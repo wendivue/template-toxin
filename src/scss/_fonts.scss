@@ -1,28 +1,63 @@
-/* quicksand-regular - latin */
 @font-face {
     font-family: 'Quicksand';
     font-style: normal;
     font-weight: 400;
-    src: url('../fonts/quicksand-v19-latin-regular.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/quicksand-v19-latin-regular.eot'); 
     src: local(''),
-         url('../fonts/quicksand-v19-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('../fonts/quicksand-v19-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-         url('../fonts/quicksand-v19-latin-regular.woff') format('woff'), /* Modern Browsers */
-         url('../fonts/quicksand-v19-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-         url('../fonts/quicksand-v19-latin-regular.svg#Quicksand') format('svg'); /* Legacy iOS */
+         url('../fonts/quicksand-v19-latin-regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/quicksand-v19-latin-regular.woff2') format('woff2'), 
+         url('../fonts/quicksand-v19-latin-regular.woff') format('woff'), 
+         url('../fonts/quicksand-v19-latin-regular.ttf') format('truetype'), 
+         url('../fonts/quicksand-v19-latin-regular.svg#Quicksand') format('svg'); 
   }
   
-  /* quicksand-700 - latin */
   @font-face {
     font-family: 'Quicksand';
     font-style: normal;
     font-weight: 700;
-    src: url('../fonts/quicksand-v19-latin-700.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/quicksand-v19-latin-700.eot'); 
     src: local(''),
-         url('../fonts/quicksand-v19-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('../fonts/quicksand-v19-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
-         url('../fonts/quicksand-v19-latin-700.woff') format('woff'), /* Modern Browsers */
-         url('../fonts/quicksand-v19-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
-         url('../fonts/quicksand-v19-latin-700.svg#Quicksand') format('svg'); /* Legacy iOS */
+         url('../fonts/quicksand-v19-latin-700.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/quicksand-v19-latin-700.woff2') format('woff2'),
+         url('../fonts/quicksand-v19-latin-700.woff') format('woff'),
+         url('../fonts/quicksand-v19-latin-700.ttf') format('truetype'),
+         url('../fonts/quicksand-v19-latin-700.svg#Quicksand') format('svg');
   }
   
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/montserrat-v14-cyrillic-regular.eot'); 
+    src: local('Montserrat Regular'), local('Montserrat-Regular'),
+         url('../fonts/montserrat-v14-cyrillic-regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/montserrat-v14-cyrillic-regular.woff2') format('woff2'),
+         url('../fonts/montserrat-v14-cyrillic-regular.woff') format('woff'),
+         url('../fonts/montserrat-v14-cyrillic-regular.ttf') format('truetype'),
+         url('../fonts/montserrat-v14-cyrillic-regular.svg#Montserrat') format('svg');
+}
+  
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/montserrat-v14-cyrillic-700.eot');
+    src: local('Montserrat Bold'), local('Montserrat-Bold'),
+         url('../fonts/montserrat-v14-cyrillic-700.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/montserrat-v14-cyrillic-700.woff2') format('woff2'),
+         url('../fonts/montserrat-v14-cyrillic-700.woff') format('woff'),
+         url('../fonts/montserrat-v14-cyrillic-700.ttf') format('truetype'),
+         url('../fonts/montserrat-v14-cyrillic-700.svg#Montserrat') format('svg');
+}
+
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://example.com/MaterialIcons-Regular.eot);
+    src: local('Material Icons'),
+      local('MaterialIcons-Regular'),
+      url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'),
+      url(https://example.com/MaterialIcons-Regular.woff) format('woff'),
+      url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
+  }
