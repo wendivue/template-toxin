@@ -1,0 +1,6 @@
+mixin text-field(object)
+ - var state = (object.state ? "text-field__input--" + object.state : "");
+
+    .text-field
+        label.text-field__label.typo-h3(for="text-field__input")=object.text
+        input#text-field__input(class="text-field__input " + state type="text" placeholder=object.placeholder)

@@ -1,0 +1,25 @@
+.text-field {
+    display: flex;
+    flex-flow: column;
+
+    &__label {
+        padding-bottom: 5px;
+    }
+
+    &__input {
+        max-width: 320px;
+        height: 44px;
+        padding-left: 15px;
+        font-family: $font-size--body;
+        color: $dark-shade-25;
+        border: 1px solid $dark-shade-25;
+        border-radius: 4px;
+        box-sizing: border-box;
+        text-transform: capitalize;
+
+        &:hover, &:focus, &--active {
+            color: $dark-shade-75;
+            border: 1px solid $dark-shade-50;
+        }
+    }
+}
