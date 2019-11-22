@@ -5,6 +5,7 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
+const webpack = require('webpack');
 
 const config = {
   entry: ["./src/js/index.js", "./src/scss/style.scss"],
@@ -72,6 +73,12 @@ const config = {
     ]
   },
   plugins: [
+    new webpack.ProvidePlugin({ 
+      $: 'jquery',
+      jQuery: 'jquery',
+      "window.jQuery": "jquery'",
+      "window.$": "jquery"
+    }),
     new MiniCssExtractPlugin({
       filename: "./css/style.bundle.css"
     }),
@@ -88,8 +95,7 @@ const config = {
     new HtmlWebpackPlugin({
       filename: "index.html",
       template: "./src/pug/index.pug"
-    }),
-    
+    })
   ]
 };
 
