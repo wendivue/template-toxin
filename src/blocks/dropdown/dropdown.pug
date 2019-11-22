@@ -1,0 +1,25 @@
+include ../text-field/text-field.pug
+- var itemsRoom = [{text: "спальни", value: "2", tabindex: 2}, {text: "кровати", value: "2", tabindex: 3}, {text: "ванные комнаты", value: "0", tabindex: 4}];
+- var itemsPeople = [{text: "as2d23"}, {text: "123Rsdm"}, {text: "23313asd"}];
+
+mixin dropdown__item(object)
+    for item in object.itemsRoom ? itemsRoom : itemsPeople
+        .dropdown__item
+            p(class="typo-h3 dropdown__text")=item.text
+            .dropdown__wrapper-input
+                button(class="dropdown__button" id="decrease" type="button") -
+                input(class="dropdown__input"  id="dropdown-input" value=item.value tabindex=item.tabindex)
+                button(class="dropdown__button" id="increase" type="button") +
+
+mixin dropdown(object)
+    - var stateMenu = (object.stateMenu ? "dropdown__menu--" + object.stateMenu : "");
+    - var size = (object.size ? "dropdown--" + object.size : "");
+
+    div(class="dropdown " + size)
+        +text-field(object)
+        div(class="dropdown__menu " + stateMenu)
+            +dropdown__item(object)
+            if(object.buttonMenu)
+                .dropdown__wrapper-button-menu
+                    button(class="typo-h3 dropdown__button-menu dropdown__button-menu--cleans" id="button-menu-cleans") очистить
+                    button(class="typo-h3 dropdown__button-menu" id="button-menu-complete") применить
