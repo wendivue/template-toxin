@@ -1,0 +1,109 @@
+.date-picker {
+
+    .text-field__input {
+        color: $dark-shade-75;
+    }
+
+    &__wrapper-button {
+        max-width: 320px;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 20px;
+        padding-bottom: 20px;
+    }
+
+    &__button {
+        display: block;
+        flex: none;
+        padding: 0;
+        height: 0;
+        color: $color-primary;
+        border: none;
+        background: #fff;
+
+        &--cleans {
+            color: $dark-shade-50;
+        }
+    }
+}
+
+.datepicker {
+    width: 320px;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+    padding-bottom: 13px;
+
+    .material-icons {
+        color: $color-primary;
+    }
+
+    &--nav {
+        border: none;
+        padding: 16px 16px 10px 16px;
+    }
+
+    &--nav-title {
+        @extend .typo-h2;
+    }
+
+    &--content {
+        padding: 20px;
+    }
+    
+    &--day-name {
+        @extend .typo-h3;
+        color: $color-primary;
+    }
+
+    &--pointer {
+        display: none;
+    }
+
+    &--cell {
+        @extend .typo-h3;
+        height: 40px;
+        font-weight: normal;
+        color: $dark-shade-50;
+
+        &.-current- {
+            color: #fff;
+            background: $gradient-secondary;
+            border-radius: 50%;
+        }
+
+        &.-in-range-{
+            background: rgba($color-primary, .25);;
+        }
+    }
+}
+
+.datepicker--cells, .datepicker--cells-days {
+    padding-top: 9px;
+}
+
+.datepicker--cell-day.-other-month-, .datepicker--cell-year.-other-decade- {
+    color: $dark-shade-25;
+}
+
+.datepicker--cell.-selected- {
+    position: relative;
+    z-index: 7;
+    background: #fff;
+
+    &::after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+         border-radius: 50%;
+        background: $gradient-primary;
+        z-index: -1;
+    }
+}
+
+.datepicker--cell.-selected-.-range-from- {
+    background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(238,230,255,1) 53%, rgba(238,230,255,1) 100%);
+}
+
+.datepicker--cell.-selected-.-range-to- {
+    background: linear-gradient(to right, rgba(238,230,255,1) 0%, rgba(238,230,255,1) 47%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%);
+}
