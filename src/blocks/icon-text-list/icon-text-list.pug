@@ -1,0 +1,17 @@
+mixin icon-text-list(object)
+    - var comfort = {icon: "insert_emoticon", title: "Комфорт", text: "Шумопоглощающие стены", theme: "border"};
+    - var convenience = {icon: "location_city", title: "Удобство", text: "Окно в каждой из спален", theme: "border"};
+    - var cosiness = {icon: "whatshot", title: "Уют", text: "Номер оснащён камином"};
+
+    if(object.full)
+        - var itemsList = [comfort, convenience, cosiness];
+    else
+        - var itemsList = [comfort, convenience];
+
+    div(class="icon-text-list ")
+        for item in itemsList
+            div(class="icon-text-list__item " + (item.theme ? "icon-text-list__item--" + item.theme : ""))
+                i(class="material-icons icon-text-list__icon")=item.icon
+                div(class="icon-text-list__wrapper-text")
+                    p(class="typo-body icon-text-list__title")=item.title
+                    p(class="typo-body icon-text-list__text")=item.text
