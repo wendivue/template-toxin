@@ -1,0 +1,44 @@
+.like-button {
+    display: flex;
+
+    &__checkbox {
+        -webkit-appearance: none;
+        width: 40px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        padding: 0 4px;
+        border: 1px solid $dark-shade-25;
+        border-radius: 10px;
+
+        &:after {
+            content: "favorite_border";
+            font-size: 10px;
+            color:$dark-shade-25;
+        }
+
+        &:checked {
+            color: $color-primary;
+            border: 1px solid $color-primary;
+
+            &:after {
+                content: "favorite";
+                font-size: 10px;
+                color: $color-primary;
+            }
+        }
+    }
+
+    &__checkbox:checked + &__number {
+        color: $color-primary;
+    }
+
+    &__number {
+        position: relative;
+        top: 8px;
+        left: -21px;
+        font-family: $font-family--body;
+        font-size: 10px;
+        color:$dark-shade-25;
+    }
+}
