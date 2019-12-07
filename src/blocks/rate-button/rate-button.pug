@@ -1,0 +1,9 @@
+mixin rate-button(object)
+    - var starBorder = 5 - object.star;
+
+    .rate-button
+        - for (var x = 0; x < object.star; x++)
+            i(class="material-icons rate-button__icon") star
+
+        - for (var x = 0; x < starBorder; x++)
+            i(class="material-icons rate-button__icon") star_border
