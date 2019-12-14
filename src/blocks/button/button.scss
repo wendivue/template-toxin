@@ -1,0 +1,55 @@
+.button {
+    width: 99px;
+    display: inline-block;
+    padding: 14.5px 0;
+    background: $gradient-primary;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 22px;
+
+    &:hover, &--active {
+        opacity: 0.5;
+    }
+
+    &--border {
+        width: 95px;
+        padding: 12.5px 0;
+        background: #fff;
+        border: 2px solid $color-primary;
+        color: $color-primary;
+    }
+
+    &--icon-link {
+        width: 85px;
+        padding: 0;
+        color: $color-primary;
+        background: none;
+        text-align: left;
+
+        &:hover, &-active {
+            opacity: 1;
+            color: $dark-shade-50;
+        }
+    }
+
+    &--small {
+        padding: 9.5px 0;
+    }
+
+    &--login {
+        width: 87px;
+    }
+
+    &--register {
+        width: 196px;
+    }
+
+    &--login-small {
+        width: 79px;
+    }
+
+    &--register-small {
+        width: 101px;
+    }
+}

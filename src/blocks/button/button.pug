@@ -1,0 +1,7 @@
+mixin button(object)
+    - var theme = (object.theme ? " button--" + object.theme : "");
+    - var size = (object.size ? " button--" + object.size : "");
+    - var state = (object.state ? " button--" + object.state : "");
+    - var themeHeader = (object.themeHeader ? " button--" + object.themeHeader : "");
+
+    a(class="typo-h3 button" + theme + size + state + themeHeader href=object.link)=object.text
