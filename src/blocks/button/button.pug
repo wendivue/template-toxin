@@ -4,4 +4,8 @@ mixin button(object)
     - var state = (object.state ? " button--" + object.state : "");
     - var themeHeader = (object.themeHeader ? " button--" + object.themeHeader : "");
 
-    a(class="typo-h3 button" + theme + size + state + themeHeader href=object.link)=object.text
+    if(!object.buttonLarge)
+        a(class="typo-h3 button" + theme + size + state + themeHeader href=object.link)=object.text
+    else
+        a(class="typo-h3 button button--large" + theme + size + state + themeHeader href=object.link)=object.text
+            i(class="material-icons button__icon") arrow_forward
