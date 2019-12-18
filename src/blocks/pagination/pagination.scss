@@ -1,0 +1,31 @@
+.pagination {
+    display: flex;
+    align-items: center;
+
+    &__number {
+        padding: 8px 16px;
+        font-size: 12px;
+        text-decoration: none;
+
+        &--current {
+            padding: 8px 17.84px;
+            background: $gradient-primary;
+            color: #fff;
+            border-radius: 22px;
+        }
+    }
+
+    &__next-page {
+        padding: 8px;
+        background: $gradient-secondary;
+        color: #fff;
+        border-radius: 22px;
+        text-decoration: none;
+    }
+
+    &__text {
+        margin-top: 9px;
+        margin-left: 5px;
+        text-transform: none;
+    }
+}
