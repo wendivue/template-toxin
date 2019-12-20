@@ -1,0 +1,14 @@
+include ../like-button/like-button.pug
+
+mixin review(object)
+    .review
+        .review__wrapper
+            img(class="review__img" src=object.img)
+            .review__wrapper-text
+                p(class="typo-body review__username")=object.username
+                p(class="typo-body review__date")=object.date
+
+        .review__wrapper
+            .review__like-button
+                +like-button(object)
+            p(class="typo-body review__text")=object.text

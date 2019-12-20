@@ -1,0 +1,30 @@
+.review {
+    width: 715px;
+
+    &__like-button {
+        align-self: baseline;
+        margin-left: 4px;
+    }
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+
+        &:last-child {
+            margin-top: 4px;
+        }
+    }
+
+    &__img {
+        margin-right: 5px;
+    }
+
+    &__username {
+        font-weight: 600;
+    }
+
+    &__text {
+        margin-top: 2px;
+        margin-left: 2px;
+    }
+}

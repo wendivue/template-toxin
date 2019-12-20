@@ -85,6 +85,11 @@ const config = {
     new CopyWebpackPlugin([
       {
         from: "./src/blocks/checkbox-list/img",
+        from: "./src/blocks/review/img",
+        to: "./img"
+      },
+      {
+        from: "./src/blocks/review/img",
         to: "./img"
       },
       {
