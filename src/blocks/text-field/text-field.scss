@@ -6,20 +6,63 @@
         padding-bottom: 5px;
     }
 
+    &__wrapper-text {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__text-state {
+        color: $dark-shade-50;
+        font-weight: normal;
+    }
+    
+    &__input-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
     &__input {
-        max-width: 320px;
+        width: 320px;
         height: 44px;
         padding-left: 15px;
-        font-family: $font-size--body;
         color: $dark-shade-25;
         border: 1px solid $dark-shade-25;
         border-radius: 4px;
         box-sizing: border-box;
-        text-transform: capitalize;
 
         &:hover, &:focus, &--active {
             color: $dark-shade-75;
             border: 1px solid $dark-shade-50;
         }
+
+        &--open {
+            border-radius: 4px 4px 0 0;
+        }
+
+        &--date {
+            width: 150px;
+        }
+    }
+
+    &__icon {
+        position: absolute;
+        padding: 10px;
+        pointer-events: none;
+        right: 0;
+
+        &--submit {
+            color: $color-primary;
+            pointer-events: painted;
+            cursor: pointer;
+        }
+    }
+
+    &--small {
+        width: 266px;
+    }
+
+    &--date {
+        width: 150px;
     }
 }

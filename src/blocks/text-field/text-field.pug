@@ -1,6 +1,25 @@
 mixin text-field(object)
- - var state = (object.state ? "text-field__input--" + object.state : "");
+    - var state = (object.state ? "text-field__input--" + object.state + " " : "");
+    - var size = (object.size ? "text-field--" + object.size : "");
+    - var id = (object.tabindex ? "text-field-" + object.tabindex : "");
+    - var myId = (object.myId ? " " + object.myId : "");
+    - var className = (object.className ? "text-field__" + object.className : "");
+    - var classNameIcon = (object.classNameIcon ? "text-field__icon--" + object.classNameIcon : "");
+    - var borderRadius = (object.stateMenu ? " text-field__input--open" : "");
 
-    .text-field
-        label.text-field__label.typo-h3(for="text-field__input")=object.text
-        input#text-field__input(class="text-field__input " + state type="text" placeholder=object.placeholder tabindex=object.tabindex)
+    div(class="text-field " + size)
+        .text-field__wrapper-text
+            label(class="typo-h3 text-field__label" for=id)=object.text
+            if(object.textState)
+                p(class="typo-h3 text-field__text-state")=object.textState
+
+        .text-field__input-wrapper
+            if(object.dropdown)
+                input(class="typo-body text-field__input " + state + className + borderRadius id=id + myId type=object.type value=object.value name=object.name tabindex=object.tabindex readonly)
+            else if (object.dateRange)
+                input(class="typo-body datepicker-here text-field__input " + state + className id=id + myId type=object.type placeholder=object.placeholder name=object.name tabindex=object.tabindex data-range="true" data-multiple-dates-separator=" - " readonly)
+            else
+                input(class="typo-body text-field__input " + state + className id=id + myId type=object.type placeholder=object.placeholder value=object.value name=object.name tabindex=object.tabindex)
+
+            if(object.iconText)
+                i(class="material-icons text-field__icon " + classNameIcon)=object.iconText
