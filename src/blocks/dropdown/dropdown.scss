@@ -1,5 +1,5 @@
 .dropdown {
-    
+
     .text-field__input {
         color: $dark-shade-75;
         cursor: pointer;
@@ -7,14 +7,19 @@
 
     &__menu {
         display: none;
-        padding: 5px 7px 10px 13px;
+        padding: 3px 7px 12px 13px;
         border-left: 1px solid $dark-shade-25;
         border-right: 1px solid $dark-shade-25;
         border-bottom: 1px solid $dark-shade-25;
         box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+        border-radius: 0 0 4px 4px;
 
         &--active {
             display: block;
+        }
+
+        &--small {
+            padding: 3px 7px 4px 13px;
         }
     }
 
@@ -35,9 +40,15 @@
         width: 30px;
         height: 30px;
         background-color: #fff;
-        border: 1px solid rgba(31, 32, 65, 0.25);
+        border: 1px solid $dark-shade-50;
         box-sizing: border-box;
         border-radius: 22px;
+
+        &--no-active {
+            pointer-events: none;
+            border: 1px solid $dark-shade-25;
+            color: $dark-shade-25;
+        }
     }
 
     &__wrapper-button-menu {

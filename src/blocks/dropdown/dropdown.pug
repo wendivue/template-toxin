@@ -1,25 +1,37 @@
 include ../text-field/text-field.pug
-- var itemsRoom = [{text: "спальни", value: "2", tabindex: 2}, {text: "кровати", value: "2", tabindex: 3}, {text: "ванные комнаты", value: "0", tabindex: 4}];
-- var itemsPeople = [{text: "as2d23"}, {text: "123Rsdm"}, {text: "23313asd"}];
+- var itemsRoom = [{text: "спальни", value: "2", tabindex: 2, id: "1"}, {text: "кровати", value: "2", tabindex: 3, id: "2"}, {text: "ванные комнаты", value: "0", tabindex: 4, id: "3"}];
+- var itemsPeople = [{text: "взрослые", value: "2", tabindex: 2}, {text: "дети", value: "2", tabindex: 3}, {text: "младенцы", value: "0", tabindex: 4}];
 
 mixin dropdown__item(object)
     for item in object.itemsRoom ? itemsRoom : itemsPeople
+        - var state = (item.value == 0 ? " dropdown__button--no-active" : "");
         .dropdown__item
             p(class="typo-h3 dropdown__text")=item.text
             .dropdown__wrapper-input
-                button(class="dropdown__button" id="decrease" type="button") -
-                input(class="dropdown__input"  id="dropdown-input" value=item.value tabindex=item.tabindex)
-                button(class="dropdown__button" id="increase" type="button") +
+                if(object.itemsRoom)
+                    button(class="dropdown__button" + state id="room-decrease-" + item.id type="button") -
+                    input(class="typo-h3 dropdown__input" id="dropdown-room-input" value=item.value tabindex=item.tabindex)
+                    button(class="dropdown__button" id="room-increase-" + item.id type="button") +
+                else
+                    button(class="dropdown__button" + state id="decrease" type="button") -
+                    input(class="typo-h3 dropdown__input"  id="dropdown-input" value=item.value tabindex=item.tabindex)
+                    button(class="dropdown__button" id="increase" type="button") +
 
 mixin dropdown(object)
-    - var stateMenu = (object.stateMenu ? "dropdown__menu--" + object.stateMenu : "");
-    - var size = (object.size ? "dropdown--" + object.size : "");
+    - var idMenu = (object.itemsRoom ? "dropdown-room-menu" : "dropdown-menu");
+    - var stateMenu = (object.stateMenu ? " dropdown__menu--" + object.stateMenu : "");
+    - var size = (object.size ? " dropdown--" + object.size : "");
+    - var sizeMenu = (object.size ? " dropdown__menu--" + object.size : "");
 
-    div(class="dropdown " + size)
+    div(class="dropdown" + size)
         +text-field(object)
-        div(class="dropdown__menu " + stateMenu)
+        div(class="dropdown__menu" + stateMenu + sizeMenu id=idMenu)
             +dropdown__item(object)
             if(object.buttonMenu)
                 .dropdown__wrapper-button-menu
-                    button(class="typo-h3 dropdown__button-menu dropdown__button-menu--cleans" id="button-menu-cleans") очистить
-                    button(class="typo-h3 dropdown__button-menu" id="button-menu-complete") применить
+                    if(object.itemsPeople)
+                        button(class="typo-h3 dropdown__button-menu dropdown__button-menu--cleans" id="button-menu-cleans-people") очистить
+                        button(class="typo-h3 dropdown__button-menu" id="button-menu-complete-people") применить
+                    else
+                        button(class="typo-h3 dropdown__button-menu dropdown__button-menu--cleans" id="button-menu-cleans") очистить
+                        button(class="typo-h3 dropdown__button-menu" id="button-menu-complete") применить
