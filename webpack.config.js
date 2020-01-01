@@ -84,8 +84,11 @@ const config = {
     }),
     new CopyWebpackPlugin([
       {
+        from: "./src/blocks/ui-kits-form/img",
+        to: "./img"
+      },
+      {
         from: "./src/blocks/checkbox-list/img",
-        from: "./src/blocks/review/img",
         to: "./img"
       },
       {
@@ -104,6 +107,10 @@ const config = {
     new HtmlWebpackPlugin({
       filename: "index.html",
       template: "./src/pug/index.pug"
+    }),
+    new HtmlWebpackPlugin({
+      filename: "ui-kits-form-elements.html",
+      template: "./src/pug/ui-kits-form-elements.pug"
     })
   ]
 };
