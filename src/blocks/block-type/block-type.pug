@@ -1,0 +1,8 @@
+mixin block-type(object)
+
+    for item in object.itemList
+        - var typo = (item.typo ? item.typo : "");
+        - var className = (item.className ? " block-type--" + item.className : "");
+        div(class="block-type" + className)
+            p(class="block-type__title " + typo)=item.title
+            p(class="block-type__text " + typo)=item.text

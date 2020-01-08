@@ -1,0 +1,32 @@
+.block-type {
+    display: flex;
+    margin-bottom: 50px;
+
+    &__title {
+        margin-right: 30px;
+        font-family: Montserrat;
+        font-weight: 400;
+        color: $dark-shade-25;
+    }
+
+    &__text {
+        text-transform: none;
+    }
+
+    &--h1 {
+        margin-left: 8px;
+    }
+
+    &--h2 {
+        margin-left: 9.5px;
+    }
+
+    &--h3 {
+        margin-left: 20px;
+        margin-bottom: 47px;
+    }
+
+    &--body {
+        width: 380px;
+    }
+}
