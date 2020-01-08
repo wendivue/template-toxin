@@ -111,6 +111,10 @@ const config = {
     new HtmlWebpackPlugin({
       filename: "ui-kits-form-elements.html",
       template: "./src/pug/ui-kits-form-elements.pug"
+    }),
+    new HtmlWebpackPlugin({
+      filename: "ui-kits-colors-type.html",
+      template: "./src/pug/ui-kits-colors-type.pug"
     })
   ]
 };
