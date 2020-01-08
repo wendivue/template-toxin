@@ -1,0 +1,46 @@
+.block-color {
+    display: flex;
+    margin-bottom: 20px;
+    margin-left: 3px;
+
+    &__wrapper-text {
+        margin-top: 8px;
+        margin-left: 40px;
+    }
+    
+    &__square {
+        width: 70px;
+        height: 70px;
+        background: #1F2041;
+        border-radius: 6px;
+
+        &--dark-shade-75 {
+            background: $dark-shade-75;
+        }
+
+        &--dark-shade-50 {
+            background: $dark-shade-50;
+        }
+
+        &--dark-shade-25 {
+            background: $dark-shade-25;
+        }
+
+        &--dark-shade-5 {
+            background: $dark-shade-5;
+        }
+
+        &--color-primary {
+            background: $color-primary;
+        }
+
+        &--color-secondary {
+            background: $color-secondary;
+        }
+    }
+
+    &__text {
+        margin-top: 7px;
+        font-weight: 400;
+    }
+}

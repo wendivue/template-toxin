@@ -1,0 +1,9 @@
+mixin block-color(object)
+
+    for item in object.itemList
+        .block-color
+            - var theme = (item.theme ? " block-color__square--" + item.theme : "");
+            div(class="block-color__square" + theme)
+            .block-color__wrapper-text
+                h2(class="typo-h2 block-color__title")=item.title
+                h2(class="typo-h2 block-color__text")=item.text
