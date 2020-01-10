@@ -1,0 +1,50 @@
+include ../date-picker/date-picker.pug
+include ../dropdown/dropdown.pug
+include ../button/button.pug
+
+mixin hotel-search(object)
+
+    .hotel-search
+        h1(class="typo-h1 hotel-search__title")=object.title
+
+        .hotel-search__date-picker
+            +date-picker({
+                text: "прибытие",
+                placeholder: "ДД.ММ.ГГГГ",
+                state: "date",
+                type: "text",
+                className: "datepicker-start",
+                myId: "start", 
+                tabindex: 1,
+                iconText: "expand_more",
+                dateRange: true
+            })
+            +date-picker({
+                text: "выезд",
+                placeholder: "ДД.ММ.ГГГГ",
+                state: "date",
+                type: "text",
+                className: "datepicker-end",
+                myId: "end",
+                iconText: "expand_more",
+                tabindex: 4
+            })
+
+        .hotel-search__dropdown
+            +dropdown({
+                text: "гости",
+                value: "Сколько гостей",
+                iconText: "expand_more",
+                className: "dropdown-people",
+                tabindex: 3,
+                itemsPeople: true,
+                buttonMenu: true,
+                dropdown: true 
+            })
+
+        .hotel-search__button
+            +button({
+                text: "подобрать номер",
+                link: "/mock-address/change-me",
+                buttonLarge: "true"
+            })
