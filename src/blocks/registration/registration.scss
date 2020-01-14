@@ -1,0 +1,44 @@
+.registration {
+    width: 320px;
+    padding: 40px 29px 29px 29px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    
+    &__title {
+        margin-bottom: 19px;
+        text-transform: none;
+    }
+
+    &__text-field {
+        margin-top: 10px;
+    }
+
+    &__radio-buttons {
+        margin-top: 7px;
+        margin-bottom: 18px;
+    }
+
+    &__date-picker {
+        margin-bottom: 15px;
+    }
+
+    &__toggle {
+        margin-top: 10px;
+    }
+
+    &__button {
+        margin-top: 23px;
+    }
+
+    &__sign-in {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 30px;
+    }
+
+    &__text-sign-in {
+        color: $dark-shade-100;
+    }
+}

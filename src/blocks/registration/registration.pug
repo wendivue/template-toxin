@@ -1,0 +1,67 @@
+include ../dropdown/dropdown.pug
+include ../radio-buttons/radio-buttons.pug
+include ../toggle/toggle.pug
+include ../button/button.pug
+
+mixin registration(object)
+    .registration
+        h1(class="typo-h1 registration__title")=object.title
+
+        .registration__text-field
+            +text-field({
+                placeholder: "Имя",
+                tabindex: 1,
+                name: "first name",
+                type: "text"
+            })
+        .registration__text-field
+            +text-field({
+                placeholder: "Фамилия",
+                tabindex: 2,
+                name: "last name",
+                type: "text"
+            })
+        .registration__radio-buttons
+            +radio-buttons
+        .registration__date-picker
+            +date-picker({
+                text: "дата рождения",
+                placeholder: "ДД.ММ.ГГГГ",
+                type: "text",
+                name: "date",
+                className: "datepicker datepicker-here"
+            })
+        .registration__text-field
+            +text-field({
+                text: "данные для входа в сервис",
+                placeholder: "Email",
+                tabindex: 3,
+                name: "email",
+                type: "text"
+            })
+        .registration__text-field
+            +text-field({
+                placeholder: "Пароль",
+                tabindex: 4,
+                name: "password",
+                type: "text"
+            })
+        .registration__toggle
+            +toggle({
+                    title:"Toggle",
+                    text: "Получать спецпредложения",
+                    id: "1"
+                })
+        .registration__button
+            +button({
+                text: "перейти к оплате",
+                link: "/mock-address/change-me",
+                buttonLarge: "true"
+            })
+        .registration__sign-in
+            p(class="typo-body registration__text-sign-in") Уже есть аккаунт на Toxin
+            +button({
+                text: "войти",
+                link: "/mock-address/change-me",
+                theme: "border"
+            })
