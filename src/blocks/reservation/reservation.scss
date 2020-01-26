@@ -1,0 +1,58 @@
+.reservation {
+    width: 320px;
+    padding: 44px 29px 29px 29px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+
+    &__wrapper-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+
+    &__items-price {
+        display: flex;
+    }
+
+    &__number {
+        font-weight: bold;
+        color: $dark-shade-100;
+
+        &:last-child {
+            padding-left: 3px;
+        }
+
+        &--big {
+            font-size: 20px;
+        }
+
+        &--primary-color {
+            color: $color-primary;
+        }
+    }
+
+    &__price {
+        font-weight: bold;
+        padding-right: 5px;
+    }
+
+    &__days {
+        font-size: 12px;
+    }
+
+    &__date-picker {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px;
+    }
+
+    &__dropdown {
+        margin-bottom: 21px;
+    }
+
+    &__price-list {
+        margin-bottom: 23px;
+    }
+}
