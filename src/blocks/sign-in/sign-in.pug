@@ -1,0 +1,34 @@
+include ../text-field/text-field.pug
+include ../button/button.pug
+
+mixin sign-in(object)
+    .sign-in
+        h1(class="typo-h1 sign-in__title")=object.title
+
+        .sign-in__text-field
+            +text-field({
+                placeholder: "Email",
+                tabindex: 1,
+                name: "email",
+                type: "text"
+            })
+        .sign-in__text-field
+            +text-field({
+                placeholder: "Пароль",
+                tabindex: 2,
+                name: "password",
+                type: "text"
+            })
+        .sign-in__button
+            +button({
+                text: "войти",
+                link: "/mock-address/change-me",
+                buttonLarge: "true"
+            })
+        .sign-in__create
+            p(class="typo-body sign-in__text") Нет аккаунта на Toxin?
+            +button({
+                text: "создать",
+                link: "/mock-address/change-me",
+                theme: "border"
+            })
