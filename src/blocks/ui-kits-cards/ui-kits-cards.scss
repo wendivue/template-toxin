@@ -1,0 +1,32 @@
+.ui-kits-cards{
+    margin-top: 57px;
+
+    &__img {
+        display: block;
+        padding-top: 25px;
+        padding-left: 264px;
+    }
+
+    &__registration {
+        margin-top: 40px;
+    }
+
+    &__sign-in {
+        margin-top: 40px;
+    }
+
+    &__wrapper-col {
+        margin-left: -2px;
+    }
+
+    &__hotel-card {
+
+        &:nth-child(2) {
+            margin-top: 41px;
+        }
+
+        &:nth-child(3) {
+            margin-top: 39px;
+        }
+    }
+}

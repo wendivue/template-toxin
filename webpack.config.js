@@ -96,7 +96,7 @@ const config = {
         to: "./img"
       },
       {
-        from: "./src/blocks/hotel-card/img",
+        from: "./src/blocks/ui-kits-cards/img",
         to: "./img"
       },
       {
@@ -119,6 +119,10 @@ const config = {
     new HtmlWebpackPlugin({
       filename: "ui-kits-colors-type.html",
       template: "./src/pug/ui-kits-colors-type.pug"
+    }),
+    new HtmlWebpackPlugin({
+      filename: "ui-kits-cards-elements.html",
+      template: "./src/pug/ui-kits-cards-elements.pug"
     })
   ]
 };
