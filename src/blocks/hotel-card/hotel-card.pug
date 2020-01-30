@@ -4,10 +4,8 @@ mixin hotel-card(object)
     .hotel-card
         .hotel-card__slider
             div(class="owl-carousel owl-theme")
-                div(class="hotel-card__item")
-                div(class="hotel-card__item")
-                div(class="hotel-card__item")
-                div(class="hotel-card__item")
+                for item in object.itemList
+                    img(class="hotel-card__img" src=item.img)
 
         .hotel-card__description
             .hotel-card__wrapper-head
@@ -22,7 +20,7 @@ mixin hotel-card(object)
 
             .hotel-card__wrapper-reviews
                 .hotel-card__rate-button
-                    +rate-button({star: 5})
+                    +rate-button(object)
                 .hotel-card__reviews
                     span(class="typo-body hotel-card__text hotel-card__text--bold")=object.reviews
                     p(class="typo-body hotel-card__text") Отзывов
