@@ -76,7 +76,7 @@ const config = {
     new webpack.ProvidePlugin({ 
       $: 'jquery',
       jQuery: 'jquery',
-      "window.jQuery": "jquery'",
+      "window.jQuery": "jquery",
       "window.$": "jquery"
     }),
     new MiniCssExtractPlugin({
@@ -93,6 +93,10 @@ const config = {
       },
       {
         from: "./src/blocks/review/img",
+        to: "./img"
+      },
+      {
+        from: "./src/blocks/hotel-card/img",
         to: "./img"
       },
       {
