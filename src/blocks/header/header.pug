@@ -1,0 +1,42 @@
+include ../button/button.pug
+include ../page/page.pug
+include ../centerblock/centerblock.pug
+
+mixin header(object)
+    .header
+        +page
+            +centerblock
+                img(class="header__logo" src="img/Logo.png")
+
+                .header__wrapper-menu
+                    nav(class="header__menu")
+                        ul(class="header__list")
+                            for item in object.itemList
+                                - var state = (item.state ? " header__link--" + item.state: "");
+                                li(class="header__item")
+                                    a(class="typo-body header__link" + state href=item.link)=item.text
+                                        if(item.icon)
+                                            i(class="material-icons header__icon") expand_more
+                                    if(item.icon)
+                                        ul(class="header__submenu")
+                                            for subItem in object.subItemList
+                                                li(class="header__subitem")
+                                                    a(class="typo-body header__link" href=subItem.link)=subItem.text
+                    if(object.textLogin)
+                        .header__login
+                            p(class="typo-body header__text-login")=object.textLogin
+                    else
+                        .header__wrapper-button
+                            .header__button
+                                +button({
+                                    text: "Login",
+                                    link: "/mock-address/change-me",
+                                    theme: "border",
+                                    size: "login-small"
+                                })
+                            .header__button
+                                +button({
+                                    text: "REGISTER",
+                                    link: "/mock-address/change-me",
+                                    size: "register-small"
+                                })
