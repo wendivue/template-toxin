@@ -24,6 +24,7 @@ $line-height--body: 24px;
     font-weight: $font-weight--h1;
     line-height: $line-height--h1;
     color: $dark-shade-100;
+    text-transform: capitalize;
 }
 
 .typo-h2 {
@@ -32,6 +33,7 @@ $line-height--body: 24px;
     font-weight: $font-weight--h2;
     line-height: $line-height--h2;
     color: $dark-shade-100;
+    text-transform: capitalize;
 }
   
 .typo-h3 {
@@ -39,8 +41,8 @@ $line-height--body: 24px;
     font-family: $font-family--h3;
     font-weight: $font-weight--h3;
     line-height: $line-height--h3;
-    text-transform: uppercase;
     color: $dark-shade-100;
+    text-transform: uppercase;
 }
 
 .typo-body {

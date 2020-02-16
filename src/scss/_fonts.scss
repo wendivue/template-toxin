@@ -10,20 +10,20 @@
          url('../fonts/quicksand-v19-latin-regular.ttf') format('truetype'), 
          url('../fonts/quicksand-v19-latin-regular.svg#Quicksand') format('svg'); 
   }
-  
-  @font-face {
-    font-family: 'Quicksand';
-    font-style: normal;
-    font-weight: 700;
-    src: url('../fonts/quicksand-v19-latin-700.eot'); 
-    src: local(''),
-         url('../fonts/quicksand-v19-latin-700.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/quicksand-v19-latin-700.woff2') format('woff2'),
-         url('../fonts/quicksand-v19-latin-700.woff') format('woff'),
-         url('../fonts/quicksand-v19-latin-700.ttf') format('truetype'),
-         url('../fonts/quicksand-v19-latin-700.svg#Quicksand') format('svg');
-  }
-  
+
+@font-face {
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/quicksand-v19-latin-700.eot'); 
+  src: local(''),
+        url('../fonts/quicksand-v19-latin-700.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/quicksand-v19-latin-700.woff2') format('woff2'),
+        url('../fonts/quicksand-v19-latin-700.woff') format('woff'),
+        url('../fonts/quicksand-v19-latin-700.ttf') format('truetype'),
+        url('../fonts/quicksand-v19-latin-700.svg#Quicksand') format('svg');
+}
+
 @font-face {
     font-family: 'Montserrat';
     font-style: normal;

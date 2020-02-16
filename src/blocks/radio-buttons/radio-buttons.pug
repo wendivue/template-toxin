@@ -2,8 +2,6 @@ mixin radio-buttons(object)
     - var itemList = [{text: "Мужчина", value: "male", checked: "true"}, {text: "Женщина", value: "female"}];
 
     .radio-buttons
-        h3(class="typo-h3 radio-buttons__title")=object.text
-
         .radio-buttons__items
             for item in itemList
                 .radio-buttons__item

@@ -8,10 +8,11 @@ mixin text-field(object)
     - var borderRadius = (object.stateMenu ? " text-field__input--open" : "");
 
     div(class="text-field " + size)
-        .text-field__wrapper-text
-            label(class="typo-h3 text-field__label" for=id)=object.text
-            if(object.textState)
-                p(class="typo-h3 text-field__text-state")=object.textState
+        if(object.text)
+            .text-field__wrapper-text
+                label(class="typo-h3 text-field__label" for=id)=object.text
+                if(object.textState)
+                    p(class="typo-h3 text-field__text-state")=object.textState
 
         .text-field__input-wrapper
             if(object.dropdown)

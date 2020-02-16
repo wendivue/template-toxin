@@ -16,7 +16,7 @@
     &__title {
         margin-bottom: 15px;
 
-        &--like-button {
+        &--like-button, &--radio-button {
             margin-bottom: 12px;
         }
     }
@@ -89,12 +89,12 @@
     &__toggle-item {
 
         &:nth-child(2) {
-            margin-bottom: 10px;
+            margin-bottom: 13px;
         }
     }
 
     &__like-button {
-        margin-top: 42px;
+        margin-top: 44px;
 
         .like-button__checkbox {
             margin-left: 0;

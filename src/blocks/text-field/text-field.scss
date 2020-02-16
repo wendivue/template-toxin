@@ -3,15 +3,18 @@
     flex-flow: column;
 
     &__label {
-        padding-bottom: 5px;
     }
 
     &__wrapper-text {
+        height: 25px;
         display: flex;
         justify-content: space-between;
+        align-items: center;
     }
 
     &__text-state {
+        padding-top: 3px;
+        align-self: baseline;
         color: $dark-shade-50;
         font-weight: normal;
     }

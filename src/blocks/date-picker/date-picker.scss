@@ -1,9 +1,5 @@
 .date-picker {
 
-    .text-field__input {
-        color: $dark-shade-75;
-    }
-
     &__wrapper-button {
         max-width: 320px;
         display: flex;
@@ -25,6 +21,10 @@
             color: $dark-shade-50;
         }
     }
+}
+
+.datepicker-here {
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
 }
 
 .datepicker {
@@ -94,7 +94,7 @@
         content: "";
         width: 100%;
         height: 100%;
-         border-radius: 50%;
+        border-radius: 50%;
         background: $gradient-primary;
         z-index: -1;
     }

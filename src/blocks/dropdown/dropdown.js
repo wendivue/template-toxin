@@ -311,7 +311,6 @@ $(document).ready(function() {
     });
   });
 
-
   $(document).on('click', '#button-menu-cleans-people', function () {
     $(".dropdown__button-menu--cleans").css("opacity", "0");
     $('[id^="decrease"]').addClass("dropdown__button--no-active");
@@ -351,7 +350,3 @@ $(document).ready(function() {
   });
 
 });
-
-
-
-

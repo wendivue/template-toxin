@@ -1,13 +1,12 @@
 .toggle {
     width: 264px;
     display: flex;
-    justify-content: space-between;
 
     &__label {
         position: relative;
         display: inline-block;
-        width: 40px;
-        height: 20px;
+        width: 38px;
+        height: 19px;
         border-radius: 20px;
         border: 1px solid $dark-shade-25;
         transition: all 0.3s;
@@ -19,8 +18,8 @@
             height: 12px;
             border-radius:50%;
             background-color: $dark-shade-25;
-            top: 4px;
-            left: 4px;
+            top: 3.5px;
+            left: 3px;
             transition: all 0.3s;
         }
     }
@@ -30,7 +29,7 @@
     }
 
     &__input:checked + &__label::after {
-        left : 24px;
+        left : 23px;
         background-color: $color-primary;
     }
     
@@ -39,6 +38,7 @@
     } 
 
     &__text {
-        text-transform: none;
+        padding-left: 10px;
+        line-height: 19px;
     }
 }

@@ -1,5 +1,5 @@
 .checkbox-buttons {
-    width: 250px;
+    width: 240px;
 
     &__wrapper-header {
         display: flex;
@@ -11,12 +11,12 @@
     &__wrapper-checkbox {
         display: flex;
         align-items: center;
-        margin-bottom: 6.3px;
+        margin-bottom: 5.4px;
     }
 
     &__checkbox {
         -webkit-appearance: none;
-        align-self: baseline;
+        align-self: start;
         min-width: 20px;
         height: 20px;
         margin-left: 0;
