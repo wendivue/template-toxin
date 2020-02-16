@@ -100,6 +100,10 @@ const config = {
         to: "./img"
       },
       {
+        from: "./src/blocks/ui-kits-header-footer/img",
+        to: "./img"
+      },
+      {
         from: "./src/fonts",
         to: "./fonts"
       },
@@ -123,6 +127,10 @@ const config = {
     new HtmlWebpackPlugin({
       filename: "ui-kits-cards-elements.html",
       template: "./src/pug/ui-kits-cards-elements.pug"
+    }),
+    new HtmlWebpackPlugin({
+      filename: "ui-kits-header-footer-page.html",
+      template: "./src/pug/ui-kits-header-footer-page.pug"
     })
   ]
 };
