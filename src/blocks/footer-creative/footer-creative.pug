@@ -1,0 +1,8 @@
+mixin footer-creative(object)
+    .footer-creative
+        img(class="footer-creative__logo" src="img/Logo.png")
+        p(class="typo-body footer-creative__text")=object.text
+        div(class="footer-creative__social")
+            for icon in object.iconList
+                a(class="footer-creative__link-icon" href=icon.link)
+                    i(class="fa footer-creative__icon " + icon.icon)
