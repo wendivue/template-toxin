@@ -34,9 +34,9 @@ mixin footer-copyright(object)
                 +centerblock
                     p(class="typo-body footer-copyright__text")=object.copyright
                     div(class="footer-copyright__social")
-                        <i class="fa fa-twitter footer-copyright__icon"></i>
-                        <i class="fa fa-facebook-square footer-copyright__icon"></i>
-                        <i class="fa fa-instagram footer-copyright__icon"></i>
+                        for icon in object.iconList
+                            a(class="footer-copyright__link-icon" href=icon.link)
+                                i(class="fa footer-copyright__icon " + icon.icon)
 
 mixin footer-list(object)
     for item in object
