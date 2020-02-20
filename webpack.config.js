@@ -104,6 +104,10 @@ const config = {
         to: "./img"
       },
       {
+        from: "./src/blocks/landing-page/img",
+        to: "./img"
+      },
+      {
         from: "./src/fonts",
         to: "./fonts"
       },
@@ -131,6 +135,10 @@ const config = {
     new HtmlWebpackPlugin({
       filename: "ui-kits-header-footer-page.html",
       template: "./src/pug/ui-kits-header-footer-page.pug"
+    }),
+    new HtmlWebpackPlugin({
+      filename: "page-landing-page.html",
+      template: "./src/pug/page-landing-page.pug"
     })
   ]
 };
