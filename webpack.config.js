@@ -108,6 +108,10 @@ const config = {
         to: "./img"
       },
       {
+        from: "./src/blocks/search-room/img",
+        to: "./img"
+      },
+      {
         from: "./src/fonts",
         to: "./fonts"
       },
@@ -139,6 +143,10 @@ const config = {
     new HtmlWebpackPlugin({
       filename: "page-landing-page.html",
       template: "./src/pug/page-landing-page.pug"
+    }),
+    new HtmlWebpackPlugin({
+      filename: "page-search-room.html",
+      template: "./src/pug/page-search-room.pug"
     })
   ]
 };
