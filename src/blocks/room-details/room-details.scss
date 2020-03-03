@@ -1,0 +1,128 @@
+.room-details {
+
+    &__wrapper-img {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__wrapper-content {
+        margin-top: 55px;
+        padding-bottom: 56px;
+        border-bottom: 1px solid rgba(31, 32, 65, 0.1);
+
+        @media (max-width: $breakpoint-sm) {
+            margin-top: 25px;
+            padding-bottom: 26px;
+        }
+    }
+    
+    &__col-img {
+        display: flex;
+        flex-flow: column;
+    }
+
+    &__main-img {
+        height: 100%;
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+    }
+
+    &__col-8 {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 14px;
+
+        @media (max-width: $breakpoint-sm) {
+            align-items: center;
+            flex-flow: column;
+        }
+    }
+
+    &__diagram {
+        width: 351px;
+
+        @media (max-width: $breakpoint-sm) {
+            margin-top: 15px;
+        }
+
+        @media (max-width: $breakpoint-xs) {
+            width: 320px;
+        }
+    }
+
+    &__pie-chart {
+        margin-top: 20px;
+    }
+
+    &__wrapper-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+
+        @media (max-width: $breakpoint-sm) {
+            margin-top: 30px;
+        }
+
+        @media (max-width: $breakpoint-xs) {
+            flex-flow: column;
+            align-items: center;
+        }
+    }
+
+    &__text-review {
+        color: $dark-shade-50;
+    }
+
+    &__items-review {
+        margin-top: 16px;
+    }
+
+    &__review {
+        margin-bottom: 22px;
+    }
+
+    &__items-rule {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 33px;
+
+        @media (max-width: $breakpoint-xs) {
+            flex-flow: column;
+            align-items: center;
+        }
+    }
+
+    &__cancel {
+        max-width: 351px;
+
+        @media (max-width: $breakpoint-xs) {
+            margin-top: 10px;
+        }
+    }
+
+    &__text-cancel {
+        max-width: 345px;
+
+        @media (max-width: $breakpoint-xs) {
+            width: 300px;
+        }
+    }
+
+    &__title-rule, &__title-cancel {
+        margin-bottom: 18px;
+    }
+
+    &__title-rule {
+        padding-left: 19px;
+    }
+
+    &__reservation {
+
+        @media (max-width: $breakpoint-md) {
+            margin-top: 10px;
+        }
+    }
+}

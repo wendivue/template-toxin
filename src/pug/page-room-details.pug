@@ -1,0 +1,139 @@
+include ./include/doctype.pug
+
+include ../blocks/page/page.pug
+include ../blocks/centerblock/centerblock.pug
+include ../blocks/room-details/room-details.pug
+include ../blocks/header/header.pug
+include ../blocks/icon-text-list/icon-text-list.pug
+include ../blocks/review/review.pug
+include ../blocks/bullet-list/bullet-list.pug
+include ../blocks/reservation/reservation.pug
+include ../blocks/pie-chart/pie-chart.pug
+include ../blocks/footer-copyright/footer-copyright.pug
+
++room-details
+    +header({
+        itemList: [
+            {text: "О нас", link: "/mock-address/change-me"},
+            {text: "Услуги", link: "/mock-address/change-me", icon: "true", subItemList: "true"},
+            {text: "Вакансии", link: "/mock-address/change-me"},
+            {text: "Новости", link: "/mock-address/change-me"},
+            {text: "Соглашения", link: "/mock-address/change-me", icon: "true", subItemList2: "true"}
+        ],
+        loginButton: {
+            text: "войти",
+            link: "/mock-address/change-me",
+            theme: "border",
+            size: "login"
+        },
+        registerButton: {
+            text: "зарегистрироваться",
+            link: "/mock-address/change-me",
+            size: "register"
+        },
+        subItemList1: [
+            {text: "бронирование", link: "/mock-address/change-me"},
+            {text: "съем квартиры", link: "/mock-address/change-me"},
+            {text: "продажа квартиры", link: "/mock-address/change-me"}
+        ],
+        subItemList2: [
+            {text: "правила", link: "/mock-address/change-me"},
+            {text: "договор", link: "/mock-address/change-me"}
+        ]
+    })
+    .room-details__wrapper-img
+        img(class="room-details__main-img" src="img/room-details-1.png")
+        .room-details__col-img
+            img(class="room-details__img" src="img/room-details-2.png")
+            img(class="room-details__img" src="img/room-details-3.png")
+    .room-details__wrapper-content
+        +page
+            +centerblock
+                .room-details__content
+                    .room-details__col-8
+                        .room-details__info
+                            h2(class="typo-h2 room-details__title") Сведения о номере
+                            +icon-text-list({
+                                full: "true"
+                            })
+                        .room-details__diagram
+                            h2(class="typo-h2 room-details__title") Впечатления от номера
+                            .room-details__pie-chart
+                                +pie-chart({
+                                    img: "img/Pie.svg",
+                                    votes: "260"
+                                })
+                    .room-details__wrapper-title
+                        h2(class="typo-h2 room-details__title") Отзывы посетителей номера
+                        p(class="typo-body room-details__text-review") 2 отзыва
+                    .room-details__items-review
+                        .room-details__review
+                            +review({
+                                img: "img/image.png",
+                                username: "Мурад Сарафанов",
+                                date: "5 дней назад",
+                                text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.",
+                                number: "12",
+                                id: "review-1",
+                                checked: "true"
+                            })
+                        .room-details__review
+                            +review({
+                                img: "img/review-image-2.png", 
+                                username: "Патрисия Стёклышкова", 
+                                date: "Неделю назад", 
+                                text: "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент",
+                                number: "2", 
+                                id: "review-2"
+                            })
+                    .room-details__items-rule
+                        .room-details__rule
+                            h2(class="typo-h2 room-details__title-rule") Правила
+                            +bullet-list({
+                                itemList: [
+                                    {text: "Нельзя с питомцами"},
+                                    {text: "Без вечеринок и мероприятий "},
+                                    {text: "Время прибытия — после 13:00, а выезд до 12:00"}
+                                ]
+                            })
+                        .room-details__cancel
+                            h2(class="typo-h2 room-details__title-cancel") Отмена
+                            p(class="typo-body room-details__text-cancel") Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+                .room-details__reservation
+                    +reservation({
+                            number: "888",
+                            price: "9 990₽"
+                        })
+
+    +footer-copyright({
+        textLogo: "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»",
+        placeholder: "Email",
+        itemList1: [
+            {title: "навигация"},
+            {text: "О нас", link: "/mock-address/change-me"},
+            {text: "Новости", link: "/mock-address/change-me"},
+            {text: "Служба поддержки", link: "/mock-address/change-me"},
+            {text: "Услуги", link: "/mock-address/change-me"}
+        ],
+        itemList2: [
+            {title: "о нас"},
+            {text: "О сервисе", link: "/mock-address/change-me"},
+            {text: "Наша команда", link: "/mock-address/change-me"},
+            {text: "Вакансии", link: "/mock-address/change-me"},
+            {text: "Инвесторы", link: "/mock-address/change-me"}
+        ],
+        itemList3: [
+            {title: "Служба поддержки"},
+            {text: "Соглашения", link: "/mock-address/change-me"},
+            {text: "Сообщества", link: "/mock-address/change-me"},
+            {text: "Связь с нами", link: "/mock-address/change-me"}
+        ],
+        titleSub: "Подписка",
+        textSub: "Получайте специальные предложения и новости сервиса",
+        copyright: "Copyright © 2018 Toxin отель. Все права зачищены",
+        iconList: [
+            {link: "/mock-address/change-me", icon: "fa-twitter"},
+            {link: "/mock-address/change-me", icon: "fa-facebook-square"},
+            {link: "/mock-address/change-me", icon: "fa-instagram"}
+        ]
+    })

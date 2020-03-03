@@ -112,6 +112,10 @@ const config = {
         to: "./img"
       },
       {
+        from: "./src/blocks/room-details/img",
+        to: "./img"
+      },
+      {
         from: "./src/fonts",
         to: "./fonts"
       },
