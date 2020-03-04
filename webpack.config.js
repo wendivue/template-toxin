@@ -116,6 +116,10 @@ const config = {
         to: "./img"
       },
       {
+        from: "./src/blocks/landing-registration/img",
+        to: "./img"
+      },
+      {
         from: "./src/fonts",
         to: "./fonts"
       },
@@ -151,6 +155,14 @@ const config = {
     new HtmlWebpackPlugin({
       filename: "page-search-room.html",
       template: "./src/pug/page-search-room.pug"
+    }),
+    new HtmlWebpackPlugin({
+      filename: "page-room-details.html",
+      template: "./src/pug/page-room-details.pug"
+    }),
+    new HtmlWebpackPlugin({
+      filename: "page-landing-registration.html",
+      template: "./src/pug/page-landing-registration.pug"
     })
   ]
 };
