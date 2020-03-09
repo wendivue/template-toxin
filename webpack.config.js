@@ -163,6 +163,10 @@ const config = {
     new HtmlWebpackPlugin({
       filename: "page-landing-registration.html",
       template: "./src/pug/page-landing-registration.pug"
+    }),
+    new HtmlWebpackPlugin({
+      filename: "page-landing-sign-in.html",
+      template: "./src/pug/page-landing-sign-in.pug"
     })
   ]
 };
