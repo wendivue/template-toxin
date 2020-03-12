@@ -1,1 +1,12 @@
 include ./include/doctype.pug
+
+include ../blocks/page/page.pug
+include ../blocks/centerblock/centerblock.pug
+
++doctype({title: "Main"})
++page
+    +centerblock
+        - var itemListLink = [{link: "page-landing-page.html"}, {link: "page-landing-registration.html"}, {link: "page-landing-sign-in.html"}, {link: "page-room-details.html"}, {link: "page-search-room.html"}, {link: "ui-kits-cards-elements.html"}, {link: "ui-kits-colors-type.html"}, {link: "ui-kits-form-elements.html"}, {link: "ui-kits-header-footer-page.html"}]
+
+        for item in itemListLink
+            a(class="typo-body" href=item.link)=item.link
