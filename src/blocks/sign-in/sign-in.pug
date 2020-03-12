@@ -22,13 +22,13 @@ mixin sign-in(object)
         .sign-in__button
             +button({
                 text: "войти",
-                link: "/mock-address/change-me",
+                link: object.link,
                 buttonLarge: "true"
             })
         .sign-in__create
             p(class="typo-body sign-in__text") Нет аккаунта на Toxin?
             +button({
                 text: "создать",
-                link: "/mock-address/change-me",
+                link: "page-landing-registration.html",
                 theme: "border"
             })

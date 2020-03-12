@@ -10,6 +10,7 @@
         border-radius: 20px;
         border: 1px solid $dark-shade-25;
         transition: all 0.3s;
+        cursor: pointer;
 
         &::after {
             content: '';

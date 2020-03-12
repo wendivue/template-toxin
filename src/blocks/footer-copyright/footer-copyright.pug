@@ -7,7 +7,7 @@ mixin footer-copyright(object)
         +page
             +centerblock
                 .footer-copyright__wrapper-logo
-                    img(class="footer-copyright__logo" src="img/Logo.png")
+                    img(class="footer-copyright__logo" src="img/Logo.png" alt="logo")
                     p(class="typo-body footer-copyright__text-logo")=object.textLogo
                 .footer-copyright__wrapper-list
                     ul.footer-copyright__list
@@ -22,8 +22,8 @@ mixin footer-copyright(object)
                         p(class="typo-body footer-copyright__text-subscribe")=object.textSub
                     .footer-copyright__subscribe
                         +text-field({
-                            placeholder: "Your email address",
-                            tabindex: 5,
+                            placeholder: object.placeholder,
+                            tabindex: 1,
                             type: "text",
                             size: "small",
                             iconText: "arrow_forward",

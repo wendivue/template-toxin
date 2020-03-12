@@ -12,6 +12,7 @@ img.ui-kits-header-footer__img(src="img/Group.png")
 +ui-kits-header-footer
     .ui-kits-header-footer__header
         +header({
+            size: "small",
             itemList: [
                 {text: "Home", link: "/mock-address/change-me", state: "active"},
                 {text: "About Us", link: "/mock-address/change-me"},
@@ -20,7 +21,18 @@ img.ui-kits-header-footer__img(src="img/Group.png")
                 {text: "News", link: "/mock-address/change-me"},
                 {text: "Documentation",link: "/mock-address/change-me"},
             ],
-            subItemList: [
+            loginButton: {
+                text: "Login",
+                link: "/mock-address/change-me",
+                theme: "border",
+                size: "login-small"
+            },
+            registerButton: {
+                text: "REGISTER",
+                link: "/mock-address/change-me",
+                size: "register-small"
+            },
+            subItemList1: [
                 {text: "reservation", link: "/mock-address/change-me"},
                 {text: "rent an apartment", link: "/mock-address/change-me"},
                 {text: "apartment for sale", link: "/mock-address/change-me"}
@@ -28,6 +40,7 @@ img.ui-kits-header-footer__img(src="img/Group.png")
         })
     .ui-kits-header-footer__header
         +header({
+            size: "small",
             itemList: [
                 {text: "Home", link: "/mock-address/change-me", state: "active"},
                 {text: "About Us", link: "/mock-address/change-me"},
@@ -36,6 +49,18 @@ img.ui-kits-header-footer__img(src="img/Group.png")
                 {text: "News", link: "/mock-address/change-me"},
                 {text: "Documentation", link: "/mock-address/change-me"},
             ],
+            loginButton: {
+                text: "Login",
+                link: "/mock-address/change-me",
+                theme: "border",
+                size: "login-small"
+            },
+            registerButton: {
+                text: "REGISTER",
+                link: "/mock-address/change-me",
+                size: "register-small"
+            },
+
             subItemList: [
                 {text: "reservation", link: "/mock-address/change-me"},
                 {text: "rent an apartment", link: "/mock-address/change-me"},

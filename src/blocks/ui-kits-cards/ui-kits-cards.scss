@@ -11,6 +11,13 @@
         margin-top: 40px;
     }
 
+    &__reservation {
+
+        @media (max-width: $breakpoint-sm) {
+            margin-top: 25px;
+        }
+    }
+
     &__sign-in {
         margin-top: 40px;
     }

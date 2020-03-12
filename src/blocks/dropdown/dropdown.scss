@@ -5,6 +5,12 @@
         cursor: pointer;
     }
 
+    .text-field__icon {
+        @media (max-width: $breakpoint-xxs) {
+            width: 40px;
+        }
+    }
+
     &__menu {
         display: none;
         padding: 3px 7px 12px 13px;

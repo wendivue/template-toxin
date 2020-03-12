@@ -19,13 +19,13 @@ include ../blocks/footer-copyright/footer-copyright.pug
             ],
             loginButton: {
                 text: "войти",
-                link: "/mock-address/change-me",
+                link: "page-landing-sign-in.html",
                 theme: "border",
                 size: "login"
             },
             registerButton: {
                 text: "зарегистрироваться",
-                link: "/mock-address/change-me",
+                link: "page-landing-registration.html",
                 size: "register"
             },
             subItemList1: [
@@ -44,7 +44,8 @@ include ../blocks/footer-copyright/footer-copyright.pug
             +centerblock
                 .landing-sign-in__sign-in
                     +sign-in({
-                        title: "войти"
+                        title: "войти",
+                        link: "/mock-address/change-me"
                     })
 
     .landing-sign-in__footer-copyright

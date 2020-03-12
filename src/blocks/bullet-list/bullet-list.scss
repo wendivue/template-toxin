@@ -1,6 +1,14 @@
 .bullet-list {
     width: 255px;
 
+    @media (max-width: $breakpoint-xs) {
+        width: 100%;
+    }
+
+    @media (max-width: $breakpoint-xxs) {
+        max-width: 305px;
+    }
+
     &__item {
         display: flex;
         align-items: center;
@@ -16,6 +24,10 @@
             margin-right: 11px;
             background-color: $dark-shade-25;
             border-radius: 10px;
+
+            @media (max-width: $breakpoint-xs) {
+                margin-right: 6px;
+            }
         }
 
         &:last-child {

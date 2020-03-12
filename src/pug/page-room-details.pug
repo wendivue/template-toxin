@@ -22,13 +22,13 @@ include ../blocks/footer-copyright/footer-copyright.pug
         ],
         loginButton: {
             text: "войти",
-            link: "/mock-address/change-me",
+            link: "page-landing-sign-in.html",
             theme: "border",
             size: "login"
         },
         registerButton: {
             text: "зарегистрироваться",
-            link: "/mock-address/change-me",
+            link: "page-landing-registration.html",
             size: "register"
         },
         subItemList1: [
@@ -102,7 +102,8 @@ include ../blocks/footer-copyright/footer-copyright.pug
                 .room-details__reservation
                     +reservation({
                             number: "888",
-                            price: "9 990₽"
+                            price: "9 990₽",
+                            link: "/mock-address/change-me"
                         })
 
     +footer-copyright({

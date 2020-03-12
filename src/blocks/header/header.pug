@@ -6,37 +6,37 @@ mixin header(object)
     .header
         +page
             +centerblock
-                img(class="header__logo" src="img/Logo.png")
+                img(class="header__logo" src="img/Logo.png" alt="logo")
 
                 .header__wrapper-menu
                     nav(class="header__menu")
                         ul(class="header__list")
                             for item in object.itemList
-                                - var state = (item.state ? " header__link--" + item.state: "");
-                                li(class="header__item")
+                                - var state = (item.state ? " header__link--" + item.state : "");
+                                - var sizeItem = (object.size ? " header__item--" + object.size : "");
+                                - var sizeIcon = (object.size ? " header__icon--" + object.size : "");
+                                li(class="header__item" + sizeItem)
                                     a(class="typo-body header__link" + state href=item.link)=item.text
                                         if(item.icon)
-                                            i(class="material-icons header__icon") expand_more
-                                    if(item.icon)
+                                            i(class="material-icons header__icon" + sizeIcon) expand_more
+                                    if(item.icon && item.subItemList)
                                         ul(class="header__submenu")
-                                            for subItem in object.subItemList
+                                            for subItem in object.subItemList1
                                                 li(class="header__subitem")
                                                     a(class="typo-body header__link" href=subItem.link)=subItem.text
+                                    else if(item.icon && item.subItemList2)
+                                        ul(class="header__submenu")
+                                            for subItem in object.subItemList2
+                                                li(class="header__subitem")
+                                                    a(class="typo-body header__link" href=subItem.link)=subItem.text
+
                     if(object.textLogin)
                         .header__login
                             p(class="typo-body header__text-login")=object.textLogin
                     else
-                        .header__wrapper-button
+                        - var smallbuttons = (object.size ? " header__wrapper-button--" + object.size : "");
+                        div(class="header__wrapper-button" + smallbuttons)
                             .header__button
-                                +button({
-                                    text: "Login",
-                                    link: "/mock-address/change-me",
-                                    theme: "border",
-                                    size: "login-small"
-                                })
+                                +button(object.loginButton)
                             .header__button
-                                +button({
-                                    text: "REGISTER",
-                                    link: "/mock-address/change-me",
-                                    size: "register-small"
-                                })
+                                +button(object.registerButton)

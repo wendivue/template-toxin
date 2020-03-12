@@ -59,6 +59,6 @@ mixin reservation(object)
         .reservation__button
             +button({
                 text: "забронировать",
-                link: "/mock-address/change-me",
+                link: object.link,
                 buttonLarge: "true"
             })

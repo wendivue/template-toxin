@@ -46,14 +46,21 @@
 
     &--large {
         width: 320px;
+
+        @media (max-width: $breakpoint-xxs) {
+            width: 300px;
+        }
     }
 
     &--login {
-        width: 87px;
+        width: 83px;
+        padding: 9.5px 0;
+        line-height: 11px;
     }
 
     &--register {
         width: 196px;
+        padding: 9.5px 0;
     }
 
     &--login-small {

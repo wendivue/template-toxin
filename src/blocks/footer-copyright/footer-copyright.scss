@@ -58,6 +58,11 @@
         color: $dark-shade-50;
         text-decoration: none;
         line-height: 15px;
+
+        &:hover, &--active {
+            color: $dark-shade-75;
+            font-weight: bold;
+        }
     }
 
     &__wrapper-subscribe {
@@ -82,7 +87,7 @@
     }
 
     &__link-icon {
-        margin-left: 20px;
+        margin-left: 25px;
 
         &:first-child {
             margin: 0;

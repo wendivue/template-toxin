@@ -1,17 +1,20 @@
 include ../rate-button/rate-button.pug
 
 mixin hotel-card(object)
+    - var altText = "image-люкс-" + object.number;
+
     .hotel-card
         .hotel-card__slider
             div(class="owl-carousel owl-theme")
                 for item in object.itemList
-                    img(class="hotel-card__img" src=item.img)
+                    a(class="hotel-card__link" href=object.link)
+                        img(class="hotel-card__img" src=item.img alt=altText)
 
         .hotel-card__description
             .hotel-card__wrapper-head
                 .hotel-card__items-number
                     p(class="typo-body hotel-card__number") № 
-                        span(class="hotel-card__number")=object.number
+                        span(class="hotel-card__number hotel-card__number--big")=object.number
                         if(object.lux)
                             span(class="typo-h3 hotel-card__number hotel-card__number--primary-color")  люкс
                 .hotel-card__items-price

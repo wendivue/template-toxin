@@ -25,6 +25,7 @@
         border: 1px solid $dark-shade-25;
         box-sizing: border-box;
         border-radius: 4px;
+        cursor: pointer;
 
         &:checked {line-height: 14px;
             position: relative;
@@ -47,6 +48,7 @@
         color: $dark-shade-50;
         line-height: 18px;
         text-transform: none;
+        cursor: pointer;
 
         &--small {
             font-size: 12px;

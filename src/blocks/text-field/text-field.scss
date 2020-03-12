@@ -2,9 +2,6 @@
     display: flex;
     flex-flow: column;
 
-    &__label {
-    }
-
     &__wrapper-text {
         height: 25px;
         display: flex;
@@ -34,6 +31,10 @@
         border-radius: 4px;
         box-sizing: border-box;
 
+        @media (max-width: $breakpoint-xxs) {
+            width: 300px;
+        }
+
         &:hover, &:focus, &--active {
             color: $dark-shade-75;
             border: 1px solid $dark-shade-50;
@@ -45,6 +46,10 @@
 
         &--date {
             width: 150px;
+
+            @media (max-width: $breakpoint-xxs) {
+                max-width: 140px;
+            }
         }
     }
 
