@@ -8,6 +8,7 @@
         align-items: center;
         justify-content: space-between;
         color: $dark-shade-50;
+        user-select: none;
     }
 
     &__wrapper-checkbox {
