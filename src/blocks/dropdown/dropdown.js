@@ -1,352 +1,209 @@
-$(document).ready(function() {
+const ROOM = 'room';
+const PEOPLE = 'people';
 
-  $(document).on('click', "#room-increase-1", function () {
-    var parent = $(this).parent();
-    $(".dropdown__button-menu--cleans").css("opacity", "1");
-    $('[id^="room-decrease"]', parent).removeClass("dropdown__button--no-active");
+class Dropdown {
+  constructor(anchor) {
+    this.anchor = anchor;
 
-    $(".text-field__dropdown").val(function (i, val) {
-      var fullval = parseInt(val.replace(/[^0-9]/g, '')).toString();
-      var val1 = parseInt(fullval.replace(/\d/, ''));
-      var val2 = parseInt(fullval.replace(/\d$/, ''));
+    this.getElement();
+    this.getValue();
+    this.bindEventClick(this.buttonPeopleIncrease, this.buttonIncrease, this.buttonDecrease);
+    this.bindEventToggle(this.dropdownInput, this.buttonComplete);
+    this.bindEventClear(this.buttonCleans);
+  }
 
-      if(val2 == "NaN" || val1 == "NaN" || fullval == "NaN") {
-        val1 = 0;
-        val2 = 0;
-        fullval = 0;
-      }
+  getElement() {
+    this.input = this.anchor.querySelectorAll('.dropdown__input');
+    this.dropdownInput = this.anchor.querySelectorAll('.text-field__input');
+    this.button = this.anchor.querySelectorAll('.dropdown__button');
+    this.buttonIncrease = this.anchor.querySelectorAll('.dropdown__button--increase');
+    this.buttonDecrease = this.anchor.querySelectorAll('.dropdown__button--decrease');
+    this.buttonPeopleIncrease = this.anchor.querySelectorAll('.dropdown__button-people--increase');
+    this.buttonPeopleDecrease = this.anchor.querySelectorAll('.dropdown__button-people--decrease');
+    this.buttonComplete = this.anchor.querySelectorAll('.dropdown__button-menu--complete');
+    this.buttonCleans = this.anchor.querySelectorAll('.dropdown__button-menu--cleans');
+  }
 
-      function increase() {
-        val2 = ++val2;
-        val2 += " спальни " + val1 + " кровати...";
-        return val2;
-      }
-  
-      if (!/9/.test(fullval)) {
-        return increase();
-      }
-      else {
-        val2 = 0;
-        return increase();
-      }
+  bindEventClick(elements, elementsIncrease, elementsDecrease) {
+    if (elementsIncrease[0] === undefined) {
+      elements[0].addEventListener('click', this.changeValuePeopleIncrease.bind(this, 0));
+      elements[1].addEventListener('click', this.changeValuePeopleIncrease.bind(this, 1));
+      elements[2].addEventListener('click', this.changeValuePeopleIncrease.bind(this, 2));
+    } else {
+      elementsIncrease[0].addEventListener('click', this.changeValueBedRoomIncrease.bind(this));
+      elementsIncrease[1].addEventListener('click', this.changeValueBedIncrease.bind(this));
+      elementsIncrease[2].addEventListener('click', this.changeValueBathRoomIncrease.bind(this));
+      elementsDecrease[0].addEventListener('click', this.changeValueBedRoomDecrease.bind(this));
+      elementsDecrease[1].addEventListener('click', this.changeValueBedDecrease.bind(this));
+      elementsDecrease[2].addEventListener('click', this.changeValueBathRoomDecrease.bind(this));
+    }
+  }
+
+  bindEventToggle(elements, buttons) {
+    elements.forEach((element) => {
+      element.addEventListener('click', this.toggle.bind(this));
     });
 
-    $("#dropdown-room-input", parent).val(function (i, val) {
-
-      function increase() {
-        return ++val;
-      }
-
-      if (!/9/.test(val)) {
-        return increase();
-      }
-      else {
-        val = 0;
-        return increase();
-      }
+    buttons.forEach((button) => {
+      button.addEventListener('click', this.toggle.bind(this));
     });
-  });
+  }
 
-  $(document).on('click', "#room-increase-2", function () {
-    var parent = $(this).parent();
-    $(".dropdown__button-menu--cleans").css("opacity", "1");
-    $('[id^="room-decrease"]', parent).removeClass("dropdown__button--no-active");
-
-    $(".text-field__dropdown").val(function (i, val) {
-      var fullval = parseInt(val.replace(/[^0-9]/g, '')).toString();
-      var val1 = parseInt(fullval.replace(/\d/, ''));
-      var val2 = parseInt(fullval.replace(/\d$/, ''));
-
-      if(val2 == "NaN" || val1 == "NaN" || fullval == "NaN") {
-        val1 = 0;
-        val2 = 0;
-        fullval = 0;
-      }
-      
-      function increase() {
-        val1 = ++val1;
-        val1 = val2 + " спальни " + val1 + " кровати...";
-        return val1;
-      }
-  
-      if (!/9/.test(fullval)) {
-        return increase();
-      }
-      else {
-        val1 = 0;
-        return increase();
-      }
+  bindEventClear(elements) {
+    elements.forEach((element) => {
+      element.addEventListener('click', this.clear.bind(this));
     });
+  }
 
-    $("#dropdown-room-input", parent).val(function (i, val) {
+  changeValueBedRoomIncrease() {
+    this.removeDecrease(this.buttonDecrease, 0);
 
-      function increase() {
-        return ++val;
-      }
+    this.val2 = this.increase(this.val2);
+    this.val2 = this.validateValue(this.val2);
 
-      if (!/9/.test(val)) {
-        return increase();
-      }
-      else {
-        val = 0;
-        return increase();
-      }
-    });
-  });
+    this.input[0].value = this.val2;
+    this.updateValue(ROOM);
+  }
 
-  $(document).on('click', "#room-increase-3", function () {
-    var parent = $(this).parent();
-    $(".dropdown__button-menu--cleans").css("opacity", "1");
-    $('[id^="room-decrease"]', parent).removeClass("dropdown__button--no-active");
+  changeValueBedRoomDecrease() {
+    this.val2 = this.decrease(this.val2);
+    this.val2 = this.validateValue(this.val2);
 
-    $("#dropdown-room-input", parent).val(function (i, val) {
+    this.input[0].value = this.val2;
+    this.updateValue(ROOM);
+  }
 
-      function increase() {
-        return ++val;
-      }
+  changeValueBedIncrease() {
+    this.removeDecrease(this.buttonDecrease, 1);
 
-      if (!/9/.test(val)) {
-        return increase();
-      }
-      else {
-        val = 0;
-        return increase();
-      }
-    });
-  });
+    this.val1 = this.increase(this.val1);
+    this.val1 = this.validateValue(this.val1);
 
-  $(document).on('click', "#room-decrease-1", function () {
-    $(".dropdown__button-menu--cleans").css("opacity", "1");
-    var parent = $(this).parent();
+    this.input[1].value = this.val1;
+    this.updateValue(ROOM);
+  }
 
-    $(".text-field__dropdown").val(function (i, val) {
-      var fullval = parseInt(val.replace(/[^0-9]/g, '')).toString();
-      var val1 = parseInt(fullval.replace(/\d/, ''));
-      var val2 = parseInt(fullval.replace(/\d$/, ''));
+  changeValueBedDecrease() {
+    this.val1 = this.decrease(this.val1);
+    this.val1 = this.validateValue(this.val1);
 
-      if(val2 == "NaN" || val1 == "NaN" || fullval == "NaN") {
-        val1 = 0;
-        val2 = 0;
-        fullval = 0;
-      }
+    this.input[1].value = this.val1;
+    this.updateValue(ROOM);
+  }
 
-      function decrease() {
-        val2 = --val2;
-        val2 += " спальни " + val1 + " кровати...";
-        return val2;
-      }
-  
-      if (!/1/.test(fullval)) {
-        return decrease();
-      }
-      else {
-        val2 = 1;
-        return decrease();
-      }
-    });
+  changeValueBathRoomIncrease() {
+    this.removeDecrease(this.buttonDecrease, 2);
+    this.val3 = parseFloat(this.input[2].value);
 
-    $("#dropdown-room-input", parent).val(function (i, val) {
+    this.val3 = this.increase(this.val3);
+    this.val3 = this.validateValue(this.val3);
 
-      function decrease() {
-        return --val;
-      }
+    this.input[2].value = this.val3;
+  }
 
-      if (!/1/.test(val)) {
-        return decrease();
-      }
-      else {
-        $('[id^="room-decrease"]', parent).addClass("dropdown__button--no-active");
-        val = 1;
-        return decrease();
-      }
-    });
-  });
+  changeValueBathRoomDecrease() {
+    this.val3 = parseFloat(this.input[2].value);
 
-  $(document).on('click', "#room-decrease-2", function () {
-    $(".dropdown__button-menu--cleans").css("opacity", "1");
-    var parent = $(this).parent();
+    this.val3 = this.decrease(this.val3);
+    this.val3 = this.validateValue(this.val3);
 
-    $(".text-field__dropdown").val(function (i, val) {
-      var fullval = parseInt(val.replace(/[^0-9]/g, '')).toString();
-      var val1 = parseInt(fullval.replace(/\d/, ''));
-      var val2 = parseInt(fullval.replace(/\d$/, ''));
+    this.input[2].value = this.val3;
+  }
 
-        if(val2 == "NaN" || val1 == "NaN" || fullval == "NaN") {
-          val1 = 0;
-          val2 = 0;
-          fullval = 0;
-        }
+  changeValuePeopleIncrease(index) {
+    this.buttonCleans[0].style.opacity = 1;
+    this.removeDecrease(this.buttonPeopleDecrease, index);
+    let value = parseFloat(this.input[index].value);
 
-      function decrease() {
-        val1 = --val1;
-        val1 = val2 + " спальни " + val1 + " кровати...";
-        return val1;
-      }
-  
-      if (!/0/.test(fullval)) {
-        return decrease();
-      }
-      else {
-        val1 = 1;
-        return decrease();
-      }
+    this.fullval = parseFloat(this.increase(parseFloat(this.fullval)));
+    value = parseFloat(this.increase(value));
+
+    this.input[index].value = value;
+    this.updateValue(PEOPLE);
+  }
+
+  getValue() {
+    const dropdownMenu = this.anchor.querySelector('.text-field__input');
+
+    let fullval = parseFloat(dropdownMenu.value.replace(/[^0-9]/g, '')).toString();
+    let val1 = parseFloat(fullval.replace(/\d/, ''));
+    let val2 = parseFloat(fullval.replace(/\d$/, ''));
+
+    if (val1 === 'NaN' || val2 === 'NaN' || fullval === 'NaN') {
+      val1 = 0;
+      val2 = 0;
+      fullval = 0;
+    }
+
+    this.fullval = fullval;
+    this.val1 = val1;
+    this.val2 = val2;
+  }
+
+  updateValue(type) {
+    const dropdownMenu = this.anchor.querySelector('.text-field__input');
+    let string;
+    if (ROOM === type) string = `${this.val2} спальни ${this.val1} кровати...`;
+    if (PEOPLE === type) string = `${this.fullval} гостя`;
+
+    dropdownMenu.value = string;
+  }
+
+  removeDecrease(element, index) {
+    return element[index].classList.remove('dropdown__button--no-active');
+  }
+
+  toggle(event) {
+    const element = event.target;
+    const dropdownMenu = this.anchor.querySelector('.dropdown__menu');
+    element.classList.toggle('text-field__input--open');
+    dropdownMenu.classList.toggle('dropdown__menu--active');
+  }
+
+  clear() {
+    this.buttonCleans[0].style.opacity = 0;
+    this.dropdownInput[0].value = 'Сколько гостей';
+
+    this.input.forEach((element) => {
+      const input = element;
+      input.value = 0;
     });
 
-    $("#dropdown-room-input", parent).val(function (i, val) {
-
-      function decrease() {
-        return --val;
-      }
-
-      if (!/1/.test(val)) {
-        return decrease();
-      }
-      else {
-        $('[id^="room-decrease"]', parent).addClass("dropdown__button--no-active");
-        val = 1;
-        return decrease();
-      }
-    });
-  });
-
-  $(document).on('click', "#room-decrease-3", function () {
-    $(".dropdown__button-menu--cleans").css("opacity", "1");
-    var parent = $(this).parent();
-
-    $("#dropdown-room-input", parent).val(function (i, val) {
-
-      function decrease() {
-        return --val;
-      }
-
-      if (!/1/.test(val)) {
-        return decrease();
-      }
-      else {
-        $('[id^="room-decrease"]', parent).addClass("dropdown__button--no-active");
-        val = 1;
-        return decrease();
-      }
-    });
-  });
-
-  $(document).on('click', "#increase", function () {
-    var parent = $(this).parent();
-    $(".dropdown__button-menu--cleans").css("opacity", "1");
-    $('[id^="decrease"]', parent).removeClass("dropdown__button--no-active");
-
-    $(".text-field__dropdown-people").val(function (i, val) {
-      var fullval = parseInt(val.replace(/[^0-9]/g, '')).toString();
-
-      if(fullval == "NaN") {
-        fullval = 0;
-      }
-  
-      function increase() {
-        fullval = ++fullval;
-        fullval += " гостя ";
-        return fullval;
-      }
-  
-      if (!/9/.test(fullval)) {
-        return increase();
-      }
-      else {
-        fullval = 0;
-        return increase();
-      }
+    this.buttonPeopleDecrease.forEach((element) => {
+      element.classList.add('dropdown__button--no-active');
     });
 
-    $("#dropdown-input", parent).val(function (i, val) {
+    this.val1 = 0;
+    this.val2 = 0;
+    this.val3 = 0;
+    this.fullval = 0;
+  }
 
-      function increase() {
-        return ++val;
-      }
+  increase(value) {
+    let curValue = value;
+    curValue += 1;
 
-      if (!/9/.test(val)) {
-        return increase();
-      }
-      else {
-        val = 0;
-        return increase();
-      }
-    });
-  });
+    return curValue;
+  }
 
-  $(document).on('click', "#decrease", function () {
-    $(".dropdown__button-menu--cleans").css("opacity", "1");
-    var parent = $(this).parent();
+  decrease(value) {
+    let curValue = value;
+    curValue -= 1;
 
-    $(".text-field__dropdown-people").val(function (i, val) {
-      var fullval = parseInt(val.replace(/[^0-9]/g, '')).toString();
-  
-      function decrease() {
-        fullval = --fullval;
-        fullval += " гостя ";
-        return fullval;
-      }
-  
-      if (!/0/.test(fullval)) {
-        return decrease();
-      }
-      else {
-        fullval = 1;
-        return decrease();
-      }
-    });
+    return curValue;
+  }
 
-    $("#dropdown-input", parent).val(function (i, val) {
-      function decrease() {
-        return --val;
-      }
+  validateValue(value) {
+    let curValue = value;
+    if (value > 9) curValue = 0;
+    if (value < 0) curValue = 0;
 
-      if (!/1/.test(val)) {
-        return decrease();
-      }
-      else {
-        $('[id^="decrease"]', parent).addClass("dropdown__button--no-active");
-        val = 1;
-        return decrease();
-      }
-    });
-  });
+    return curValue;
+  }
+}
 
-  $(document).on('click', '#button-menu-cleans-people', function () {
-    $(".dropdown__button-menu--cleans").css("opacity", "0");
-    $('[id^="decrease"]').addClass("dropdown__button--no-active");
+const dropdown = document.querySelectorAll('.dropdown');
 
-    $('[id^="dropdown-input"]').val(function (i, val) {
-      return 0;
-    });
-
-    $(".text-field__dropdown-people").val(function (i, val) {
-      return "Сколько гостей";
-    });
-  });
-
-  $(document).on('click', '#button-menu-cleans', function () {
-    $(".dropdown__button-menu--cleans").css("opacity", "0");
-    $('[id^="room-decrease"]').addClass("dropdown__button--no-active");
-
-    $('[id^="dropdown-room-input"]').val(function (i, val) {
-      return 0;
-    });
-    п
-    $(".text-field__dropdown").val(function (i, val) {
-      return "Сколько спален и кроватей";
-    });
-  });
-
-  $(".text-field__dropdown-people, #button-menu-complete-people").on('click', function() {
-    var parent = $(this).parent();
-    $(".text-field__input", parent).toggleClass("text-field__input--open");
-    $("#dropdown-menu").slideToggle();
-  });
-
-  $(".text-field__dropdown, #button-menu-complete").on('click', function() {
-    var parent = $(this).parent();
-    $(".text-field__input", parent).toggleClass("text-field__input--open");
-    $("#dropdown-room-menu").slideToggle();
-  });
-
+dropdown.forEach((element) => {
+  new Dropdown(element);
 });
