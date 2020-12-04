@@ -1,37 +1,76 @@
+@import 'ion-rangeslider/css/ion.rangeSlider';
+
 .range-slider {
     width: 266px;
+    position: relative;
 
     &__header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 21px;
     }
 
-    &__price {
-        width: 38%;
-        font-size: 12px;
-        border: none;
-        color: $dark-shade-50;
-    }
-
-    .ui-slider {
-        height: 4px;
-        border: 1px solid $dark-shade-25;
-        border-radius: 3px;
-    }
-
-    .ui-slider-handle {
-        top: -5px;
-        width: 12px;
-        height: 12px;
-        background: $gradient-secondary;
-        border: 2px solid #fff;
-        border-radius: 10px;
+    .irs {
+        display: block;
         cursor: pointer;
+      
     }
 
-    .ui-widget-header {
-        background: $gradient-secondary;
+    .irs--flat {
+        top: -3px;
+        height: 29px;
+        
+        .irs-line {
+            height: 6.5px;
+            box-sizing: border-box;
+            background-color: white;
+            border: 1px solid $dark-shade-25;
+            border-radius: 10px;
+        }
+        
+        .irs-bar {
+            height: 6.5px;
+            background: $gradient-secondary;
+            border-radius: 10px;
+        }
+
+        .irs-handle {
+            top: 21px;
+            width: 16px;
+            height: 16px;
+            background: $gradient-secondary;
+            border: 2px solid white;
+            border-radius: 10px;
+            cursor: pointer;
+
+            &>i:first-child {
+                display: none;
+            }
+        }
+
+        .irs-single {
+            display: block;
+            top: -13px;
+            right: 0;
+            left: auto !important;
+            visibility: visible !important;
+            font-size: $font-size--h3;
+            color: $dark-shade-50;
+            background-color: inherit;
+            pointer-events: none;
+        }
+
+        .irs-from:before,
+        .irs-to:before,
+        .irs-single:before {
+            display: none;
+        }
+    }
+
+    .irs-min,
+    .irs-max,
+    .irs-from,
+    .irs-to {
+        display: none;
     }
 }
