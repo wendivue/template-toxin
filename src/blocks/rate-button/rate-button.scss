@@ -1,7 +1,10 @@
+@import '../../scss/global-typography';
+
 .rate-button {
     display: flex;
 
     &__icon {
+        @include material-icons;
         color: $color-primary;
     }
 }

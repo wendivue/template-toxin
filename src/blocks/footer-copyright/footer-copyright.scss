@@ -1,3 +1,5 @@
+@import '../../scss/global-typography';
+
 .footer-copyright {
     padding: 85px 0 0 0;
 
@@ -22,6 +24,18 @@
     &__logo {
         height: 40px;
         margin-bottom: 15px;
+    }
+
+    &__title {
+        @include typo-h3;
+    }
+
+    &__text {
+        @include typo-body;
+    }
+
+    &__text-logo {
+        @include typo-body;
     }
 
     &__wrapper-list {
@@ -55,6 +69,7 @@
     }
 
     &__link {
+        @include typo-body;
         color: $dark-shade-50;
         text-decoration: none;
         line-height: 15px;
@@ -74,7 +89,12 @@
         }
     }
 
+    &__title-subscribe {
+        @include typo-h3;
+    }
+
     &__text-subscribe {
+        @include typo-body;
         padding-top: 18px;
     }
 

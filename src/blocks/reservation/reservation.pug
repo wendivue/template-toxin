@@ -7,12 +7,12 @@ mixin reservation(object)
     .reservation
         .reservation__wrapper-head
             .reservation__items-number
-                p(class="typo-body reservation__number") № 
+                p(class="reservation__number reservation__number--small") № 
                     span(class="reservation__number reservation__number--big")=object.number
-                    span(class="typo-h3 reservation__number reservation__number--primary-color")  люкс
+                    span(class="reservation__number reservation__number--primary-color")  люкс
             .reservation__items-price
-                span(class="typo-body reservation__price")=object.price
-                p(class="typo-body reservation__days") в сутки
+                span(class="reservation__price")=object.price
+                p(class="reservation__days") в сутки
         .reservation__date-picker
             +date-picker({
                 text: "прибытие",

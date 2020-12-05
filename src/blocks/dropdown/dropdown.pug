@@ -9,15 +9,15 @@ mixin dropdown__item(object)
     for item in object.itemsRoom ? itemsRoom : itemsPeople
         - var state = (item.value == 0 ? " dropdown__button--no-active" : "");
         .dropdown__item
-            p(class="typo-h3 dropdown__text")=item.text
+            p(class="dropdown__text")=item.text
             .dropdown__wrapper-input
                 if(object.itemsRoom)
                     button(class="dropdown__button dropdown__button--decrease" + state type="button") -
-                    input(class="typo-h3 dropdown__input" value=item.value tabindex=item.tabindex)
+                    input(class="dropdown__input" value=item.value tabindex=item.tabindex)
                     button(class="dropdown__button dropdown__button--increase" type="button") +
                 else
                     button(class="dropdown__button dropdown__button-people--decrease" + state type="button") -
-                    input(class="typo-h3 dropdown__input" value=item.value tabindex=item.tabindex)
+                    input(class="dropdown__input" value=item.value tabindex=item.tabindex)
                     button(class="dropdown__button dropdown__button-people--increase" type="button") +
 
 mixin dropdown(object)
@@ -31,5 +31,5 @@ mixin dropdown(object)
             +dropdown__item(object)
             if(object.buttonMenu)
                 .dropdown__wrapper-button-menu
-                    button(class="typo-h3 dropdown__button-menu dropdown__button-menu--cleans") очистить
-                    button(class="typo-h3 dropdown__button-menu dropdown__button-menu--complete") применить
+                    button(class="dropdown__button-menu dropdown__button-menu--cleans") очистить
+                    button(class="dropdown__button-menu dropdown__button-menu--complete") применить

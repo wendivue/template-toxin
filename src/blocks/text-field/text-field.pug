@@ -10,17 +10,17 @@ mixin text-field(object)
     div(class="text-field " + size)
         if(object.text)
             .text-field__wrapper-text
-                label(class="typo-h3 text-field__label" for=id)=object.text
+                label(class="text-field__label" for=id)=object.text
                 if(object.textState)
-                    p(class="typo-h3 text-field__text-state")=object.textState
+                    p(class="text-field__text-state")=object.textState
 
         .text-field__input-wrapper
             if(object.dropdown)
-                input(class="typo-body text-field__input " + state + className + borderRadius id=id + myId type=object.type value=object.value name=object.name tabindex=object.tabindex readonly)
+                input(class="text-field__input " + state + className + borderRadius id=id + myId type=object.type value=object.value name=object.name tabindex=object.tabindex readonly)
             else if (object.dateRange)
-                input(class="typo-body datepicker-here text-field__input " + state + className id=id + myId type=object.type placeholder=object.placeholder name=object.name tabindex=object.tabindex data-range="true" data-multiple-dates-separator=" - " readonly)
+                input(class="datepicker-here text-field__input " + state + className id=id + myId type=object.type placeholder=object.placeholder name=object.name tabindex=object.tabindex data-range="true" data-multiple-dates-separator=" - " readonly)
             else
-                input(class="typo-body text-field__input " + state + className id=id + myId type=object.type placeholder=object.placeholder value=object.value name=object.name tabindex=object.tabindex)
+                input(class="text-field__input " + state + className id=id + myId type=object.type placeholder=object.placeholder value=object.value name=object.name tabindex=object.tabindex)
 
             if(object.iconText)
-                i(class="material-icons text-field__icon " + classNameIcon)=object.iconText
+                i(class="text-field__icon " + classNameIcon)=object.iconText

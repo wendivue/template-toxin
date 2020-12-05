@@ -1,3 +1,5 @@
+@import '../../scss/global-typography';
+
 .room-details {
 
     &__wrapper-img {
@@ -41,6 +43,10 @@
         }
     }
 
+    &__title {
+        @include typo-h2;
+    }
+
     &__diagram {
         width: 351px;
 
@@ -73,10 +79,12 @@
     }
 
     &__text-review {
+        @include typo-body;
         color: $dark-shade-50;
     }
 
     &__items-review {
+        @include typo-body;
         margin-top: 16px;
     }
 
@@ -109,9 +117,14 @@
         @media (max-width: $breakpoint-xs) {
             width: 300px;
         }
+
+        &--small {
+            @include typo-body;
+        }
     }
 
     &__title-rule, &__title-cancel {
+        @include typo-h2;
         margin-bottom: 18px;
     }
 

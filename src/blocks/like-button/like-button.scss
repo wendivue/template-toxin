@@ -1,7 +1,12 @@
+@import '../../scss/global-typography';
+
 .like-button {
+    position: relative;
     display: flex;
+    align-items: center;
 
     &__checkbox {
+        @include material-icons;
         -webkit-appearance: none;
         width: 40px;
         height: 20px;
@@ -36,8 +41,7 @@
 
     &__number {
         position: relative;
-        top: 8px;
-        left: -21px;
+        right: 23px;
         font-family: $font-family--body;
         font-size: 10px;
         color:$dark-shade-25;

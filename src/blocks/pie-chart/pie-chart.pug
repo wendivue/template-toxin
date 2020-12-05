@@ -5,10 +5,10 @@ mixin pie-chart(object)
         .pie-chart__wrapper-img
             img(class="pie-chart__img-diagram" src=object.img)
             .pie-chart__wrapper-text-diagram
-                p(class="typo-h1 pie-chart__text-diagram")=object.votes
-                p(class="typo-body pie-chart__text-diagram") голосов
+                p(class="pie-chart__text-diagram pie-chart__text-diagram--big")=object.votes
+                p(class="pie-chart__text-diagram") голосов
 
         ul.pie-chart__list
             for item in itemList
                 - var theme = (item.theme ? " pie-chart__item--" + item.theme : "");
-                li(class="typo-body pie-chart__item" + theme)=item.text
+                li(class="pie-chart__item" + theme)=item.text

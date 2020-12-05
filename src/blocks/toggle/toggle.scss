@@ -1,3 +1,5 @@
+@import '../../scss/global-typography';
+
 .toggle {
     width: 264px;
     display: flex;
@@ -39,6 +41,7 @@
     } 
 
     &__text {
+        @include typo-body;
         padding-left: 10px;
         line-height: 19px;
     }

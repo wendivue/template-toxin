@@ -6,7 +6,7 @@ include ../button/button.pug
 
 mixin registration(object)
     .registration
-        h1(class="typo-h1 registration__title")=object.title
+        h1(class="registration__title")=object.title
 
         .registration__text-field
             +text-field({
@@ -60,7 +60,7 @@ mixin registration(object)
                 buttonLarge: "true"
             })
         .registration__sign-in
-            p(class="typo-body registration__text-sign-in") Уже есть аккаунт на Toxin
+            p(class="registration__text-sign-in") Уже есть аккаунт на Toxin
             +button({
                 text: "войти",
                 link: "page-landing-sign-in.html",

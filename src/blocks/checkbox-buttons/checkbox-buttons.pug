@@ -6,7 +6,7 @@ mixin checkbox-buttons(object)
 
     .checkbox-buttons
         header.checkbox-buttons__wrapper-header
-            h3(class="typo-h3 checkbox-buttons__title")=object.text
+            h3(class="checkbox-buttons__title")=object.text
             
         div(class="checkbox-buttons__items ")
             for item in itemsList
@@ -18,7 +18,7 @@ mixin checkbox-buttons(object)
 
                     if(object.rich)
                         .checkbox-buttons__wrapper-text
-                            p(class="typo-body checkbox-buttons__text")=item.title
-                            label(class="typo-body checkbox-buttons__label checkbox-buttons__label--small" for=item.id ? "checkbox-buttons-" + item.id : "")=item.text
+                            p(class="checkbox-buttons__text")=item.title
+                            label(class="checkbox-buttons__label checkbox-buttons__label--small" for=item.id ? "checkbox-buttons-" + item.id : "")=item.text
                     else
-                        label(class="typo-body checkbox-buttons__label" for=item.id ? "checkbox-buttons-" + item.id : "")=item.text
+                        label(class="checkbox-buttons__label" for=item.id ? "checkbox-buttons-" + item.id : "")=item.text

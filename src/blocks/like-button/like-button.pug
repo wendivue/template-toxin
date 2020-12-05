@@ -3,8 +3,8 @@ mixin like-button(object)
 
     .like-button
         if(object.checked)
-            input(class="material-icons like-button__checkbox" id=id type="checkbox" checked)
+            input(class="like-button__checkbox" id=id type="checkbox" checked)
         else
-            input(class="material-icons like-button__checkbox" id=id type="checkbox")
+            input(class="like-button__checkbox" id=id type="checkbox")
 
         label(class="like-button__number" for=id)=object.number

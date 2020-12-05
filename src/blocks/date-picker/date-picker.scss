@@ -1,3 +1,6 @@
+@import "~air-datepicker/dist/css/datepicker";
+@import '../../scss/global-typography';
+
 .date-picker {
 
     &__wrapper-button {
@@ -9,6 +12,7 @@
     }
 
     &__button {
+        @include typo-h3;
         display: block;
         flex: none;
         padding: 0;
@@ -16,10 +20,16 @@
         color: $color-primary;
         border: none;
         background: #fff;
+        cursor: pointer;
 
         &--cleans {
             color: $dark-shade-50;
         }
+    }
+
+    &__icon {
+        @include material-icons;
+        color: $color-primary;
     }
 }
 
@@ -42,7 +52,7 @@
     }
 
     &--nav-title {
-        @extend .typo-h2;
+        @include typo-h2;
     }
 
     &--content {
@@ -50,7 +60,7 @@
     }
     
     &--day-name {
-        @extend .typo-h3;
+        @include typo-h3;
         color: $color-primary;
     }
 
@@ -59,7 +69,7 @@
     }
 
     &--cell {
-        @extend .typo-h3;
+        @include typo-h3;
         height: 40px;
         font-weight: normal;
         color: $dark-shade-50;

@@ -1,3 +1,5 @@
+@import '../../scss/global-typography';
+
 .sign-in {
     width: 320px;
     padding: 40px 29px 31px 29px;
@@ -12,11 +14,16 @@
     }
 
     &__title {
+        @include typo-h1;
         margin-bottom: 19px;
     }
 
     &__text-field {
         margin-top: 10px;
+    }
+
+    &__text {
+        @include typo-body;
     }
 
     &__create {

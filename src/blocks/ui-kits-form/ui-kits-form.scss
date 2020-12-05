@@ -1,3 +1,5 @@
+@import '../../scss/global-typography';
+
 .ui-kits-form {
     margin-top: 50px;
 
@@ -14,6 +16,7 @@
     }
 
     &__title {
+        @include typo-h3;
         margin-bottom: 15px;
 
         &--like-button, &--radio-button {
@@ -113,7 +116,7 @@
     }
 
     &__rate-button {
-        margin-top: 37px;
+        margin-top: 39px;
     }
 
     &__rate-button-items {

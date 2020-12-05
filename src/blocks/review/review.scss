@@ -1,3 +1,5 @@
+@import '../../scss/global-typography';
+
 .review {
     max-width: 712px;
 
@@ -33,15 +35,21 @@
     }
 
     &__username {
+        @include typo-body;
         font-weight: 600;
     }
 
     &__text {
+        @include typo-body;
         margin-top: 7px;
         margin-left: 2px;
 
         @media (max-width: $breakpoint-xs) {
             text-align: center;
         }
+    }
+
+    &__date {
+        @include typo-body;
     }
 }

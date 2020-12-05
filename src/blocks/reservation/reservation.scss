@@ -1,3 +1,5 @@
+@import '../../scss/global-typography';
+
 .reservation {
     width: 320px;
     padding: 44px 29px 29px 29px;
@@ -27,6 +29,7 @@
     }
 
     &__number {
+        @include typo-h3;
         font-weight: bold;
         color: $dark-shade-100;
 
@@ -38,17 +41,25 @@
             font-size: 20px;
         }
 
+        &--small {
+            @include typo-body;
+            font-weight: bold;
+            color: $dark-shade-100;
+        }
+
         &--primary-color {
             color: $color-primary;
         }
     }
 
     &__price {
+        @include typo-body;
         font-weight: bold;
         padding-right: 5px;
     }
 
     &__days {
+        @include typo-body;
         font-size: 12px;
     }
 
@@ -63,6 +74,6 @@
     }
 
     &__price-list {
-        margin-bottom: 23px;
+        margin-bottom: 19px;
     }
 }

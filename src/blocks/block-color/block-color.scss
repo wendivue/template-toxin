@@ -1,3 +1,5 @@
+@import '../../scss/global-typography';
+
 .block-color {
     display: flex;
     margin-bottom: 20px;
@@ -6,6 +8,10 @@
     &__wrapper-text {
         margin-top: 8px;
         margin-left: 40px;
+    }
+
+    &__title {
+        @include typo-h2;
     }
     
     &__square {
@@ -40,6 +46,7 @@
     }
 
     &__text {
+        @include typo-h2;
         margin-top: 7px;
         font-weight: 400;
     }

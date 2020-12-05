@@ -1,3 +1,5 @@
+@import '../../scss/global-typography';
+
 .icon-text-list {
     width: 266px;
 
@@ -12,16 +14,19 @@
     }
 
     &__icon {
+        @include material-icons;
         margin-right: 10px;
         font-size: 48px;
         color: $color-primary;
     }
 
     &__title {
+        @include typo-body;
         font-weight: bold;
     }
 
     &__text {
+        @include typo-body;
         text-transform: none;
     }
 }

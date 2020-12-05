@@ -3,11 +3,12 @@ class Checkbox {
     this.anchor = anchor;
 
     this.getElement();
-    this.bindEventClick(this.anchor);
+    this.bindEventClick(this.header);
   }
 
   getElement() {
-    this.icon = this.anchor.querySelector('.checkbox-list__icon');
+    this.header = this.anchor.querySelector('.checkbox-list__wrapper-header');
+    this.icon = this.header.querySelector('.checkbox-list__icon');
     this.menu = this.anchor.querySelector('.checkbox-list__items');
   }
 

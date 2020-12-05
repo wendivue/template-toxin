@@ -1,24 +1,37 @@
-const path = require("path");
-const fs = require("fs");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const TerserPlugin = require("terser-webpack-plugin");
+const path = require('path');
+const fs = require('fs');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const webpack = require('webpack');
 
+const pages = [
+  'index',
+  'ui-kits-form-elements',
+  'ui-kits-colors-type',
+  'ui-kits-cards-elements',
+  'ui-kits-header-footer-page',
+  'page-landing-page',
+  'page-search-room',
+  'page-room-details',
+  'page-landing-registration',
+  'page-landing-sign-in'
+];
+
 const config = {
-  entry: ["./src/js/index.js", "./src/scss/style.scss"],
+  entry: './src/index.js',
   output: {
-    filename: "./js/bundle.js"
+    filename: './js/bundle.js',
   },
-  devtool: "source-map",
-  mode: "production",
+  devtool: 'source-map',
+  mode: 'production',
   optimization: {
     minimizer: [
       new TerserPlugin({
         sourceMap: true,
-        extractComments: true
+        extractComments: true,
       })
     ]
   },
@@ -26,28 +39,28 @@ const config = {
     rules: [
       {
         test: /\.(sass|scss)$/,
-        include: path.resolve(__dirname, "src/scss"),
+        include: path.resolve(__dirname, 'src/'),
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
             options: {}
           },
           {
-            loader: "css-loader",
+            loader: 'css-loader',
             options: {
               sourceMap: true,
               url: false
             }
           },
           {
-            loader: "postcss-loader",
+            loader: 'postcss-loader',
             options: {
-              ident: "postcss",
+              ident: 'postcss',
               sourceMap: true,
               plugins: () => [
-                require("cssnano")({
+                require('cssnano')({
                   preset: [
-                    "default",
+                    'default',
                     {
                       discardComments: {
                         removeAll: true
@@ -59,7 +72,7 @@ const config = {
             }
           },
           {
-            loader: "sass-loader",
+            loader: 'sass-loader',
             options: {
               sourceMap: true
             }
@@ -68,111 +81,54 @@ const config = {
       },
       {
         test: /\.pug$/,
-        use: ["pug-loader"]
-      }
+        use: ['pug-loader']
+      },
+      {
+        test: /\.(png|svg|jpe?g|gif)$/i,
+        use: {
+          loader: 'file-loader',
+          options: {
+            outputPath: 'img/',
+            name: '[name].[ext]',
+          },
+        },
+      },
     ]
   },
   plugins: [
-    new webpack.ProvidePlugin({ 
+    new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
-      "window.jQuery": "jquery",
-      "window.$": "jquery"
+      'window.jQuery': 'jquery',
+      'window.$': 'jquery'
     }),
     new MiniCssExtractPlugin({
-      filename: "./css/style.bundle.css"
+      filename: './css/style.bundle.css'
     }),
     new CopyWebpackPlugin([
       {
-        from: "./src/blocks/ui-kits-form/img",
-        to: "./img"
+        from: './src/fonts',
+        to: './fonts'
       },
       {
-        from: "./src/blocks/checkbox-list/img",
-        to: "./img"
-      },
-      {
-        from: "./src/blocks/review/img",
-        to: "./img"
-      },
-      {
-        from: "./src/blocks/ui-kits-cards/img",
-        to: "./img"
-      },
-      {
-        from: "./src/blocks/ui-kits-header-footer/img",
-        to: "./img"
-      },
-      {
-        from: "./src/blocks/landing-page/img",
-        to: "./img"
-      },
-      {
-        from: "./src/blocks/search-room/img",
-        to: "./img"
-      },
-      {
-        from: "./src/blocks/room-details/img",
-        to: "./img"
-      },
-      {
-        from: "./src/blocks/landing-registration/img",
-        to: "./img"
-      },
-      {
-        from: "./src/fonts",
-        to: "./fonts"
-      },
-      {
-        from: "./src/favicon",
-        to: "./favicon"
+        from: './src/favicon',
+        to: './favicon'
       }
     ]),
-    new HtmlWebpackPlugin({
-      filename: "index.html",
-      template: "./src/pug/index.pug"
-    }),
-    new HtmlWebpackPlugin({
-      filename: "ui-kits-form-elements.html",
-      template: "./src/pug/ui-kits-form-elements.pug"
-    }),
-    new HtmlWebpackPlugin({
-      filename: "ui-kits-colors-type.html",
-      template: "./src/pug/ui-kits-colors-type.pug"
-    }),
-    new HtmlWebpackPlugin({
-      filename: "ui-kits-cards-elements.html",
-      template: "./src/pug/ui-kits-cards-elements.pug"
-    }),
-    new HtmlWebpackPlugin({
-      filename: "ui-kits-header-footer-page.html",
-      template: "./src/pug/ui-kits-header-footer-page.pug"
-    }),
-    new HtmlWebpackPlugin({
-      filename: "page-landing-page.html",
-      template: "./src/pug/page-landing-page.pug"
-    }),
-    new HtmlWebpackPlugin({
-      filename: "page-search-room.html",
-      template: "./src/pug/page-search-room.pug"
-    }),
-    new HtmlWebpackPlugin({
-      filename: "page-room-details.html",
-      template: "./src/pug/page-room-details.pug"
-    }),
-    new HtmlWebpackPlugin({
-      filename: "page-landing-registration.html",
-      template: "./src/pug/page-landing-registration.pug"
-    }),
-    new HtmlWebpackPlugin({
-      filename: "page-landing-sign-in.html",
-      template: "./src/pug/page-landing-sign-in.pug"
-    })
   ]
 };
 
-module.exports = (env, argv) => {
-  if (argv.mode === "production") {
+pages.forEach((page) => {
+  config.plugins.push(
+    new HtmlWebpackPlugin({
+      filename: `${page}.html`,
+      template: `./src/pug/${page}.pug`,
+    })
+  );
+});
+
+module.exports = (_, argv) => {
+  if (argv.mode === 'production') {
     config.plugins.push(new CleanWebpackPlugin());
   }
   return config;

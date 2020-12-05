@@ -1,3 +1,5 @@
+@import '../../scss/global-typography';
+
 .radio-buttons {
     width: 220px;
 
@@ -45,6 +47,7 @@
     }
 
     &__label {
+        @include typo-body;
         color: $dark-shade-50;
         cursor: pointer;
 

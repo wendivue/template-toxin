@@ -11,7 +11,7 @@ mixin icon-text-list(object)
     div(class="icon-text-list ")
         for item in itemsList
             div(class="icon-text-list__item " + (item.theme ? "icon-text-list__item--" + item.theme : ""))
-                i(class="material-icons icon-text-list__icon")=item.icon
+                i(class="icon-text-list__icon")=item.icon
                 div(class="icon-text-list__wrapper-text")
-                    p(class="typo-body icon-text-list__title")=item.title
-                    p(class="typo-body icon-text-list__text")=item.text
+                    p(class="icon-text-list__title")=item.title
+                    p(class="icon-text-list__text")=item.text

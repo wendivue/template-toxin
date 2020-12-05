@@ -3,7 +3,7 @@ include ../button/button.pug
 
 mixin sign-in(object)
     .sign-in
-        h1(class="typo-h1 sign-in__title")=object.title
+        h1(class="sign-in__title")=object.title
 
         .sign-in__text-field
             +text-field({
@@ -26,7 +26,7 @@ mixin sign-in(object)
                 buttonLarge: "true"
             })
         .sign-in__create
-            p(class="typo-body sign-in__text") Нет аккаунта на Toxin?
+            p(class="sign-in__text") Нет аккаунта на Toxin?
             +button({
                 text: "создать",
                 link: "page-landing-registration.html",

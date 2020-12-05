@@ -1,9 +1,11 @@
+import 'air-datepicker/dist/js/datepicker';
+
 $('.text-field__datepicker, .datepicker-here').datepicker({
   navTitles: {
     days: 'MM yyyy',
   },
-  prevHtml: '<i class="material-icons">arrow_back</i>',
-  nextHtml: '<i class="material-icons">arrow_forward</i>',
+  prevHtml: '<i class="date-picker__icon">arrow_back</i>',
+  nextHtml: '<i class="date-picker__icon">arrow_forward</i>',
 });
 
 $('.text-field__datepicker-start').datepicker({
@@ -13,7 +15,7 @@ $('.text-field__datepicker-start').datepicker({
   }
 });
 
-$('.datepicker').append("<div class='date-picker__wrapper-button'><button class='typo-h3 datepicker--button date-picker__button date-picker__button--cleans ' data-action='clear'>очистить</button><button class='typo-h3 date-picker__button'>применить</button></div>");
+$('.datepicker').append("<div class='date-picker__wrapper-button'><button class='datepicker--button date-picker__button date-picker__button--cleans ' data-action='clear'>очистить</button><button class='date-picker__button'>применить</button></div>");
 
 $('.date-picker__button').on('click', () => {
   $('.datepicker-here').blur();

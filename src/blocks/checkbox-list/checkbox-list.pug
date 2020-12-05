@@ -5,8 +5,8 @@ mixin checkbox-list(object)
 
     .checkbox-list
         header.checkbox-list__wrapper-header
-            h3(class="typo-h3 checkbox-list__title")=object.text
-            i(class="material-icons checkbox-list__icon " + stateIcon)="expand_more"
+            h3(class="checkbox-list__title")=object.text
+            i(class="checkbox-list__icon " + stateIcon)="expand_more"
             
         div(class="checkbox-list__items " + state)
             for item in itemsList
@@ -16,4 +16,4 @@ mixin checkbox-list(object)
                     else
                         input(class="checkbox-list__checkbox" id=item.id ? "checkbox-list-" + item.id : "" type="checkbox")
 
-                    label(class="typo-body checkbox-list__label" for=item.id ? "checkbox-list-" + item.id : "")=item.text
+                    label(class="checkbox-list__label" for=item.id ? "checkbox-list-" + item.id : "")=item.text

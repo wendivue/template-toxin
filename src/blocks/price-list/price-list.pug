@@ -4,13 +4,13 @@ mixin price-list(object)
             .price-list__item
                 if(item.icon)
                     div(class="price-list__wrapper-text")
-                        p(class="typo-body price-list__text")=item.description
+                        p(class="price-list__text")=item.description
                         i(class="price-list__icon") i
-                    p(class="typo-body price-list__text")=item.price + '\u{20BD}'
+                    p(class="price-list__text")=item.price + '\u{20BD}'
                 else
-                    p(class="typo-body price-list__text")=item.description
-                    p(class="typo-body price-list__text")=item.price + '\u{20BD}'
+                    p(class="price-list__text")=item.description
+                    p(class="price-list__text")=item.price + '\u{20BD}'
         .price-list__full-price
-            h2(class="typo-h2 price-list__text")=object.description
+            h2(class="price-list__text price-list__text--big")=object.description
             div(class="price-list__line")
-            h2(class="typo-h2 price-list__text")=object.price + '\u{20BD}'
+            h2(class="price-list__text price-list__text--big")=object.price + '\u{20BD}'

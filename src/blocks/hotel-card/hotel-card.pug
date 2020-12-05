@@ -13,17 +13,17 @@ mixin hotel-card(object)
         .hotel-card__description
             .hotel-card__wrapper-head
                 .hotel-card__items-number
-                    p(class="typo-body hotel-card__number") № 
+                    p(class="hotel-card__number hotel-card__number--small") № 
                         span(class="hotel-card__number hotel-card__number--big")=object.number
                         if(object.lux)
-                            span(class="typo-h3 hotel-card__number hotel-card__number--primary-color")  люкс
+                            span(class="hotel-card__number hotel-card__number--primary-color")  люкс
                 .hotel-card__items-price
-                    span(class="typo-body hotel-card__text hotel-card__text--bold")=object.price
-                    p(class="typo-body hotel-card__text") в сутки
+                    span(class="hotel-card__text hotel-card__text--bold")=object.price
+                    p(class="hotel-card__text") в сутки
 
             .hotel-card__wrapper-reviews
                 .hotel-card__rate-button
                     +rate-button(object)
                 .hotel-card__reviews
-                    span(class="typo-body hotel-card__text hotel-card__text--bold")=object.reviews
-                    p(class="typo-body hotel-card__text") Отзывов
+                    span(class="hotel-card__text hotel-card__text--bold")=object.reviews
+                    p(class="hotel-card__text") Отзывов

@@ -1,3 +1,5 @@
+@import '../../scss/global-typography';
+
 .landing-page {
 
     &__content {
@@ -37,6 +39,7 @@
     }
 
     &__text {
+        @include typo-body;
         max-width: 300px;
         margin-top: 287px;
         align-self: flex-end;
@@ -47,4 +50,8 @@
             margin: 0;
         }
     }
+}
+
+.main {
+    @include typo-body;
 }

@@ -53,20 +53,20 @@ include ../blocks/footer-copyright/footer-copyright.pug
                 .room-details__content
                     .room-details__col-8
                         .room-details__info
-                            h2(class="typo-h2 room-details__title") Сведения о номере
+                            h2(class="room-details__title") Сведения о номере
                             +icon-text-list({
                                 full: "true"
                             })
                         .room-details__diagram
-                            h2(class="typo-h2 room-details__title") Впечатления от номера
+                            h2(class="room-details__title") Впечатления от номера
                             .room-details__pie-chart
                                 +pie-chart({
                                     img: "img/Pie.svg",
                                     votes: "260"
                                 })
                     .room-details__wrapper-title
-                        h2(class="typo-h2 room-details__title") Отзывы посетителей номера
-                        p(class="typo-body room-details__text-review") 2 отзыва
+                        h2(class="room-details__title") Отзывы посетителей номера
+                        p(class="room-details__text-review") 2 отзыва
                     .room-details__items-review
                         .room-details__review
                             +review({
@@ -89,7 +89,7 @@ include ../blocks/footer-copyright/footer-copyright.pug
                             })
                     .room-details__items-rule
                         .room-details__rule
-                            h2(class="typo-h2 room-details__title-rule") Правила
+                            h2(class="room-details__title-rule") Правила
                             +bullet-list({
                                 itemList: [
                                     {text: "Нельзя с питомцами"},
@@ -98,8 +98,8 @@ include ../blocks/footer-copyright/footer-copyright.pug
                                 ]
                             })
                         .room-details__cancel
-                            h2(class="typo-h2 room-details__title-cancel") Отмена
-                            p(class="typo-body room-details__text-cancel") Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+                            h2(class="room-details__title-cancel") Отмена
+                            p(class="room-details__text-cancel room-details__text-cancel--small") Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
                 .room-details__reservation
                     +reservation({
                             number: "888",

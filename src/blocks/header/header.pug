@@ -16,23 +16,23 @@ mixin header(object)
                                 - var sizeItem = (object.size ? " header__item--" + object.size : "");
                                 - var sizeIcon = (object.size ? " header__icon--" + object.size : "");
                                 li(class="header__item" + sizeItem)
-                                    a(class="typo-body header__link" + state href=item.link)=item.text
+                                    a(class="header__link" + state href=item.link)=item.text
                                         if(item.icon)
-                                            i(class="material-icons header__icon" + sizeIcon) expand_more
+                                            i(class="header__icon" + sizeIcon) expand_more
                                     if(item.icon && item.subItemList)
                                         ul(class="header__submenu")
                                             for subItem in object.subItemList1
                                                 li(class="header__subitem")
-                                                    a(class="typo-body header__link" href=subItem.link)=subItem.text
+                                                    a(class="header__link" href=subItem.link)=subItem.text
                                     else if(item.icon && item.subItemList2)
                                         ul(class="header__submenu")
                                             for subItem in object.subItemList2
                                                 li(class="header__subitem")
-                                                    a(class="typo-body header__link" href=subItem.link)=subItem.text
+                                                    a(class="header__link" href=subItem.link)=subItem.text
 
                     if(object.textLogin)
                         .header__login
-                            p(class="typo-body header__text-login")=object.textLogin
+                            p(class="header__text-login")=object.textLogin
                     else
                         - var smallbuttons = (object.size ? " header__wrapper-button--" + object.size : "");
                         div(class="header__wrapper-button" + smallbuttons)

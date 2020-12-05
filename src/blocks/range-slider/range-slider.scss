@@ -1,4 +1,6 @@
 @import 'ion-rangeslider/css/ion.rangeSlider';
+@import '../../scss/global-typography';
+
 
 .range-slider {
     width: 266px;
@@ -8,6 +10,14 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+    }
+
+    &__title {
+        @include typo-h3;
+    }
+
+    &__input {
+        @include typo-h1;
     }
 
     .irs {
