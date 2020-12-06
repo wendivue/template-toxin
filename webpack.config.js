@@ -1,5 +1,4 @@
 const path = require('path');
-const fs = require('fs');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -17,7 +16,7 @@ const pages = [
   'page-search-room',
   'page-room-details',
   'page-landing-registration',
-  'page-landing-sign-in'
+  'page-landing-sign-in',
 ];
 
 const config = {
@@ -32,8 +31,8 @@ const config = {
       new TerserPlugin({
         sourceMap: true,
         extractComments: true,
-      })
-    ]
+      }),
+    ],
   },
   module: {
     rules: [
@@ -43,14 +42,14 @@ const config = {
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
-            options: {}
+            options: {},
           },
           {
             loader: 'css-loader',
             options: {
               sourceMap: true,
-              url: false
-            }
+              url: false,
+            },
           },
           {
             loader: 'postcss-loader',
@@ -63,25 +62,25 @@ const config = {
                     'default',
                     {
                       discardComments: {
-                        removeAll: true
-                      }
-                    }
-                  ]
-                })
-              ]
-            }
+                        removeAll: true,
+                      },
+                    },
+                  ],
+                }),
+              ],
+            },
           },
           {
             loader: 'sass-loader',
             options: {
-              sourceMap: true
-            }
-          }
-        ]
+              sourceMap: true,
+            },
+          },
+        ],
       },
       {
         test: /\.pug$/,
-        use: ['pug-loader']
+        use: ['pug-loader'],
       },
       {
         test: /\.(png|svg|jpe?g|gif)$/i,
@@ -93,29 +92,29 @@ const config = {
           },
         },
       },
-    ]
+    ],
   },
   plugins: [
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
       'window.jQuery': 'jquery',
-      'window.$': 'jquery'
+      'window.$': 'jquery',
     }),
     new MiniCssExtractPlugin({
-      filename: './css/style.bundle.css'
+      filename: './css/style.bundle.css',
     }),
     new CopyWebpackPlugin([
       {
         from: './src/fonts',
-        to: './fonts'
+        to: './fonts',
       },
       {
         from: './src/favicon',
-        to: './favicon'
-      }
+        to: './favicon',
+      },
     ]),
-  ]
+  ],
 };
 
 pages.forEach((page) => {
