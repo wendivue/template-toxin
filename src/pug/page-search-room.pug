@@ -63,7 +63,7 @@ include ../blocks/footer-copyright/footer-copyright.pug
                     .search-room__dropdown
                         +dropdown({
                             text: "гости",
-                            value: "3 гостя, 1 младенец",
+                            value: "3 гостя",
                             iconText: "expand_more",
                             className: "dropdown-people",
                             size: "small",
@@ -94,7 +94,8 @@ include ../blocks/footer-copyright/footer-copyright.pug
                             className: "dropdown",
                             size:"small",
                             tabindex: 3,
-                            itemsRoom: true
+                            itemsRoom: true,
+                            dropdown: true
                         })
                     .search-room__checkbox-list
                         +checkbox-list({

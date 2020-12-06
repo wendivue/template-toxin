@@ -57,6 +57,7 @@
         border: 1px solid $dark-shade-50;
         box-sizing: border-box;
         border-radius: 22px;
+        cursor: pointer;
 
         &--no-active {
             pointer-events: none;
@@ -81,6 +82,7 @@
         color: $color-primary;
         border: none;
         background: #fff;
+        cursor: pointer;
 
         &--cleans {
             opacity: 0;

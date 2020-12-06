@@ -1,7 +1,6 @@
 @import 'ion-rangeslider/css/ion.rangeSlider';
 @import '../../scss/global-typography';
 
-
 .range-slider {
     width: 266px;
     position: relative;
@@ -23,13 +22,12 @@
     .irs {
         display: block;
         cursor: pointer;
-      
     }
 
     .irs--flat {
         top: -3px;
         height: 29px;
-        
+
         .irs-line {
             height: 6.5px;
             box-sizing: border-box;
@@ -37,7 +35,7 @@
             border: 1px solid $dark-shade-25;
             border-radius: 10px;
         }
-        
+
         .irs-bar {
             height: 6.5px;
             background: $gradient-secondary;
@@ -53,7 +51,7 @@
             border-radius: 10px;
             cursor: pointer;
 
-            &>i:first-child {
+            & > i:first-child {
                 display: none;
             }
         }

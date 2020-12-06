@@ -7,7 +7,12 @@ class Dropdown {
 
     this.getElement();
     this.getValue();
-    this.bindEventClick(this.buttonPeopleIncrease, this.buttonIncrease, this.buttonDecrease);
+    this.bindEventClick(
+      this.buttonPeopleIncrease,
+      this.buttonPeopleDecrease,
+      this.buttonIncrease,
+      this.buttonDecrease
+    );
     this.bindEventToggle(this.dropdownInput, this.buttonComplete);
     this.bindEventClear(this.buttonCleans);
   }
@@ -24,11 +29,14 @@ class Dropdown {
     this.buttonCleans = this.anchor.querySelectorAll('.dropdown__button-menu--cleans');
   }
 
-  bindEventClick(elements, elementsIncrease, elementsDecrease) {
+  bindEventClick(peopleIncrease, peopleDecrease, elementsIncrease, elementsDecrease) {
     if (elementsIncrease[0] === undefined) {
-      elements[0].addEventListener('click', this.changeValuePeopleIncrease.bind(this, 0));
-      elements[1].addEventListener('click', this.changeValuePeopleIncrease.bind(this, 1));
-      elements[2].addEventListener('click', this.changeValuePeopleIncrease.bind(this, 2));
+      peopleIncrease[0].addEventListener('click', this.changeValuePeopleIncrease.bind(this, 0));
+      peopleIncrease[1].addEventListener('click', this.changeValuePeopleIncrease.bind(this, 1));
+      peopleIncrease[2].addEventListener('click', this.changeValuePeopleIncrease.bind(this, 2));
+      peopleDecrease[0].addEventListener('click', this.changeValuePeopleDecrease.bind(this, 0));
+      peopleDecrease[1].addEventListener('click', this.changeValuePeopleDecrease.bind(this, 1));
+      peopleDecrease[2].addEventListener('click', this.changeValuePeopleDecrease.bind(this, 2));
     } else {
       elementsIncrease[0].addEventListener('click', this.changeValueBedRoomIncrease.bind(this));
       elementsIncrease[1].addEventListener('click', this.changeValueBedIncrease.bind(this));
@@ -113,10 +121,26 @@ class Dropdown {
   changeValuePeopleIncrease(index) {
     this.buttonCleans[0].style.opacity = 1;
     this.removeDecrease(this.buttonPeopleDecrease, index);
-    let value = parseFloat(this.input[index].value);
 
     this.fullval = parseFloat(this.increase(parseFloat(this.fullval)));
-    value = parseFloat(this.increase(value));
+    this.fullval = this.validatePeopleValue(this.fullval, index);
+    let { value } = this.input[index];
+    value = parseFloat(this.increase(parseFloat(value)));
+    value = this.validateValue(value);
+
+    this.input[index].value = value;
+    this.updateValue(PEOPLE);
+  }
+
+  changeValuePeopleDecrease(index) {
+    this.buttonCleans[0].style.opacity = 1;
+
+    this.fullval = parseFloat(this.decrease(parseFloat(this.fullval)));
+    this.fullval = this.validatePeopleValue(this.fullval, index);
+    let { value } = this.input[index];
+    value = parseFloat(this.decrease(parseFloat(value)));
+    value = this.validateValue(value);
+    if (value === 0) this.buttonPeopleDecrease[index].classList.add('dropdown__button--no-active');
 
     this.input[index].value = value;
     this.updateValue(PEOPLE);
@@ -197,6 +221,22 @@ class Dropdown {
     let curValue = value;
     if (value > 9) curValue = 0;
     if (value < 0) curValue = 0;
+
+    return curValue;
+  }
+
+  validatePeopleValue(value, index) {
+    let curValue = value;
+    if (value > 9) {
+      this.input[0].value = 0;
+      this.input[1].value = 0;
+      this.input[2].value = 0;
+      this.input[index].value = -1;
+      curValue = 0;
+    }
+    if (value < 0) {
+      curValue = 0;
+    }
 
     return curValue;
   }

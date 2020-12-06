@@ -44,15 +44,15 @@
             background: $gradient-primary;
             border-radius: 10px;
         }
+
+        &:checked ~ label {
+            color: $dark-shade-75;
+        }
     }
 
     &__label {
         @include typo-body;
         color: $dark-shade-50;
         cursor: pointer;
-
-        &--active {
-            color: $dark-shade-75;
-        }
     }
 }
