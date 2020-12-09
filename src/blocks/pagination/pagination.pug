@@ -2,7 +2,7 @@ mixin pagination(object)
 
     .pagination
         for item in object.itemList
-            if(item.currentPage)
+            if(item.isCurrentPage)
                 a(class="pagination__number pagination__number--current" href=item.link)=item.text
             else
                 a(class="pagination__number" href=item.link)=item.text

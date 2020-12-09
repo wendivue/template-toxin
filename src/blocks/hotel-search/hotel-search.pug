@@ -17,7 +17,7 @@ mixin hotel-search(object)
                 myId: "start", 
                 tabindex: 1,
                 iconText: "expand_more",
-                dateRange: true
+                isDateRange: true
             })
             +date-picker({
                 text: "выезд",
@@ -37,14 +37,14 @@ mixin hotel-search(object)
                 iconText: "expand_more",
                 className: "dropdown-people",
                 tabindex: 3,
-                itemsPeople: true,
-                buttonMenu: true,
-                dropdown: true 
+                isItemsPeople: true,
+                isButtonMenu: true,
+                isDropdown: true 
             })
 
         .hotel-search__button
             +button({
                 text: "подобрать номер",
                 link: object.link,
-                buttonLarge: "true"
+                isButtonLarge: true
             })

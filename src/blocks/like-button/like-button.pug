@@ -1,8 +1,8 @@
-mixin like-button({ id, number, checked })
+mixin like-button({ id, number, isChecked })
     - id = (id ? "like-button-" + id : "");
 
     .like-button
-        if(checked)
+        if(isChecked)
             input(class="like-button__checkbox" id=id type="checkbox" checked)
         else
             input(class="like-button__checkbox" id=id type="checkbox")

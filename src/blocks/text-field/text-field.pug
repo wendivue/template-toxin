@@ -16,10 +16,10 @@ mixin text-field(object)
                     p(class="text-field__text-state")=object.textState
 
         .text-field__input-wrapper
-            if(object.dropdown)
+            if(object.isDropdown)
                 input(class="text-field__input " + state + className + borderRadius id=id + myId type=object.type value=object.value name=object.name tabindex=object.tabindex readonly)
             else if (object.dateRange)
-                input(class="datepicker-here text-field__input " + state + className id=id + myId type=object.type placeholder=object.placeholder name=object.name tabindex=object.tabindex data-range="true" data-multiple-dates-separator=" - " readonly)
+                input(class="datepicker-here text-field__input " + state + className id=id + myId type=object.type placeholder=object.placeholder name=object.name tabindex=object.tabindex data-range=true data-multiple-dates-separator=" - " readonly)
             else
                 input(class="text-field__input " + state + className id=id + myId type=object.type placeholder=object.placeholder value=object.value name=object.name tabindex=object.tabindex)
 

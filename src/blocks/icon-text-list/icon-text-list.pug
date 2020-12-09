@@ -3,7 +3,7 @@ mixin icon-text-list(object)
     - var convenience = {icon: "location_city", title: "Удобство", text: "Окно в каждой из спален", theme: "border"};
     - var cosiness = {icon: "whatshot", title: "Уют", text: "Номер оснащён камином"};
 
-    if(object.full)
+    if(object.isFull)
         - var itemsList = [comfort, convenience, cosiness];
     else
         - var itemsList = [comfort, convenience];

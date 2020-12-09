@@ -1,8 +1,8 @@
-mixin toggle({ id, text, checked })
+mixin toggle({ id, text, isChecked })
     - id = (id ? "toggle-" + id : "");
     
     .toggle
-        if(checked)
+        if(isChecked)
             input(class="toggle__input" id=id type="checkbox" checked)
         else
             input(class="toggle__input" id=id type="checkbox")

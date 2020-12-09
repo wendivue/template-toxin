@@ -38,7 +38,8 @@ img.ui-kits-form__img(src="img/Group.png")
                     +text-field({
                         text: "Text Field",
                         placeholder: "This is pretty awesome",
-                        tabindex: 2, state: "active",
+                        tabindex: 2,
+                        state: "active",
                         textState:"Hover / Focus"
                     })
                 .ui-kits-form__dropdown
@@ -49,9 +50,9 @@ img.ui-kits-form__img(src="img/Group.png")
                         className: "dropdown-people",
                         textState:"Default",
                         tabindex: 3,
-                        itemsPeople: true,
-                        buttonMenu: true,
-                        dropdown: true 
+                        isItemsPeople: true,
+                        isButtonMenu: true,
+                        isDropdown: true 
                     })
                 .ui-kits-form__masked
                     +date-picker({
@@ -68,9 +69,10 @@ img.ui-kits-form__img(src="img/Group.png")
                         state: "date",
                         type: "text",
                         className: "datepicker-start",
-                        myId: "start", tabindex: 1,
+                        myId: "start",
+                        tabindex: 1,
                         iconText: "expand_more",
-                        dateRange: true
+                        isDateRange: true
                     })
                     +date-picker({
                         text: "date Dropdown",
@@ -89,7 +91,7 @@ img.ui-kits-form__img(src="img/Group.png")
                         type: "text",
                         size: "small",
                         iconText: "expand_more",
-                        dateRange: true
+                        isDateRange: true
                     })
                 .ui-kits-form__subscription
                     +text-field({
@@ -110,8 +112,8 @@ img.ui-kits-form__img(src="img/Group.png")
                         className: "dropdown",
                         size:"small",
                         tabindex: 6,
-                        itemsRoom: true,
-                        dropdown: true
+                        isItemsRoom: true,
+                        isDropdown: true
                     })
                 .ui-kits-form__dropdown-room-expanded
                     +dropdown({
@@ -122,9 +124,9 @@ img.ui-kits-form__img(src="img/Group.png")
                         className: "dropdown",
                         size:"small",
                         tabindex: 7,
-                        itemsRoom: true,
+                        isItemsRoom: true,
                         stateMenu: "active",
-                        dropdown: true
+                        isDropdown: true
                     })
                 .ui-kits-form__checkbox-list
                     +checkbox-list({
@@ -146,7 +148,7 @@ img.ui-kits-form__img(src="img/Group.png")
                         +toggle({
                             title:"Toggle",
                             text: "Получать спецпредложения",
-                            checked: "true",
+                            isChecked: true,
                             id: "1"
                         })
                     .ui-kits-form__toggle-item
@@ -167,7 +169,7 @@ img.ui-kits-form__img(src="img/Group.png")
                             +like-button({
                                 number: "12",
                                 id: "2",
-                                checked: "true"
+                                isChecked: true
                             })
                 .ui-kits-form__rate-button
                     h3.ui-kits-form__title rate button
@@ -183,16 +185,16 @@ img.ui-kits-form__img(src="img/Group.png")
                         iconText: "expand_more",
                         className: "dropdown-people",
                         tabindex: 8,
-                        itemsPeople: true,
-                        buttonMenu: true,
-                        dropdown: true,
-                        nullPeople: true,
+                        isItemsPeople: true,
+                        isButtonMenu: true,
+                        isDropdown: true,
+                        isNullPeople: true,
                         stateMenu: "active" 
                     })
                 .ui-kits-form__rich-checkbox-buttons
                     +checkbox-buttons({
                         text: "Rich Checkbox Buttons",
-                        rich: "true"
+                        isRich: true
                     })
             +col-4
                 +range-slider({text: "Range Slider"})
@@ -241,13 +243,13 @@ img.ui-kits-form__img(src="img/Group.png")
                     +button({
                         text: "перейти к оплате",
                         link: "/mock-address/change-me",
-                        buttonLarge: "true"
+                        isButtonLarge: true
                     })
                 .ui-kits-form__pagination
                     h3.ui-kits-form__title pagination
                     +pagination({
                         itemList: [
-                            {text: "1", link: "/mock-address/change-me", currentPage: true},
+                            {text: "1", link: "/mock-address/change-me", isCurrentPage: true},
                             {text: "2", link: "/mock-address/change-me"},
                             {text: "3", link: "/mock-address/change-me"},
                             {text: "..."},
@@ -263,9 +265,9 @@ img.ui-kits-form__img(src="img/Group.png")
                         iconText: "expand_more",
                         className: "dropdown-people",
                         tabindex: 9,
-                        itemsPeople: true,
-                        buttonMenu: true,
-                        dropdown: true,
+                        isItemsPeople: true,
+                        isButtonMenu: true,
+                        isDropdown: true,
                         stateMenu: "active"
                     })
                 .ui-kits-form__bullet-list
@@ -289,5 +291,5 @@ img.ui-kits-form__img(src="img/Group.png")
                         text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.",
                         number: "12", 
                         id: "review-1", 
-                        checked: "true"
+                        isChecked: true
                     })

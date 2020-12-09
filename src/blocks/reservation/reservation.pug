@@ -23,7 +23,7 @@ mixin reservation(object)
                 myId: "start", 
                 tabindex: 1,
                 iconText: "expand_more",
-                dateRange: true
+                isDateRange: true
             })
             +date-picker({
                 text: "выезд",
@@ -42,16 +42,16 @@ mixin reservation(object)
                 iconText: "expand_more",
                 className: "dropdown-people",
                 tabindex: 3,
-                itemsPeople: true,
-                buttonMenu: true,
-                dropdown: true 
+                isItemsPeople: true,
+                isButtonMenu: true,
+                isDropdown: true 
             })
         .reservation__price-list
             +price-list({
                 itemList: [
                     {description: "9 990₽ х 4 суток", price: "39 960"},
-                    {description: "Сбор за услуги: скидка 2 179₽", price: "0", icon: "true"},
-                    {description: "Сбор за дополнительные услуги", price: "300", icon: "true"}
+                    {description: "Сбор за услуги: скидка 2 179₽", price: "0", icon: true},
+                    {description: "Сбор за дополнительные услуги", price: "300", icon: true}
                 ],
                 description: "Итого",
                 price: "38 081"
@@ -60,6 +60,6 @@ mixin reservation(object)
             +button({
                 text: "забронировать",
                 link: object.link,
-                buttonLarge: "true",
+                isButtonLarge: true,
                 isButton: true
             })

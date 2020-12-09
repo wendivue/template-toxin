@@ -15,7 +15,7 @@ mixin hotel-card(object)
                 .hotel-card__items-number
                     p(class="hotel-card__number hotel-card__number--small") № 
                         span(class="hotel-card__number hotel-card__number--big")=object.number
-                        if(object.lux)
+                        if(object.isLux)
                             span(class="hotel-card__number hotel-card__number--primary-color")  люкс
                 .hotel-card__items-price
                     span(class="hotel-card__text hotel-card__text--bold")=object.price

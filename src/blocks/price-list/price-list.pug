@@ -2,7 +2,7 @@ mixin price-list(object)
     .price-list
         for item in object.itemList
             .price-list__item
-                if(item.icon)
+                if(item.isIcon)
                     div(class="price-list__wrapper-text")
                         p(class="price-list__text")=item.description
                         i(class="price-list__icon") i

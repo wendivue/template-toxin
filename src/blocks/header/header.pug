@@ -18,14 +18,14 @@ mixin header(object)
                                 - var sizeIcon = (object.size ? " header__icon--" + object.size : "");
                                 li(class="header__item" + sizeItem)
                                     a(class="header__link" + state href=item.link)=item.text
-                                        if(item.icon)
+                                        if(item.isIcon)
                                             i(class="header__icon" + sizeIcon) expand_more
-                                    if(item.icon && item.subItemList)
+                                    if(item.isIcon && item.isSubItemList)
                                         ul(class="header__submenu")
                                             for subItem in object.subItemList1
                                                 li(class="header__subitem")
                                                     a(class="header__link" href=subItem.link)=subItem.text
-                                    else if(item.icon && item.subItemList2)
+                                    else if(item.isIcon && item.isSubItemList2)
                                         ul(class="header__submenu")
                                             for subItem in object.subItemList2
                                                 li(class="header__subitem")

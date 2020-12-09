@@ -16,10 +16,10 @@ include ../blocks/footer-copyright/footer-copyright.pug
     +header({
         itemList: [
             {text: "О нас", link: "/mock-address/change-me"},
-            {text: "Услуги", link: "/mock-address/change-me", icon: "true", subItemList: "true"},
+            {text: "Услуги", link: "/mock-address/change-me", isIcon: true, isSubItemList: true},
             {text: "Вакансии", link: "/mock-address/change-me"},
             {text: "Новости", link: "/mock-address/change-me"},
-            {text: "Соглашения", link: "/mock-address/change-me", icon: "true", subItemList2: "true"}
+            {text: "Соглашения", link: "/mock-address/change-me", isIcon: true, isSubItemList2: true}
         ],
         loginButton: {
             text: "войти",
@@ -55,7 +55,7 @@ include ../blocks/footer-copyright/footer-copyright.pug
                         .room-details__info
                             h2(class="room-details__title") Сведения о номере
                             +icon-text-list({
-                                full: "true"
+                                isFull: true
                             })
                         .room-details__diagram
                             h2(class="room-details__title") Впечатления от номера
@@ -76,7 +76,7 @@ include ../blocks/footer-copyright/footer-copyright.pug
                                 text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.",
                                 number: "12",
                                 id: "review-1",
-                                checked: "true"
+                                isChecked: true
                             })
                         .room-details__review
                             +review({

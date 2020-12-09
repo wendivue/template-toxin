@@ -3,15 +3,15 @@ include ../text-field/text-field.pug
 mixin dropdown__item(object)
     - var itemsRoom = [{text: "спальни", value: "2", tabindex: 2}, {text: "кровати", value: "2", tabindex: 3}, {text: "ванные комнаты", value: "0", tabindex: 4}];
     - var itemsPeople = [{text: "взрослые", value: "2", tabindex: 2}, {text: "дети", value: "1", tabindex: 3}, {text: "младенцы", value: "0", tabindex: 4}];
-    if(object.nullPeople)
+    if(object.isNullPeople)
         - var itemsPeople = [{text: "взрослые", value: "0", tabindex: 2}, {text: "дети", value: "0", tabindex: 3}, {text: "младенцы", value: "0", tabindex: 4}];
 
-    for item in object.itemsRoom ? itemsRoom : itemsPeople
+    for item in object.isItemsRoom ? itemsRoom : itemsPeople
         - var state = (item.value == 0 ? " dropdown__button--no-active" : "");
         .dropdown__item
             p(class="dropdown__text")=item.text
             .dropdown__wrapper-input
-                if(object.itemsRoom)
+                if(object.isItemsRoom)
                     button(class="dropdown__button dropdown__button--decrease" + state type="button") -
                     input(class="dropdown__input" value=item.value tabindex=item.tabindex)
                     button(class="dropdown__button dropdown__button--increase" type="button") +
@@ -30,7 +30,7 @@ mixin dropdown(object)
         +text-field(object)
         div(class="dropdown__menu" + stateMenu + sizeMenu)
             +dropdown__item(object)
-            if(object.buttonMenu)
+            if(object.isButtonMenu)
                 .dropdown__wrapper-button-menu
                     button(class="dropdown__button-menu dropdown__button-menu--cleans") очистить
                     button(class="dropdown__button-menu dropdown__button-menu--complete") применить

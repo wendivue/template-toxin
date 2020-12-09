@@ -1,11 +1,11 @@
 mixin radio-buttons(object)
-    - var itemList = [{text: "Мужчина", value: "male", checked: true}, {text: "Женщина", value: "female"}];
+    - var itemList = [{text: "Мужчина", value: "male", isChecked: true}, {text: "Женщина", value: "female"}];
 
     .radio-buttons
         .radio-buttons__items
             for item in itemList
                 .radio-buttons__item
-                    if(item.checked)
+                    if(item.isChecked)
                         input(class="radio-buttons__radio" id=item.value type="radio" name="gender" value=item.value checked)
                     else 
                         input(class="radio-buttons__radio" id=item.value type="radio" name="gender" value=item.value )
