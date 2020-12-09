@@ -4,8 +4,8 @@ $('.text-field__datepicker, .datepicker-here').datepicker({
   navTitles: {
     days: 'MM yyyy',
   },
-  prevHtml: '<i class="date-picker__icon">arrow_back</i>',
-  nextHtml: '<i class="date-picker__icon">arrow_forward</i>',
+  prevHtml: '<button class="date-picker__icon">arrow_back</button>',
+  nextHtml: '<button class="date-picker__icon">arrow_forward</button>',
 });
 
 $('.text-field__datepicker-start').datepicker({

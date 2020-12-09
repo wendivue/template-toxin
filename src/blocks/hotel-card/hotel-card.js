@@ -5,7 +5,7 @@ $('.owl-carousel').owlCarousel({
   items: 1,
   dots: true,
   navText: [
-    '<i class="hotel-card__icon">expand_more</i>',
-    '<i class="hotel-card__icon">expand_more</i>',
+    '<button class="hotel-card__icon">expand_more</button>',
+    '<button class="hotel-card__icon">expand_more</button>',
   ],
 });

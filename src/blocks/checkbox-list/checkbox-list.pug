@@ -6,7 +6,7 @@ mixin checkbox-list({ state, text })
     .checkbox-list
         header.checkbox-list__wrapper-header
             h3(class="checkbox-list__title")=text
-            i(class="checkbox-list__icon " + stateIcon)="expand_more"
+            button(class="checkbox-list__icon " + stateIcon)="expand_more"
             
         div(class="checkbox-list__items " + state)
             for item in itemsList

@@ -39,6 +39,8 @@
 
     &__icon {
         @include material-icons;
+        color: #fff;
+        cursor: pointer;
     }
 
     &__number {

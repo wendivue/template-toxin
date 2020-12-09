@@ -24,4 +24,4 @@ mixin text-field(object)
                 input(class="text-field__input " + state + className id=id + myId type=object.type placeholder=object.placeholder value=object.value name=object.name tabindex=object.tabindex)
 
             if(object.iconText)
-                i(class="text-field__icon " + classNameIcon)=object.iconText
+                button(class="text-field__icon " + classNameIcon)=object.iconText

@@ -9,7 +9,6 @@
         margin-bottom: 10px;
         align-items: center;
         justify-content: space-between;
-        color: $dark-shade-50;
         user-select: none;
     }
 
@@ -68,6 +67,8 @@
 
     &__icon {
         @include material-icons;
+        cursor: pointer;
+
         &--open {
             transform: rotate(-180deg);
         }
