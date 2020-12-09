@@ -1,11 +1,11 @@
-mixin button(object)
-    - var theme = (object.theme ? " button--" + object.theme : "");
-    - var size = (object.size ? " button--" + object.size : "");
-    - var state = (object.state ? " button--" + object.state : "");
-    - var themeHeader = (object.themeHeader ? " button--" + object.themeHeader : "");
+mixin button({ theme, size, state, themeHeader, buttonLarge, link, text })
+    - theme = (theme ? " button--" + theme : "");
+    - size = (size ? " button--" + size : "");
+    - state = (state ? " button--" + state : "");
+    - themeHeader = (themeHeader ? " button--" + themeHeader : "");
 
-    if(!object.buttonLarge)
-        a(class="button" + theme + size + state + themeHeader href=object.link)=object.text
+    if(!buttonLarge)
+        a(class="button" + theme + size + state + themeHeader href=link)=text
     else
-        a(class="button button--large" + theme + size + state + themeHeader href=object.link)=object.text
+        a(class="button button--large" + theme + size + state + themeHeader href=link)=text
             i(class="button__icon") arrow_forward

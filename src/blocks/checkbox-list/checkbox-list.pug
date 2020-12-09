@@ -1,19 +1,21 @@
-mixin checkbox-list(object)
+mixin checkbox-list({ state, text })
     - var itemsList = [{text: "Завтрак", id: "1"},{text: "Письменный стол", id: "2", checked: "true"},{text: "Стул для кормления", id: "3", checked: "true"},{text: "Кроватка", id: "4", checked: "true"},{text: "Телевизор", id: "5"},{text: "Шампунь", id: "6"},{text: "Телевизор", id: "7"},{text: "Шампунь", id: "8"}];
-    - var state = (object.state ? "checkbox-list__items--" + object.state : "");
-    - var stateIcon = (object.state ? "checkbox-list__icon--" + object.state : "");
+    - state = (state ? "checkbox-list__items--" + state : "");
+    - var stateIcon = (state ? "checkbox-list__icon--" + state : "");
 
     .checkbox-list
         header.checkbox-list__wrapper-header
-            h3(class="checkbox-list__title")=object.text
+            h3(class="checkbox-list__title")=text
             i(class="checkbox-list__icon " + stateIcon)="expand_more"
             
         div(class="checkbox-list__items " + state)
             for item in itemsList
+             - var { id, text } = item;
+             - id = id ? "checkbox-list-" + id : "";
                 .checkbox-list__wrapper-checkbox
                     if(item.checked)
-                        input(class="checkbox-list__checkbox" id=item.id ? "checkbox-list-" + item.id : "" type="checkbox" checked)
+                        input(class="checkbox-list__checkbox" id=id type="checkbox" checked)
                     else
-                        input(class="checkbox-list__checkbox" id=item.id ? "checkbox-list-" + item.id : "" type="checkbox")
+                        input(class="checkbox-list__checkbox" id=id type="checkbox")
 
-                    label(class="checkbox-list__label" for=item.id ? "checkbox-list-" + item.id : "")=item.text
+                    label(class="checkbox-list__label" for=id : "")=text

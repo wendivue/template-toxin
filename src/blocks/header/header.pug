@@ -12,7 +12,8 @@ mixin header(object)
                     nav(class="header__menu")
                         ul(class="header__list")
                             for item in object.itemList
-                                - var state = (item.state ? " header__link--" + item.state : "");
+                                - var {state} = item;
+                                - state = (state ? " header__link--" + state : "");
                                 - var sizeItem = (object.size ? " header__item--" + object.size : "");
                                 - var sizeIcon = (object.size ? " header__icon--" + object.size : "");
                                 li(class="header__item" + sizeItem)

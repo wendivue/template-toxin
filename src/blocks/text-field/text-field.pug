@@ -1,10 +1,11 @@
 mixin text-field(object)
-    - var state = (object.state ? "text-field__input--" + object.state + " " : "");
-    - var size = (object.size ? "text-field--" + object.size : "");
+    - var { state, size, className, classNameIcon } = object;
+    - state = (state ? "text-field__input--" + state + " " : "");
+    - size = (size ? "text-field--" + size : "");
+    - className = (className ? "text-field__" + className : "");
+    - classNameIcon = (classNameIcon ? "text-field__icon--" + classNameIcon : "");
     - var id = (object.tabindex ? "text-field-" + object.tabindex : "");
     - var myId = (object.myId ? " " + object.myId : "");
-    - var className = (object.className ? "text-field__" + object.className : "");
-    - var classNameIcon = (object.classNameIcon ? "text-field__icon--" + object.classNameIcon : "");
     - var borderRadius = (object.stateMenu ? " text-field__input--open" : "");
 
     div(class="text-field " + size)

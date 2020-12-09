@@ -1,11 +1,11 @@
-mixin toggle(object)
-    - var id = (object.id ? "toggle-" + object.id : "");
+mixin toggle({ id, text, checked })
+    - id = (id ? "toggle-" + id : "");
     
     .toggle
-        if(object.checked)
+        if(checked)
             input(class="toggle__input" id=id type="checkbox" checked)
         else
             input(class="toggle__input" id=id type="checkbox")
 
         label(class="toggle__label" for=id)
-        p(class="toggle__text")=object.text
+        p(class="toggle__text")=text

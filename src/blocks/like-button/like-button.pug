@@ -1,10 +1,10 @@
-mixin like-button(object)
-    - var id = (object.id ? "like-button-" + object.id : "");
+mixin like-button({ id, number, checked })
+    - id = (id ? "like-button-" + id : "");
 
     .like-button
-        if(object.checked)
+        if(checked)
             input(class="like-button__checkbox" id=id type="checkbox" checked)
         else
             input(class="like-button__checkbox" id=id type="checkbox")
 
-        label(class="like-button__number" for=id)=object.number
+        label(class="like-button__number" for=id)=number

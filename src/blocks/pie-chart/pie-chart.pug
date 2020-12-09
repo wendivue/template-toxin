@@ -10,5 +10,6 @@ mixin pie-chart(object)
 
         ul.pie-chart__list
             for item in itemList
-                - var theme = (item.theme ? " pie-chart__item--" + item.theme : "");
-                li(class="pie-chart__item" + theme)=item.text
+                - var { theme, text } = item
+                - theme = (theme ? " pie-chart__item--" + theme : "");
+                li(class="pie-chart__item" + theme)=text

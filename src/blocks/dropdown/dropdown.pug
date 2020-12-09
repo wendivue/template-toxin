@@ -21,11 +21,12 @@ mixin dropdown__item(object)
                     button(class="dropdown__button dropdown__button-people--increase" type="button") +
 
 mixin dropdown(object)
-    - var stateMenu = (object.stateMenu ? " dropdown__menu--" + object.stateMenu : "");
-    - var size = (object.size ? " dropdown--" + object.size : "");
-    - var sizeMenu = (object.size ? " dropdown__menu--" + object.size : "");
+    - var { stateMenu, size } = object
+    - stateMenu = (stateMenu ? " dropdown__menu--" + stateMenu : "");
+    - var sizeDropdown = (size ? " dropdown--" + size : "");
+    - var sizeMenu = (size ? " dropdown__menu--" + size : "");
 
-    div(class="dropdown" + size)
+    div(class="dropdown" + sizeDropdown)
         +text-field(object)
         div(class="dropdown__menu" + stateMenu + sizeMenu)
             +dropdown__item(object)
