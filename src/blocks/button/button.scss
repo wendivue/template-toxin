@@ -3,15 +3,16 @@
 .button {
     @include typo-h3;
     position: relative;
-    width: 99px;
+    min-width: 99px;
     display: inline-block;
-    padding: 14.5px 0;
+    padding: 14.5px 19.5px;
     background: $gradient-primary;
     color: #fff;
     text-align: center;
     text-decoration: none;
     border: none;
     border-radius: 22px;
+    box-sizing: border-box;
 
     &:hover, &--active {
         opacity: 0.5;
@@ -26,16 +27,15 @@
     }
 
     &--border {
-        width: 95px;
-        padding: 12.5px 0;
+        padding: 12.5px 17.5px;
         background: #fff;
         border: 2px solid $color-primary;
         color: $color-primary;
     }
 
     &--icon-link {
-        width: 83px;
         padding: 0;
+        min-width: auto;
         color: $color-primary;
         background: none;
         text-align: left;
@@ -46,37 +46,17 @@
         }
     }
 
-    &--small {
-        padding: 9.5px 0;
-    }
-
     &--large {
-        width: 320px;
-
-        @media (max-width: $breakpoint-xxs) {
-            width: 300px;
-        }
+        width: 100%;
     }
 
-    &--login {
-        width: 83px;
-        padding: 9.5px 0;
-        line-height: 11px;
+    &--small {
+        padding: 9.5px 19.5px;
+        
     }
 
-    &--register {
-        width: 196px;
-        padding: 9.5px 0;
-    }
-
-    &--login-small {
-        width: 75px;
-        padding: 9.5px 0;
-        line-height: 11px;
-    }
-
-    &--register-small {
-        width: 101px;
-        padding: 9.5px 0;
+    &--small-border {
+        min-width: auto;
+        padding: 7.5px 17.5px;
     }
 }

@@ -1,7 +1,6 @@
 @import '../../scss/global-typography';
 
 .review {
-    max-width: 712px;
 
     @media (max-width: $breakpoint-xs) {
         width: 300px;

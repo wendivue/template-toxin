@@ -15,7 +15,7 @@
 
     &__text {
         @include typo-body;
-        width: 214px;
+        max-width: 214px;
         line-height: 18px;
 
         &:last-child {

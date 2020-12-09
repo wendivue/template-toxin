@@ -1,15 +1,6 @@
 @import '../../scss/global-typography';
 
 .bullet-list {
-    width: 255px;
-
-    @media (max-width: $breakpoint-xs) {
-        width: 100%;
-    }
-
-    @media (max-width: $breakpoint-xxs) {
-        max-width: 305px;
-    }
 
     &__item {
         @include typo-body;

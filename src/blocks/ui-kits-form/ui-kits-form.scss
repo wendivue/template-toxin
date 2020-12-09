@@ -135,6 +135,7 @@
     }
 
     &__rich-checkbox-buttons {
+        max-width: 240px;
         margin-top: 257px;
     }
 
@@ -165,6 +166,15 @@
 
     &__bullet-list {
         margin-top: 255px;
+        max-width: 255px;
+
+        @media (max-width: $breakpoint-xs) {
+            width: 100%;
+        }
+    
+        @media (max-width: $breakpoint-xxs) {
+            max-width: 305px;
+        }
     }
 
     &__col-8 {
@@ -177,6 +187,7 @@
     }
 
     &__review {
+        max-width: 712px;
         margin-top: 10px;
         margin-right: 3px;
     }

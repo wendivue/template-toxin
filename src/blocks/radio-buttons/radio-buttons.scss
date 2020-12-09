@@ -1,7 +1,6 @@
 @import '../../scss/global-typography';
 
 .radio-buttons {
-    width: 220px;
 
     &__title {
         margin-bottom: 12px;
@@ -10,11 +9,14 @@
     &__item {
         display: flex;
         align-items: center;
+
+        &:first-child {
+            margin-right: 20px;
+        }
     }
 
     &__items {
         display: flex;
-        justify-content: space-between;
     }
 
     &__radio {

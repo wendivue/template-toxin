@@ -1,14 +1,12 @@
 @import '../../scss/global-typography';
 
 .checkbox-list {
-    width: 266px;
     cursor: pointer;
 
     &__wrapper-header {
         display: flex;
         margin-bottom: 10px;
         align-items: center;
-        justify-content: space-between;
         user-select: none;
     }
 
@@ -56,6 +54,7 @@
 
     &__title {
         @include typo-h3;
+        margin-right: 32px;
     }
 
     &__label {

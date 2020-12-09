@@ -190,10 +190,10 @@ img.ui-kits-form__img(src="img/Group.png")
                         stateMenu: "active" 
                     })
                 .ui-kits-form__rich-checkbox-buttons
-                +checkbox-buttons({
-                    text: "Rich Checkbox Buttons",
-                    rich: "true"
-                })
+                    +checkbox-buttons({
+                        text: "Rich Checkbox Buttons",
+                        rich: "true"
+                    })
             +col-4
                 +range-slider({text: "Range Slider"})
                 .ui-kits-form__buttons
@@ -225,17 +225,19 @@ img.ui-kits-form__img(src="img/Group.png")
                                 state: "active"
                             })
                     .ui-kits-form__buttons-items
-                        +button({
-                            text: "CLICK ME",
-                            link: "/mock-address/change-me",
-                            theme: "icon-link"
-                        })
-                        +button({
-                            text: "CLICK ME",
-                            link: "/mock-address/change-me",
-                            theme: "icon-link",
-                            state: "icon-link-active"
-                        })
+                        .ui-kits-form__buttons-item
+                            +button({
+                                text: "CLICK ME",
+                                link: "/mock-address/change-me",
+                                theme: "icon-link"
+                            })
+                        .ui-kits-form__buttons-item
+                            +button({
+                                text: "CLICK ME",
+                                link: "/mock-address/change-me",
+                                theme: "icon-link",
+                                state: "icon-link-active"
+                            })
                     +button({
                         text: "перейти к оплате",
                         link: "/mock-address/change-me",

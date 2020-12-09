@@ -89,6 +89,7 @@
     }
 
     &__review {
+        max-width: 712px;
         margin-bottom: 22px;
     }
 
@@ -103,8 +104,20 @@
         }
     }
 
+    &__rule {
+        max-width: 255px;
+
+        @media (max-width: $breakpoint-xs) {
+            width: 100%;
+        }
+    
+        @media (max-width: $breakpoint-xxs) {
+            max-width: 305px;
+        }
+    }
+
     &__cancel {
-        max-width: 351px;
+        max-width: 345px;
 
         @media (max-width: $breakpoint-xs) {
             margin-top: 10px;
