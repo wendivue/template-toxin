@@ -8,11 +8,11 @@ mixin checkbox-list({ state, text })
             h3(class="checkbox-list__title")=text
             button(class="checkbox-list__icon " + stateIcon)="expand_more"
             
-        div(class="checkbox-list__items " + state)
+        ul(class="checkbox-list__items " + state)
             for item in itemsList
              - var { id, text } = item;
              - id = id ? "checkbox-list-" + id : "";
-                .checkbox-list__wrapper-checkbox
+                li.checkbox-list__wrapper-checkbox
                     if(item.checked)
                         input(class="checkbox-list__checkbox" id=id type="checkbox" checked)
                     else

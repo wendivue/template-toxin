@@ -8,9 +8,9 @@ mixin checkbox-buttons(object)
         header.checkbox-buttons__wrapper-header
             h3(class="checkbox-buttons__title")=object.text
             
-        div(class="checkbox-buttons__items ")
+        ul(class="checkbox-buttons__items ")
             for item in itemsList
-                .checkbox-buttons__wrapper-checkbox
+                li.checkbox-buttons__wrapper-checkbox
                     if(item.checked)
                         input(class="checkbox-buttons__checkbox" id=item.id ? "checkbox-buttons-" + item.id : "" type="checkbox" checked)
                     else
