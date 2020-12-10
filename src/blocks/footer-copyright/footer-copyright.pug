@@ -1,11 +1,11 @@
 include ../page/page.pug
-include ../centerblock/centerblock.pug
+include ../center-block/center-block.pug
 include ../text-field/text-field.pug
 
 mixin footer-copyright(object)
     .footer-copyright
         +page
-            +centerblock
+            +center-block
                 .footer-copyright__wrapper-logo
                     img(class="footer-copyright__logo" src="img/Logo.png" alt="logo")
                     p(class="footer-copyright__text-logo")=object.textLogo
@@ -31,7 +31,7 @@ mixin footer-copyright(object)
                         })
         .footer-copyright__bottom-footer
             +page
-                +centerblock
+                +center-block
                     p(class="footer-copyright__text")=object.copyright
                     div(class="footer-copyright__social")
                         for icon in object.iconList

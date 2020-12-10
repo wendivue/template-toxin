@@ -2,7 +2,7 @@ include ./include/doctype.pug
 
 include ../blocks/ui-kits-form/ui-kits-form.pug
 include ../blocks/page/page.pug
-include ../blocks/centerblock/centerblock.pug
+include ../blocks/center-block/center-block.pug
 include ../blocks/col-4/col-4.pug
 include ../blocks/text-field/text-field.pug
 include ../blocks/dropdown/dropdown.pug
@@ -24,7 +24,7 @@ include ../blocks/review/review.pug
 img.ui-kits-form__img(src="img/Group.png")
 +ui-kits-form
     +page
-        +centerblock
+        +center-block
             +col-4
                 .ui-kits-form__text-field
                     +text-field({
@@ -280,7 +280,7 @@ img.ui-kits-form__img(src="img/Group.png")
                         ]
                     })
     +page
-        +centerblock
+        +center-block
             .ui-kits-form__col-8
                 +icon-text-list({})
                 .ui-kits-form__review
