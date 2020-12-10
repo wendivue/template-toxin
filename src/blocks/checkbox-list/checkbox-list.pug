@@ -1,7 +1,7 @@
 mixin checkbox-list({ state, text })
-  - var itemsList = [{text: 'Завтрак', id: '1'},{text: 'Письменный стол', id: '2', isChecked: true},{text: 'Стул для кормления', id: '3', isChecked: true},{text: 'Кроватка', id: '4', isChecked: true},{text: 'Телевизор', id: '5'},{text: 'Шампунь', id: '6'},{text: 'Телевизор', id: '7'},{text: 'Шампунь', id: '8'}];
+  - let itemsList = [{text: 'Завтрак', id: '1'},{text: 'Письменный стол', id: '2', isChecked: true},{text: 'Стул для кормления', id: '3', isChecked: true},{text: 'Кроватка', id: '4', isChecked: true},{text: 'Телевизор', id: '5'},{text: 'Шампунь', id: '6'},{text: 'Телевизор', id: '7'},{text: 'Шампунь', id: '8'}];
   - state = state ? "checkbox-list__items--" + state : "";
-  - var stateIcon = state ? "checkbox-list__icon--" + state : "";
+  - const stateIcon = state ? "checkbox-list__icon--" + state : "";
 
   .checkbox-list
     header.checkbox-list__wrapper-header
@@ -10,7 +10,7 @@ mixin checkbox-list({ state, text })
 
     ul(class="checkbox-list__items " + state)
       each item in itemsList
-        - var { id, text } = item;
+        - let { id, text } = item;
         - id = id ? "checkbox-list-" + id : "";
           li.checkbox-list__wrapper-checkbox
             if (item.isChecked)

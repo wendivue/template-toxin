@@ -12,10 +12,10 @@ mixin header(object)
           nav.header__menu
             ul.header__list
               each item in object.itemList
-                - var { state } = item;
+                - let { state } = item;
                 - state = state ? " header__link--" + state : "";
-                - var sizeItem = object.size ? " header__item--" + object.size : "";
-                - var sizeIcon = object.size ? " header__icon--" + object.size : "";
+                - const sizeItem = object.size ? " header__item--" + object.size : "";
+                - const sizeIcon = object.size ? " header__icon--" + object.size : "";
                 li(class="header__item" + sizeItem)
                   a(class="header__link" + state, href=item.link)= item.text
                     if (item.isIcon)
@@ -35,7 +35,7 @@ mixin header(object)
             .header__login
               p.header__text-login= object.textLogin
           else
-            - var smallbuttons = object.size ? " header__wrapper-button--" + object.size : "";
+            - const smallbuttons = object.size ? " header__wrapper-button--" + object.size : "";
             div(class="header__wrapper-button" + smallbuttons)
               .header__button
                 +button(object.loginButton)

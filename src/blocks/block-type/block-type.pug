@@ -1,6 +1,6 @@
 mixin block-type(object)
   each item in object.itemList
-    - var { className, title, text } = item;
+    - let { className, title, text } = item;
     - className = className ? " block-type--" + className : "";
     div(class="block-type" + className)
       p.block-type__title= title

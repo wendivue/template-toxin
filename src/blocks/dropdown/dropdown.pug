@@ -1,13 +1,13 @@
 include ../text-field/text-field.pug
 
 mixin dropdown__item(object)
-  - var itemsRoom = [{text: 'спальни', value: '2', tabindex: 2}, {text: 'кровати', value: '2', tabindex: 3}, {text: 'ванные комнаты', value: '0', tabindex: 4}];
-  - var itemsPeople = [{text: 'взрослые', value: '2', tabindex: 2}, {text: 'дети', value: '1', tabindex: 3}, {text: 'младенцы', value: '0', tabindex: 4}];
+  - let itemsRoom = [{text: 'спальни', value: '2', tabindex: 2}, {text: 'кровати', value: '2', tabindex: 3}, {text: 'ванные комнаты', value: '0', tabindex: 4}];
+  - let itemsPeople = [{text: 'взрослые', value: '2', tabindex: 2}, {text: 'дети', value: '1', tabindex: 3}, {text: 'младенцы', value: '0', tabindex: 4}];
   if (object.isNullPeople)
-    - var itemsPeople = [{text: 'взрослые', value: '0', tabindex: 2}, {text: 'дети', value: '0', tabindex: 3}, {text: 'младенцы', value: '0', tabindex: 4}];
+    - itemsPeople = [{text: 'взрослые', value: '0', tabindex: 2}, {text: 'дети', value: '0', tabindex: 3}, {text: 'младенцы', value: '0', tabindex: 4}];
 
   each item in object.isItemsRoom ? itemsRoom : itemsPeople
-    - var state = item.value == 0 ? " dropdown__button--no-active" : "";
+    - const state = item.value == 0 ? " dropdown__button--no-active" : "";
     .dropdown__item
       p.dropdown__text= item.text
       .dropdown__wrapper-input
@@ -21,10 +21,10 @@ mixin dropdown__item(object)
           button.dropdown__button.dropdown__button-people--increase(type='button') +
 
 mixin dropdown(object)
-  - var { stateMenu, size } = object;
+  - let { stateMenu, size } = object;
   - stateMenu = stateMenu ? " dropdown__menu--" + stateMenu : "";
-  - var sizeDropdown = size ? " dropdown--" + size : "";
-  - var sizeMenu = size ? " dropdown__menu--" + size : "";
+  - const sizeDropdown = size ? " dropdown--" + size : "";
+  - const sizeMenu = size ? " dropdown__menu--" + size : "";
 
   div(class="dropdown" + sizeDropdown)
     +text-field(object)

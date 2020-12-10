@@ -1,5 +1,5 @@
 mixin pie-chart(object)
-  - var itemList = [{text: 'Великолепно', theme: 'great'}, {text: 'Хорошо', theme: 'good'}, {text: 'Удовлетворительно', theme: 'norm'} , {text: 'Разочарован', theme: 'disappoint'}];
+  - const itemList = [{text: 'Великолепно', theme: 'great'}, {text: 'Хорошо', theme: 'good'}, {text: 'Удовлетворительно', theme: 'norm'} , {text: 'Разочарован', theme: 'disappoint'}];
 
   .pie-chart
     .pie-chart__wrapper-img
@@ -10,6 +10,6 @@ mixin pie-chart(object)
 
     ul.pie-chart__list
       each item in itemList
-        - var { theme, text } = item;
+        - let { theme, text } = item;
         - theme = theme ? " pie-chart__item--" + theme : "";
         li(class="pie-chart__item" + theme)= text

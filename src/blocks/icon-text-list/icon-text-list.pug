@@ -1,12 +1,12 @@
 mixin icon-text-list(object)
-  - var comfort = { icon: 'insert_emoticon', title: 'Комфорт', text: 'Шумопоглощающие стены', theme: 'border' };
-  - var convenience = { icon: 'location_city', title: 'Удобство', text: 'Окно в каждой из спален', theme: 'border' };
-  - var cosiness = { icon: 'whatshot', title: 'Уют', text: 'Номер оснащён камином' };
-
+  - const comfort = { icon: 'insert_emoticon', title: 'Комфорт', text: 'Шумопоглощающие стены', theme: 'border' };
+  - const convenience = { icon: 'location_city', title: 'Удобство', text: 'Окно в каждой из спален', theme: 'border' };
+  - const cosiness = { icon: 'whatshot', title: 'Уют', text: 'Номер оснащён камином' };
+  - let itemsList
   if (object.isFull)
-    - var itemsList = [comfort, convenience, cosiness];
+    - itemsList = [comfort, convenience, cosiness];
   else
-    - var itemsList = [comfort, convenience];
+    - itemsList = [comfort, convenience];
 
   .icon-text-list
     each item in itemsList
