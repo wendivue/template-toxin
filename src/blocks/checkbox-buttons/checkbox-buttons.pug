@@ -1,8 +1,8 @@
 mixin checkbox-buttons(object)
   if (object.isRich)
-    - var itemsList = [{text: "Ширина коридоров в номере не менее 91 см.", id: "4", title: "Широкий коридор"}, {text: "На 1 этаже вас встретит специалист и проводит до номера.", id: "5", title: "Помощник для инвалидов"}]
+    - var itemsList = [{text: 'Ширина коридоров в номере не менее 91 см.', id: '4', title: 'Широкий коридор'}, {text: 'На 1 этаже вас встретит специалист и проводит до номера.', id: '5', title: 'Помощник для инвалидов'}]
   else
-    - var itemsList = [{text: "Можно курить", id: "1"}, {text: "Можно с питомцами", id: "2", isChecked: true}, {text: "Можно пригласить гостей (до 10 человек)", id: "3", isChecked: true}];
+    - var itemsList = [{text: 'Можно курить', id: '1'}, {text: 'Можно с питомцами', id: '2', isChecked: true}, {text: 'Можно пригласить гостей (до 10 человек)', id: '3', isChecked: true}];
 
   .checkbox-buttons
     header.checkbox-buttons__wrapper-header

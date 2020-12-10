@@ -6,11 +6,11 @@ mixin sign-in(object)
     h1.sign-in__title= object.title
 
     .sign-in__text-field
-      +text-field({ placeholder: "Email", tabindex: 1, name: "email", type: "text" })
+      +text-field({ placeholder: 'Email', tabindex: 1, name: 'email', type: 'text' })
     .sign-in__text-field
-      +text-field({ placeholder: "Пароль", tabindex: 2, name: "password", type: "text" })
+      +text-field({ placeholder: 'Пароль', tabindex: 2, name: 'password', type: 'text' })
     .sign-in__button
-      +button({ text: "войти", link: object.link, isButtonLarge: true })
+      +button({ text: 'войти', link: object.link, isButtonLarge: true })
     .sign-in__create
       p.sign-in__text Нет аккаунта на Toxin?
-      +button({ text: "создать", link: "page-landing-registration.html", theme: "border" })
+      +button({ text: 'создать', link: 'page-landing-registration.html', theme: 'border' })

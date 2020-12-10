@@ -7,11 +7,11 @@ mixin hotel-search(object)
     h1.hotel-search__title= object.title
 
     .hotel-search__date-picker
-      +date-picker({ text: "прибытие", placeholder: "ДД.ММ.ГГГГ", state: "date", type: "text", className: "datepicker-start", myId: "start", tabindex: 1, iconText: "expand_more", isDateRange: true })
-      +date-picker({ text: "выезд", placeholder: "ДД.ММ.ГГГГ", state: "date", type: "text", className: "datepicker-end", myId: "end", iconText: "expand_more", tabindex: 4 })
+      +date-picker({ text: 'прибытие', placeholder: 'ДД.ММ.ГГГГ', state: 'date', type: 'text', className: 'datepicker-start', myId: 'start', tabindex: 1, iconText: 'expand_more', isDateRange: true })
+      +date-picker({ text: 'выезд', placeholder: 'ДД.ММ.ГГГГ', state: 'date', type: 'text', className: 'datepicker-end', myId: 'end', iconText: 'expand_more', tabindex: 4 })
 
     .hotel-search__dropdown
-      +dropdown({ text: "гости", value: "Сколько гостей", iconText: "expand_more", className: "dropdown-people", tabindex: 3, isItemsPeople: true, isButtonMenu: true, isDropdown: true })
+      +dropdown({ text: 'гости', value: 'Сколько гостей', iconText: 'expand_more', className: 'dropdown-people', tabindex: 3, isItemsPeople: true, isButtonMenu: true, isDropdown: true })
 
     .hotel-search__button
-      +button({ text: "подобрать номер", link: object.link, isButtonLarge: true })
+      +button({ text: 'подобрать номер', link: object.link, isButtonLarge: true })
