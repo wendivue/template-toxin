@@ -1,54 +1,53 @@
 @import '../../scss/global-typography';
 
 .review {
+  @media (max-width: $breakpoint-xs) {
+    width: 300px;
+  }
+
+  &__like-button {
+    align-self: baseline;
+    margin-top: 6px;
 
     @media (max-width: $breakpoint-xs) {
-        width: 300px;
+      align-self: center;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+
+    @media (max-width: $breakpoint-xs) {
+      flex-flow: column;
+      text-align: center;
     }
 
-    &__like-button {
-        align-self: baseline;
-        margin-top: 6px;
-
-        @media (max-width: $breakpoint-xs) {
-            align-self: center;
-        }
+    &:last-child {
+      margin-top: 4px;
     }
+  }
 
-    &__wrapper {
-        display: flex;
-        align-items: center;
+  &__img {
+    margin-right: 9px;
+  }
 
-        @media (max-width: $breakpoint-xs) {
-            flex-flow: column;
-            text-align: center;
-        }
+  &__username {
+    @include typo-body;
+    font-weight: 600;
+  }
 
-        &:last-child {
-            margin-top: 4px;
-        }
+  &__text {
+    @include typo-body;
+    margin-top: 7px;
+    margin-left: 2px;
+
+    @media (max-width: $breakpoint-xs) {
+      text-align: center;
     }
+  }
 
-    &__img {
-        margin-right: 9px;
-    }
-
-    &__username {
-        @include typo-body;
-        font-weight: 600;
-    }
-
-    &__text {
-        @include typo-body;
-        margin-top: 7px;
-        margin-left: 2px;
-
-        @media (max-width: $breakpoint-xs) {
-            text-align: center;
-        }
-    }
-
-    &__date {
-        @include typo-body;
-    }
+  &__date {
+    @include typo-body;
+  }
 }

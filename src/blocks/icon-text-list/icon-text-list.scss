@@ -1,31 +1,30 @@
 @import '../../scss/global-typography';
 
 .icon-text-list {
+  &__item {
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
 
-    &__item {
-        display: flex;
-        align-items: center;
-        padding: 20px 0;
-
-        &--border {
-            border-bottom: 1px solid rgba(31, 32, 65, 0.1);;
-        }
+    &--border {
+      border-bottom: 1px solid rgba(31, 32, 65, 0.1);
     }
+  }
 
-    &__icon {
-        @include material-icons;
-        margin-right: 10px;
-        font-size: 48px;
-        color: $color-primary;
-    }
+  &__icon {
+    @include material-icons;
+    margin-right: 10px;
+    font-size: 48px;
+    color: $color-primary;
+  }
 
-    &__title {
-        @include typo-body;
-        font-weight: bold;
-    }
+  &__title {
+    @include typo-body;
+    font-weight: bold;
+  }
 
-    &__text {
-        @include typo-body;
-        text-transform: none;
-    }
+  &__text {
+    @include typo-body;
+    text-transform: none;
+  }
 }

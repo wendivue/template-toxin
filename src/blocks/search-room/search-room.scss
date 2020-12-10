@@ -1,70 +1,69 @@
 @import '../../scss/global-typography';
 
 .search-room {
+  &__layout-body {
+    padding-bottom: 56px;
+    border-bottom: 1px solid $dark-shade-25;
+  }
 
-    &__layout-body {
-        padding-bottom: 56px;
-        border-bottom: 1px solid $dark-shade-25;
-    }
+  &__date-picker {
+    margin-top: 10px;
+  }
 
-    &__date-picker {
-        margin-top: 10px;
-    }
+  &__dropdown {
+    margin-top: 15px;
+  }
 
-    &__dropdown {
-        margin-top: 15px;
-    }
+  &__range-slider {
+    margin-top: 30px;
+  }
 
-    &__range-slider {
-        margin-top: 30px;
-    }
+  &__checkbox-buttons {
+    max-width: 240px;
+    margin-top: 26px;
+  }
 
-    &__checkbox-buttons {
-        max-width: 240px;
-        margin-top: 26px;
-    }
+  &__text-range-slider {
+    @include typo-body;
+    margin-top: 9px;
+    font-size: 12px;
+  }
 
-    &__text-range-slider {
-        @include typo-body;
-        margin-top: 9px;
-        font-size: 12px;
-    }
+  &__rich {
+    max-width: 240px;
+    margin-top: 34px;
+  }
 
-    &__rich {
-        max-width: 240px;
-        margin-top: 34px;
-    }
+  &__dropdown-room {
+    margin-top: 9px;
+  }
 
-    &__dropdown-room {
-        margin-top: 9px;
-    }
+  &__checkbox-list {
+    margin-top: 25px;
+  }
 
-    &__checkbox-list {
-        margin-top: 25px;
-    }
+  &__content {
+    width: 834px;
+    margin-top: 15px;
+  }
 
-    &__content {
-        width: 834px;
-        margin-top: 15px;
-    }
+  &__title {
+    @include typo-h1;
+    margin-bottom: 21px;
+    text-transform: none;
+  }
 
-    &__title {
-        @include typo-h1;
-        margin-bottom: 21px;
-        text-transform: none;
-    }
+  &__wrapper-hotel-card {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
 
-    &__wrapper-hotel-card {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 20px;
-    }
-
-    &__pagination {
-        display: flex;
-        flex-flow: column;
-        align-items: center;
-        margin-top: 41px;
-        margin-right: 14.6px;
-    }
+  &__pagination {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin-top: 41px;
+    margin-right: 14.6px;
+  }
 }

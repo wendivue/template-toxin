@@ -23,65 +23,65 @@ $line-height--h3: 15px;
 $line-height--body: 24px;
 
 @mixin typo-h1 {
-    font-size: $font-size--h1;
-    font-family: $font-family--h1;
-    font-weight: $font-weight--h1;
-    line-height: $line-height--h1;
-    color: $dark-shade-100;
-    text-transform: capitalize;
+  font-size: $font-size--h1;
+  font-family: $font-family--h1;
+  font-weight: $font-weight--h1;
+  line-height: $line-height--h1;
+  color: $dark-shade-100;
+  text-transform: capitalize;
 
-    @media (max-width: $breakpoint-xs) {
-        font-size: $font-size--h1-xs;
-    }
+  @media (max-width: $breakpoint-xs) {
+    font-size: $font-size--h1-xs;
+  }
 }
 
 @mixin typo-h2 {
-    font-size: $font-size--h2;
-    font-family: $font-family--h2;
-    font-weight: $font-weight--h2;
-    line-height: $line-height--h2;
-    color: $dark-shade-100;
+  font-size: $font-size--h2;
+  font-family: $font-family--h2;
+  font-weight: $font-weight--h2;
+  line-height: $line-height--h2;
+  color: $dark-shade-100;
 
-    @media (max-width: $breakpoint-xs) {
-        font-size: $font-size--h2-xs;
-    }
+  @media (max-width: $breakpoint-xs) {
+    font-size: $font-size--h2-xs;
+  }
 }
-  
+
 @mixin typo-h3 {
-    font-size: $font-size--h3;
-    font-family: $font-family--h3;
-    font-weight: $font-weight--h3;
-    line-height: $line-height--h3;
-    color: $dark-shade-100;
-    text-transform: uppercase;
+  font-size: $font-size--h3;
+  font-family: $font-family--h3;
+  font-weight: $font-weight--h3;
+  line-height: $line-height--h3;
+  color: $dark-shade-100;
+  text-transform: uppercase;
 }
 
 @mixin typo-body {
-    font-size: $font-size--body;
-    font-family: $font-family--body;
-    font-weight: $font-weight--body;
-    line-height: $line-height--body;
-    color: $dark-shade-75;
+  font-size: $font-size--body;
+  font-family: $font-family--body;
+  font-weight: $font-weight--body;
+  line-height: $line-height--body;
+  color: $dark-shade-75;
 }
 
 @mixin material-icons {
-    font-family: 'Material Icons';
-    font-weight: normal;
-    font-style: normal;
-    font-size: 24px;
-    color: $dark-shade-50;
-    display: inline-block;
-    line-height: 1;
-    text-transform: none;
-    border: none;
-    background: none;
-    letter-spacing: normal;
-    word-wrap: normal;
-    white-space: nowrap;
-    direction: ltr;
-  
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-    -moz-osx-font-smoothing: grayscale;
-    font-feature-settings: 'liga';
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  color: $dark-shade-50;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  border: none;
+  background: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga';
 }

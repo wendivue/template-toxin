@@ -1,18 +1,18 @@
 mixin button({ theme, size, state, themeHeader, isButtonLarge, link, text, isButton })
-    - theme = (theme ? " button--" + theme : "");
-    - size = (size ? " button--" + size : "");
-    - state = (state ? " button--" + state : "");
-    - themeHeader = (themeHeader ? " button--" + themeHeader : "");
+  - theme = theme ? " button--" + theme : "";
+  - size = size ? " button--" + size : "";
+  - state = state ? " button--" + state : "";
+  - themeHeader = themeHeader ? " button--" + themeHeader : "";
 
-    if(isButton)
-        if(!isButtonLarge)
-            button(class="button" + theme + size + state + themeHeader href=link)=text
-        else
-            button(class="button button--large" + theme + size + state + themeHeader href=link)=text
-                i(class="button__icon") arrow_forward
+  if (isButton)
+    if (!isButtonLarge)
+      button(class="button" + theme + size + state + themeHeader, href=link)= text
     else
-        if(!isButtonLarge)
-            a(class="button" + theme + size + state + themeHeader href=link)=text
-        else
-            a(class="button button--large" + theme + size + state + themeHeader href=link)=text
-                i(class="button__icon") arrow_forward
+      button(class="button button--large" + theme + size + state + themeHeader, href=link)= text
+        i.button__icon arrow_forward
+  else
+    if (!isButtonLarge)
+      a(class="button" + theme + size + state + themeHeader, href=link)= text
+    else
+      a(class="button button--large" + theme + size + state + themeHeader, href=link)= text
+        i.button__icon arrow_forward

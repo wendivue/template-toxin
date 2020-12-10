@@ -1,78 +1,79 @@
 @import '../../scss/global-typography';
 
 .text-field {
+  display: flex;
+  flex-flow: column;
+
+  &__wrapper-text {
+    height: 25px;
     display: flex;
-    flex-flow: column;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-    &__wrapper-text {
-        height: 25px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+  &__text-state {
+    @include typo-h3;
+    padding-top: 3px;
+    align-self: baseline;
+    color: $dark-shade-50;
+    font-weight: normal;
+  }
+
+  &__label {
+    @include typo-h3;
+  }
+
+  &__input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  &__input {
+    @include typo-body;
+    width: 100%;
+    min-height: 44px;
+    padding-left: 15px;
+    color: $dark-shade-25;
+    border: 1px solid $dark-shade-25;
+    border-radius: 4px;
+    box-sizing: border-box;
+
+    &:hover,
+    &:focus,
+    &--active {
+      color: $dark-shade-75;
+      border: 1px solid $dark-shade-50;
     }
 
-    &__text-state {
-        @include typo-h3;
-        padding-top: 3px;
-        align-self: baseline;
-        color: $dark-shade-50;
-        font-weight: normal;
-    }
-    
-    &__label {
-        @include typo-h3;
+    &--open {
+      border-radius: 4px 4px 0 0;
     }
 
-    &__input-wrapper {
-        position: relative;
-        display: flex;
-        align-items: center;
+    &--date {
+      max-width: 150px;
+
+      @media (max-width: $breakpoint-xxs) {
+        max-width: 140px;
+      }
     }
+  }
 
-    &__input {
-        @include typo-body;
-        width: 100%;
-        min-height: 44px;
-        padding-left: 15px;
-        color: $dark-shade-25;
-        border: 1px solid $dark-shade-25;
-        border-radius: 4px;
-        box-sizing: border-box;
+  &__icon {
+    @include material-icons;
+    position: absolute;
+    padding: 10px;
+    pointer-events: none;
+    right: 0;
 
-
-        &:hover, &:focus, &--active {
-            color: $dark-shade-75;
-            border: 1px solid $dark-shade-50;
-        }
-
-        &--open {
-            border-radius: 4px 4px 0 0;
-        }
-
-        &--date {
-            max-width: 150px;
-
-            @media (max-width: $breakpoint-xxs) {
-                max-width: 140px;
-            }
-        }
+    &--submit {
+      color: $color-primary;
+      pointer-events: painted;
+      cursor: pointer;
     }
+  }
 
-    &__icon {
-        @include material-icons;
-        position: absolute;
-        padding: 10px;
-        pointer-events: none;
-        right: 0;
-
-        &--submit {
-            color: $color-primary;
-            pointer-events: painted;
-            cursor: pointer;
-        }
-    }
-
-    &--small {
-        max-width: 266px;
-    }
+  &--small {
+    max-width: 266px;
+  }
 }

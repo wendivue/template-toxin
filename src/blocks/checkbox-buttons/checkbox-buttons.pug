@@ -1,24 +1,33 @@
 mixin checkbox-buttons(object)
-    if(object.isRich)
-        - var itemsList = [{text: "Ширина коридоров в номере не менее 91 см.", id: "4", title: "Широкий коридор"}, {text: "На 1 этаже вас встретит специалист и проводит до номера.", id: "5", title: "Помощник для инвалидов"}]
-    else
-        - var itemsList = [{text: "Можно курить", id: "1"}, {text: "Можно с питомцами", id: "2", isChecked: true}, {text: "Можно пригласить гостей (до 10 человек)", id: "3", isChecked: true}];
+  if (object.isRich)
+    - var itemsList = [{text: "Ширина коридоров в номере не менее 91 см.", id: "4", title: "Широкий коридор"}, {text: "На 1 этаже вас встретит специалист и проводит до номера.", id: "5", title: "Помощник для инвалидов"}]
+  else
+    - var itemsList = [{text: "Можно курить", id: "1"}, {text: "Можно с питомцами", id: "2", isChecked: true}, {text: "Можно пригласить гостей (до 10 человек)", id: "3", isChecked: true}];
 
-    .checkbox-buttons
-        header.checkbox-buttons__wrapper-header
-            h3(class="checkbox-buttons__title")=object.text
-            
-        ul(class="checkbox-buttons__items ")
-            for item in itemsList
-                li.checkbox-buttons__wrapper-checkbox
-                    if(item.isChecked)
-                        input(class="checkbox-buttons__checkbox" id=item.id ? "checkbox-buttons-" + item.id : "" type="checkbox" checked)
-                    else
-                        input(class="checkbox-buttons__checkbox" id=item.id ? "checkbox-buttons-" + item.id : "" type="checkbox")
+  .checkbox-buttons
+    header.checkbox-buttons__wrapper-header
+      h3.checkbox-buttons__title= object.text
 
-                    if(object.isRich)
-                        .checkbox-buttons__wrapper-text
-                            p(class="checkbox-buttons__text")=item.title
-                            label(class="checkbox-buttons__label checkbox-buttons__label--small" for=item.id ? "checkbox-buttons-" + item.id : "")=item.text
-                    else
-                        label(class="checkbox-buttons__label" for=item.id ? "checkbox-buttons-" + item.id : "")=item.text
+    ul.checkbox-buttons__items
+      each item in itemsList
+        li.checkbox-buttons__wrapper-checkbox
+          if (item.isChecked)
+            input.checkbox-buttons__checkbox(
+              id=item.id ? "checkbox-buttons-" + item.id : "",
+              type='checkbox',
+              checked
+            )
+          else
+            input.checkbox-buttons__checkbox(
+              id=item.id ? "checkbox-buttons-" + item.id : "",
+              type='checkbox'
+            )
+
+          if (object.isRich)
+            .checkbox-buttons__wrapper-text
+              p.checkbox-buttons__text= item.title
+              label.checkbox-buttons__label.checkbox-buttons__label--small(
+                for=item.id ? "checkbox-buttons-" + item.id : ""
+              )= item.text
+          else
+            label.checkbox-buttons__label(for=item.id ? "checkbox-buttons-" + item.id : "")= item.text

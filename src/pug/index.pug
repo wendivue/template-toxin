@@ -5,8 +5,8 @@ include ../blocks/center-block/center-block.pug
 
 +doctype({title: "Main"})
 +page
-    +center-block
-        - var itemListLink = [{link: "page-landing-page.html"}, {link: "page-landing-registration.html"}, {link: "page-landing-sign-in.html"}, {link: "page-room-details.html"}, {link: "page-search-room.html"}, {link: "ui-kits-cards-elements.html"}, {link: "ui-kits-colors-type.html"}, {link: "ui-kits-form-elements.html"}, {link: "ui-kits-header-footer-page.html"}]
+  +center-block
+    - var itemListLink = [{ link: "page-landing-page.html" }, { link: "page-landing-registration.html" }, { link: "page-landing-sign-in.html" }, { link: "page-room-details.html" }, { link: "page-search-room.html" }, { link: "ui-kits-cards-elements.html" }, { link: "ui-kits-colors-type.html" }, { link: "ui-kits-form-elements.html" }, { link: "ui-kits-header-footer-page.html" }];
 
-        for item in itemListLink
-            a(class="main" href=item.link)=item.link
+    each item in itemListLink
+      a.main(href=item.link)= item.link

@@ -1,16 +1,15 @@
 mixin range-slider(object)
+  - var config = { dataMin: "0", dataMax: "15500", dataFrom: "5000", dataTo: "10000" };
 
-    - var config = {dataMin: "0", dataMax: "15500", dataFrom: "5000", dataTo: "10000"}
+  .range-slider
+    .range-slider__header
+      h3.range-slider__title= object.text
 
-    .range-slider
-        .range-slider__header
-            h3(class="range-slider__title")=object.text
-
-        input.range-slider__input(
-            type="text",
-            value="",
-            data-min=config.dataMin, 
-            data-max=config.dataMax,
-            data-from=config.dataFrom,
-            data-to=config.dataTo
-        )
+    input.range-slider__input(
+      type='text',
+      value='',
+      data-min=config.dataMin,
+      data-max=config.dataMax,
+      data-from=config.dataFrom,
+      data-to=config.dataTo
+    )

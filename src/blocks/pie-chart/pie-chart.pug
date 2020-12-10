@@ -1,15 +1,15 @@
 mixin pie-chart(object)
-    - var itemList = [{text: "Великолепно", theme: "great"}, {text: "Хорошо", theme: "good"}, {text: "Удовлетворительно", theme: "norm"} , {text: "Разочарован", theme: "disappoint"}];
+  - var itemList = [{text: "Великолепно", theme: "great"}, {text: "Хорошо", theme: "good"}, {text: "Удовлетворительно", theme: "norm"} , {text: "Разочарован", theme: "disappoint"}];
 
-    .pie-chart
-        .pie-chart__wrapper-img
-            img(class="pie-chart__img-diagram" src=object.img)
-            .pie-chart__wrapper-text-diagram
-                p(class="pie-chart__text-diagram pie-chart__text-diagram--big")=object.votes
-                p(class="pie-chart__text-diagram") голосов
+  .pie-chart
+    .pie-chart__wrapper-img
+      img.pie-chart__img-diagram(src=object.img)
+      .pie-chart__wrapper-text-diagram
+        p.pie-chart__text-diagram.pie-chart__text-diagram--big= object.votes
+        p.pie-chart__text-diagram голосов
 
-        ul.pie-chart__list
-            for item in itemList
-                - var { theme, text } = item
-                - theme = (theme ? " pie-chart__item--" + theme : "");
-                li(class="pie-chart__item" + theme)=text
+    ul.pie-chart__list
+      each item in itemList
+        - var { theme, text } = item;
+        - theme = theme ? " pie-chart__item--" + theme : "";
+        li(class="pie-chart__item" + theme)= text

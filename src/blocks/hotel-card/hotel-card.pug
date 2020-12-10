@@ -1,29 +1,29 @@
 include ../rate-button/rate-button.pug
 
 mixin hotel-card(object)
-    - var altText = "image-люкс-" + object.number;
+  - var altText = "image-люкс-" + object.number;
 
-    .hotel-card
-        .hotel-card__slider
-            div(class="owl-carousel owl-theme")
-                for item in object.itemList
-                    a(class="hotel-card__link" href=object.link)
-                        img(class="hotel-card__img" src=item.img alt=altText)
+  .hotel-card
+    .hotel-card__slider
+      .owl-carousel.owl-theme
+        each item in object.itemList
+          a.hotel-card__link(href=object.link)
+            img.hotel-card__img(src=item.img, alt=altText)
 
-        .hotel-card__description
-            .hotel-card__wrapper-head
-                .hotel-card__items-number
-                    p(class="hotel-card__number hotel-card__number--small") № 
-                        span(class="hotel-card__number hotel-card__number--big")=object.number
-                        if(object.isLux)
-                            span(class="hotel-card__number hotel-card__number--primary-color")  люкс
-                .hotel-card__items-price
-                    span(class="hotel-card__text hotel-card__text--bold")=object.price
-                    p(class="hotel-card__text") в сутки
+    .hotel-card__description
+      .hotel-card__wrapper-head
+        .hotel-card__items-number
+          p.hotel-card__number.hotel-card__number--small №
+            span.hotel-card__number.hotel-card__number--big= object.number
+            if (object.isLux)
+              span.hotel-card__number.hotel-card__number--primary-color люкс
+        .hotel-card__items-price
+          span.hotel-card__text.hotel-card__text--bold= object.price
+          p.hotel-card__text в сутки
 
-            .hotel-card__wrapper-reviews
-                .hotel-card__rate-button
-                    +rate-button(object)
-                .hotel-card__reviews
-                    span(class="hotel-card__text hotel-card__text--bold")=object.reviews
-                    p(class="hotel-card__text") Отзывов
+      .hotel-card__wrapper-reviews
+        .hotel-card__rate-button
+          +rate-button(object)
+        .hotel-card__reviews
+          span.hotel-card__text.hotel-card__text--bold= object.reviews
+          p.hotel-card__text Отзывов

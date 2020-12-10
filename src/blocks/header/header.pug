@@ -3,41 +3,41 @@ include ../page/page.pug
 include ../center-block/center-block.pug
 
 mixin header(object)
-    .header
-        +page
-            +center-block
-                img(class="header__logo" src="img/Logo.png" alt="logo")
+  .header
+    +page
+      +center-block
+        img.header__logo(src='img/Logo.png', alt='logo')
 
-                .header__wrapper-menu
-                    nav(class="header__menu")
-                        ul(class="header__list")
-                            for item in object.itemList
-                                - var {state} = item;
-                                - state = (state ? " header__link--" + state : "");
-                                - var sizeItem = (object.size ? " header__item--" + object.size : "");
-                                - var sizeIcon = (object.size ? " header__icon--" + object.size : "");
-                                li(class="header__item" + sizeItem)
-                                    a(class="header__link" + state href=item.link)=item.text
-                                        if(item.isIcon)
-                                            i(class="header__icon" + sizeIcon) expand_more
-                                    if(item.isIcon && item.isSubItemList)
-                                        ul(class="header__submenu")
-                                            for subItem in object.subItemList1
-                                                li(class="header__subitem")
-                                                    a(class="header__link" href=subItem.link)=subItem.text
-                                    else if(item.isIcon && item.isSubItemList2)
-                                        ul(class="header__submenu")
-                                            for subItem in object.subItemList2
-                                                li(class="header__subitem")
-                                                    a(class="header__link" href=subItem.link)=subItem.text
+        .header__wrapper-menu
+          nav.header__menu
+            ul.header__list
+              each item in object.itemList
+                - var { state } = item;
+                - state = state ? " header__link--" + state : "";
+                - var sizeItem = object.size ? " header__item--" + object.size : "";
+                - var sizeIcon = object.size ? " header__icon--" + object.size : "";
+                li(class="header__item" + sizeItem)
+                  a(class="header__link" + state, href=item.link)= item.text
+                    if (item.isIcon)
+                      i(class="header__icon" + sizeIcon) expand_more
+                  if (item.isIcon && item.isSubItemList)
+                    ul.header__submenu
+                      each subItem in object.subItemList1
+                        li.header__subitem
+                          a.header__link(href=subItem.link)= subItem.text
+                  else if (item.isIcon && item.isSubItemList2)
+                    ul.header__submenu
+                      each subItem in object.subItemList2
+                        li.header__subitem
+                          a.header__link(href=subItem.link)= subItem.text
 
-                    if(object.textLogin)
-                        .header__login
-                            p(class="header__text-login")=object.textLogin
-                    else
-                        - var smallbuttons = (object.size ? " header__wrapper-button--" + object.size : "");
-                        div(class="header__wrapper-button" + smallbuttons)
-                            .header__button
-                                +button(object.loginButton)
-                            .header__button
-                                +button(object.registerButton)
+          if (object.textLogin)
+            .header__login
+              p.header__text-login= object.textLogin
+          else
+            - var smallbuttons = object.size ? " header__wrapper-button--" + object.size : "";
+            div(class="header__wrapper-button" + smallbuttons)
+              .header__button
+                +button(object.loginButton)
+              .header__button
+                +button(object.registerButton)

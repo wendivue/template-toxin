@@ -1,126 +1,127 @@
 @import '../../scss/global-typography';
 
 .header {
-    box-shadow: 0px 10px 20px $dark-shade-5;
+  box-shadow: 0px 10px 20px $dark-shade-5;
 
-    &__wrapper-menu {
-        display: flex;
-        align-items: center;
-        flex-flow: wrap;
+  &__wrapper-menu {
+    display: flex;
+    align-items: center;
+    flex-flow: wrap;
 
-        @media (max-width: $breakpoint-xs) {
-            flex-flow: nowrap;
-        }
+    @media (max-width: $breakpoint-xs) {
+      flex-flow: nowrap;
+    }
+  }
+
+  &__logo {
+    height: 40px;
+  }
+
+  &__list {
+    display: flex;
+
+    @media (max-width: $breakpoint-xs) {
+      flex-flow: column;
+    }
+  }
+
+  &__item {
+    margin-left: 20px;
+
+    @media (max-width: $breakpoint-xs) {
+      margin: 0;
     }
 
-    &__logo {
-        height: 40px;
+    &:hover .header__submenu {
+      display: block;
     }
 
-    &__list {
-        display: flex;
+    &--small {
+      margin-left: 30px;
+    }
+  }
 
-        @media (max-width: $breakpoint-xs) {
-            flex-flow: column;
-        }
+  &__link {
+    @include typo-body;
+    display: flex;
+    color: $dark-shade-50;
+    text-decoration: none;
+
+    &:hover,
+    &--active {
+      color: $dark-shade-75;
+      text-shadow: 0.7px 0.1px 0px $dark-shade-50, -0.7px -0.1px 0px $dark-shade-50;
+    }
+  }
+
+  &__icon {
+    @include material-icons;
+    position: relative;
+    color: $dark-shade-50;
+
+    &--small {
+      margin-right: -13px;
+    }
+  }
+
+  &__submenu {
+    position: absolute;
+    display: none;
+    padding: 5px;
+    background: #fff;
+    border-right: 1px solid $dark-shade-5;
+    border-bottom: 1px solid $dark-shade-5;
+    border-left: 1px solid $dark-shade-5;
+    box-shadow: 0px 3px 7px $dark-shade-5;
+    z-index: 10;
+  }
+
+  &__subitem {
+    border-bottom: 1px solid $dark-shade-5;
+    padding: 10px;
+
+    &:last-child {
+      border: none;
+    }
+  }
+
+  &__login {
+    margin-left: 30px;
+    padding: 3px 0 3px 31px;
+    border-left: 1px solid rgba(31, 32, 65, 0.1);
+
+    @media (max-width: $breakpoint-xs) {
+      margin-left: 0;
+      padding: 3px 0 3px 7px;
+    }
+  }
+
+  &__text-login {
+    @include typo-body;
+    color: $dark-shade-50;
+  }
+
+  &__wrapper-button {
+    display: flex;
+    margin-left: 2px;
+
+    @media (max-width: $breakpoint-xs) {
+      flex-flow: column;
+      align-items: center;
+      margin-left: 0;
     }
 
-    &__item {
-        margin-left: 20px;
-
-        @media (max-width: $breakpoint-xs) {
-            margin: 0;
-        }
-
-        &:hover .header__submenu{
-            display: block;
-        }
-
-        &--small {
-            margin-left: 30px;
-        }
+    &--small {
+      margin-left: 7px;
     }
+  }
 
-    &__link {
-        @include typo-body;
-        display: flex;
-        color: $dark-shade-50;
-        text-decoration: none;
+  &__button {
+    margin-left: 20px;
 
-        &:hover, &--active {
-            color: $dark-shade-75;
-            text-shadow: 0.70px 0.1px 0px $dark-shade-50, -0.70px -0.1px 0px $dark-shade-50;
-        }
+    @media (max-width: $breakpoint-xs) {
+      margin-top: 5px;
+      margin-left: 0;
     }
-
-    &__icon {
-        @include material-icons;
-        position: relative;
-        color: $dark-shade-50;
-
-        &--small {
-            margin-right: -13px;
-        }
-    }
-
-    &__submenu {
-        position: absolute;
-        display: none;
-        padding: 5px;
-        background: #fff;
-        border-right: 1px solid $dark-shade-5;
-        border-bottom: 1px solid $dark-shade-5;
-        border-left: 1px solid $dark-shade-5;
-        box-shadow: 0px 3px 7px $dark-shade-5;
-        z-index: 10;
-    }
-
-    &__subitem {
-        border-bottom: 1px solid $dark-shade-5;
-        padding: 10px;
-
-        &:last-child {
-            border: none;
-        }
-    }
-
-    &__login {
-        margin-left: 30px;
-        padding: 3px 0 3px 31px;
-        border-left: 1px solid rgba(31, 32, 65, 0.1);
-
-        @media (max-width: $breakpoint-xs) {
-            margin-left: 0;
-            padding: 3px 0 3px 7px;
-        }
-    }
-
-    &__text-login {
-        @include typo-body;
-        color: $dark-shade-50;
-    }
-
-    &__wrapper-button {
-        display: flex;
-        margin-left: 2px;
-
-        @media (max-width: $breakpoint-xs) {
-            flex-flow: column;
-            align-items: center;
-            margin-left: 0;
-        }
-
-        &--small {
-            margin-left: 7px;
-        }
-    }
-
-    &__button {
-        margin-left: 20px;
-
-        @media (max-width: $breakpoint-xs) {
-            margin-top: 5px;
-            margin-left: 0;
-        }
-    }
+  }
 }

@@ -1,70 +1,70 @@
 @import '../../scss/global-typography';
 
 .checkbox-buttons {
+  &__wrapper-header {
+    display: flex;
+    margin-bottom: 12px;
+    align-items: center;
+    color: $dark-shade-50;
+  }
 
-    &__wrapper-header {
-        display: flex;
-        margin-bottom: 12px;
-        align-items: center;
-        color: $dark-shade-50;
+  &__wrapper-checkbox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5.4px;
+  }
+
+  &__checkbox {
+    -webkit-appearance: none;
+    align-self: start;
+    min-width: 20px;
+    height: 20px;
+    margin-left: 0;
+    margin-right: 9px;
+    background-color: #fff;
+    border: 1px solid $dark-shade-25;
+    box-sizing: border-box;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:checked {
+      line-height: 14px;
+      position: relative;
+      color: $color-primary;
+      border: 1px solid $color-primary;
     }
 
-    &__wrapper-checkbox {
-        display: flex;
-        align-items: center;
-        margin-bottom: 5.4px;
+    &:checked:after {
+      position: absolute;
+      top: 3px;
+      left: 4px;
+      width: 10px;
+      height: 10px;
+      content: '';
+      background: url('../img/Vector.png') no-repeat;
     }
+  }
 
-    &__checkbox {
-        -webkit-appearance: none;
-        align-self: start;
-        min-width: 20px;
-        height: 20px;
-        margin-left: 0;
-        margin-right: 9px;
-        background-color: #fff;
-        border: 1px solid $dark-shade-25;
-        box-sizing: border-box;
-        border-radius: 4px;
-        cursor: pointer;
+  &__label {
+    @include typo-body;
+    color: $dark-shade-50;
+    line-height: 18px;
+    text-transform: none;
+    cursor: pointer;
 
-        &:checked {line-height: 14px;
-            position: relative;
-            color: $color-primary;
-            border: 1px solid $color-primary;
-        }
-
-        &:checked:after {
-            position: absolute;
-            top: 3px;
-            left: 4px;
-            width: 10px;
-            height: 10px;
-            content: '';
-            background: url("../img/Vector.png") no-repeat;
-        }
+    &--small {
+      font-size: 12px;
+      line-height: 14px;
     }
+  }
 
-    &__label {
-        @include typo-body;
-        color: $dark-shade-50;
-        line-height: 18px;
-        text-transform: none;
-        cursor: pointer;
+  &__title {
+    @include typo-h3;
+  }
 
-        &--small {
-            font-size: 12px;
-            line-height: 14px;
-        }
-    }
-
-    &__title {
-        @include typo-h3;
-    }
-
-    &__text {
-        @include typo-body;
-        font-weight: bold;
-        text-transform: none;
-    }
+  &__text {
+    @include typo-body;
+    font-weight: bold;
+    text-transform: none;
+  }
 }

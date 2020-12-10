@@ -1,137 +1,136 @@
 @import '../../scss/global-typography';
 
 .hotel-card {
-    width: 270px;
+  width: 270px;
 
-    &__img {
-        border-radius: 4px 4px 0 0;
+  &__img {
+    border-radius: 4px 4px 0 0;
+  }
+
+  &__description {
+    padding: 29px 18px 19px 20px;
+    background-color: #fff;
+    box-shadow: 0px 10px 20px $dark-shade-5;
+    border-radius: 0 0 4px 4px;
+  }
+
+  &__wrapper-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(31, 32, 65, 0.1);
+  }
+
+  &__items-price {
+    display: flex;
+  }
+
+  &__wrapper-reviews {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+  }
+
+  &__reviews {
+    display: flex;
+    padding-right: 10px;
+  }
+
+  &__icon {
+    @include material-icons;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  &__number {
+    @include typo-h3;
+    font-weight: bold;
+    color: $dark-shade-100;
+
+    &--primary-color {
+      color: $color-primary;
+      margin-left: 8px;
     }
 
-    &__description {
-        padding: 29px 18px 19px 20px;
-        background-color: #fff;
-        box-shadow: 0px 10px 20px $dark-shade-5;
-        border-radius: 0 0 4px 4px;
+    &--big {
+      font-size: 16px;
     }
 
-    &__wrapper-head {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-bottom: 8px;
-        border-bottom: 1px solid rgba(31, 32, 65, 0.1);
+    &--small {
+      @include typo-body;
+      font-weight: bold;
+      color: $dark-shade-100;
     }
+  }
 
-    &__items-price {
-        display: flex;
+  &__text {
+    @include typo-body;
+    font-size: 12px;
+    color: $dark-shade-50;
+
+    &--bold {
+      font-size: 14px;
+      font-weight: bold;
+      padding-right: 5px;
     }
-
-    &__wrapper-reviews {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 8px;
-    }
-
-    &__reviews {
-        display: flex;
-        padding-right: 10px;
-    }
-
-    &__icon {
-        @include material-icons;
-        color: #fff;
-        cursor: pointer;
-    }
-
-    &__number {
-        @include typo-h3;
-        font-weight: bold;
-        color: $dark-shade-100;
-
-        &--primary-color {
-            color: $color-primary;
-            margin-left: 8px;
-        }
-
-        &--big {
-            font-size: 16px;
-        }
-
-        &--small {
-            @include typo-body;
-            font-weight: bold;
-            color: $dark-shade-100;
-        }
-    }
-
-    &__text {
-        @include typo-body;
-        font-size: 12px;
-        color: $dark-shade-50;
-
-        &--bold {
-            font-size: 14px;
-            font-weight: bold;
-            padding-right: 5px;
-        }
-    }
+  }
 }
 
 .owl-carousel {
-
-    &:hover {
-        .owl-nav {
-            display: block;
-        }
+  &:hover {
+    .owl-nav {
+      display: block;
     }
+  }
 }
 
 .owl-nav {
-    display: none;
+  display: none;
 }
 
 .owl-nav > button {
-    margin-top: -26px;
-    position: absolute;
-    top: 61%;
-    font-size: 24px;
-    color: #cdcbcd;
-    outline: none;
+  margin-top: -26px;
+  position: absolute;
+  top: 61%;
+  font-size: 24px;
+  color: #cdcbcd;
+  outline: none;
 }
 
 .owl-nav i {
-    font-size: 24px;
-    color: #fff;  
+  font-size: 24px;
+  color: #fff;
 }
 
 .owl-nav .owl-prev {
-    left: 10px;
-    transform: rotate(90deg);
+  left: 10px;
+  transform: rotate(90deg);
 }
 
 .owl-nav .owl-next {
-    right: 10px;
-    transform: rotate(-90deg);
+  right: 10px;
+  transform: rotate(-90deg);
 }
 
 .owl-dots {
-    position: relative;
-    margin-top: -27px;
-    margin-left: 212px;
+  position: relative;
+  margin-top: -27px;
+  margin-left: 212px;
 }
 
 .owl-theme .owl-dot span {
-    width: 5px;
-    height: 5px;
-    margin: 5px 2px;
-    border: 1px solid #fff;
-    display: block;
-    border-radius: 30px;
-    transition: opacity .2s ease;
+  width: 5px;
+  height: 5px;
+  margin: 5px 2px;
+  border: 1px solid #fff;
+  display: block;
+  border-radius: 30px;
+  transition: opacity 0.2s ease;
 }
 
 .owl-theme .active span {
-    width: 5px;
-    height: 5px;
-    background: #fff;
+  width: 5px;
+  height: 5px;
+  background: #fff;
 }

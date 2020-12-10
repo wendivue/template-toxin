@@ -1,10 +1,9 @@
 mixin block-color(object)
-
-    for item in object.itemList
-        .block-color
-            - var { theme, title , text } = item;
-            - theme = (theme ? " block-color__square--" + theme : "");
-            div.block-color__square(class="block-color__square--" + theme)
-            .block-color__wrapper-text
-                h2(class="block-color__title")=title
-                p(class="block-color__text")=text
+  each item in object.itemList
+    .block-color
+      - var { theme, title, text } = item;
+      - theme = theme ? " block-color__square--" + theme : "";
+      .block-color__square(class="block-color__square--" + theme)
+      .block-color__wrapper-text
+        h2.block-color__title= title
+        p.block-color__text= text

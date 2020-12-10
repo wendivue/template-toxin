@@ -1,128 +1,128 @@
 @import '../../scss/global-typography';
 
 .footer-copyright {
-    padding: 85px 0 0 0;
+  padding: 85px 0 0 0;
+
+  @media (max-width: $breakpoint-xs) {
+    padding: 25px 0 0 0;
+  }
+
+  .fa {
+    font-size: 24px;
+    color: $color-primary;
+  }
+
+  &__wrapper-logo {
+    max-width: 260px;
+
+    @media (max-width: $breakpoint-md) {
+      max-width: 447px;
+      padding: 10px 0;
+    }
+  }
+
+  &__logo {
+    height: 40px;
+    margin-bottom: 15px;
+  }
+
+  &__title {
+    @include typo-h3;
+  }
+
+  &__text {
+    @include typo-body;
+  }
+
+  &__text-logo {
+    @include typo-body;
+  }
+
+  &__wrapper-list {
+    display: flex;
+    width: 555px;
+    justify-content: space-between;
+    flex-flow: wrap;
+
+    @media (max-width: $breakpoint-md) {
+      width: auto;
+      padding: 10px 0;
+    }
+  }
+
+  &__list {
+    flex-basis: 28.7%;
+    padding-top: 4px;
+  }
+
+  &__list-item {
+    margin-bottom: 22px;
+
+    @media (max-width: $breakpoint-md) {
+      width: auto;
+    }
 
     @media (max-width: $breakpoint-xs) {
-        padding: 25px 0 0 0;
+      margin-bottom: 10px;
     }
+  }
 
-    .fa {
-        font-size: 24px;
-        color: $color-primary;
+  &__link {
+    @include typo-body;
+    color: $dark-shade-50;
+    text-decoration: none;
+    line-height: 15px;
+
+    &:hover,
+    &--active {
+      color: $dark-shade-75;
+      font-weight: bold;
     }
+  }
 
-    &__wrapper-logo {
-        max-width: 260px;
+  &__wrapper-subscribe {
+    width: 260px;
+    margin-top: 4px;
 
-        @media (max-width: $breakpoint-md) {
-            max-width: 447px;
-            padding: 10px 0;
-        }
+    @media (max-width: $breakpoint-md) {
+      width: auto;
     }
+  }
 
-    &__logo {
-        height: 40px;
-        margin-bottom: 15px;
+  &__title-subscribe {
+    @include typo-h3;
+  }
+
+  &__text-subscribe {
+    @include typo-body;
+    padding-top: 18px;
+  }
+
+  &__subscribe {
+    padding-top: 23px;
+  }
+
+  &__wrapper-text {
+    flex-flow: column;
+  }
+
+  &__link-icon {
+    margin-left: 25px;
+
+    &:first-child {
+      margin: 0;
     }
+  }
 
-    &__title {
-        @include typo-h3;
+  &__bottom-footer {
+    border-top: 1px solid $dark-shade-5;
+    margin-top: 64px;
+    padding: 9px 0 7px 0;
+  }
+
+  &__social {
+    @media (max-width: $breakpoint-md) {
+      padding-top: 10px;
     }
-
-    &__text {
-        @include typo-body;
-    }
-
-    &__text-logo {
-        @include typo-body;
-    }
-
-    &__wrapper-list {
-        display: flex;
-        width: 555px;
-        justify-content: space-between;
-        flex-flow: wrap;
-
-        @media (max-width: $breakpoint-md) {
-            width: auto;
-            padding: 10px 0;
-        }
-    }
-
-    &__list {
-        flex-basis: 28.7%;
-        padding-top: 4px;
-    }
-
-    &__list-item {
-        margin-bottom: 22px;
-
-        @media (max-width: $breakpoint-md) {
-            width: auto;
-        }
-
-        @media (max-width: $breakpoint-xs) {
-            margin-bottom: 10px;
-        }
-    }
-
-    &__link {
-        @include typo-body;
-        color: $dark-shade-50;
-        text-decoration: none;
-        line-height: 15px;
-
-        &:hover, &--active {
-            color: $dark-shade-75;
-            font-weight: bold;
-        }
-    }
-
-    &__wrapper-subscribe {
-        width: 260px;
-        margin-top: 4px;
-
-        @media (max-width: $breakpoint-md) {
-            width: auto;
-        }
-    }
-
-    &__title-subscribe {
-        @include typo-h3;
-    }
-
-    &__text-subscribe {
-        @include typo-body;
-        padding-top: 18px;
-    }
-
-    &__subscribe {
-        padding-top: 23px;
-    }
-
-    &__wrapper-text {
-        flex-flow: column;
-    }
-
-    &__link-icon {
-        margin-left: 25px;
-
-        &:first-child {
-            margin: 0;
-        }
-    }
-
-    &__bottom-footer {
-        border-top: 1px solid $dark-shade-5;
-        margin-top: 64px;
-        padding: 9px 0 7px 0;
-    }
-
-    &__social {
-
-        @media (max-width: $breakpoint-md) {
-            padding-top: 10px;
-        }
-    }
+  }
 }

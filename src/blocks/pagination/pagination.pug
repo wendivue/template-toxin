@@ -1,12 +1,11 @@
 mixin pagination(object)
+  .pagination
+    each item in object.itemList
+      if (item.isCurrentPage)
+        a.pagination__number.pagination__number--current(href=item.link)= item.text
+      else
+        a.pagination__number(href=item.link)= item.text
 
-    .pagination
-        for item in object.itemList
-            if(item.isCurrentPage)
-                a(class="pagination__number pagination__number--current" href=item.link)=item.text
-            else
-                a(class="pagination__number" href=item.link)=item.text
+    a.pagination__next-page(href=object.nextPage) arrow_forward
 
-        a(class="pagination__next-page" href=object.nextPage) arrow_forward
-
-    p(class="pagination__text")=object.text
+  p.pagination__text= object.text

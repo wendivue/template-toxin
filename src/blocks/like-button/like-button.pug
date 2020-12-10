@@ -1,10 +1,10 @@
 mixin like-button({ id, number, isChecked })
-    - id = (id ? "like-button-" + id : "");
+  - id = id ? "like-button-" + id : "";
 
-    .like-button
-        if(isChecked)
-            input(class="like-button__checkbox" id=id type="checkbox" checked)
-        else
-            input(class="like-button__checkbox" id=id type="checkbox")
+  .like-button
+    if (isChecked)
+      input.like-button__checkbox(id=id, type='checkbox', checked)
+    else
+      input.like-button__checkbox(id=id, type='checkbox')
 
-        label(class="like-button__number" for=id)=number
+    label.like-button__number(for=id)= number

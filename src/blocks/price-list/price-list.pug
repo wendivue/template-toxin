@@ -1,16 +1,16 @@
 mixin price-list(object)
-    .price-list
-        for item in object.itemList
-            .price-list__item
-                if(item.isIcon)
-                    div(class="price-list__wrapper-text")
-                        p(class="price-list__text")=item.description
-                        i(class="price-list__icon") i
-                    p(class="price-list__text")=item.price + '\u{20BD}'
-                else
-                    p(class="price-list__text")=item.description
-                    p(class="price-list__text")=item.price + '\u{20BD}'
-        .price-list__full-price
-            h2(class="price-list__text price-list__text--big")=object.description
-            div(class="price-list__line")
-            h2(class="price-list__text price-list__text--big")=object.price + '\u{20BD}'
+  .price-list
+    each item in object.itemList
+      .price-list__item
+        if (item.isIcon)
+          .price-list__wrapper-text
+            p.price-list__text= item.description
+            i.price-list__icon i
+          p.price-list__text= item.price + "\u{20BD}"
+        else
+          p.price-list__text= item.description
+          p.price-list__text= item.price + "\u{20BD}"
+    .price-list__full-price
+      h2.price-list__text.price-list__text--big= object.description
+      .price-list__line
+      h2.price-list__text.price-list__text--big= object.price + "\u{20BD}"

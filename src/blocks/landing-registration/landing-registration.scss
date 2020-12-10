@@ -1,16 +1,14 @@
 .landing-registration {
+  &__content {
+    width: 100%;
+    height: 100%;
+    height: 687px;
+    padding-top: 15px;
+    background: url(../img/image4.1.png) 100% 100% no-repeat;
+    background-size: cover;
 
-    &__content {
-        width: 100%;
-        height: 100%;
-        height: 687px;
-        padding-top: 15px;
-        background: url(../img/image4.1.png) 100% 100% no-repeat;
-        background-size: cover;
-
-
-        .center-block {
-            justify-content: center;
-        }
+    .center-block {
+      justify-content: center;
     }
+  }
 }

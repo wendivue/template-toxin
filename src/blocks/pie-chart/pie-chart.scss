@@ -1,90 +1,86 @@
 @import '../../scss/global-typography';
 
 .pie-chart {
+  display: flex;
+
+  &__wrapper-img {
+    width: 120px;
+    height: 120px;
+    position: relative;
+  }
+
+  &__wrapper-text-diagram {
+    position: absolute;
+    top: 34%;
+    left: 26%;
+  }
+
+  &__text-diagram {
+    @include typo-body;
+    color: $color-primary;
+    text-align: center;
+    line-height: 21px;
+
+    &--big {
+      @include typo-h1;
+      color: $color-primary;
+      text-align: center;
+      line-height: 21px;
+    }
+  }
+
+  &__list {
+    padding-top: 28px;
+    padding-left: 30px;
+
+    @media (max-width: $breakpoint-xxs) {
+      padding-left: 10px;
+    }
+  }
+
+  &__item {
+    @include typo-body;
     display: flex;
+    align-items: center;
+    text-transform: none;
 
-    &__wrapper-img {
-        width: 120px;
-        height: 120px;
-        position: relative;
+    &:before {
+      content: '';
+      align-self: baseline;
+      min-width: 10px;
+      height: 10px;
+      margin-top: 6px;
+      margin-right: 5px;
+      background-color: $dark-shade-25;
+      border-radius: 10px;
     }
 
-    &__wrapper-text-diagram {
-        position: absolute;
-        top: 34%;
-        left: 26%;
+    &:last-child {
+      margin: 0;
     }
 
-    &__text-diagram {
-        @include typo-body;
-        color: $color-primary;
-        text-align: center;
-        line-height: 21px;
-
-        &--big {
-            @include typo-h1;
-            color: $color-primary;
-            text-align: center;
-            line-height: 21px;
-        }
+    &--great {
+      &:before {
+        background-color: #ffe39c;
+      }
     }
 
-    &__list {
-        padding-top: 28px;
-        padding-left: 30px;
-
-        @media (max-width: $breakpoint-xxs) {
-            padding-left: 10px;
-        }
+    &--good {
+      &:before {
+        background-color: #6fcf97;
+      }
     }
 
-    &__item {
-        @include typo-body;
-        display: flex;
-        align-items: center;
-        text-transform: none;
-
-        &:before {
-            content: '';
-            align-self: baseline;
-            min-width: 10px;
-            height: 10px;
-            margin-top: 6px;
-            margin-right: 5px;
-            background-color: $dark-shade-25;
-            border-radius: 10px;
-        }
-
-        &:last-child {
-            margin: 0;
-        }
-
-        &--great {
-
-            &:before {
-                background-color: #FFE39C;
-            }
-        }
-
-        &--good {
-
-            &:before {
-                background-color: #6FCF97;
-            }
-        }
-
-        &--norm {
-
-            &:before {
-                background-color: #BC9CFF;
-            }
-        }
-
-        &--disappoint {
-
-            &:before {
-                background-color: #919191;
-            }
-        }
+    &--norm {
+      &:before {
+        background-color: #bc9cff;
+      }
     }
+
+    &--disappoint {
+      &:before {
+        background-color: #919191;
+      }
+    }
+  }
 }

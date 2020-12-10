@@ -1,19 +1,19 @@
 .ui-kits-color {
-    margin-top: 52px;
+  margin-top: 52px;
 
-    &__img {
-        display: block;
-        padding-top: 25px;
-        padding-left: 263px;
+  &__img {
+    display: block;
+    padding-top: 25px;
+    padding-left: 263px;
+  }
+
+  &__col-8 {
+    width: 403px;
+    display: flex;
+    flex-flow: column;
+
+    &:last-child {
+      margin-right: 57px;
     }
-
-    &__col-8 {
-        width: 403px;
-        display: flex;
-        flex-flow: column;
-
-        &:last-child {
-            margin-right: 57px;
-        }
-    }
+  }
 }

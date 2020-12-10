@@ -1,96 +1,96 @@
 @import '../../scss/global-typography';
 
 .dropdown {
-    position: relative;
-    .text-field__input {
-        color: $dark-shade-75;
-        cursor: pointer;
+  position: relative;
+  .text-field__input {
+    color: $dark-shade-75;
+    cursor: pointer;
+  }
+
+  .text-field__icon {
+    @media (max-width: $breakpoint-xxs) {
+      width: 40px;
     }
+  }
 
-    .text-field__icon {
-        @media (max-width: $breakpoint-xxs) {
-            width: 40px;
-        }
-    }
+  &__menu {
+    position: absolute;
+    width: 298px;
+    display: none;
+    padding: 3px 7px 12px 13px;
+    background-color: #fff;
+    border-left: 1px solid $dark-shade-25;
+    border-right: 1px solid $dark-shade-25;
+    border-bottom: 1px solid $dark-shade-25;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+    border-radius: 0 0 4px 4px;
+    z-index: 10;
 
-    &__menu {
-        position: absolute;
-        width: 298px;
-        display: none;
-        padding: 3px 7px 12px 13px;
-        background-color: #fff;
-        border-left: 1px solid $dark-shade-25;
-        border-right: 1px solid $dark-shade-25;
-        border-bottom: 1px solid $dark-shade-25;
-        box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-        border-radius: 0 0 4px 4px;
-        z-index: 10;
-
-        &--active {
-            display: block;
-        }
-
-        &--small {
-            width: 244px;
-            padding: 3px 7px 4px 13px;
-        }
-    }
-
-    &__item {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 0 7px 0;
-    }
-
-    &__input {
-        @include typo-h3;
-        width: 20px;
-        padding-left: 12px;
-        border: none;
-    }
-
-    &__button {
-        width: 30px;
-        height: 30px;
-        background-color: #fff;
-        border: 1px solid $dark-shade-50;
-        box-sizing: border-box;
-        border-radius: 22px;
-        cursor: pointer;
-
-        &--no-active {
-            pointer-events: none;
-            border: 1px solid $dark-shade-25;
-            color: $dark-shade-25;
-        }
-    }
-
-    &__text {
-        @include typo-h3;
-    }
-
-    &__wrapper-button-menu {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 15px;
-    }
-
-    &__button-menu {
-        @include typo-h3;
-        padding: 0;
-        color: $color-primary;
-        border: none;
-        background: #fff;
-        cursor: pointer;
-
-        &--cleans {
-            opacity: 0;
-            color: $dark-shade-50;
-        }
+    &--active {
+      display: block;
     }
 
     &--small {
-        width: 266px;
+      width: 244px;
+      padding: 3px 7px 4px 13px;
     }
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 7px 0;
+  }
+
+  &__input {
+    @include typo-h3;
+    width: 20px;
+    padding-left: 12px;
+    border: none;
+  }
+
+  &__button {
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border: 1px solid $dark-shade-50;
+    box-sizing: border-box;
+    border-radius: 22px;
+    cursor: pointer;
+
+    &--no-active {
+      pointer-events: none;
+      border: 1px solid $dark-shade-25;
+      color: $dark-shade-25;
+    }
+  }
+
+  &__text {
+    @include typo-h3;
+  }
+
+  &__wrapper-button-menu {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+  }
+
+  &__button-menu {
+    @include typo-h3;
+    padding: 0;
+    color: $color-primary;
+    border: none;
+    background: #fff;
+    cursor: pointer;
+
+    &--cleans {
+      opacity: 0;
+      color: $dark-shade-50;
+    }
+  }
+
+  &--small {
+    width: 266px;
+  }
 }

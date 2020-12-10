@@ -3,45 +3,38 @@ include ../center-block/center-block.pug
 include ../text-field/text-field.pug
 
 mixin footer-copyright(object)
-    .footer-copyright
-        +page
-            +center-block
-                .footer-copyright__wrapper-logo
-                    img(class="footer-copyright__logo" src="img/Logo.png" alt="logo")
-                    p(class="footer-copyright__text-logo")=object.textLogo
-                .footer-copyright__wrapper-list
-                    ul.footer-copyright__list
-                        +footer-list(object.itemList1)
-                    ul.footer-copyright__list
-                        +footer-list(object.itemList2)
-                    ul.footer-copyright__list
-                        +footer-list(object.itemList3)
-                .footer-copyright__wrapper-subscribe
-                    .footer-copyright__wrapper-text
-                        h3(class="footer-copyright__title-subscribe")=object.titleSub
-                        p(class="footer-copyright__text-subscribe")=object.textSub
-                    .footer-copyright__subscribe
-                        +text-field({
-                            placeholder: object.placeholder,
-                            tabindex: 1,
-                            type: "text",
-                            size: "small",
-                            iconText: "arrow_forward",
-                            classNameIcon: "submit"
-                        })
-        .footer-copyright__bottom-footer
-            +page
-                +center-block
-                    p(class="footer-copyright__text")=object.copyright
-                    div(class="footer-copyright__social")
-                        for icon in object.iconList
-                            a(class="footer-copyright__link-icon" href=icon.link)
-                                i(class="fa footer-copyright__icon " + icon.icon)
+  .footer-copyright
+    +page
+      +center-block
+        .footer-copyright__wrapper-logo
+          img.footer-copyright__logo(src='img/Logo.png', alt='logo')
+          p.footer-copyright__text-logo= object.textLogo
+        .footer-copyright__wrapper-list
+          ul.footer-copyright__list
+            +footer-list(object.itemList1)
+          ul.footer-copyright__list
+            +footer-list(object.itemList2)
+          ul.footer-copyright__list
+            +footer-list(object.itemList3)
+        .footer-copyright__wrapper-subscribe
+          .footer-copyright__wrapper-text
+            h3.footer-copyright__title-subscribe= object.titleSub
+            p.footer-copyright__text-subscribe= object.textSub
+          .footer-copyright__subscribe
+            +text-field({ placeholder: object.placeholder, tabindex: 1, type: "text", size: "small", iconText: "arrow_forward", classNameIcon: "submit" })
+    .footer-copyright__bottom-footer
+      +page
+        +center-block
+          p.footer-copyright__text= object.copyright
+          .footer-copyright__social
+            each icon in object.iconList
+              a.footer-copyright__link-icon(href=icon.link)
+                i(class="fa footer-copyright__icon " + icon.icon)
 
 mixin footer-list(object)
-    for item in object
-        li(class="footer-copyright__list-item")
-            if(item.title)
-                h3(class="footer-copyright__title")=item.title
-            else
-                a(class="footer-copyright__link" href=item.link)=item.text
+  each item in object
+    li.footer-copyright__list-item
+      if (item.title)
+        h3.footer-copyright__title= item.title
+      else
+        a.footer-copyright__link(href=item.link)= item.text
