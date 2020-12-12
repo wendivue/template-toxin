@@ -10,6 +10,8 @@ include ../blocks/reservation/reservation.pug
 include ../blocks/sign-in/sign-in.pug
 include ../blocks/hotel-card/hotel-card.pug
 
+- const itemsPeople = [{text: 'взрослые', value: '2', tabindex: 2}, {text: 'дети', value: '1', tabindex: 3}, {text: 'младенцы', value: '0', tabindex: 3}];
+
 +doctype({title: 'Cards'})
 img.ui-kits-cards__img(src='img/Group.png')
 
@@ -18,12 +20,12 @@ img.ui-kits-cards__img(src='img/Group.png')
     +center-block
       +col-4
         .ui-kits-cards__hotel-search
-          +hotel-search({ title: 'Найдём номера под ваши пожелания', link: '/mock-address/change-me' })
+          +hotel-search({ title: 'Найдём номера под ваши пожелания', link: '/mock-address/change-me' }, itemsPeople)
         .ui-kits-cards__registration
           +registration({ title: 'Регистрация аккаунта', link: '/mock-address/change-me' })
       +col-4
         .ui-kits-cards__reservation
-          +reservation({ number: '888', price: '9 990₽', link: '/mock-address/change-me' })
+          +reservation({ number: '888', price: '9 990₽', link: '/mock-address/change-me' }, itemsPeople)
         .ui-kits-cards__sign-in
           +sign-in({ title: 'войти', link: '/mock-address/change-me' })
       +col-4

@@ -1,15 +1,6 @@
 mixin icon-text-list(object)
-  - const comfort = { icon: 'insert_emoticon', title: 'Комфорт', text: 'Шумопоглощающие стены', theme: 'border' };
-  - const convenience = { icon: 'location_city', title: 'Удобство', text: 'Окно в каждой из спален', theme: 'border' };
-  - const cosiness = { icon: 'whatshot', title: 'Уют', text: 'Номер оснащён камином' };
-  - let itemsList
-  if (object.isFull)
-    - itemsList = [comfort, convenience, cosiness];
-  else
-    - itemsList = [comfort, convenience];
-
   .icon-text-list
-    each item in itemsList
+    each item in object.iconList
       div(class="icon-text-list__item " + (item.theme ? "icon-text-list__item--" + item.theme : ""))
         i.icon-text-list__icon= item.icon
         .icon-text-list__wrapper-text

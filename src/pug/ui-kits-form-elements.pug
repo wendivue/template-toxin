@@ -20,6 +20,16 @@ include ../blocks/pagination/pagination.pug
 include ../blocks/bullet-list/bullet-list.pug
 include ../blocks/review/review.pug
 
+- const checkboxList = [{text: 'Завтрак', id: '1'},{text: 'Письменный стол', id: '2', isChecked: true},{text: 'Стул для кормления', id: '3', isChecked: true},{text: 'Кроватка', id: '4', isChecked: true},{text: 'Телевизор', id: '5'},{text: 'Шампунь', id: '6'},{text: 'Телевизор', id: '7'},{text: 'Шампунь', id: '8'}];
+- const checkboxButtons1 = [{text: 'Ширина коридоров в номере не менее 91 см.', id: '4', title: 'Широкий коридор'}, {text: 'На 1 этаже вас встретит специалист и проводит до номера.', id: '5', title: 'Помощник для инвалидов'}];
+- const checkboxButtons2 = [{text: 'Можно курить', id: '1'}, {text: 'Можно с питомцами', id: '2', isChecked: true}, {text: 'Можно пригласить гостей (до 10 человек)', id: '3', isChecked: true}];
+- const itemsRoom = [{text: 'спальни', value: '2', tabindex: 2}, {text: 'кровати', value: '2', tabindex: 3}, {text: 'ванные комнаты', value: '0', tabindex: 4}];
+- const itemsPeople = [{text: 'взрослые', value: '2', tabindex: 2}, {text: 'дети', value: '1', tabindex: 3}, {text: 'младенцы', value: '0', tabindex: 4}];
+- const itemsPeopleNull = [{text: 'взрослые', value: '0', tabindex: 2}, {text: 'дети', value: '0', tabindex: 3}, {text: 'младенцы', value: '0', tabindex: 4}];
+- const iconList = [{ icon: "insert_emoticon", title: "Комфорт", text: "Шумопоглощающие стены", theme: "border" }, { icon: "location_city", title: "Удобство", text: "Окно в каждой из спален", theme: "border" }];
+- const radioButtonsList = [{text: 'Мужчина', value: 'male', name: 'gender', isChecked: true}, {text: 'Женщина', name: 'gender', value: 'female'}];
+- const rangeConfig = { dataMin: 0, dataMax: 15500, dataFrom: 5000, dataTo: 10000 };
+
 +doctype({title: 'Form Elements'})
 img.ui-kits-form__img(src='img/Group.png')
 +ui-kits-form
@@ -31,7 +41,7 @@ img.ui-kits-form__img(src='img/Group.png')
         .ui-kits-form__text-field-hover
           +text-field({ text: 'Text Field', placeholder: 'This is pretty awesome', tabindex: 2, state: 'active', textState:'Hover / Focus' })
         .ui-kits-form__dropdown
-          +dropdown({ text: 'Dropdown', value: 'Сколько гостей', iconText: 'expand_more', className: 'dropdown-people', textState:'Default', tabindex: 3, isItemsPeople: true, isButtonMenu: true, isDropdown: true })
+          +dropdown({ text: 'Dropdown', value: 'Сколько гостей', iconText: 'expand_more', className: 'dropdown-people', textState:'Default', tabindex: 3, isItemsPeople: true, isButtonMenu: true, isDropdown: true }, itemsPeople)
         .ui-kits-form__masked
           +date-picker({ text: 'masked text field', placeholder: 'ДД.ММ.ГГГГ', type: 'text', textState:'Default', className: 'datepicker datepicker-here' })
         .ui-kits-form__date-picker
@@ -42,18 +52,18 @@ img.ui-kits-form__img(src='img/Group.png')
         .ui-kits-form__subscription
           +text-field({ text: 'subscription text field', placeholder: 'Email', tabindex: 5, type: 'text', size: 'small', iconText: 'arrow_forward', classNameIcon: 'submit' })
         .ui-kits-form__dropdown-room
-          +dropdown({ text: 'Dropdown', value: '2 спальни 2 кровати...', iconText: 'expand_more', textState:'Default', className: 'dropdown', size:'small', tabindex: 6, isItemsRoom: true, isDropdown: true })
+          +dropdown({ text: 'Dropdown', value: '2 спальни 2 кровати...', iconText: 'expand_more', textState:'Default', className: 'dropdown', size:'small', tabindex: 6, isItemsRoom: true, isDropdown: true }, itemsRoom)
         .ui-kits-form__dropdown-room-expanded
-          +dropdown({ text: 'Dropdown', value: '2 спальни 2 кровати...', iconText: 'expand_more', textState:'expanded', className: 'dropdown', size:'small', tabindex: 7, isItemsRoom: true, stateMenu: 'active', isDropdown: true })
+          +dropdown({ text: 'Dropdown', value: '2 спальни 2 кровати...', iconText: 'expand_more', textState:'expanded', className: 'dropdown', size:'small', tabindex: 7, isItemsRoom: true, stateMenu: 'active', isDropdown: true }, itemsRoom)
         .ui-kits-form__checkbox-list
-          +checkbox-list({ text: 'expandable checkbox list' })
+          +checkbox-list({ text: 'expandable checkbox list', checkboxList })
         .ui-kits-form__checkbox-list-open
-          +checkbox-list({ text: 'expandable checkbox list', state: 'open' })
+          +checkbox-list({ text: 'expandable checkbox list', state: 'open', checkboxList })
       +col-4
-        +checkbox-buttons({text: 'Checkbox Buttons'})
+        +checkbox-buttons({text: 'Checkbox Buttons' }, checkboxButtons2)
         .ui-kits-form__radio-buttons
           h3.ui-kits-form__title.ui-kits-form__title--radio-button Radio Buttons
-          +radio-buttons({text: 'Radio Buttons'})
+          +radio-buttons({radioButtonsList})
         .ui-kits-form__toggle
           h3.ui-kits-form__title Toggle
           .ui-kits-form__toggle-item
@@ -75,11 +85,11 @@ img.ui-kits-form__img(src='img/Group.png')
             .ui-kits-form__rate-button-item
               +rate-button({star: 5})
         .ui-kits-form__dropdown-people
-          +dropdown({ text: 'dropdown', value: 'Сколько гостей', iconText: 'expand_more', className: 'dropdown-people', tabindex: 8, isItemsPeople: true, isButtonMenu: true, isDropdown: true, isNullPeople: true, stateMenu: 'active' })
+          +dropdown({ text: 'dropdown', value: 'Сколько гостей', iconText: 'expand_more', className: 'dropdown-people', tabindex: 8, isItemsPeople: true, isButtonMenu: true, isDropdown: true, stateMenu: 'active' }, itemsPeopleNull)
         .ui-kits-form__rich-checkbox-buttons
-          +checkbox-buttons({ text: 'Rich Checkbox Buttons', isRich: true })
+          +checkbox-buttons({ text: 'Rich Checkbox Buttons', isRich: true }, checkboxButtons1)
       +col-4
-        +range-slider({text: 'Range Slider'})
+        +range-slider({text: 'Range Slider'}, rangeConfig)
         .ui-kits-form__buttons
           h3.ui-kits-form__title buttons
           .ui-kits-form__buttons-items
@@ -102,13 +112,13 @@ img.ui-kits-form__img(src='img/Group.png')
           h3.ui-kits-form__title pagination
           +pagination({ itemList: [ {text: '1', link: '/mock-address/change-me', isCurrentPage: true}, {text: '2', link: '/mock-address/change-me'}, {text: '3', link: '/mock-address/change-me'}, {text: '...'}, {text: '15', link: '/mock-address/change-me'} ], nextPage: '/mock-address/change-me', text: '1 – 12 из 100+ вариантов аренды' })
         .ui-kits-form__dropdown-people-expanded
-          +dropdown({ text: 'dropdown', value: '3 гостя', iconText: 'expand_more', className: 'dropdown-people', tabindex: 9, isItemsPeople: true, isButtonMenu: true, isDropdown: true, stateMenu: 'active' })
+          +dropdown({ text: 'dropdown', value: '3 гостя', iconText: 'expand_more', className: 'dropdown-people', tabindex: 9, isItemsPeople: true, isButtonMenu: true, isDropdown: true, stateMenu: 'active' }, itemsPeople)
         .ui-kits-form__bullet-list
           h3.ui-kits-form__title bullet list
           +bullet-list({ itemList: [ {text: 'Нельзя с питомцами'}, {text: 'Без вечеринок и мероприятий '}, {text: 'Время прибытия — после 13:00, а выезд до 12:00'} ] })
   +page
     +center-block
       .ui-kits-form__col-8
-        +icon-text-list({})
+        +icon-text-list({iconList})
         .ui-kits-form__review
           +review({ img: 'img/image.png', username: 'Мурад Сарафанов', date: '5 дней назад', text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.', number: '12', id: 'review-1', isChecked: true })

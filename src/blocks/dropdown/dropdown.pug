@@ -1,12 +1,7 @@
 include ../text-field/text-field.pug
 
-mixin dropdown__item(object)
-  - let itemsRoom = [{text: 'спальни', value: '2', tabindex: 2}, {text: 'кровати', value: '2', tabindex: 3}, {text: 'ванные комнаты', value: '0', tabindex: 4}];
-  - let itemsPeople = [{text: 'взрослые', value: '2', tabindex: 2}, {text: 'дети', value: '1', tabindex: 3}, {text: 'младенцы', value: '0', tabindex: 4}];
-  if (object.isNullPeople)
-    - itemsPeople = [{text: 'взрослые', value: '0', tabindex: 2}, {text: 'дети', value: '0', tabindex: 3}, {text: 'младенцы', value: '0', tabindex: 4}];
-
-  each item in object.isItemsRoom ? itemsRoom : itemsPeople
+mixin dropdown__item(object, itemsList)
+  each item in itemsList
     - const state = item.value == 0 ? " dropdown__button--no-active" : "";
     .dropdown__item
       p.dropdown__text= item.text
@@ -20,7 +15,7 @@ mixin dropdown__item(object)
           input.dropdown__input(value=item.value, tabindex=item.tabindex)
           button.dropdown__button.dropdown__button-people--increase(type='button') +
 
-mixin dropdown(object)
+mixin dropdown(object, itemsList)
   - let { stateMenu, size } = object;
   - stateMenu = stateMenu ? " dropdown__menu--" + stateMenu : "";
   - const sizeDropdown = size ? " dropdown--" + size : "";
@@ -29,7 +24,7 @@ mixin dropdown(object)
   div(class="dropdown" + sizeDropdown)
     +text-field(object)
     div(class="dropdown__menu" + stateMenu + sizeMenu)
-      +dropdown__item(object)
+      +dropdown__item(object, itemsList)
       if (object.isButtonMenu)
         .dropdown__wrapper-button-menu
           button.dropdown__button-menu.dropdown__button-menu--cleans очистить

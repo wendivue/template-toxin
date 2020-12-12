@@ -1,16 +1,10 @@
-mixin checkbox-buttons(object)
-  - let itemsList;
-  if (object.isRich)
-    - itemsList = [{text: 'Ширина коридоров в номере не менее 91 см.', id: '4', title: 'Широкий коридор'}, {text: 'На 1 этаже вас встретит специалист и проводит до номера.', id: '5', title: 'Помощник для инвалидов'}];
-  else
-    - itemsList = [{text: 'Можно курить', id: '1'}, {text: 'Можно с питомцами', id: '2', isChecked: true}, {text: 'Можно пригласить гостей (до 10 человек)', id: '3', isChecked: true}];
-
+mixin checkbox-buttons(object, checkboxButtons)
   .checkbox-buttons
     header.checkbox-buttons__wrapper-header
       h3.checkbox-buttons__title= object.text
 
     ul.checkbox-buttons__items
-      each item in itemsList
+      each item in checkboxButtons
         li.checkbox-buttons__wrapper-checkbox
           if (item.isChecked)
             input.checkbox-buttons__checkbox(

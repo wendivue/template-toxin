@@ -2,7 +2,7 @@ include ../date-picker/date-picker.pug
 include ../dropdown/dropdown.pug
 include ../button/button.pug
 
-mixin hotel-search(object)
+mixin hotel-search(object, itemsList)
   .hotel-search
     h1.hotel-search__title= object.title
 
@@ -11,7 +11,7 @@ mixin hotel-search(object)
       +date-picker({ text: 'выезд', placeholder: 'ДД.ММ.ГГГГ', state: 'date', type: 'text', className: 'datepicker-end', myId: 'end', iconText: 'expand_more', tabindex: 4 })
 
     .hotel-search__dropdown
-      +dropdown({ text: 'гости', value: 'Сколько гостей', iconText: 'expand_more', className: 'dropdown-people', tabindex: 3, isItemsPeople: true, isButtonMenu: true, isDropdown: true })
+      +dropdown({ text: 'гости', value: 'Сколько гостей', iconText: 'expand_more', className: 'dropdown-people', tabindex: 3, isItemsPeople: true, isButtonMenu: true, isDropdown: true }, itemsList)
 
     .hotel-search__button
       +button({ text: 'подобрать номер', link: object.link, isButtonLarge: true })

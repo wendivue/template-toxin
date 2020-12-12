@@ -7,6 +7,8 @@ include ../blocks/header/header.pug
 include ../blocks/hotel-search/hotel-search.pug
 include ../blocks/footer-copyright/footer-copyright.pug
 
+- const itemsPeople = [{text: 'взрослые', value: '2', tabindex: 2}, {text: 'дети', value: '1', tabindex: 3}, {text: 'младенцы', value: '0', tabindex: 3}];
+
 +doctype({ title: 'Landing page' })
 +landing-page
   .landing-page__header
@@ -16,7 +18,7 @@ include ../blocks/footer-copyright/footer-copyright.pug
     +page
       +center-block
         .landing-page__hotel-search
-          +hotel-search({ title: 'Найдём номера под ваши пожелания', link: 'page-search-room.html' })
+          +hotel-search({ title: 'Найдём номера под ваши пожелания', link: 'page-search-room.html' }, itemsPeople)
     +page
       .landing-page__wrapper-text
         p.landing-page__text Лучшие номера для вашей работы, отдыха и просто вдохновения

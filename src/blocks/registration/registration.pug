@@ -4,6 +4,8 @@ include ../radio-buttons/radio-buttons.pug
 include ../toggle/toggle.pug
 include ../button/button.pug
 
+- const radioButtonsList = [{text: 'Мужчина', value: 'male', name: 'gender', isChecked: true}, {text: 'Женщина', name: 'gender', value: 'female'}];
+
 mixin registration(object)
   .registration
     h1.registration__title= object.title
@@ -13,7 +15,7 @@ mixin registration(object)
     .registration__text-field
       +text-field({ placeholder: 'Фамилия', tabindex: 2, name: 'last name', type: 'text' })
     .registration__radio-buttons
-      +radio-buttons
+      +radio-buttons({radioButtonsList})
     .registration__date-picker
       +date-picker({ text: 'дата рождения', placeholder: 'ДД.ММ.ГГГГ', type: 'text', name: 'date', className: 'datepicker datepicker-here' })
     .registration__text-field

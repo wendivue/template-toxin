@@ -14,6 +14,13 @@ include ../blocks/hotel-card/hotel-card.pug
 include ../blocks/pagination/pagination.pug
 include ../blocks/footer-copyright/footer-copyright.pug
 
+- const checkboxList = [{text: 'Завтрак', id: '1'},{text: 'Письменный стол', id: '2', isChecked: true},{text: 'Стул для кормления', id: '3', isChecked: true},{text: 'Кроватка', id: '4', isChecked: true},{text: 'Телевизор', id: '5'},{text: 'Шампунь', id: '6'},{text: 'Телевизор', id: '7'},{text: 'Шампунь', id: '8'}];
+- const checkboxButtons = [{text: 'Ширина коридоров в номере не менее 91 см.', id: '4', title: 'Широкий коридор'}, {text: 'На 1 этаже вас встретит специалист и проводит до номера.', id: '5', title: 'Помощник для инвалидов'}];
+- const checkboxButtonsRich = [{text: 'Можно курить', id: '1'}, {text: 'Можно с питомцами', id: '2', isChecked: true}, {text: 'Можно пригласить гостей (до 10 человек)', id: '3', isChecked: true}];
+- const itemsRoom = [{text: 'спальни', value: '2', tabindex: 2}, {text: 'кровати', value: '2', tabindex: 3}, {text: 'ванные комнаты', value: '0', tabindex: 2}];
+- const itemsPeople = [{text: 'взрослые', value: '2', tabindex: 2}, {text: 'дети', value: '1', tabindex: 3}, {text: 'младенцы', value: '0', tabindex: 1}];
+- const rangeConfig = { dataMin: 0, dataMax: 15500, dataFrom: 5000, dataTo: 10000 };
+
 +doctype({title: 'Search room'})
 +search-room
   .search-room__header
@@ -26,18 +33,18 @@ include ../blocks/footer-copyright/footer-copyright.pug
           .search-room__date-picker
             +date-picker({ text: 'даты пребывания в отеле', placeholder: '19 авг - 23 авг', type: 'text', size: 'small', tabindex: 1, className: 'datepicker datepicker-here' })
           .search-room__dropdown
-            +dropdown({ text: 'гости', value: '3 гостя', iconText: 'expand_more', className: 'dropdown-people', size: 'small', tabindex: 2, isItemsPeople: true, isButtonMenu: true, isDropdown: true })
+            +dropdown({ text: 'гости', value: '3 гостя', iconText: 'expand_more', className: 'dropdown-people', size: 'small', tabindex: 2, isItemsPeople: true, isButtonMenu: true, isDropdown: true }, itemsPeople)
           .search-room__range-slider
-            +range-slider({ text: 'диапазон цены' })
+            +range-slider({ text: 'диапазон цены' }, rangeConfig)
           p.search-room__text-range-slider Стоимость за сутки пребывания в номере
           .search-room__checkbox-buttons
-            +checkbox-buttons({ text: 'Checkbox Buttons' })
+            +checkbox-buttons({ text: 'Checkbox Buttons' }, checkboxButtonsRich)
           .search-room__rich
-            +checkbox-buttons({ text: 'доступность', isRich: true })
+            +checkbox-buttons({ text: 'доступность', isRich: true }, checkboxButtons)
           .search-room__dropdown-room
-            +dropdown({ text: 'удобства номера', value: '2 спальни, 2 кровати...', iconText: 'expand_more', className: 'dropdown', size:'small', tabindex: 3, isItemsRoom: true, isDropdown: true })
+            +dropdown({ text: 'удобства номера', value: '2 спальни, 2 кровати...', iconText: 'expand_more', className: 'dropdown', size:'small', tabindex: 3, isItemsRoom: true, isDropdown: true }, itemsRoom)
           .search-room__checkbox-list
-            +checkbox-list({ text: 'дополнительные удобства' })
+            +checkbox-list({ text: 'дополнительные удобства', checkboxList })
 
         .search-room__content
           h1.search-room__title Номера, которые мы для вас подобрали
