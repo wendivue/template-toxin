@@ -8,15 +8,15 @@ const webpack = require('webpack');
 
 const pages = [
   'index',
-  'ui-kits-form-elements',
-  'ui-kits-colors-type',
-  'ui-kits-cards-elements',
-  'ui-kits-header-footer-page',
-  'page-landing-page',
-  'page-search-room',
-  'page-room-details',
-  'page-landing-registration',
-  'page-landing-sign-in',
+  'ui-kits-cards',
+  'ui-kits-color',
+  'ui-kits-form',
+  'ui-kits-header-footer',
+  'landing-page',
+  'landing-sign-in',
+  'landing-registration',
+  'search-room',
+  'room-details',
 ];
 
 const config = {
@@ -121,7 +121,7 @@ pages.forEach((page) => {
   config.plugins.push(
     new HtmlWebpackPlugin({
       filename: `${page}.html`,
-      template: `./src/pug/${page}.pug`,
+      template: `./src/pages/${page}/${page}.pug`,
     })
   );
 });

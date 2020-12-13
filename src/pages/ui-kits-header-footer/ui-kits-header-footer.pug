@@ -1,16 +1,13 @@
-include ./include/doctype.pug
+extends ../../layout/main-layout.pug
 
-include ../blocks/ui-kits-header-footer/ui-kits-header-footer.pug
-include ../blocks/page/page.pug
-include ../blocks/center-block/center-block.pug
-include ../blocks/header/header.pug
-include ../blocks/footer-copyright/footer-copyright.pug
-include ../blocks/footer-creative/footer-creative.pug
+block variables
+  include ../../blocks/footer-creative/footer-creative.pug
 
-+doctype({title: 'Headers & Footers'})
-img.ui-kits-header-footer__img(src='img/Group.png')
+  - const pageTitle = "Headers & Footers";
+  - const classMain = "ui-kits-header-footer";
+  - const classImg = "ui-kits-header-footer__img";
 
-+ui-kits-header-footer
+block content
   .ui-kits-header-footer__header
     +header({ size: 'small', itemList: [ {text: 'Home', link: '/mock-address/change-me', state: 'active'}, {text: 'About Us', link: '/mock-address/change-me'}, {text: 'Services', link: '/mock-address/change-me', isIcon: true}, {text: 'Careers', link: '/mock-address/change-me'}, {text: 'News', link: '/mock-address/change-me'}, {text: 'Documentation',link: '/mock-address/change-me'}, ], loginButton: { text: 'Login', link: '/mock-address/change-me', theme: 'border', size: 'small-border' }, registerButton: { text: 'REGISTER', link: '/mock-address/change-me', size: 'small' }, subItemList1: [ {text: 'reservation', link: '/mock-address/change-me'}, {text: 'rent an apartment', link: '/mock-address/change-me'}, {text: 'apartment for sale', link: '/mock-address/change-me'} ] })
   .ui-kits-header-footer__header
