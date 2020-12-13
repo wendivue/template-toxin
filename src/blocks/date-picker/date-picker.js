@@ -18,7 +18,7 @@ $('.js-text-field__datepicker-start').datepicker({
 
 $('.datepicker').append(
   `<div class='date-picker__wrapper-button'>
-  <button class= 'datepicker--button date-picker__button date-picker__button--cleans ' data-action='clear' > очистить</button >
+  <button class= 'datepicker--button date-picker__button date-picker__button--cleans ' data - action='clear' > очистить</button >
   <button class='date-picker__button js-date-picker__button'>применить</button></div >`
 );
 
