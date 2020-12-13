@@ -3,7 +3,7 @@ mixin range-slider(object, rangeConfig)
     .range-slider__header
       h3.range-slider__title= object.text
 
-    input.range-slider__input(
+    input.range-slider__input.js-range-slider__input(
       type='text',
       value='',
       data-min=rangeConfig.dataMin,

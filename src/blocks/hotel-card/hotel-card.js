@@ -1,6 +1,6 @@
 import 'owl.carousel';
 
-$('.owl-carousel').owlCarousel({
+$('.js-owl-carousel').owlCarousel({
   nav: true,
   items: 1,
   dots: true,

@@ -5,7 +5,7 @@ mixin hotel-card(object)
 
   .hotel-card
     .hotel-card__slider
-      .owl-carousel.owl-theme
+      .owl-carousel.owl-theme.js-owl-carousel
         each item in object.itemList
           a.hotel-card__link(href=object.link)
             img.hotel-card__img(src=item.img, alt=altText)

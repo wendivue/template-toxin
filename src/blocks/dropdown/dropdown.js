@@ -18,15 +18,19 @@ class Dropdown {
   }
 
   getElement() {
-    this.input = this.anchor.querySelectorAll('.dropdown__input');
-    this.dropdownInput = this.anchor.querySelectorAll('.text-field__input');
-    this.button = this.anchor.querySelectorAll('.dropdown__button');
-    this.buttonIncrease = this.anchor.querySelectorAll('.dropdown__button--increase');
-    this.buttonDecrease = this.anchor.querySelectorAll('.dropdown__button--decrease');
-    this.buttonPeopleIncrease = this.anchor.querySelectorAll('.dropdown__button-people--increase');
-    this.buttonPeopleDecrease = this.anchor.querySelectorAll('.dropdown__button-people--decrease');
-    this.buttonComplete = this.anchor.querySelectorAll('.dropdown__button-menu--complete');
-    this.buttonCleans = this.anchor.querySelectorAll('.dropdown__button-menu--cleans');
+    this.input = this.anchor.querySelectorAll('.js-dropdown__input');
+    this.dropdownInput = this.anchor.querySelectorAll('.js-text-field__input');
+    this.button = this.anchor.querySelectorAll('.js-dropdown__button');
+    this.buttonIncrease = this.anchor.querySelectorAll('.js-dropdown__button--increase');
+    this.buttonDecrease = this.anchor.querySelectorAll('.js-dropdown__button--decrease');
+    this.buttonPeopleIncrease = this.anchor.querySelectorAll(
+      '.js-dropdown__button-people--increase'
+    );
+    this.buttonPeopleDecrease = this.anchor.querySelectorAll(
+      '.js-dropdown__button-people--decrease'
+    );
+    this.buttonComplete = this.anchor.querySelectorAll('.js-dropdown__button-menu--complete');
+    this.buttonCleans = this.anchor.querySelectorAll('.js-dropdown__button-menu--cleans');
   }
 
   bindEventClick(peopleIncrease, peopleDecrease, elementsIncrease, elementsDecrease) {
@@ -147,7 +151,7 @@ class Dropdown {
   }
 
   getValue() {
-    const dropdownMenu = this.anchor.querySelector('.text-field__input');
+    const dropdownMenu = this.anchor.querySelector('.js-text-field__input');
 
     let fullval = parseFloat(dropdownMenu.value.replace(/[^0-9]/g, '')).toString();
     let val1 = parseFloat(fullval.replace(/\d/, ''));
@@ -165,7 +169,7 @@ class Dropdown {
   }
 
   updateValue(type) {
-    const dropdownMenu = this.anchor.querySelector('.text-field__input');
+    const dropdownMenu = this.anchor.querySelector('.js-text-field__input');
     let string;
     if (ROOM === type) string = `${this.val2} спальни ${this.val1} кровати...`;
     if (PEOPLE === type) string = `${this.fullval} гостя`;
@@ -179,7 +183,7 @@ class Dropdown {
 
   toggle(event) {
     const element = event.target;
-    const dropdownMenu = this.anchor.querySelector('.dropdown__menu');
+    const dropdownMenu = this.anchor.querySelector('.js-dropdown__menu');
     element.classList.toggle('text-field__input--open');
     dropdownMenu.classList.toggle('dropdown__menu--active');
   }
@@ -242,7 +246,7 @@ class Dropdown {
   }
 }
 
-const dropdown = document.querySelectorAll('.dropdown');
+const dropdown = document.querySelectorAll('.js-dropdown');
 
 dropdown.forEach((element) => {
   new Dropdown(element);

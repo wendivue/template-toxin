@@ -2,7 +2,7 @@ mixin text-field(object)
   - let { state, size, className, classNameIcon } = object;
   - state = state ? "text-field__input--" + state + " " : "";
   - size = size ? "text-field--" + size : "";
-  - className = className ? "text-field__" + className : "";
+  - className = className ? "js-text-field__" + className : "";
   - classNameIcon = classNameIcon ? "text-field__icon--" + classNameIcon : "";
   - const id = object.tabindex ? "text-field-" + object.tabindex : "";
   - const myId = object.myId ? " " + object.myId : "";
@@ -18,7 +18,7 @@ mixin text-field(object)
     .text-field__input-wrapper
       if (object.isDropdown)
         input(
-          class="text-field__input " + state + className + borderRadius,
+          class="js-text-field__input text-field__input " + state + className + borderRadius,
           id=id + myId,
           type=object.type,
           value=object.value,
@@ -26,7 +26,7 @@ mixin text-field(object)
           tabindex=object.tabindex,
           readonly
         )
-      else if (object.dateRange)
+      else if (object.isDateRange)
         input(
           class="datepicker-here text-field__input " + state + className,
           id=id + myId,

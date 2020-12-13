@@ -1,6 +1,6 @@
 import 'air-datepicker/dist/js/datepicker';
 
-$('.text-field__datepicker, .datepicker-here').datepicker({
+$('.js-text-field__datepicker, .datepicker-here').datepicker({
   navTitles: {
     days: 'MM yyyy',
   },
@@ -8,19 +8,20 @@ $('.text-field__datepicker, .datepicker-here').datepicker({
   nextHtml: '<button class="date-picker__icon">arrow_forward</button>',
 });
 
-$('.text-field__datepicker-start').datepicker({
+$('.js-text-field__datepicker-start').datepicker({
+  range: true,
   onSelect: (fd) => {
-    $('.text-field__datepicker-start').val(fd.split('-')[0]);
-    $('.text-field__datepicker-end').val(fd.split('-')[1]);
+    $('.js-text-field__datepicker-start').val(fd.split('-')[0]);
+    $('.js-text-field__datepicker-end').val(fd.split('-')[1]);
   },
 });
 
 $('.datepicker').append(
   `<div class='date-picker__wrapper-button'>
   <button class= 'datepicker--button date-picker__button date-picker__button--cleans ' data - action='clear' > очистить</button >
-  <button class='date-picker__button'>применить</button></div >`
+  <button class='date-picker__button js-date-picker__button'>применить</button></div >`
 );
 
-$('.date-picker__button').on('click', () => {
+$('.js-date-picker__button').on('click', () => {
   $('.datepicker-here').blur();
 });

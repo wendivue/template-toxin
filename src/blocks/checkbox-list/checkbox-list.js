@@ -7,9 +7,9 @@ class Checkbox {
   }
 
   getElement() {
-    this.header = this.anchor.querySelector('.checkbox-list__wrapper-header');
-    this.icon = this.header.querySelector('.checkbox-list__icon');
-    this.menu = this.anchor.querySelector('.checkbox-list__items');
+    this.header = this.anchor.querySelector('.js-checkbox-list__wrapper-header');
+    this.icon = this.header.querySelector('.js-checkbox-list__icon');
+    this.menu = this.anchor.querySelector('.js-checkbox-list__items');
   }
 
   bindEventClick(element) {
@@ -22,7 +22,7 @@ class Checkbox {
   }
 }
 
-const checkbox = document.querySelectorAll('.checkbox-list');
+const checkbox = document.querySelectorAll('.js-checkbox-list');
 
 checkbox.forEach((anchor) => {
   new Checkbox(anchor);

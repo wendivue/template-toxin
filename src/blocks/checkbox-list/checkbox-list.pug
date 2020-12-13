@@ -2,12 +2,12 @@ mixin checkbox-list({ state, text, checkboxList })
   - state = state ? "checkbox-list__items--" + state : "";
   - const stateIcon = state ? "checkbox-list__icon--" + state : "";
 
-  .checkbox-list
-    header.checkbox-list__wrapper-header
+  .checkbox-list.js-checkbox-list
+    header.checkbox-list__wrapper-header.js-checkbox-list__wrapper-header
       h3.checkbox-list__title= text
-      button(class="checkbox-list__icon " + stateIcon)= "expand_more"
+      button(class="js-checkbox-list__icon checkbox-list__icon " + stateIcon)= "expand_more"
 
-    ul(class="checkbox-list__items " + state)
+    ul(class="js-checkbox-list__items checkbox-list__items " + state)
       each item in checkboxList
         - let { id, text } = item;
         - id = id ? "checkbox-list-" + id : "";
