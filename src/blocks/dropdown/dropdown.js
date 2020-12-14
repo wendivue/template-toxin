@@ -4,7 +4,9 @@ const PEOPLE = 'people';
 class Dropdown {
   constructor(anchor) {
     this.anchor = anchor;
+  }
 
+  init() {
     this.getElement();
     this.getValue();
     this.bindEventClick(
@@ -246,8 +248,9 @@ class Dropdown {
   }
 }
 
-const dropdown = document.querySelectorAll('.js-dropdown');
+const dropdowns = document.querySelectorAll('.js-dropdown');
 
-dropdown.forEach((element) => {
-  new Dropdown(element);
+dropdowns.forEach((element) => {
+  const dropdown = new Dropdown(element);
+  dropdown.init();
 });

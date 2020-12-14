@@ -1,7 +1,9 @@
 class Checkbox {
   constructor(anchor) {
     this.anchor = anchor;
+  }
 
+  init() {
     this.getElement();
     this.bindEventClick(this.header);
   }
@@ -22,8 +24,9 @@ class Checkbox {
   }
 }
 
-const checkbox = document.querySelectorAll('.js-checkbox-list');
+const checkboxs = document.querySelectorAll('.js-checkbox-list');
 
-checkbox.forEach((anchor) => {
-  new Checkbox(anchor);
+checkboxs.forEach((anchor) => {
+  const checkbox = new Checkbox(anchor);
+  checkbox.init();
 });
