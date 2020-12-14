@@ -1,0 +1,35 @@
+extends ../../layout/main-layout.pug
+
+block variables
+  include ../../blocks/col-4/col-4.pug
+  include ../../blocks/hotel-search/hotel-search.pug
+  include ../../blocks/registration/registration.pug
+  include ../../blocks/reservation/reservation.pug
+  include ../../blocks/sign-in/sign-in.pug
+  include ../../blocks/hotel-card/hotel-card.pug
+
+  - const pageTitle = "Cards";
+  - const classMain = "ui-kits-cards";
+  - const isPageCenter = true;
+  - const classImg = "ui-kits-cards__img";
+  - const itemsPeople = [{text: 'взрослые', value: '2', tabindex: 2}, {text: 'дети', value: '1', tabindex: 3}, {text: 'младенцы', value: '0', tabindex: 3}];
+
+block content
+  +col-4
+    .ui-kits-cards__hotel-search
+      +hotel-search({ title: 'Найдём номера под ваши пожелания', link: '/mock-address/change-me' }, itemsPeople)
+    .ui-kits-cards__registration
+      +registration({ title: 'Регистрация аккаунта', link: '/mock-address/change-me' })
+  +col-4
+    .ui-kits-cards__reservation
+      +reservation({ number: '888', price: '9 990₽', link: '/mock-address/change-me' }, itemsPeople)
+    .ui-kits-cards__sign-in
+      +sign-in({ title: 'войти', link: '/mock-address/change-me' })
+  +col-4
+    .ui-kits-cards__wrapper-col
+      .ui-kits-cards__date-picker
+        .datepicker-here
+    .ui-kits-cards__hotel-card
+      +hotel-card({ number: '888', price: '9 990₽', isLux: true, star: '5', reviews: '145', link: '/mock-address/change-me', itemList: [ {img: 'img/hotel-1.png'}, {img: 'img/hotel-1.png'}, {img: 'img/hotel-1.png'}, {img: 'img/hotel-1.png'} ] })
+    .ui-kits-cards__hotel-card
+      +hotel-card({ number: '840', price: '9 990₽', star: '4', reviews: '65', link: '/mock-address/change-me', itemList: [ {img: 'img/hotel-2.png'}, {img: 'img/hotel-2.png'}, {img: 'img/hotel-2.png'}, {img: 'img/hotel-2.png'} ] })

@@ -1,0 +1,19 @@
+extends ../../layout/main-layout.pug
+
+block variables
+  - const pageTitle = "Landing-page";
+  - const classMain = "landing-page";
+  - const classWrapper = "landing-page__content";
+  - const headerProps = { itemList: [ {text: 'О нас', link: '/mock-address/change-me'}, {text: 'Услуги', link: '/mock-address/change-me', isIcon: true, isSubItemList: true}, {text: 'Вакансии', link: '/mock-address/change-me'}, {text: 'Новости', link: '/mock-address/change-me'}, {text: 'Соглашения', link: '/mock-address/change-me', isIcon: true, isSubItemList2: true} ], loginButton: { text: 'войти', link: 'page-landing-sign-in.html', theme: 'border', size: 'small-border' }, registerButton: { text: 'зарегистрироваться', link: 'page-landing-registration.html', size: 'small' }, subItemList1: [ {text: 'бронирование', link: '/mock-address/change-me'}, {text: 'съем квартиры', link: '/mock-address/change-me'}, {text: 'продажа квартиры', link: '/mock-address/change-me'} ], subItemList2: [ {text: 'правила', link: '/mock-address/change-me'}, {text: 'договор', link: '/mock-address/change-me'} ] };
+  - const footerProps = { textLogo: 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»', placeholder: 'Email', itemList1: [ {title: 'навигация'}, {text: 'О нас', link: '/mock-address/change-me'}, {text: 'Новости', link: '/mock-address/change-me'}, {text: 'Служба поддержки', link: '/mock-address/change-me'}, {text: 'Услуги', link: '/mock-address/change-me'} ], itemList2: [ {title: 'о нас'}, {text: 'О сервисе', link: '/mock-address/change-me'}, {text: 'Наша команда', link: '/mock-address/change-me'}, {text: 'Вакансии', link: '/mock-address/change-me'}, {text: 'Инвесторы', link: '/mock-address/change-me'} ], itemList3: [ {title: 'Служба поддержки'}, {text: 'Соглашения', link: '/mock-address/change-me'}, {text: 'Сообщества', link: '/mock-address/change-me'}, {text: 'Связь с нами', link: '/mock-address/change-me'} ], titleSub: 'Подписка', textSub: 'Получайте специальные предложения и новости сервиса', copyright: 'Copyright © 2018 Toxin отель. Все права зачищены', iconList: [ {link: '/mock-address/change-me', icon: 'fa-twitter'}, {link: '/mock-address/change-me', icon: 'fa-facebook-square'}, {link: '/mock-address/change-me', icon: 'fa-instagram'} ] };
+  - const itemsPeople = [{text: 'взрослые', value: '0', tabindex: 2}, {text: 'дети', value: '0', tabindex: 3}, {text: 'младенцы', value: '0', tabindex: 4}];
+
+block content
+  include ../../blocks/hotel-search/hotel-search.pug
+  +page
+    +center-block
+      .landing-page__hotel-search
+        +hotel-search({ title: 'Найдём номера под ваши пожелания', link: 'page-search-room.html' }, itemsPeople)
+  +page
+    .landing-page__wrapper-text
+      p.landing-page__text Лучшие номера для вашей работы, отдыха и просто вдохновения

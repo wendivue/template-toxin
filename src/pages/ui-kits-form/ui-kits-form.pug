@@ -1,38 +1,37 @@
-include ./include/doctype.pug
+extends ../../layout/main-layout.pug
 
-include ../blocks/ui-kits-form/ui-kits-form.pug
-include ../blocks/page/page.pug
-include ../blocks/center-block/center-block.pug
-include ../blocks/col-4/col-4.pug
-include ../blocks/text-field/text-field.pug
-include ../blocks/dropdown/dropdown.pug
-include ../blocks/date-picker/date-picker.pug
-include ../blocks/checkbox-list/checkbox-list.pug
-include ../blocks/icon-text-list/icon-text-list.pug
-include ../blocks/checkbox-buttons/checkbox-buttons.pug
-include ../blocks/radio-buttons/radio-buttons.pug
-include ../blocks/toggle/toggle.pug
-include ../blocks/like-button/like-button.pug
-include ../blocks/rate-button/rate-button.pug
-include ../blocks/range-slider/range-slider.pug
-include ../blocks/button/button.pug
-include ../blocks/pagination/pagination.pug
-include ../blocks/bullet-list/bullet-list.pug
-include ../blocks/review/review.pug
+block variables
+  include ../../blocks/col-4/col-4.pug
+  include ../../blocks/text-field/text-field.pug
+  include ../../blocks/dropdown/dropdown.pug
+  include ../../blocks/date-picker/date-picker.pug
+  include ../../blocks/checkbox-list/checkbox-list.pug
+  include ../../blocks/icon-text-list/icon-text-list.pug
+  include ../../blocks/checkbox-buttons/checkbox-buttons.pug
+  include ../../blocks/radio-buttons/radio-buttons.pug
+  include ../../blocks/toggle/toggle.pug
+  include ../../blocks/like-button/like-button.pug
+  include ../../blocks/rate-button/rate-button.pug
+  include ../../blocks/range-slider/range-slider.pug
+  include ../../blocks/button/button.pug
+  include ../../blocks/pagination/pagination.pug
+  include ../../blocks/bullet-list/bullet-list.pug
+  include ../../blocks/review/review.pug
 
-- const checkboxList = [{text: 'Завтрак', id: '1'},{text: 'Письменный стол', id: '2', isChecked: true},{text: 'Стул для кормления', id: '3', isChecked: true},{text: 'Кроватка', id: '4', isChecked: true},{text: 'Телевизор', id: '5'},{text: 'Шампунь', id: '6'},{text: 'Телевизор', id: '7'},{text: 'Шампунь', id: '8'}];
-- const checkboxButtons1 = [{text: 'Ширина коридоров в номере не менее 91 см.', id: '4', title: 'Широкий коридор'}, {text: 'На 1 этаже вас встретит специалист и проводит до номера.', id: '5', title: 'Помощник для инвалидов'}];
-- const checkboxButtons2 = [{text: 'Можно курить', id: '1'}, {text: 'Можно с питомцами', id: '2', isChecked: true}, {text: 'Можно пригласить гостей (до 10 человек)', id: '3', isChecked: true}];
-- const itemsRoom = [{text: 'спальни', value: '2', tabindex: 2}, {text: 'кровати', value: '2', tabindex: 3}, {text: 'ванные комнаты', value: '0', tabindex: 4}];
-- const itemsPeople = [{text: 'взрослые', value: '2', tabindex: 2}, {text: 'дети', value: '1', tabindex: 3}, {text: 'младенцы', value: '0', tabindex: 4}];
-- const itemsPeopleNull = [{text: 'взрослые', value: '0', tabindex: 2}, {text: 'дети', value: '0', tabindex: 3}, {text: 'младенцы', value: '0', tabindex: 4}];
-- const iconList = [{ icon: "insert_emoticon", title: "Комфорт", text: "Шумопоглощающие стены", theme: "border" }, { icon: "location_city", title: "Удобство", text: "Окно в каждой из спален", theme: "border" }];
-- const radioButtonsList = [{text: 'Мужчина', value: 'male', name: 'gender', isChecked: true}, {text: 'Женщина', name: 'gender', value: 'female'}];
-- const rangeConfig = { dataMin: 0, dataMax: 15500, dataFrom: 5000, dataTo: 10000 };
+  - const pageTitle = "Form Elements";
+  - const classMain = "ui-kits-form";
+  - const classImg = "ui-kits-form__img";
+  - const checkboxList = [{text: 'Завтрак', id: '1'},{text: 'Письменный стол', id: '2', isChecked: true},{text: 'Стул для кормления', id: '3', isChecked: true},{text: 'Кроватка', id: '4', isChecked: true},{text: 'Телевизор', id: '5'},{text: 'Шампунь', id: '6'},{text: 'Телевизор', id: '7'},{text: 'Шампунь', id: '8'}];
+  - const checkboxButtons1 = [{text: 'Ширина коридоров в номере не менее 91 см.', id: '4', title: 'Широкий коридор'}, {text: 'На 1 этаже вас встретит специалист и проводит до номера.', id: '5', title: 'Помощник для инвалидов'}];
+  - const checkboxButtons2 = [{text: 'Можно курить', id: '1'}, {text: 'Можно с питомцами', id: '2', isChecked: true}, {text: 'Можно пригласить гостей (до 10 человек)', id: '3', isChecked: true}];
+  - const itemsRoom = [{text: 'спальни', value: '2', tabindex: 2}, {text: 'кровати', value: '2', tabindex: 3}, {text: 'ванные комнаты', value: '0', tabindex: 4}];
+  - const itemsPeople = [{text: 'взрослые', value: '2', tabindex: 2}, {text: 'дети', value: '1', tabindex: 3}, {text: 'младенцы', value: '0', tabindex: 4}];
+  - const itemsPeopleNull = [{text: 'взрослые', value: '0', tabindex: 2}, {text: 'дети', value: '0', tabindex: 3}, {text: 'младенцы', value: '0', tabindex: 4}];
+  - const iconList = [{ icon: "insert_emoticon", title: "Комфорт", text: "Шумопоглощающие стены", theme: "border" }, { icon: "location_city", title: "Удобство", text: "Окно в каждой из спален", theme: "border" }];
+  - const radioButtonsList = [{text: 'Мужчина', value: 'male', name: 'gender', isChecked: true}, {text: 'Женщина', name: 'gender', value: 'female'}];
+  - const rangeConfig = { dataMin: 0, dataMax: 15500, dataFrom: 5000, dataTo: 10000 };
 
-+doctype({title: 'Form Elements'})
-img.ui-kits-form__img(src='img/Group.png')
-+ui-kits-form
+block content
   +page
     +center-block
       +col-4
