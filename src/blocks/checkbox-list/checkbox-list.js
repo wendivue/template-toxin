@@ -24,9 +24,4 @@ class Checkbox {
   }
 }
 
-const checkboxs = document.querySelectorAll('.js-checkbox-list');
-
-checkboxs.forEach((anchor) => {
-  const checkbox = new Checkbox(anchor);
-  checkbox.init();
-});
+export default Checkbox;
