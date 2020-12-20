@@ -4,7 +4,7 @@ mixin dropdown__item({ isItemsRoom, itemsList })
   each item in itemsList
     - let { value, text, tabindex } = item;
     - let stateItem = value == 0 ? " dropdown__button--no-active" : "";
-    .dropdown__item
+    li.dropdown__item
       p.dropdown__text= text
       .dropdown__wrapper-input
         if (isItemsRoom)
@@ -33,7 +33,7 @@ mixin dropdown({ stateMenu, size, isButtonMenu, value, text, isItemsRoom, tabind
 
   div(class="js-dropdown dropdown" + sizeDropdown)
     +text-field({ state, className, size, id, myId, type, value, name, tabindex, iconText, classNameIcon, textState, isDropdown })
-    div(class="js-dropdown__menu dropdown__menu" + stateMenu + sizeMenu)
+    ul(class="js-dropdown__menu dropdown__menu" + stateMenu + sizeMenu)
       +dropdown__item({ isItemsRoom, itemsList })
       if (isButtonMenu)
         .dropdown__wrapper-button-menu

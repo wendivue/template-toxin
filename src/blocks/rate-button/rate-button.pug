@@ -1,9 +1,11 @@
 mixin rate-button({ star })
   - const starBorder = 5 - star;
 
-  .rate-button
+  ul.rate-button
     - for (let x = 0; x < star; x++)
-      i.rate-button__icon star
+      li.rate-button__item
+        i.rate-button__icon star
 
     - for (let x = 0; x < starBorder; x++)
-      i.rate-button__icon star_border
+      li.rate-button__item
+        i.rate-button__icon star_border

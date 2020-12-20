@@ -106,7 +106,7 @@
     flex-flow: column;
   }
 
-  &__link-icon {
+  &__item {
     margin-left: 25px;
 
     &:first-child {
@@ -121,6 +121,8 @@
   }
 
   &__social {
+    display: flex;
+
     @media (max-width: $breakpoint-md) {
       padding-top: 10px;
     }

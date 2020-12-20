@@ -43,21 +43,33 @@ block content
 
   .search-room__content
     h1.search-room__title Номера, которые мы для вас подобрали
-    .search-room__wrapper-hotel-card
-      +hotel-card({ number: '888', price: '9 990₽', isLux: true, star: '5', reviews: '145', link: '/mock-address/change-me', itemList: [ {img: 'img/hotel-1.png'}, {img: 'img/hotel-1.png'}, {img: 'img/hotel-1.png'}, {img: 'img/hotel-1.png'} ] })
-      +hotel-card({ number: '840', price: '9 990₽', star: '4', reviews: '65', link: '/mock-address/change-me', itemList: [ {img: 'img/hotel-2.png'}, {img: 'img/hotel-2.png'}, {img: 'img/hotel-2.png'}, {img: 'img/hotel-2.png'} ] })
-      +hotel-card({ number: '980', price: '8 500₽', lux: 'true', star: '3', reviews: '35', link: '/mock-address/change-me', itemList: [ {img: 'img/hotel-3.png'}, {img: 'img/hotel-3.png'}, {img: 'img/hotel-3.png'}, {img: 'img/hotel-3.png'} ] })
-    .search-room__wrapper-hotel-card
-      +hotel-card({ number: '856', price: '7 300₽', star: '5', reviews: '19', link: '/mock-address/change-me', itemList: [ {img: 'img/hotel-4.png'}, {img: 'img/hotel-4.png'}, {img: 'img/hotel-4.png'}, {img: 'img/hotel-4.png'} ] })
-      +hotel-card({ number: '740', price: '6 000₽', star: '4', reviews: '44', link: '/mock-address/change-me', itemList: [ {img: 'img/hotel-5.png'}, {img: 'img/hotel-5.png'}, {img: 'img/hotel-5.png'}, {img: 'img/hotel-5.png'} ] })
-      +hotel-card({ number: '982', price: '5 800₽', star: '3', reviews: '56', link: '/mock-address/change-me', itemList: [ {img: 'img/hotel-6.png'}, {img: 'img/hotel-6.png'}, {img: 'img/hotel-6.png'}, {img: 'img/hotel-6.png'} ] })
-    .search-room__wrapper-hotel-card
-      +hotel-card({ number: '678', price: '5 500₽', star: '5', reviews: '45', link: '/mock-address/change-me', itemList: [ {img: 'img/hotel-7.png'}, {img: 'img/hotel-7.png'}, {img: 'img/hotel-7.png'}, {img: 'img/hotel-7.png'} ] })
-      +hotel-card({ number: '450', price: '5 300₽', star: '4', reviews: '39', link: '/mock-address/change-me', itemList: [ {img: 'img/hotel-8.png'}, {img: 'img/hotel-8.png'}, {img: 'img/hotel-8.png'}, {img: 'img/hotel-8.png'} ] })
-      +hotel-card({ number: '350', price: '5 000₽', star: '3', reviews: '77', link: '/mock-address/change-me', itemList: [ {img: 'img/hotel-9.png'}, {img: 'img/hotel-9.png'}, {img: 'img/hotel-9.png'}, {img: 'img/hotel-9.png'} ] })
-    .search-room__wrapper-hotel-card
-      +hotel-card({ number: '666', price: '5 000₽', star: '5', reviews: '25', link: '/mock-address/change-me', itemList: [ {img: 'img/hotel-10.png'}, {img: 'img/hotel-10.png'}, {img: 'img/hotel-10.png'}, {img: 'img/hotel-10.png'} ] })
-      +hotel-card({ number: '444', price: '5 000₽', star: '3', reviews: '15', link: '/mock-address/change-me', itemList: [ {img: 'img/hotel-11.png'}, {img: 'img/hotel-11.png'}, {img: 'img/hotel-11.png'}, {img: 'img/hotel-11.png'} ] })
-      +hotel-card({ number: '352', price: '5 000₽', star: '3', reviews: '55', link: '/mock-address/change-me', itemList: [ {img: 'img/hotel-12.png'}, {img: 'img/hotel-12.png'}, {img: 'img/hotel-12.png'}, {img: 'img/hotel-12.png'} ] })
+    ul.search-room__wrapper-hotel-card
+      li.search-room__hotel-card
+        +hotel-card({ number: '888', price: '9 990₽', isLux: true, star: '5', reviews: '145', link: '/mock-address/change-me', itemList: [ {img: 'img/hotel-1.png'}, {img: 'img/hotel-1.png'}, {img: 'img/hotel-1.png'}, {img: 'img/hotel-1.png'} ] })
+      li.search-room__hotel-card
+        +hotel-card({ number: '840', price: '9 990₽', star: '4', reviews: '65', link: '/mock-address/change-me', itemList: [ {img: 'img/hotel-2.png'}, {img: 'img/hotel-2.png'}, {img: 'img/hotel-2.png'}, {img: 'img/hotel-2.png'} ] })
+      li.search-room__hotel-card
+        +hotel-card({ number: '980', price: '8 500₽', lux: 'true', star: '3', reviews: '35', link: '/mock-address/change-me', itemList: [ {img: 'img/hotel-3.png'}, {img: 'img/hotel-3.png'}, {img: 'img/hotel-3.png'}, {img: 'img/hotel-3.png'} ] })
+    ul.search-room__wrapper-hotel-card
+      li.search-room__hotel-card
+        +hotel-card({ number: '856', price: '7 300₽', star: '5', reviews: '19', link: '/mock-address/change-me', itemList: [ {img: 'img/hotel-4.png'}, {img: 'img/hotel-4.png'}, {img: 'img/hotel-4.png'}, {img: 'img/hotel-4.png'} ] })
+      li.search-room__hotel-card
+        +hotel-card({ number: '740', price: '6 000₽', star: '4', reviews: '44', link: '/mock-address/change-me', itemList: [ {img: 'img/hotel-5.png'}, {img: 'img/hotel-5.png'}, {img: 'img/hotel-5.png'}, {img: 'img/hotel-5.png'} ] })
+      li.search-room__hotel-card
+        +hotel-card({ number: '982', price: '5 800₽', star: '3', reviews: '56', link: '/mock-address/change-me', itemList: [ {img: 'img/hotel-6.png'}, {img: 'img/hotel-6.png'}, {img: 'img/hotel-6.png'}, {img: 'img/hotel-6.png'} ] })
+    ul.search-room__wrapper-hotel-card
+      li.search-room__hotel-card
+        +hotel-card({ number: '678', price: '5 500₽', star: '5', reviews: '45', link: '/mock-address/change-me', itemList: [ {img: 'img/hotel-7.png'}, {img: 'img/hotel-7.png'}, {img: 'img/hotel-7.png'}, {img: 'img/hotel-7.png'} ] })
+      li.search-room__hotel-card
+        +hotel-card({ number: '450', price: '5 300₽', star: '4', reviews: '39', link: '/mock-address/change-me', itemList: [ {img: 'img/hotel-8.png'}, {img: 'img/hotel-8.png'}, {img: 'img/hotel-8.png'}, {img: 'img/hotel-8.png'} ] })
+      li.search-room__hotel-card
+        +hotel-card({ number: '350', price: '5 000₽', star: '3', reviews: '77', link: '/mock-address/change-me', itemList: [ {img: 'img/hotel-9.png'}, {img: 'img/hotel-9.png'}, {img: 'img/hotel-9.png'}, {img: 'img/hotel-9.png'} ] })
+    ul.search-room__wrapper-hotel-card
+      li.search-room__hotel-card
+        +hotel-card({ number: '666', price: '5 000₽', star: '5', reviews: '25', link: '/mock-address/change-me', itemList: [ {img: 'img/hotel-10.png'}, {img: 'img/hotel-10.png'}, {img: 'img/hotel-10.png'}, {img: 'img/hotel-10.png'} ] })
+      li.search-room__hotel-card
+        +hotel-card({ number: '444', price: '5 000₽', star: '3', reviews: '15', link: '/mock-address/change-me', itemList: [ {img: 'img/hotel-11.png'}, {img: 'img/hotel-11.png'}, {img: 'img/hotel-11.png'}, {img: 'img/hotel-11.png'} ] })
+      li.search-room__hotel-card
+        +hotel-card({ number: '352', price: '5 000₽', star: '3', reviews: '55', link: '/mock-address/change-me', itemList: [ {img: 'img/hotel-12.png'}, {img: 'img/hotel-12.png'}, {img: 'img/hotel-12.png'}, {img: 'img/hotel-12.png'} ] })
     .search-room__pagination
       +pagination({ itemList: [ {text: '1', link: '/mock-address/change-me', isCurrentPage: true}, {text: '2', link: '/mock-address/change-me'}, {text: '3', link: '/mock-address/change-me'}, {text: '...'}, {text: '15', link: '/mock-address/change-me'} ], nextPage: '/mock-address/change-me', text: '1 – 12 из 100+ вариантов аренды' })

@@ -1,9 +1,9 @@
 mixin radio-buttons({ radioButtonsList })
   .radio-buttons
-    .radio-buttons__items
+    ul.radio-buttons__items
       each item in radioButtonsList
         - const { isChecked, value, name, text } = item;
-        .radio-buttons__item
+        li.radio-buttons__item
           if (isChecked)
             input.radio-buttons__radio(id=value, type='radio', name=name, value=value, checked)
           else

@@ -2,6 +2,6 @@ mixin block-type({ itemList })
   each item in itemList
     - let { className, title, text } = item;
     - className = className ? " block-type--" + className : "";
-    div(class="block-type" + className)
+    li(class="block-type" + className)
       p.block-type__title= title
       p.block-type__text= text

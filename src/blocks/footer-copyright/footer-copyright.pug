@@ -26,11 +26,12 @@ mixin footer-copyright({ textLogo, itemList1, itemList2, itemList3, titleSub, pl
       +page
         +center-block
           p.footer-copyright__text= copyright
-          .footer-copyright__social
+          ul.footer-copyright__social
             each icons in iconList
               - const { link, icon } = icons;
-              a.footer-copyright__link-icon(href=link)
-                i(class="fa footer-copyright__icon " + icon)
+              li.footer-copyright__item
+                a.footer-copyright__link-icon(href=link)
+                  i(class="fa footer-copyright__icon " + icon)
 
 mixin footer-list(itemList)
   each item in itemList

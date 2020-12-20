@@ -1,8 +1,8 @@
 mixin price-list({ itemList, description, price })
-  .price-list
+  ul.price-list
     each item in itemList
       - const { isIcon, description, price } = item;
-      .price-list__item
+      li.price-list__item
         if (isIcon)
           .price-list__wrapper-text
             p.price-list__text= description

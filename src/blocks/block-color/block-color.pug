@@ -1,6 +1,6 @@
 mixin block-color({ itemList })
   each item in itemList
-    .block-color
+    li.block-color
       - let { theme, title, text } = item;
       - theme = theme ? " block-color__square--" + theme : "";
       .block-color__square(class="block-color__square--" + theme)

@@ -24,10 +24,11 @@
   }
 
   &__social {
+    display: flex;
     margin-top: 27px;
   }
 
-  &__link-icon {
+  &__item {
     margin-left: 20px;
 
     &:first-child {

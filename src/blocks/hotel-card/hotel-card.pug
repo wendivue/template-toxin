@@ -5,10 +5,11 @@ mixin hotel-card({ number, itemList, price, isLux, link, reviews, star })
 
   .hotel-card
     .hotel-card__slider
-      .owl-carousel.owl-theme.js-owl-carousel
+      ul.owl-carousel.owl-theme.js-owl-carousel
         each item in itemList
-          a.hotel-card__link(href=link)
-            img.hotel-card__img(src=item.img, alt=altText)
+          li.hotel-card__item
+            a.hotel-card__link(href=link)
+              img.hotel-card__img(src=item.img, alt=altText)
 
     .hotel-card__description
       .hotel-card__wrapper-head

@@ -1,0 +1,12 @@
+@import '../../scss/global-typography';
+
+.main {
+  &__list {
+    display: flex;
+    margin-top: 150px;
+  }
+
+  &__link {
+    @include typo-body;
+  }
+}
