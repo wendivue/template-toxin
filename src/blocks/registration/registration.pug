@@ -6,16 +6,16 @@ include ../button/button.pug
 
 - const radioButtonsList = [{text: 'Мужчина', value: 'male', name: 'gender', isChecked: true}, {text: 'Женщина', name: 'gender', value: 'female'}];
 
-mixin registration(object)
+mixin registration({ title, link })
   .registration
-    h1.registration__title= object.title
+    h1.registration__title= title
 
     .registration__text-field
       +text-field({ placeholder: 'Имя', tabindex: 1, name: 'first name', type: 'text' })
     .registration__text-field
       +text-field({ placeholder: 'Фамилия', tabindex: 2, name: 'last name', type: 'text' })
     .registration__radio-buttons
-      +radio-buttons({radioButtonsList})
+      +radio-buttons({ radioButtonsList })
     .registration__date-picker
       +date-picker({ text: 'дата рождения', placeholder: 'ДД.ММ.ГГГГ', type: 'text', name: 'date', className: 'datepicker datepicker-here' })
     .registration__text-field
@@ -25,7 +25,7 @@ mixin registration(object)
     .registration__toggle
       +toggle({ title: 'Toggle', text: 'Получать спецпредложения', id: '1' })
     .registration__button
-      +button({ text: 'перейти к оплате', link: object.link, isButtonLarge: true })
+      +button({ text: 'перейти к оплате', link: link, isButtonLarge: true })
     .registration__sign-in
       p.registration__text-sign-in Уже есть аккаунт на Toxin
       +button({ text: 'войти', link: 'page-landing-sign-in.html', theme: 'border' })

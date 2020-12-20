@@ -1,13 +1,13 @@
-mixin pie-chart(object)
+mixin pie-chart({ img, votes, pieChartList })
   .pie-chart
     .pie-chart__wrapper-img
-      img.pie-chart__img-diagram(src=object.img)
+      img.pie-chart__img-diagram(src=img)
       .pie-chart__wrapper-text-diagram
-        p.pie-chart__text-diagram.pie-chart__text-diagram--big= object.votes
+        p.pie-chart__text-diagram.pie-chart__text-diagram--big= votes
         p.pie-chart__text-diagram голосов
 
     ul.pie-chart__list
-      each item in object.pieChartList
+      each item in pieChartList
         - let { theme, text } = item;
         - theme = theme ? " pie-chart__item--" + theme : "";
         li(class="pie-chart__item" + theme)= text

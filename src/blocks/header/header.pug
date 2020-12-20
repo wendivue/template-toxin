@@ -2,7 +2,7 @@ include ../button/button.pug
 include ../page/page.pug
 include ../center-block/center-block.pug
 
-mixin header(object)
+mixin header({ itemList, size, textLogin, loginButton, registerButton, subItemList1, subItemList2 })
   .header
     +page
       +center-block
@@ -11,33 +11,33 @@ mixin header(object)
         .header__wrapper-menu
           nav.header__menu
             ul.header__list
-              each item in object.itemList
-                - let { state } = item;
+              each item in itemList
+                - let { state, link, text, isIcon, isSubItemList, isSubItemList2 } = item;
                 - state = state ? " header__link--" + state : "";
-                - const sizeItem = object.size ? " header__item--" + object.size : "";
-                - const sizeIcon = object.size ? " header__icon--" + object.size : "";
+                - const sizeItem = size ? " header__item--" + size : "";
+                - const sizeIcon = size ? " header__icon--" + size : "";
                 li(class="header__item" + sizeItem)
-                  a(class="header__link" + state, href=item.link)= item.text
-                    if (item.isIcon)
+                  a(class="header__link" + state, href=link)= text
+                    if (isIcon)
                       i(class="header__icon" + sizeIcon) expand_more
-                  if (item.isIcon && item.isSubItemList)
+                  if (isIcon && isSubItemList)
                     ul.header__submenu
-                      each subItem in object.subItemList1
+                      each subItem in subItemList1
                         li.header__subitem
                           a.header__link(href=subItem.link)= subItem.text
-                  else if (item.isIcon && item.isSubItemList2)
+                  else if (isIcon && isSubItemList2)
                     ul.header__submenu
-                      each subItem in object.subItemList2
+                      each subItem in subItemList2
                         li.header__subitem
                           a.header__link(href=subItem.link)= subItem.text
 
-          if (object.textLogin)
+          if (textLogin)
             .header__login
-              p.header__text-login= object.textLogin
+              p.header__text-login= textLogin
           else
-            - const smallbuttons = object.size ? " header__wrapper-button--" + object.size : "";
+            - const smallbuttons = size ? " header__wrapper-button--" + size : "";
             div(class="header__wrapper-button" + smallbuttons)
               .header__button
-                +button(object.loginButton)
+                +button(loginButton)
               .header__button
-                +button(object.registerButton)
+                +button(registerButton)

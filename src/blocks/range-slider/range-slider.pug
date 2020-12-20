@@ -1,13 +1,14 @@
-mixin range-slider(object, rangeConfig)
+mixin range-slider({ text, rangeConfig })
+  - const { dataMin, dataMax, dataFrom, dataTo } = rangeConfig;
   .range-slider
     .range-slider__header
-      h3.range-slider__title= object.text
+      h3.range-slider__title= text
 
     input.range-slider__input.js-range-slider__input(
       type='text',
       value='',
-      data-min=rangeConfig.dataMin,
-      data-max=rangeConfig.dataMax,
-      data-from=rangeConfig.dataFrom,
-      data-to=rangeConfig.dataTo
+      data-min=dataMin,
+      data-max=dataMax,
+      data-from=dataFrom,
+      data-to=dataTo
     )

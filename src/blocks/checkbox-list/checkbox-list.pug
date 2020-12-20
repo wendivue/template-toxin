@@ -9,10 +9,10 @@ mixin checkbox-list({ state, text, checkboxList })
 
     ul(class="js-checkbox-list__items checkbox-list__items " + state)
       each item in checkboxList
-        - let { id, text } = item;
+        - let { id, text, isChecked } = item;
         - id = id ? "checkbox-list-" + id : "";
           li.checkbox-list__wrapper-checkbox
-            if (item.isChecked)
+            if (isChecked)
               input.checkbox-list__checkbox(id=id, type='checkbox', checked)
             else
               input.checkbox-list__checkbox(id=id, type='checkbox')

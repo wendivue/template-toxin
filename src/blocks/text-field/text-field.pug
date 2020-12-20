@@ -1,39 +1,38 @@
-mixin text-field(object)
-  - let { state, size, className, classNameIcon } = object;
+mixin text-field({ state, size, className, classNameIcon, tabindex, myId, stateMenu, text, textState, isDropdown, type, value, name, isDateRange, placeholder, iconText })
   - state = state ? "text-field__input--" + state + " " : "";
   - size = size ? "text-field--" + size : "";
   - className = className ? "js-text-field__" + className : "";
   - classNameIcon = classNameIcon ? "text-field__icon--" + classNameIcon : "";
-  - const id = object.tabindex ? "text-field-" + object.tabindex : "";
-  - const myId = object.myId ? " " + object.myId : "";
-  - const borderRadius = object.stateMenu ? " text-field__input--open" : "";
+  - const id = tabindex ? "text-field-" + tabindex : "";
+  - myId = myId ? " " + myId : "";
+  - const borderRadius = stateMenu ? " text-field__input--open" : "";
 
   div(class="text-field " + size)
-    if (object.text)
+    if (text)
       .text-field__wrapper-text
-        label.text-field__label(for=id)= object.text
-        if (object.textState)
-          p.text-field__text-state= object.textState
+        label.text-field__label(for=id)= text
+        if (textState)
+          p.text-field__text-state= textState
 
     .text-field__input-wrapper
-      if (object.isDropdown)
+      if (isDropdown)
         input(
           class="js-text-field__input text-field__input " + state + className + borderRadius,
           id=id + myId,
-          type=object.type,
-          value=object.value,
-          name=object.name,
-          tabindex=object.tabindex,
+          type=type,
+          value=value,
+          name=name,
+          tabindex=tabindex,
           readonly
         )
-      else if (object.isDateRange)
+      else if (isDateRange)
         input(
           class="datepicker-here text-field__input " + state + className,
           id=id + myId,
-          type=object.type,
-          placeholder=object.placeholder,
-          name=object.name,
-          tabindex=object.tabindex,
+          type=type,
+          placeholder=placeholder,
+          name=name,
+          tabindex=tabindex,
           data-multiple-dates-separator=' - ',
           readonly
         )
@@ -41,12 +40,12 @@ mixin text-field(object)
         input(
           class="text-field__input " + state + className,
           id=id + myId,
-          type=object.type,
-          placeholder=object.placeholder,
-          value=object.value,
-          name=object.name,
-          tabindex=object.tabindex
+          type=type,
+          placeholder=placeholder,
+          value=value,
+          name=name,
+          tabindex=tabindex
         )
 
-      if (object.iconText)
-        button(class="text-field__icon " + classNameIcon)= object.iconText
+      if (iconText)
+        button(class="text-field__icon " + classNameIcon)= iconText

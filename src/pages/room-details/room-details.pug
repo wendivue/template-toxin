@@ -49,4 +49,4 @@ block content
               h2.room-details__title-cancel Отмена
               p.room-details__text-cancel.room-details__text-cancel--small Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
         .room-details__reservation
-          +reservation({ number: '888', price: '9 990₽', link: '/mock-address/change-me' }, itemsPeople)
+          +reservation({ number: '888', price: '9 990₽', link: '/mock-address/change-me', itemsList: itemsPeople })

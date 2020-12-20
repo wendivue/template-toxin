@@ -1,5 +1,5 @@
 include ../text-field/text-field.pug
 
-mixin date-picker(object)
+mixin date-picker({ state, size, className, classNameIcon, tabindex, myId, stateMenu, text, textState, isDropdown, type, name, isDateRange, placeholder, iconText })
   .date-picker
-    +text-field(object)
+    +text-field({ state, size, className, classNameIcon, tabindex, myId, stateMenu, text, textState, isDropdown, type, name, isDateRange, placeholder, iconText })

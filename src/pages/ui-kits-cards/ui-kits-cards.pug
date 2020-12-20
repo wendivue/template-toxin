@@ -17,12 +17,12 @@ block variables
 block content
   +col-4
     .ui-kits-cards__hotel-search
-      +hotel-search({ title: 'Найдём номера под ваши пожелания', link: '/mock-address/change-me' }, itemsPeople)
+      +hotel-search({ title: 'Найдём номера под ваши пожелания', link: '/mock-address/change-me', itemsList: itemsPeople })
     .ui-kits-cards__registration
       +registration({ title: 'Регистрация аккаунта', link: '/mock-address/change-me' })
   +col-4
     .ui-kits-cards__reservation
-      +reservation({ number: '888', price: '9 990₽', link: '/mock-address/change-me' }, itemsPeople)
+      +reservation({ number: '888', price: '9 990₽', link: '/mock-address/change-me', itemsList: itemsPeople })
     .ui-kits-cards__sign-in
       +sign-in({ title: 'войти', link: '/mock-address/change-me' })
   +col-4

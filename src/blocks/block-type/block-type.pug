@@ -1,5 +1,5 @@
-mixin block-type(object)
-  each item in object.itemList
+mixin block-type({ itemList })
+  each item in itemList
     - let { className, title, text } = item;
     - className = className ? " block-type--" + className : "";
     div(class="block-type" + className)

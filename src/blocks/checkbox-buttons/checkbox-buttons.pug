@@ -1,28 +1,21 @@
-mixin checkbox-buttons(object, checkboxButtons)
+mixin checkbox-buttons({ caption, isRich, checkboxButtons })
   .checkbox-buttons
     header.checkbox-buttons__wrapper-header
-      h3.checkbox-buttons__title= object.text
+      h3.checkbox-buttons__title= caption
 
     ul.checkbox-buttons__items
       each item in checkboxButtons
+        - let { text, id, title, isChecked } = item;
+        - id = id ? "checkbox-buttons-" + id : "";
         li.checkbox-buttons__wrapper-checkbox
-          if (item.isChecked)
-            input.checkbox-buttons__checkbox(
-              id=item.id ? "checkbox-buttons-" + item.id : "",
-              type='checkbox',
-              checked
-            )
+          if (isChecked)
+            input.checkbox-buttons__checkbox(id=id, type='checkbox', checked)
           else
-            input.checkbox-buttons__checkbox(
-              id=item.id ? "checkbox-buttons-" + item.id : "",
-              type='checkbox'
-            )
+            input.checkbox-buttons__checkbox(id=id, type='checkbox')
 
-          if (object.isRich)
+          if (isRich)
             .checkbox-buttons__wrapper-text
-              p.checkbox-buttons__text= item.title
-              label.checkbox-buttons__label.checkbox-buttons__label--small(
-                for=item.id ? "checkbox-buttons-" + item.id : ""
-              )= item.text
+              p.checkbox-buttons__text= title
+              label.checkbox-buttons__label.checkbox-buttons__label--small(for=id)= text
           else
-            label.checkbox-buttons__label(for=item.id ? "checkbox-buttons-" + item.id : "")= item.text
+            label.checkbox-buttons__label(for=id)= text

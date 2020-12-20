@@ -1,41 +1,41 @@
 include ../text-field/text-field.pug
 
-mixin dropdown__item(object, itemsList)
+mixin dropdown__item({ isItemsRoom, itemsList })
   each item in itemsList
-    - const state = item.value == 0 ? " dropdown__button--no-active" : "";
+    - let { value, text, tabindex } = item;
+    - let stateItem = value == 0 ? " dropdown__button--no-active" : "";
     .dropdown__item
-      p.dropdown__text= item.text
+      p.dropdown__text= text
       .dropdown__wrapper-input
-        if (object.isItemsRoom)
+        if (isItemsRoom)
           button(
-            class="dropdown__button js-dropdown__button js-dropdown__button js-dropdown__button--decrease dropdown__button--decrease" + state,
+            class="dropdown__button js-dropdown__button js-dropdown__button js-dropdown__button--decrease dropdown__button--decrease" + stateItem,
             type='button'
           ) -
-          input.dropdown__input.js-dropdown__input(value=item.value, tabindex=item.tabindex)
+          input.dropdown__input.js-dropdown__input(value=value, tabindex=tabindex)
           button.dropdown__button.dropdown__button--increase.js-dropdown__button.js-dropdown__button--increase(
             type='button'
           ) +
         else
           button(
-            class="dropdown__button js-dropdown__button js-dropdown__button-people--decrease dropdown__button-people--decrease" + state,
+            class="dropdown__button js-dropdown__button js-dropdown__button-people--decrease dropdown__button-people--decrease" + stateItem,
             type='button'
           ) -
-          input.dropdown__input.js-dropdown__input(value=item.value, tabindex=item.tabindex)
+          input.dropdown__input.js-dropdown__input(value=value, tabindex=tabindex)
           button.dropdown__button.dropdown__button-people--increase.js-dropdown__button.js-dropdown__button-people--increase(
             type='button'
           ) +
 
-mixin dropdown(object, itemsList)
-  - let { stateMenu, size } = object;
+mixin dropdown({ stateMenu, size, isButtonMenu, value, text, isItemsRoom, tabindex, state, className, id, myId, type, name, iconText, classNameIcon, textState, isDropdown, itemsList })
   - stateMenu = stateMenu ? " dropdown__menu--" + stateMenu : "";
   - const sizeDropdown = size ? " dropdown--" + size : "";
   - const sizeMenu = size ? " dropdown__menu--" + size : "";
 
   div(class="js-dropdown dropdown" + sizeDropdown)
-    +text-field(object)
+    +text-field({ state, className, size, id, myId, type, value, name, tabindex, iconText, classNameIcon, textState, isDropdown })
     div(class="js-dropdown__menu dropdown__menu" + stateMenu + sizeMenu)
-      +dropdown__item(object, itemsList)
-      if (object.isButtonMenu)
+      +dropdown__item({ isItemsRoom, itemsList })
+      if (isButtonMenu)
         .dropdown__wrapper-button-menu
           button.dropdown__button-menu.dropdown__button-menu--cleans.js-dropdown__button-menu--cleans очистить
           button.dropdown__button-menu.dropdown__button-menu--complete.js-dropdown__button-menu--complete применить

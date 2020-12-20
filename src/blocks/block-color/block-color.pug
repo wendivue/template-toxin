@@ -1,5 +1,5 @@
-mixin block-color(object)
-  each item in object.itemList
+mixin block-color({ itemList })
+  each item in itemList
     .block-color
       - let { theme, title, text } = item;
       - theme = theme ? " block-color__square--" + theme : "";

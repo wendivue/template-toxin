@@ -1,16 +1,11 @@
-mixin radio-buttons(object)
+mixin radio-buttons({ radioButtonsList })
   .radio-buttons
     .radio-buttons__items
-      each item in object.radioButtonsList
+      each item in radioButtonsList
+        - const { isChecked, value, name, text } = item;
         .radio-buttons__item
-          if (item.isChecked)
-            input.radio-buttons__radio(
-              id=item.value,
-              type='radio',
-              name=item.name,
-              value=item.value,
-              checked
-            )
+          if (isChecked)
+            input.radio-buttons__radio(id=value, type='radio', name=name, value=value, checked)
           else
-            input.radio-buttons__radio(id=item.value, type='radio', name=item.name, value=item.value)
-          label.radio-buttons__label(for=item.value)= item.text
+            input.radio-buttons__radio(id=value, type='radio', name=name, value=value)
+          label.radio-buttons__label(for=value)= text

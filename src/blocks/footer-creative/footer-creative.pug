@@ -1,8 +1,8 @@
-mixin footer-creative(object)
+mixin footer-creative({ text, iconList, link, icon })
   .footer-creative
     img.footer-creative__logo(src='img/Logo.png', alt='logo')
-    p.footer-creative__text= object.text
+    p.footer-creative__text= text
     .footer-creative__social
-      each icon in object.iconList
-        a.footer-creative__link-icon(href=icon.link)
-          i(class="fa footer-creative__icon " + icon.icon)
+      each icon in iconList
+        a.footer-creative__link-icon(href=link)
+          i(class="fa footer-creative__icon " + icon)

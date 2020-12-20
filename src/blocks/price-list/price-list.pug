@@ -1,16 +1,17 @@
-mixin price-list(object)
+mixin price-list({ itemList, description, price })
   .price-list
-    each item in object.itemList
+    each item in itemList
+      - const { isIcon, description, price } = item;
       .price-list__item
-        if (item.isIcon)
+        if (isIcon)
           .price-list__wrapper-text
-            p.price-list__text= item.description
+            p.price-list__text= description
             i.price-list__icon i
-          p.price-list__text= item.price + "\u{20BD}"
+          p.price-list__text= price + "\u{20BD}"
         else
-          p.price-list__text= item.description
-          p.price-list__text= item.price + "\u{20BD}"
+          p.price-list__text= description
+          p.price-list__text= price + "\u{20BD}"
     .price-list__full-price
-      h2.price-list__text.price-list__text--big= object.description
+      h2.price-list__text.price-list__text--big= description
       .price-list__line
-      h2.price-list__text.price-list__text--big= object.price + "\u{20BD}"
+      h2.price-list__text.price-list__text--big= price + "\u{20BD}"

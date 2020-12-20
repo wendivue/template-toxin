@@ -1,8 +1,9 @@
-mixin icon-text-list(object)
+mixin icon-text-list({ iconList })
   .icon-text-list
-    each item in object.iconList
-      div(class="icon-text-list__item " + (item.theme ? "icon-text-list__item--" + item.theme : ""))
-        i.icon-text-list__icon= item.icon
+    each item in iconList
+      - const { theme, icon, title, text } = item;
+      div(class="icon-text-list__item " + (theme ? "icon-text-list__item--" + theme : ""))
+        i.icon-text-list__icon= icon
         .icon-text-list__wrapper-text
-          p.icon-text-list__title= item.title
-          p.icon-text-list__text= item.text
+          p.icon-text-list__title= title
+          p.icon-text-list__text= text

@@ -1,11 +1,12 @@
-mixin pagination(object)
+mixin pagination({ itemList, nextPage, text })
   .pagination
-    each item in object.itemList
-      if (item.isCurrentPage)
-        a.pagination__number.pagination__number--current(href=item.link)= item.text
+    each item in itemList
+      - const { isCurrentPage, link, text } = item;
+      if (isCurrentPage)
+        a.pagination__number.pagination__number--current(href=link)= text
       else
-        a.pagination__number(href=item.link)= item.text
+        a.pagination__number(href=link)= text
 
-    a.pagination__next-page(href=object.nextPage) arrow_forward
+    a.pagination__next-page(href=nextPage) arrow_forward
 
-  p.pagination__text= object.text
+  p.pagination__text= text
