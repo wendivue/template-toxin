@@ -4,7 +4,7 @@ include ../dropdown/dropdown.pug
 include ../button/button.pug
 
 mixin reservation({ number, price, link, itemsList })
-  .reservation
+  form.reservation(action=link)
     .reservation__wrapper-head
       .reservation__items-number
         p.reservation__number.reservation__number--small №
@@ -21,4 +21,4 @@ mixin reservation({ number, price, link, itemsList })
     .reservation__price-list
       +price-list({ itemList: [ {description: '9 990₽ х 4 суток', price: '39 960'}, {description: 'Сбор за услуги: скидка 2 179₽', price: '0', icon: true}, {description: 'Сбор за дополнительные услуги', price: '300', icon: true} ], description: 'Итого', price: '38 081' })
     .reservation__button
-      +button({ text: 'забронировать', link: link, isButtonLarge: true, isButton: true })
+      +button({ text: 'забронировать', isButtonLarge: true, isButton: true, type: 'submit' })

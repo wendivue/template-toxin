@@ -2,7 +2,7 @@ include ../text-field/text-field.pug
 include ../button/button.pug
 
 mixin sign-in({ title, link })
-  .sign-in
+  form.sign-in(action=link)
     h1.sign-in__title= title
 
     .sign-in__text-field
@@ -10,7 +10,7 @@ mixin sign-in({ title, link })
     .sign-in__text-field
       +text-field({ placeholder: 'Пароль', tabindex: 2, name: 'password', type: 'text' })
     .sign-in__button
-      +button({ text: 'войти', link: link, isButtonLarge: true })
+      +button({ text: 'войти', isButtonLarge: true, isButton: true, type: 'submit' })
     .sign-in__create
       p.sign-in__text Нет аккаунта на Toxin?
       +button({ text: 'создать', link: 'page-landing-registration.html', theme: 'border' })

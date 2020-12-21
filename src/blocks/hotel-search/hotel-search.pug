@@ -3,7 +3,7 @@ include ../dropdown/dropdown.pug
 include ../button/button.pug
 
 mixin hotel-search({ title, link, itemsList})
-  .hotel-search
+  form.hotel-search(action=link)
     h1.hotel-search__title= title
 
     .hotel-search__date-picker
@@ -14,4 +14,4 @@ mixin hotel-search({ title, link, itemsList})
       +dropdown({ text: 'гости', value: 'Сколько гостей', iconText: 'expand_more', className: 'dropdown-people', tabindex: 3, isItemsPeople: true, isButtonMenu: true, isDropdown: true, itemsList })
 
     .hotel-search__button
-      +button({ text: 'подобрать номер', link: link, isButtonLarge: true })
+      +button({ text: 'подобрать номер', isButtonLarge: true, isButton: true, type: 'submit'})

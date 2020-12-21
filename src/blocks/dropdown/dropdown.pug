@@ -32,7 +32,7 @@ mixin dropdown({ stateMenu, size, isButtonMenu, value, text, isItemsRoom, tabind
   - const sizeMenu = size ? " dropdown__menu--" + size : "";
 
   div(class="js-dropdown dropdown" + sizeDropdown)
-    +text-field({ state, className, size, id, myId, type, value, name, tabindex, iconText, classNameIcon, textState, isDropdown })
+    +text-field({ state, className, size, id, myId, type, value, name, tabindex, iconText, classNameIcon, textState, isDropdown, text })
     ul(class="js-dropdown__menu dropdown__menu" + stateMenu + sizeMenu)
       +dropdown__item({ isItemsRoom, itemsList })
       if (isButtonMenu)

@@ -1,14 +1,15 @@
-mixin button({ theme, size, state, themeHeader, isButtonLarge, link, text, isButton })
+mixin button({ theme, size, state, themeHeader, isButtonLarge, link, text, isButton, type })
   - theme = theme ? " button--" + theme : "";
   - size = size ? " button--" + size : "";
   - state = state ? " button--" + state : "";
   - themeHeader = themeHeader ? " button--" + themeHeader : "";
+  - type = type ? type : "";
 
   if (isButton)
     if (!isButtonLarge)
-      button(class="button" + theme + size + state + themeHeader, href=link)= text
+      button(class="button" + theme + size + state + themeHeader, href=link, type=type)= text
     else
-      button(class="button button--large" + theme + size + state + themeHeader, href=link)= text
+      button(class="button button--large" + theme + size + state + themeHeader, href=link, type=type)= text
         i.button__icon arrow_forward
   else
     if (!isButtonLarge)

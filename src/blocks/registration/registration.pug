@@ -7,7 +7,7 @@ include ../button/button.pug
 - const radioButtonsList = [{text: 'Мужчина', value: 'male', name: 'gender', isChecked: true}, {text: 'Женщина', name: 'gender', value: 'female'}];
 
 mixin registration({ title, link })
-  .registration
+  form.registration(action=link)
     h1.registration__title= title
 
     .registration__text-field
@@ -25,7 +25,7 @@ mixin registration({ title, link })
     .registration__toggle
       +toggle({ title: 'Toggle', text: 'Получать спецпредложения', id: '1' })
     .registration__button
-      +button({ text: 'перейти к оплате', link: link, isButtonLarge: true })
+      +button({ text: 'зарегистрироваться', isButtonLarge: true, isButton: true, type: 'submit' })
     .registration__sign-in
       p.registration__text-sign-in Уже есть аккаунт на Toxin
       +button({ text: 'войти', link: 'page-landing-sign-in.html', theme: 'border' })
