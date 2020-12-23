@@ -9,5 +9,5 @@ mixin pie-chart({ img, votes, pieChartList })
     ul.pie-chart__list
       each item in pieChartList
         - let { theme, text } = item;
-        - theme = theme ? " pie-chart__item--" + theme : "";
-        li(class="pie-chart__item" + theme)= text
+        - itemThemeClass = theme ? " pie-chart__item--" + theme : "";
+        li(class="pie-chart__item" + itemThemeClass)= text

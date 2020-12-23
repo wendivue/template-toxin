@@ -13,13 +13,13 @@ mixin header({ itemList, size, textLogin, loginButton, registerButton, subItemLi
             ul.header__list
               each item in itemList
                 - let { state, link, text, isIcon, isSubItemList, isSubItemList2 } = item;
-                - state = state ? " header__link--" + state : "";
-                - const sizeItem = size ? " header__item--" + size : "";
-                - const sizeIcon = size ? " header__icon--" + size : "";
-                li(class="header__item" + sizeItem)
-                  a(class="header__link" + state, href=link)= text
+                - const linkStateClass = state ? " header__link--" + state : "";
+                - const itemSizeClass = size ? " header__item--" + size : "";
+                - const iconSizeClass = size ? " header__icon--" + size : "";
+                li(class="header__item" + itemSizeClass)
+                  a(class="header__link" + linkStateClass, href=link)= text
                     if (isIcon)
-                      i(class="header__icon" + sizeIcon) expand_more
+                      i(class="header__icon" + iconSizeClass) expand_more
                   if (isIcon && isSubItemList)
                     ul.header__submenu
                       each subItem in subItemList1
@@ -35,8 +35,8 @@ mixin header({ itemList, size, textLogin, loginButton, registerButton, subItemLi
             .header__login
               p.header__text-login= textLogin
           else
-            - const smallButtons = size ? " header__wrapper-button--" + size : "";
-            div(class="header__wrapper-button" + smallButtons)
+            - const buttonSizeClass = size ? " header__wrapper-button--" + size : "";
+            div(class="header__wrapper-button" + buttonSizeClass)
               .header__button
                 +button(loginButton)
               .header__button

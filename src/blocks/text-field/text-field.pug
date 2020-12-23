@@ -1,13 +1,13 @@
-mixin text-field({ state, size, className, classNameIcon, tabindex, myId, stateMenu, text, textState, isDropdown, type, value, name, isDateRange, placeholder, iconText })
-  - state = state ? "text-field__input--" + state + " " : "";
-  - size = size ? "text-field--" + size : "";
-  - className = className ? "js-text-field__" + className : "";
-  - classNameIcon = classNameIcon ? "text-field__icon--" + classNameIcon : "";
+mixin text-field({ state, size, className, themeIcon, tabindex, myId, stateMenu, text, textState, isDropdown, type, value, name, isDateRange, placeholder, iconText })
+  - const inputStateClass = state ? "text-field__input--" + state + " " : "";
+  - const inputOpenClass = stateMenu ? " text-field__input--open" : "";
+  - const textFieldSizeClass = size ? "text-field--" + size : "";
+  - const textFieldJsClass = className ? "js-text-field__" + className : "";
+  - const iconThemeClass = themeIcon ? "text-field__icon--" + themeIcon : "";
   - const id = tabindex ? "text-field-" + tabindex : "";
   - myId = myId ? " " + myId : "";
-  - const borderRadius = stateMenu ? " text-field__input--open" : "";
 
-  div(class="text-field " + size)
+  div(class="text-field " + textFieldSizeClass)
     if (text)
       .text-field__wrapper-text
         label.text-field__label(for=id)= text
@@ -17,7 +17,7 @@ mixin text-field({ state, size, className, classNameIcon, tabindex, myId, stateM
     .text-field__input-wrapper
       if (isDropdown)
         input(
-          class="js-text-field__input text-field__input " + state + className + borderRadius,
+          class="js-text-field__input text-field__input " + inputStateClass + textFieldJsClass + inputOpenClass,
           id=id + myId,
           type=type,
           value=value,
@@ -27,7 +27,7 @@ mixin text-field({ state, size, className, classNameIcon, tabindex, myId, stateM
         )
       else if (isDateRange)
         input(
-          class="datepicker-here text-field__input " + state + className,
+          class="datepicker-here text-field__input " + inputStateClass + textFieldJsClass,
           id=id + myId,
           type=type,
           placeholder=placeholder,
@@ -38,7 +38,7 @@ mixin text-field({ state, size, className, classNameIcon, tabindex, myId, stateM
         )
       else
         input(
-          class="text-field__input " + state + className,
+          class="text-field__input " + inputStateClass + textFieldJsClass,
           id=id + myId,
           type=type,
           placeholder=placeholder,
@@ -48,4 +48,4 @@ mixin text-field({ state, size, className, classNameIcon, tabindex, myId, stateM
         )
 
       if (iconText)
-        button(class="text-field__icon " + classNameIcon)= iconText
+        button(class="text-field__icon " + iconThemeClass)= iconText
