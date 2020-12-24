@@ -1,13 +1,13 @@
 include ../text-field/text-field.pug
 include ./dropdown-item/dropdown-item.pug
 
-mixin dropdown({ stateMenu, size, isButtonMenu, value, text, isItemsRoom, tabindex, state, className, id, myId, type, name, iconText, themeIcon, textState, isDropdown, itemsList })
+mixin dropdown({ stateMenu, size, isButtonMenu, value, text, isItemsRoom, state, className, id, type, name, iconText, themeIcon, textState, isDropdown, itemsList })
   - const menuStateClass = stateMenu ? " dropdown__menu--" + stateMenu : "";
   - const dropdownSizeClass = size ? " dropdown--" + size : "";
   - const menuSizeClass = size ? " dropdown__menu--" + size : "";
 
   div(class="js-dropdown dropdown" + dropdownSizeClass)
-    +text-field({ state, className, size, id, myId, type, value, name, tabindex, iconText, themeIcon, textState, isDropdown, text })
+    +text-field({ state, className, size, id, type, value, name, iconText, themeIcon, textState, isDropdown, text })
     ul(class="js-dropdown__menu dropdown__menu" + menuStateClass + menuSizeClass)
       +dropdown-item({ isItemsRoom, itemsList })
       if (isButtonMenu)

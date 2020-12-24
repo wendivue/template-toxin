@@ -1,6 +1,6 @@
 mixin dropdown-item({ isItemsRoom, itemsList })
   each item in itemsList
-    - let { value, text, tabindex } = item;
+    - let { value, text } = item;
     - const buttonStateClass = value == 0 ? " dropdown__button--no-active" : "";
     li.dropdown__item
       p.dropdown__text= text
@@ -10,7 +10,7 @@ mixin dropdown-item({ isItemsRoom, itemsList })
             class="dropdown__button js-dropdown__button js-dropdown__button js-dropdown__button--decrease dropdown__button--decrease" + buttonStateClass,
             type='button'
           ) -
-          input.dropdown__input.js-dropdown__input(value=value, tabindex=tabindex)
+          input.dropdown__input.js-dropdown__input(value=value)
           button.dropdown__button.dropdown__button--increase.js-dropdown__button.js-dropdown__button--increase(
             type='button'
           ) +
@@ -19,7 +19,7 @@ mixin dropdown-item({ isItemsRoom, itemsList })
             class="dropdown__button js-dropdown__button js-dropdown__button-people--decrease dropdown__button-people--decrease" + buttonStateClass,
             type='button'
           ) -
-          input.dropdown__input.js-dropdown__input(value=value, tabindex=tabindex)
+          input.dropdown__input.js-dropdown__input(value=value)
           button.dropdown__button.dropdown__button-people--increase.js-dropdown__button.js-dropdown__button-people--increase(
             type='button'
           ) +

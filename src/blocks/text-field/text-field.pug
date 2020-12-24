@@ -1,11 +1,10 @@
-mixin text-field({ state, size, className, themeIcon, tabindex, myId, stateMenu, text, textState, isDropdown, type, value, name, isDateRange, placeholder, iconText })
+mixin text-field({ state, size, className, themeIcon, id, stateMenu, text, textState, isDropdown, type, value, name, isDateRange, placeholder, iconText })
   - const inputStateClass = state ? "text-field__input--" + state + " " : "";
   - const inputOpenClass = stateMenu ? " text-field__input--open" : "";
   - const textFieldSizeClass = size ? "text-field--" + size : "";
   - const textFieldJsClass = className ? "js-text-field__" + className : "";
   - const iconThemeClass = themeIcon ? "text-field__icon--" + themeIcon : "";
-  - const id = tabindex ? "text-field-" + tabindex : "";
-  - myId = myId ? " " + myId : "";
+  - id = id ? "text-field-" + id : "";
 
   div(class="text-field " + textFieldSizeClass)
     if (text)
@@ -18,33 +17,32 @@ mixin text-field({ state, size, className, themeIcon, tabindex, myId, stateMenu,
       if (isDropdown)
         input(
           class="js-text-field__input text-field__input " + inputStateClass + textFieldJsClass + inputOpenClass,
-          id=id + myId,
+          id=id,
           type=type,
           value=value,
           name=name,
-          tabindex=tabindex,
+          ,
           readonly
         )
       else if (isDateRange)
         input(
           class="datepicker-here text-field__input " + inputStateClass + textFieldJsClass,
-          id=id + myId,
+          id=id,
           type=type,
           placeholder=placeholder,
           name=name,
-          tabindex=tabindex,
+          ,
           data-multiple-dates-separator=' - ',
           readonly
         )
       else
         input(
           class="text-field__input " + inputStateClass + textFieldJsClass,
-          id=id + myId,
+          id=id,
           type=type,
           placeholder=placeholder,
           value=value,
-          name=name,
-          tabindex=tabindex
+          name=name
         )
 
       if (iconText)
