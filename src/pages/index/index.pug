@@ -1,11 +1,13 @@
-include ../../blocks/page/page.pug
-include ../../blocks/center-block/center-block.pug
+extends ../../layout/main-layout.pug
 
-+page
-  +center-block
-    - const itemListLink = [{ link: "landing-page.html" }, { link: "landing-registration.html" }, { link: "landing-sign-in.html" }, { link: "room-details.html" }, { link: "search-room.html" }, { link: "ui-kits-cards.html" }, { link: "ui-kits-color.html" }, { link: "ui-kits-form.html" }, { link: "ui-kits-header-footer.html" }];
-    main.main
-      ul.main__list
-        each item in itemListLink
-          li.main__item
-            a.main__link(href=item.link)= item.link
+block variables
+  - const pageTitle = "Main";
+  - const classMain = "main";
+  - const isPageCenter = true;
+  - const itemListLink = [{ link: "landing-page.html" }, { link: "landing-registration.html" }, { link: "landing-sign-in.html" }, { link: "room-details.html" }, { link: "search-room.html" }, { link: "ui-kits-cards.html" }, { link: "ui-kits-color.html" }, { link: "ui-kits-form.html" }, { link: "ui-kits-header-footer.html" }];
+
+block content
+  ul.main__list
+    each item in itemListLink
+      li.main__item
+        a.main__link(href=item.link)= item.link
