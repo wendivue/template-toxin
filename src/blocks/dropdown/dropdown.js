@@ -4,6 +4,8 @@ const PEOPLE = 'people';
 class Dropdown {
   constructor(anchor) {
     this.anchor = anchor;
+
+    this.init();
   }
 
   init() {

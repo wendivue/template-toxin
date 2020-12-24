@@ -1,6 +1,8 @@
 class Checkbox {
   constructor(anchor) {
     this.anchor = anchor;
+
+    this.init();
   }
 
   init() {
