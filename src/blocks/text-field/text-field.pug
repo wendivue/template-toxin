@@ -1,9 +1,9 @@
-mixin text-field({ state, size, className, themeIcon, id, stateMenu, text, textState, isDropdown, type, value, name, isDateRange, placeholder, iconText })
+mixin text-field({ state, size, themeIcon, id, stateMenu, text, textState, isDropdown, type, value, name, isDateRange, isDatepicker, placeholder, iconText, isDateStart})
   - const inputStateClass = state ? "text-field__input--" + state + " " : "";
   - const inputOpenClass = stateMenu ? " text-field__input--open" : "";
   - const textFieldSizeClass = size ? "text-field--" + size : "";
-  - const textFieldJsClass = className ? "js-text-field__" + className : "";
   - const iconThemeClass = themeIcon ? "text-field__icon--" + themeIcon : "";
+  - const dateTypeClass = isDateStart ? "js-text-field__datepicker-start" : "js-text-field__datepicker-end";
   - id = id ? "text-field-" + id : "";
 
   div(class="text-field " + textFieldSizeClass)
@@ -16,28 +16,35 @@ mixin text-field({ state, size, className, themeIcon, id, stateMenu, text, textS
     .text-field__input-wrapper
       if (isDropdown)
         input(
-          class="js-text-field__input text-field__input " + inputStateClass + textFieldJsClass + inputOpenClass,
+          class="js-text-field__input text-field__input " + inputStateClass + inputOpenClass,
           id=id,
           type=type,
           value=value,
           name=name,
-          ,
           readonly
         )
-      else if (isDateRange)
+      else if (isDatepicker)
         input(
-          class="datepicker-here text-field__input " + inputStateClass + textFieldJsClass,
+          class="datepicker-here text-field__input " + inputStateClass,
           id=id,
           type=type,
           placeholder=placeholder,
           name=name,
-          ,
+          readonly
+        )
+      else if (isDateRange)
+        input(
+          class="datepicker-here js-text-field__date-range text-field__input " + inputStateClass + dateTypeClass,
+          id=id,
+          type=type,
+          placeholder=placeholder,
+          name=name,
           data-multiple-dates-separator=' - ',
           readonly
         )
       else
         input(
-          class="text-field__input " + inputStateClass + textFieldJsClass,
+          class="text-field__input " + inputStateClass,
           id=id,
           type=type,
           placeholder=placeholder,

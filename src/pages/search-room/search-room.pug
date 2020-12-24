@@ -26,9 +26,9 @@ block variables
 block content
   .search-room__sidebar
     .search-room__date-picker
-      +date-picker({ text: 'даты пребывания в отеле', placeholder: '19 авг - 23 авг', type: 'text', size: 'small', className: 'datepicker datepicker-here' })
+      +date-picker({ text: 'даты пребывания в отеле', placeholder: '19 авг - 23 авг', type: 'text', size: 'small', isDateRange: true })
     .search-room__dropdown
-      +dropdown({ text: 'гости', value: '3 гостя', iconText: 'expand_more', className: 'dropdown-people', size: 'small', isItemsPeople: true, isButtonMenu: true, isDropdown: true, itemsList: itemsPeople })
+      +dropdown({ text: 'гости', value: '3 гостя', iconText: 'expand_more', size: 'small', isItemsPeople: true, isButtonMenu: true, isDropdown: true, itemsList: itemsPeople })
     .search-room__range-slider
       +range-slider({ text: 'диапазон цены', rangeConfig })
     p.search-room__text-range-slider Стоимость за сутки пребывания в номере
@@ -37,7 +37,7 @@ block content
     .search-room__rich
       +checkbox-buttons({ caption: 'доступность', isRich: true, checkboxButtons: checkboxButtonsRich })
     .search-room__dropdown-room
-      +dropdown({ text: 'удобства номера', value: '2 спальни, 2 кровати...', iconText: 'expand_more', className: 'dropdown', size:'small', isItemsRoom: true, isDropdown: true, itemsList: itemsRoom })
+      +dropdown({ text: 'удобства номера', value: '2 спальни, 2 кровати...', iconText: 'expand_more', size:'small', isItemsRoom: true, isDropdown: true, itemsList: itemsRoom })
     .search-room__checkbox-list
       +checkbox-list({ text: 'дополнительные удобства', checkboxList })
 

@@ -9,6 +9,10 @@ function datePicker(element) {
     nextHtml: '<button class="date-picker__icon">arrow_forward</button>',
   });
 
+  $('.js-text-field__date-range').datepicker({
+    range: true,
+  });
+
   $('.js-text-field__datepicker-start').datepicker({
     range: true,
     onSelect: (fd) => {
