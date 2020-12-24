@@ -1,0 +1,8 @@
+mixin footer-list(itemList)
+  each item in itemList
+    - const { title, link, text } = item;
+    li.footer-copyright__list-item
+      if (title)
+        h3.footer-copyright__title= title
+      else
+        a.footer-copyright__link(href=link)= text
