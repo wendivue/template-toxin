@@ -40,6 +40,7 @@
   }
 
   &__full-price {
+    position: relative;
     display: flex;
     justify-content: space-between;
     margin-top: 33px;
@@ -47,11 +48,15 @@
     .price-list__text {
       width: 22%;
     }
-  }
 
-  &__line {
-    margin-top: 15px;
-    width: 55%;
-    border-top: 1px dotted $dark-shade-25;
+    &:before {
+      position: absolute;
+      content: '';
+      width: 55%;
+      height: 1px;
+      bottom: 6px;
+      left: 70px;
+      border-bottom: 1px dotted $dark-shade-25;
+    }
   }
 }
