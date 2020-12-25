@@ -4,6 +4,16 @@
   &__list {
     display: flex;
     margin-top: 150px;
+
+    @media (max-width: $breakpoint-md) {
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    @media (max-width: $breakpoint-md) {
+      padding-bottom: 10px;
+    }
   }
 
   &__link {

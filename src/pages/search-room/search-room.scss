@@ -43,7 +43,8 @@
   }
 
   &__content {
-    width: 834px;
+    width: 100%;
+    max-width: 834px;
     margin-top: 15px;
   }
 
@@ -56,7 +57,12 @@
   &__wrapper-hotel-card {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
+
+    @media (max-width: $breakpoint-sm) {
+      align-items: center;
+      flex-flow: column;
+    }
   }
 
   &__pagination {
