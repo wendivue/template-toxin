@@ -130,8 +130,8 @@ class Dropdown {
     this.buttonCleans[0].style.opacity = 1;
     this.removeDecrease(this.buttonPeopleDecrease, index);
 
-    this.fullval = parseFloat(this.increase(parseFloat(this.fullval)));
-    this.fullval = this.validatePeopleValue(this.fullval, index);
+    this.fullVal = parseFloat(this.increase(parseFloat(this.fullVal)));
+    this.fullVal = this.validatePeopleValue(this.fullVal, index);
     let { value } = this.input[index];
     value = parseFloat(this.increase(parseFloat(value)));
     value = this.validateValue(value);
@@ -143,8 +143,8 @@ class Dropdown {
   changeValuePeopleDecrease(index) {
     this.buttonCleans[0].style.opacity = 1;
 
-    this.fullval = parseFloat(this.decrease(parseFloat(this.fullval)));
-    this.fullval = this.validatePeopleValue(this.fullval, index);
+    this.fullVal = parseFloat(this.decrease(parseFloat(this.fullVal)));
+    this.fullVal = this.validatePeopleValue(this.fullVal, index);
     let { value } = this.input[index];
     value = parseFloat(this.decrease(parseFloat(value)));
     value = this.validateValue(value);
@@ -157,17 +157,17 @@ class Dropdown {
   getValue() {
     const dropdownMenu = this.anchor.querySelector('.js-text-field__input');
 
-    let fullval = parseFloat(dropdownMenu.value.replace(/[^0-9]/g, '')).toString();
-    let val1 = parseFloat(fullval.replace(/\d/, ''));
-    let val2 = parseFloat(fullval.replace(/\d$/, ''));
+    let fullVal = parseFloat(dropdownMenu.value.replace(/[^0-9]/g, '')).toString();
+    let val1 = parseFloat(fullVal.replace(/\d/, ''));
+    let val2 = parseFloat(fullVal.replace(/\d$/, ''));
 
-    if (val1 === 'NaN' || val2 === 'NaN' || fullval === 'NaN') {
+    if (val1 === 'NaN' || val2 === 'NaN' || fullVal === 'NaN') {
       val1 = 0;
       val2 = 0;
-      fullval = 0;
+      fullVal = 0;
     }
 
-    this.fullval = fullval;
+    this.fullVal = fullVal;
     this.val1 = val1;
     this.val2 = val2;
   }
@@ -176,7 +176,7 @@ class Dropdown {
     const dropdownMenu = this.anchor.querySelector('.js-text-field__input');
     let string;
     if (ROOM === type) string = `${this.val2} спальни ${this.val1} кровати...`;
-    if (PEOPLE === type) string = `${this.fullval} гостя`;
+    if (PEOPLE === type) string = `${this.fullVal} гостя`;
 
     dropdownMenu.value = string;
   }
@@ -208,7 +208,7 @@ class Dropdown {
     this.val1 = 0;
     this.val2 = 0;
     this.val3 = 0;
-    this.fullval = 0;
+    this.fullVal = 0;
   }
 
   increase(value) {
