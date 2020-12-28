@@ -31,5 +31,9 @@ mixin footer-copyright({ textLogo, itemList1, itemList2, itemList3, titleSub, te
             each icons in iconList
               - const { link, icon } = icons;
               li.footer-copyright__item
-                a.footer-copyright__link-icon(href=link)
+                a.footer-copyright__link-icon(
+                  href=link,
+                  target='_blank',
+                  rel='noopener noreferrer'
+                )
                   i(class="fa footer-copyright__icon " + icon)
