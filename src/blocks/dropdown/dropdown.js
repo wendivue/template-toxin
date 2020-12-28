@@ -161,7 +161,7 @@ class Dropdown {
     let val1 = parseFloat(fullVal.replace(/\d/, ''));
     let val2 = parseFloat(fullVal.replace(/\d$/, ''));
 
-    if (val1 === 'NaN' || val2 === 'NaN' || fullVal === 'NaN') {
+    if (Number.isNaN(val1) || Number.isNaN(val2) || Number.isNaN(fullVal)) {
       val1 = 0;
       val2 = 0;
       fullVal = 0;
