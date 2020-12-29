@@ -7,7 +7,10 @@
     background: url('../img/landing-registration-1.png') 100% 100% no-repeat;
     background-size: cover;
 
-    .center-block {
+    &__registration {
+      max-width: 1160px;
+      display: flex;
+      flex: 1 1 100%;
       justify-content: center;
     }
   }

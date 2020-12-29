@@ -57,6 +57,11 @@
         max-width: 140px;
       }
     }
+
+    &--dropdown {
+      color: $dark-shade-75;
+      cursor: pointer;
+    }
   }
 
   &__icon {
@@ -65,6 +70,10 @@
     padding: 10px;
     pointer-events: none;
     right: 0;
+
+    @media (max-width: $breakpoint-xxs) {
+      width: 40px;
+    }
 
     &--submit {
       color: $color-primary;

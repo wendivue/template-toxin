@@ -2,16 +2,6 @@
 
 .dropdown {
   position: relative;
-  .text-field__input {
-    color: $dark-shade-75;
-    cursor: pointer;
-  }
-
-  .text-field__icon {
-    @media (max-width: $breakpoint-xxs) {
-      width: 40px;
-    }
-  }
 
   &__menu {
     position: absolute;

@@ -23,6 +23,7 @@
 
     &--big {
       @include typo-h2;
+      width: 22%;
     }
   }
 
@@ -44,10 +45,6 @@
     display: flex;
     justify-content: space-between;
     margin-top: 33px;
-
-    .price-list__text {
-      width: 22%;
-    }
 
     &:before {
       position: absolute;
