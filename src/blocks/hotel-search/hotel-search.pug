@@ -11,7 +11,7 @@ mixin hotel-search({ title, link, itemsList})
       +date-picker({ text: 'выезд', placeholder: 'ДД.ММ.ГГГГ', state: 'date', type: 'text', id: 'end', iconText: 'expand_more', isDateRange: true })
 
     .hotel-search__dropdown
-      +dropdown({ text: 'гости', value: 'Сколько гостей', iconText: 'expand_more', isItemsPeople: true, isButtonMenu: true, isDropdown: true, itemsList })
+      +dropdown({ text: 'гости', value: 'Сколько гостей', iconText: 'expand_more', isItemsPeople: true, isButtonMenu: true, isDropdown: true, isHideButtonCleans: true, itemsList })
 
     .hotel-search__button
       +button({ text: 'подобрать номер', isButtonLarge: true, isButton: true, type: 'submit'})

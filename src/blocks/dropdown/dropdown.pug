@@ -1,10 +1,11 @@
 include ../text-field/text-field.pug
 include ./dropdown-item/dropdown-item.pug
 
-mixin dropdown({ stateMenu, size, isButtonMenu, value, text, isItemsRoom, state, id, type, name, iconText, themeIcon, textState, isDropdown, itemsList })
+mixin dropdown({ stateMenu, size, isButtonMenu, value, text, isItemsRoom, state, id, type, name, iconText, themeIcon, textState, isDropdown, itemsList, isHideButtonCleans })
   - const menuStateClass = stateMenu ? " dropdown__menu--" + stateMenu : "";
   - const dropdownSizeClass = size ? " dropdown--" + size : "";
   - const menuSizeClass = size ? " dropdown__menu--" + size : "";
+  - const buttonCleansHideClass = isHideButtonCleans ? "dropdown__button-menu--hide" : "";
 
   div(class="js-dropdown dropdown" + dropdownSizeClass)
     +text-field({ state, size, id, type, value, name, iconText, themeIcon, textState, isDropdown, text })
@@ -12,5 +13,7 @@ mixin dropdown({ stateMenu, size, isButtonMenu, value, text, isItemsRoom, state,
       +dropdown-item({ isItemsRoom, itemsList })
       if (isButtonMenu)
         .dropdown__wrapper-button-menu
-          button.dropdown__button-menu.dropdown__button-menu--cleans.js-dropdown__button-menu--cleans очистить
+          button.dropdown__button-menu.dropdown__button-menu--cleans.js-dropdown__button-menu--cleans(
+            class=buttonCleansHideClass
+          ) очистить
           button.dropdown__button-menu.dropdown__button-menu--complete.js-dropdown__button-menu--complete применить

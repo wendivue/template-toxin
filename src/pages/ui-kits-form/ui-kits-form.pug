@@ -40,7 +40,7 @@ block content
         .ui-kits-form__text-field-hover
           +text-field({ text: 'Text Field', placeholder: 'This is pretty awesome', state: 'active', textState:'Hover / Focus' })
         .ui-kits-form__dropdown
-          +dropdown({ text: 'Dropdown', value: 'Сколько гостей', iconText: 'expand_more', textState:'Default', isButtonMenu: true, isDropdown: true, itemsList: itemsPeople })
+          +dropdown({ text: 'Dropdown', value: 'Сколько гостей', iconText: 'expand_more', textState:'Default', isButtonMenu: true, isDropdown: true, isHideButtonCleans: true, itemsList: itemsPeopleNull })
         .ui-kits-form__masked
           +date-picker({ text: 'masked text field', placeholder: 'ДД.ММ.ГГГГ', type: 'text', textState:'Default', isDatepicker: true })
         .ui-kits-form__date-picker
@@ -84,7 +84,7 @@ block content
             .ui-kits-form__rate-button-item
               +rate-button({star: 5})
         .ui-kits-form__dropdown-people
-          +dropdown({ text: 'dropdown', value: 'Сколько гостей', iconText: 'expand_more', isButtonMenu: true, isDropdown: true, stateMenu: 'active', itemsList: itemsPeopleNull })
+          +dropdown({ text: 'dropdown', value: 'Сколько гостей', iconText: 'expand_more', isButtonMenu: true, isDropdown: true, stateMenu: 'active', isHideButtonCleans: true, itemsList: itemsPeopleNull })
         .ui-kits-form__rich-checkbox-buttons
           +checkbox-buttons({ caption: 'Rich Checkbox Buttons', isRich: true, checkboxButtons: checkboxButtons1 })
       +col-4

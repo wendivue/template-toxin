@@ -75,8 +75,11 @@
     cursor: pointer;
 
     &--cleans {
-      opacity: 0;
       color: $dark-shade-50;
+    }
+
+    &--hide {
+      opacity: 0;
     }
   }
 

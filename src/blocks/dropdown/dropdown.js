@@ -127,7 +127,7 @@ class Dropdown {
   }
 
   changeValuePeopleIncrease(index) {
-    this.buttonCleans[0].style.opacity = 1;
+    this.buttonCleans[0].classList.remove('dropdown__button-menu--hide');
     this.removeDecrease(this.buttonPeopleDecrease, index);
 
     this.fullVal = parseFloat(this.increase(parseFloat(this.fullVal)));
@@ -141,7 +141,7 @@ class Dropdown {
   }
 
   changeValuePeopleDecrease(index) {
-    this.buttonCleans[0].style.opacity = 1;
+    this.buttonCleans[0].classList.remove('dropdown__button-menu--hide');
 
     this.fullVal = parseFloat(this.decrease(parseFloat(this.fullVal)));
     this.fullVal = this.validatePeopleValue(this.fullVal, index);
@@ -193,7 +193,7 @@ class Dropdown {
   }
 
   clear() {
-    this.buttonCleans[0].style.opacity = 0;
+    this.buttonCleans[0].classList.add('dropdown__button-menu--hide');
     this.dropdownInput[0].value = 'Сколько гостей';
 
     this.input.forEach((element) => {
