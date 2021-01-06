@@ -3,18 +3,18 @@ mixin checkbox-list({ state, text, checkboxList })
   - const iconStateClass = state ? "checkbox-list__icon--" + state : "";
 
   .checkbox-list.js-checkbox-list
-    header.checkbox-list__wrapper-header.js-checkbox-list__wrapper-header
+    .checkbox-list__wrapper-header.js-checkbox-list__wrapper-header
       h3.checkbox-list__title= text
       button(class="js-checkbox-list__icon checkbox-list__icon " + iconStateClass)= "expand_more"
 
     ul(class="js-checkbox-list__items checkbox-list__items " + itemsStateClass)
       each item in checkboxList
-        - let { id, text, isChecked } = item;
+        - let { id, text, name, isChecked } = item;
         - id = id ? "checkbox-list-" + id : "";
           li.checkbox-list__wrapper-checkbox
             if (isChecked)
-              input.checkbox-list__checkbox(id=id, type='checkbox', checked)
+              input.checkbox-list__checkbox(id=id, name=name, type='checkbox', checked)
             else
-              input.checkbox-list__checkbox(id=id, type='checkbox')
+              input.checkbox-list__checkbox(id=id, name=name, type='checkbox')
 
             label.checkbox-list__label(for=id)= text

@@ -9,8 +9,9 @@ mixin dropdown({ stateMenu, size, isButtonMenu, value, text, isItemsRoom, state,
 
   div(class="js-dropdown dropdown" + dropdownSizeClass)
     +text-field({ state, size, id, type, value, name, iconText, themeIcon, textState, isDropdown, text })
-    ul(class="js-dropdown__menu dropdown__menu" + menuStateClass + menuSizeClass)
-      +dropdown-item({ isItemsRoom, itemsList })
+    .dropdown__menu(class="js-dropdown__menu dropdown__menu" + menuStateClass + menuSizeClass)
+      ul.dropdown__list
+        +dropdown-item({ isItemsRoom, itemsList })
       if (isButtonMenu)
         .dropdown__wrapper-button-menu
           button.dropdown__button-menu.dropdown__button-menu--cleans.js-dropdown__button-menu--cleans(

@@ -4,7 +4,7 @@ include ../text-field/text-field.pug
 include ./footer-list/footer-list.pug
 
 mixin footer-copyright({ textLogo, itemList1, itemList2, itemList3, titleSub, textSub, placeholder, copyright, iconList })
-  .footer-copyright
+  footer.footer-copyright
     +page
       +center-block
         .footer-copyright__wrapper-logo
@@ -22,7 +22,7 @@ mixin footer-copyright({ textLogo, itemList1, itemList2, itemList3, titleSub, te
             h3.footer-copyright__title-subscribe= titleSub
             p.footer-copyright__text-subscribe= textSub
           .footer-copyright__subscribe
-            +text-field({ placeholder: placeholder, type: 'text', size: 'small', iconText: 'arrow_forward', themeIcon: 'submit' })
+            +text-field({ placeholder: placeholder, type: 'email', size: 'small', iconText: 'arrow_forward', themeIcon: 'submit', name: 'email' })
     .footer-copyright__bottom-footer
       +page
         +center-block

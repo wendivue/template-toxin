@@ -1,17 +1,17 @@
 mixin checkbox-buttons({ caption, isRich, checkboxButtons })
   .checkbox-buttons
-    header.checkbox-buttons__wrapper-header
+    .checkbox-buttons__wrapper-header
       h3.checkbox-buttons__title= caption
 
     ul.checkbox-buttons__items
       each item in checkboxButtons
-        - let { text, id, title, isChecked } = item;
+        - let { text, id, title, name, isChecked } = item;
         - id = id ? "checkbox-buttons-" + id : "";
         li.checkbox-buttons__wrapper-checkbox
           if (isChecked)
-            input.checkbox-buttons__checkbox(id=id, type='checkbox', checked)
+            input.checkbox-buttons__checkbox(id=id, name=name, type='checkbox', checked)
           else
-            input.checkbox-buttons__checkbox(id=id, type='checkbox')
+            input.checkbox-buttons__checkbox(id=id, name=name, type='checkbox')
 
           if (isRich)
             .checkbox-buttons__wrapper-text

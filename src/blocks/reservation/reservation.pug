@@ -14,10 +14,10 @@ mixin reservation({ number, price, link, itemsList })
         span.reservation__price= price
         p.reservation__days в сутки
     .reservation__date-picker
-      +date-picker({ text: 'прибытие', placeholder: '19.08.2019', state: 'date', type: 'text', id: 'start', iconText: 'expand_more', isDateRange: true, isDateStart: true })
-      +date-picker({ text: "выезд", placeholder: '23.08.2019', state: 'date', type: 'text', id: 'end', iconText: 'expand_more', isDateRange: true })
+      +date-picker({ text: 'прибытие', placeholder: '19.08.2019', state: 'date', name: 'arrival', type: 'text', id: 'start', iconText: 'expand_more', isDateRange: true, isDateStart: true })
+      +date-picker({ text: "выезд", placeholder: '23.08.2019', state: 'date', name: 'departure', type: 'text', id: 'end', iconText: 'expand_more', isDateRange: true })
     .reservation__dropdown
-      +dropdown({ text: 'гости', value: '3 гостя', iconText: 'expand_more', isItemsPeople: true, isButtonMenu: true, isDropdown: true, itemsList })
+      +dropdown({ text: 'гости', name: 'people', value: '3 гостя', iconText: 'expand_more', isItemsPeople: true, isButtonMenu: true, isDropdown: true, itemsList })
     .reservation__price-list
       +price-list({ itemList: [ {description: '9 990₽ х 4 суток', price: '39 960'}, {description: 'Сбор за услуги: скидка 2 179₽', price: '0', icon: true}, {description: 'Сбор за дополнительные услуги', price: '300', icon: true} ], description: 'Итого', price: '38 081' })
     .reservation__button

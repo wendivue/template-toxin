@@ -6,9 +6,9 @@ mixin sign-in({ title, link })
     h1.sign-in__title= title
 
     .sign-in__text-field
-      +text-field({ placeholder: 'Email', name: 'email', type: 'text' })
+      +text-field({ placeholder: 'Email', name: 'email', type: 'email' })
     .sign-in__text-field
-      +text-field({ placeholder: 'Пароль', name: 'password', type: 'text' })
+      +text-field({ placeholder: 'Пароль', name: 'password', type: 'password' })
     .sign-in__button
       +button({ text: 'войти', isButtonLarge: true, isButton: true, type: 'submit' })
     .sign-in__create
