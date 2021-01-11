@@ -8,6 +8,10 @@
     flex-direction: column;
     width: 320px;
     margin-left: 50px;
+
+    @media (max-width: $breakpoint-md) {
+      margin-left: 0;
+    }
   }
 
   &__title {
@@ -176,6 +180,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media (max-width: $breakpoint-xs) {
+      flex-flow: column;
+    }
   }
 
   &__review {

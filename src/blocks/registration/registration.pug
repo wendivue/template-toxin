@@ -17,9 +17,9 @@ mixin registration({ title, link })
     .registration__radio-buttons
       +radio-buttons({ radioButtonsList })
     .registration__date-picker
-      +date-picker({ text: 'дата рождения', placeholder: 'ДД.ММ.ГГГГ', type: 'text', name: 'date', isDatepicker: true })
+      +date-picker({ text: 'дата рождения', placeholder: 'ДД.ММ.ГГГГ', id: 'date', type: 'text', name: 'date', isDatepicker: true })
     .registration__text-field
-      +text-field({ text: 'данные для входа в сервис', placeholder: 'Email', name: 'email', type: 'email' })
+      +text-field({ text: 'данные для входа в сервис', placeholder: 'Email', id: 'email', name: 'email', type: 'email' })
     .registration__text-field
       +text-field({ placeholder: 'Пароль', name: 'password', type: 'password' })
     .registration__toggle

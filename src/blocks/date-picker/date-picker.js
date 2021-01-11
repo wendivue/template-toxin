@@ -1,7 +1,7 @@
 import 'air-datepicker/dist/js/datepicker';
 
 function datePicker(element) {
-  $(element, '.datepicker-here').datepicker({
+  $(`${element}, .datepicker-here`).datepicker({
     navTitles: {
       days: 'MM yyyy',
     },
