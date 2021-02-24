@@ -76,7 +76,9 @@
     }
 
     &--submit {
-      color: $color-primary;
+      background-image: $gradient-primary;
+      background-clip: text;
+      color: transparent;
       pointer-events: painted;
       cursor: pointer;
     }

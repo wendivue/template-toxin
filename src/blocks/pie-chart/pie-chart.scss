@@ -61,25 +61,25 @@
 
     &--great {
       &:before {
-        background-color: #ffe39c;
+        background: linear-gradient(180deg, #ffe39c 0%, #ffba9c 100%);
       }
     }
 
     &--good {
       &:before {
-        background-color: #6fcf97;
+        background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
       }
     }
 
     &--norm {
       &:before {
-        background-color: #bc9cff;
+        background: $gradient-primary;
       }
     }
 
     &--disappoint {
       &:before {
-        background-color: #919191;
+        background: linear-gradient(180deg, #919191 0%, #3d4975 100%);
       }
     }
   }

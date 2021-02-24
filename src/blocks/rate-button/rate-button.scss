@@ -5,6 +5,8 @@
 
   &__icon {
     @include material-icons;
-    color: $color-primary;
+    background-image: $gradient-primary;
+    background-clip: text;
+    color: transparent;
   }
 }

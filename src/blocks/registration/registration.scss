@@ -1,12 +1,14 @@
 @import '../../scss/global-typography';
 
 .registration {
+  position: relative;
   width: 320px;
   padding: 40px 29px 29px 29px;
   background-color: #fff;
   border: 1px solid rgba(0, 0, 0, 0.12);
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+  z-index: 1;
 
   @media (max-width: $breakpoint-xxs) {
     padding: 44px 29px 29px 9px;

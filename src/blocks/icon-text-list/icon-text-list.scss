@@ -15,7 +15,9 @@
     @include material-icons;
     margin-right: 10px;
     font-size: 48px;
-    color: $color-primary;
+    background-image: $gradient-primary;
+    background-clip: text;
+    color: transparent;
   }
 
   &__title {
