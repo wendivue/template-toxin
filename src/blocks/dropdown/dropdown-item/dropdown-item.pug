@@ -1,7 +1,7 @@
 mixin dropdown-item({ isItemsRoom, itemsList })
   each item in itemsList
     - let { value, text, name } = item;
-    - const buttonStateClass = value == 0 ? " dropdown__button--no-active" : "";
+    - const buttonStateClass = value === "0" ? " dropdown__button--no-active" : "";
     li.dropdown__item
       p.dropdown__text= text
       .dropdown__wrapper-input

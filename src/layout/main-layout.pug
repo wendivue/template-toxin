@@ -21,7 +21,8 @@ html(lang='ru')
     title= pageTitle
   body
     if (classImg)
-      img(class=classImg, src='img/group.svg')
+      a(href=mainLink)
+        img(class=classImg, src='img/group.svg')
 
     if (headerProps)
       +header(headerProps)

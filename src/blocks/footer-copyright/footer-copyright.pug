@@ -3,37 +3,51 @@ include ../center-block/center-block.pug
 include ../text-field/text-field.pug
 include ./footer-list/footer-list.pug
 
-mixin footer-copyright({ textLogo, itemList1, itemList2, itemList3, titleSub, textSub, placeholder, copyright, iconList })
-  footer.footer-copyright
-    +page
-      +center-block
-        .footer-copyright__wrapper-logo
-          img.footer-copyright__logo(src='img/logo.svg', alt='logo')
-          p.footer-copyright__text-logo= textLogo
-        .footer-copyright__wrapper-list
-          ul.footer-copyright__list
-            +footer-list(itemList1)
-          ul.footer-copyright__list
-            +footer-list(itemList2)
-          ul.footer-copyright__list
-            +footer-list(itemList3)
-        .footer-copyright__wrapper-subscribe
-          .footer-copyright__wrapper-text
-            h3.footer-copyright__title-subscribe= titleSub
-            p.footer-copyright__text-subscribe= textSub
-          .footer-copyright__subscribe
-            +text-field({ placeholder: placeholder, type: 'email', size: 'small', iconText: 'arrow_forward', themeIcon: 'submit', name: 'email' })
-    .footer-copyright__bottom-footer
+mixin footer-copyright({ linkLogo, textLogo, type='full', itemList1, itemList2, itemList3, titleSub, textSub, placeholder, copyright, iconList })
+  if (type === 'full')
+    footer.footer-copyright.footer-copyright--full
       +page
         +center-block
-          p.footer-copyright__text= copyright
-          ul.footer-copyright__social
-            each icons in iconList
-              - const { link, icon } = icons;
-              li.footer-copyright__item
-                a.footer-copyright__link-icon(
-                  href=link,
-                  target='_blank',
-                  rel='noopener noreferrer'
-                )
-                  i(class="fa " + icon)
+          .footer-copyright__wrapper-logo
+            a(href=linkLogo) 
+              img.footer-copyright__logo(src='img/logo.svg', alt='logo')
+            p.footer-copyright__text-logo= textLogo
+          .footer-copyright__wrapper-list
+            ul.footer-copyright__list
+              +footer-list(itemList1)
+            ul.footer-copyright__list
+              +footer-list(itemList2)
+            ul.footer-copyright__list
+              +footer-list(itemList3)
+          .footer-copyright__wrapper-subscribe
+            .footer-copyright__wrapper-text
+              h3.footer-copyright__title-subscribe= titleSub
+              p.footer-copyright__text-subscribe= textSub
+            .footer-copyright__subscribe
+              +text-field({ placeholder: placeholder, type: 'email', size: 'small', iconText: 'arrow_forward', themeIcon: 'submit', name: 'email' })
+      .footer-copyright__bottom-footer
+        +page
+          +center-block
+            p.footer-copyright__text= copyright
+            ul.footer-copyright__social
+              each icons in iconList
+                - const { link, icon } = icons;
+                li.footer-copyright__item
+                  a.footer-copyright__link-icon(
+                    href=link,
+                    target='_blank',
+                    rel='noopener noreferrer'
+                  )
+                    i(class="fa " + icon)
+  else if (type === 'creative')
+    footer.footer-copyright.footer-copyright--creative
+      a(href=linkLogo) 
+        img.footer-copyright__logo(src='img/logo.svg', alt='logo')
+      .footer-copyright__wrapper-copyright
+        p.footer-copyright__text= copyright
+      ul.footer-copyright__social
+        each item in iconList
+          - const { link, icon } = item;
+          li.footer-copyright__item
+            a.footer-copyright__link-icon(href=link, target='_blank', rel='noopener noreferrer')
+              i(class="fa " + icon)

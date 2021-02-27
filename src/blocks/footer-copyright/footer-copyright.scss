@@ -1,12 +1,6 @@
 @import '../../scss/global-typography';
 
 .footer-copyright {
-  padding: 85px 0 0 0;
-
-  @media (max-width: $breakpoint-xs) {
-    padding: 25px 0 0 0;
-  }
-
   .fa {
     font-size: 24px;
     background-image: $gradient-primary;
@@ -38,6 +32,11 @@
 
   &__text-logo {
     @include typo-body;
+  }
+
+  &__wrapper-copyright {
+    margin-bottom: 21px;
+    text-align: center;
   }
 
   &__wrapper-list {
@@ -128,5 +127,20 @@
     @media (max-width: $breakpoint-md) {
       padding-top: 10px;
     }
+  }
+
+  &--full {
+    padding: 85px 0 0 0;
+
+    @media (max-width: $breakpoint-xs) {
+      padding: 25px 0 0 0;
+    }
+  }
+
+  &--creative {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding: 120px 0 110px 0;
   }
 }
