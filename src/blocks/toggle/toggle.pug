@@ -8,4 +8,4 @@ mixin toggle({ id, text, name, isChecked })
       input.toggle__input(id=id, name=name, type='checkbox')
 
     label.toggle__label(for=id)
-    p.toggle__text= text
+    label.toggle__text(for=id)= text

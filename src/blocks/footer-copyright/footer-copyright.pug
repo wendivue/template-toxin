@@ -12,13 +12,16 @@ mixin footer-copyright({ linkLogo, textLogo, type='full', itemList1, itemList2, 
             a(href=linkLogo) 
               img.footer-copyright__logo(src='img/logo.svg', alt='logo')
             p.footer-copyright__text-logo= textLogo
-          .footer-copyright__wrapper-list
-            ul.footer-copyright__list
-              +footer-list(itemList1)
-            ul.footer-copyright__list
-              +footer-list(itemList2)
-            ul.footer-copyright__list
-              +footer-list(itemList3)
+          ul.footer-copyright__wrapper-list
+            li.footer-copyright__lists
+              ul.footer-copyright__list
+                +footer-list(itemList1)
+            li.footer-copyright__lists
+              ul.footer-copyright__list
+                +footer-list(itemList2)
+            li.footer-copyright__lists
+              ul.footer-copyright__list
+                +footer-list(itemList3)
           .footer-copyright__wrapper-subscribe
             .footer-copyright__wrapper-text
               h3.footer-copyright__title-subscribe= titleSub

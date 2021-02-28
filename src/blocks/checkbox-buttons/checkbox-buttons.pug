@@ -14,8 +14,8 @@ mixin checkbox-buttons({ caption, isRich, checkboxButtons })
             input.checkbox-buttons__checkbox(id=id, name=name, type='checkbox')
 
           if (isRich)
-            .checkbox-buttons__wrapper-text
+            label.checkbox-buttons__wrapper-text(for=id)
               h3.checkbox-buttons__text= title
-              label.checkbox-buttons__label.checkbox-buttons__label--small(for=id)= text
+              p.checkbox-buttons__info.checkbox-buttons__label--small= text
           else
-            label.checkbox-buttons__label(for=id)= text
+            label.checkbox-buttons__info(for=id)= text

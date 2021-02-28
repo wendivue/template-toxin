@@ -14,6 +14,10 @@
     margin-bottom: 5.4px;
   }
 
+  &__wrapper-text {
+    cursor: pointer;
+  }
+
   &__checkbox {
     -webkit-appearance: none;
     align-self: start;
@@ -45,7 +49,7 @@
     }
   }
 
-  &__label {
+  &__info {
     @include typo-body;
     color: $dark-shade-50;
     line-height: 18px;

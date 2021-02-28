@@ -48,6 +48,19 @@
     margin-top: 15px;
   }
 
+  &__hotel-card {
+    margin-bottom: 18.5px;
+    margin-right: 12px;
+
+    &:nth-child(3n + 3) {
+      margin-right: 0;
+    }
+
+    @media (max-width: $breakpoint-sm) {
+      margin-right: 0;
+    }
+  }
+
   &__title {
     @include typo-h1;
     margin-bottom: 21px;
@@ -56,8 +69,7 @@
 
   &__wrapper-hotel-card {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 18px;
+    flex-flow: wrap;
 
     @media (max-width: $breakpoint-sm) {
       align-items: center;

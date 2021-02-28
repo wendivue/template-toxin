@@ -22,7 +22,8 @@ block variables
   - const classMain = "ui-kits-form";
   - const classImg = "ui-kits-form__img";
   - const mainLink = "index.html";
-  - const checkboxList = [{text: 'Завтрак', id: '1', name: 'breakfast'},{text: 'Письменный стол', id: '2', name: 'desk', isChecked: true},{text: 'Стул для кормления', id: '3', name: 'chair', isChecked: true},{text: 'Кроватка', id: '4', name: 'crib', isChecked: true},{text: 'Телевизор', id: '5', name: 'tv'},{text: 'Шампунь', id: '6', name: 'shampoo'}];
+  - const checkboxList1 = [{text: 'Завтрак', id: '1', name: 'breakfast'},{text: 'Письменный стол', id: '2', name: 'desk', isChecked: true},{text: 'Стул для кормления', id: '3', name: 'chair', isChecked: true},{text: 'Кроватка', id: '4', name: 'crib', isChecked: true},{text: 'Телевизор', id: '5', name: 'tv'},{text: 'Шампунь', id: '6', name: 'shampoo'}];
+  - const checkboxList2 = [{text: 'Завтрак', id: '7', name: 'breakfast'},{text: 'Письменный стол', id: '8', name: 'desk', isChecked: true},{text: 'Стул для кормления', id: '9', name: 'chair', isChecked: true},{text: 'Кроватка', id: '10', name: 'crib', isChecked: true},{text: 'Телевизор', id: '11', name: 'tv'},{text: 'Шампунь', id: '12', name: 'shampoo'}];
   - const checkboxButtons1 = [{text: 'Ширина коридоров в номере не менее 91 см.', id: '4', title: 'Широкий коридор', name: 'hall'}, {text: 'На 1 этаже вас встретит специалист и проводит до номера.', id: '5', title: 'Помощник для инвалидов', name: 'assistant'}];
   - const checkboxButtons2 = [{text: 'Можно курить', id: '1', name: 'smoke'}, {text: 'Можно с питомцами', id: '2', name:'pet', isChecked: true}, {text: 'Можно пригласить гостей (до 10 человек)', id: '3', name: 'guests', isChecked: true}];
   - const itemsRoom = [{text: 'спальни', value: '2', name: 'bedrooms-1'}, {text: 'кровати', value: '2', name: 'bed-1'}, {text: 'ванные комнаты', value: '0', name: 'bathrooms-1'}];
@@ -56,9 +57,9 @@ block content
         .ui-kits-form__dropdown-room-expanded
           +dropdown({ text: 'Dropdown', name: 'room-2', value: '2 спальни 2 кровати...', iconText: 'expand_more', id: 'dropdown-3', textState:'expanded', size:'small', isItemsRoom: true, stateMenu: 'active', isDropdown: true, itemsList: itemsRoom })
         .ui-kits-form__checkbox-list
-          +checkbox-list({ text: 'expandable checkbox list', checkboxList })
+          +checkbox-list({ text: 'expandable checkbox list', checkboxList: checkboxList1 })
         .ui-kits-form__checkbox-list-open
-          +checkbox-list({ text: 'expandable checkbox list', state: 'open', checkboxList })
+          +checkbox-list({ text: 'expandable checkbox list', state: 'open', checkboxList: checkboxList2 })
       .ui-kits-form__col-4
         +checkbox-buttons({ caption: 'Checkbox Buttons', checkboxButtons: checkboxButtons2 })
         .ui-kits-form__radio-buttons
