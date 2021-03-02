@@ -2,7 +2,7 @@ include ../button/button.pug
 include ../page/page.pug
 include ../center-block/center-block.pug
 
-mixin header({ itemList, size, textLogin, loginButton, loginLink, registerButton, subItemList1, subItemList2 })
+mixin header({ itemList, size, textLogin, loginButton, loginLink, registerButton })
   header.header
     +page
       +center-block
@@ -13,22 +13,17 @@ mixin header({ itemList, size, textLogin, loginButton, loginLink, registerButton
           nav.header__menu
             ul.header__list
               each item in itemList
-                - let { state, link, text, isIcon, isSubItemList, isSubItemList2 } = item;
+                - let { state, link, text, isIcon, subItemList } = item;
                 - const linkStateClass = state ? " header__link--" + state : "";
                 - const itemSizeClass = size ? " header__item--" + size : "";
                 - const iconSizeClass = size ? " header__icon--" + size : "";
                 li(class="header__item" + itemSizeClass)
                   a(class="header__link" + linkStateClass, href=link)= text
-                    if (isIcon)
+                    if (subItemList)
                       i(class="header__icon" + iconSizeClass) expand_more
-                  if (isIcon && isSubItemList)
+                  if (subItemList)
                     ul.header__submenu
-                      each subItem in subItemList1
-                        li.header__subitem
-                          a.header__link(href=subItem.link)= subItem.text
-                  else if (isIcon && isSubItemList2)
-                    ul.header__submenu
-                      each subItem in subItemList2
+                      each subItem in subItemList
                         li.header__subitem
                           a.header__link(href=subItem.link)= subItem.text
 
