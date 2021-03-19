@@ -1,4 +1,4 @@
-extends ../../layout/main-layout.pug
+extends ~Layout/main-layout.pug
 
 block variables
   - const pageTitle = "Landing-page";
@@ -9,7 +9,7 @@ block variables
   - const itemsPeople = [{text: 'взрослые', value: '0', name: 'adults'}, {text: 'дети', value: '0', name: 'children'}, {text: 'младенцы', value: '0', name: 'babies'}];
 
 block content
-  include ../../blocks/hotel-search/hotel-search.pug
+  include ~Blocks/hotel-search/hotel-search.pug
   +page
     +center-block
       .landing-page__hotel-search

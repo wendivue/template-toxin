@@ -1,10 +1,13 @@
 const path = require('path');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
 const webpack = require('webpack');
+
+const PATHS = {
+  src: path.join(__dirname, './src'),
+  dist: path.join(__dirname, './dist'),
+};
 
 const pages = [
   'index',
@@ -20,25 +23,27 @@ const pages = [
 ];
 
 const config = {
-  entry: './src/index.js',
+  entry: `${PATHS.src}/index.js`,
   output: {
     filename: './js/bundle.js',
   },
   devtool: 'source-map',
-  mode: 'production',
-  optimization: {
-    minimizer: [
-      new TerserPlugin({
-        sourceMap: true,
-        extractComments: true,
-      }),
-    ],
+  resolve: {
+    alias: {
+      Src: path.resolve(__dirname, PATHS.src),
+      Dist: path.resolve(__dirname, PATHS.dist),
+      Typography: path.resolve(__dirname, `${PATHS.src}/scss/_global-typography`),
+      Vars: path.resolve(__dirname, `${PATHS.src}/scss/_vars`),
+      Layout: path.resolve(__dirname, `${PATHS.src}/layout`),
+      Blocks: path.resolve(__dirname, `${PATHS.src}/blocks`),
+    },
   },
+
   module: {
     rules: [
       {
         test: /\.(sass|scss)$/,
-        include: path.resolve(__dirname, 'src/'),
+        include: PATHS.src,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
@@ -101,16 +106,14 @@ const config = {
       'window.jQuery': 'jquery',
       'window.$': 'jquery',
     }),
-    new MiniCssExtractPlugin({
-      filename: './css/style.bundle.css',
-    }),
+    new MiniCssExtractPlugin(),
     new CopyWebpackPlugin([
       {
-        from: './src/fonts',
+        from: `${PATHS.src}/fonts`,
         to: './fonts',
       },
       {
-        from: './src/favicon',
+        from: `${PATHS.src}/favicon`,
         to: './favicon',
       },
     ]),
@@ -121,14 +124,9 @@ pages.forEach((page) => {
   config.plugins.push(
     new HtmlWebpackPlugin({
       filename: `${page}.html`,
-      template: `./src/pages/${page}/${page}.pug`,
+      template: `${PATHS.src}/pages/${page}/${page}.pug`,
     })
   );
 });
 
-module.exports = (_, argv) => {
-  if (argv.mode === 'production') {
-    config.plugins.push(new CleanWebpackPlugin());
-  }
-  return config;
-};
+module.exports = config;

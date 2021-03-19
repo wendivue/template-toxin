@@ -11,5 +11,10 @@
   },
   "rules": {
     "class-methods-use-this": "off"
-  }
+  },
+  "ignorePatterns": [
+    "webpack.base.config.js",
+    "webpack.production.config.js",
+    "webpack.development.config.js"
+  ]
 }
