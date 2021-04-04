@@ -30,8 +30,6 @@ const config = {
   devtool: 'source-map',
   resolve: {
     alias: {
-      Src: path.resolve(__dirname, PATHS.src),
-      Dist: path.resolve(__dirname, PATHS.dist),
       Typography: path.resolve(__dirname, `${PATHS.src}/scss/_global-typography`),
       Vars: path.resolve(__dirname, `${PATHS.src}/scss/_vars`),
       Layout: path.resolve(__dirname, `${PATHS.src}/layout`),
