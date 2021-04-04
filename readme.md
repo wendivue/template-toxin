@@ -8,6 +8,8 @@ Development: <code>npm run dev</code>
 
 Production: <code>npm run build</code>
 
+Linter: <code>npm run lint</code>
+
 ## Page link
 
 - [Main page](https://wendivue.github.io/template-toxin)
