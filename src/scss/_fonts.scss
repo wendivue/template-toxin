@@ -10,9 +10,9 @@
   }
 }
 
-@include font-face('Quicksand', normal, normal, swap, 'fonts/quicksand-regular');
-@include font-face('Quicksand', normal, bold, swap, 'fonts/quicksand-700');
-@include font-face('Montserrat', normal, normal, swap, 'fonts/montserrat-regular');
-@include font-face('Montserrat', normal, bold, swap, 'fonts/montserrat-700');
-@include font-face('Material Icons', normal, normal, swap, 'fonts/material-icons-regular');
-@include font-face('FontAwesome', normal, normal, swap, 'fonts/font-awesome');
+@include font-face('Quicksand', normal, normal, swap, '~Fonts/quicksand-regular');
+@include font-face('Quicksand', normal, bold, swap, '~Fonts/quicksand-700');
+@include font-face('Montserrat', normal, normal, swap, '~Fonts/montserrat-regular');
+@include font-face('Montserrat', normal, bold, swap, '~Fonts/montserrat-700');
+@include font-face('Material Icons', normal, normal, swap, '~Fonts/material-icons-regular');
+@include font-face('FontAwesome', normal, normal, swap, '~Fonts/font-awesome');

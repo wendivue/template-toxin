@@ -1,39 +1,43 @@
 const path = require('path');
+const fs = require('fs');
+const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const webpack = require('webpack');
 
 const PATHS = {
   src: path.join(__dirname, './src'),
   dist: path.join(__dirname, './dist'),
 };
 
-const pages = [
-  'index',
-  'ui-kits-cards',
-  'ui-kits-color',
-  'ui-kits-form',
-  'ui-kits-header-footer',
-  'landing-page',
-  'landing-sign-in',
-  'landing-registration',
-  'search-room',
-  'room-details',
-];
+const templatePages = fs.readdirSync(`${PATHS.src}/pages`);
+
+const addTemplate = () => {
+  return templatePages.map((page) => {
+    return { [page]: `${PATHS.src}/pages/${page}/${page}.js` };
+  });
+};
+
+let templateEntry = addTemplate();
+templateEntry = Object.assign({}, ...templateEntry);
 
 const config = {
-  entry: `${PATHS.src}/index.js`,
+  entry: templateEntry,
   output: {
-    filename: './js/bundle.js',
+    filename: './js/[name].js',
   },
   devtool: 'source-map',
   resolve: {
     alias: {
       Typography: path.resolve(__dirname, `${PATHS.src}/scss/_global-typography`),
       Vars: path.resolve(__dirname, `${PATHS.src}/scss/_vars`),
+      FontsScss: path.resolve(__dirname, `${PATHS.src}/scss/_fonts`),
+      Libs: path.resolve(__dirname, `${PATHS.src}/scss/_libs`),
+      Reset: path.resolve(__dirname, `${PATHS.src}/scss/_reset`),
       Layout: path.resolve(__dirname, `${PATHS.src}/layout`),
       Blocks: path.resolve(__dirname, `${PATHS.src}/blocks`),
+      Pages: path.resolve(__dirname, `${PATHS.src}/pages`),
+      Fonts: path.resolve(__dirname, `${PATHS.src}/fonts`),
     },
   },
 
@@ -51,7 +55,6 @@ const config = {
             loader: 'css-loader',
             options: {
               sourceMap: true,
-              url: false,
             },
           },
           {
@@ -95,6 +98,16 @@ const config = {
           },
         },
       },
+      {
+        test: /\.(woff2|woff|ttf|otf|eot)$/i,
+        use: {
+          loader: 'file-loader',
+          options: {
+            outputPath: 'fonts/',
+            name: '[name].[ext]',
+          },
+        },
+      },
     ],
   },
   plugins: [
@@ -118,11 +131,12 @@ const config = {
   ],
 };
 
-pages.forEach((page) => {
+templatePages.forEach((page) => {
   config.plugins.push(
     new HtmlWebpackPlugin({
       filename: `${page}.html`,
       template: `${PATHS.src}/pages/${page}/${page}.pug`,
+      chunks: [`${page}`, 'vendors'],
     })
   );
 });

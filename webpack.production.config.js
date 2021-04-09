@@ -11,6 +11,16 @@ const productionConfig = merge(baseConfig, {
         extractComments: true,
       }),
     ],
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          name: 'vendors',
+          test: /node_modules/,
+          chunks: 'all',
+          enforce: true,
+        },
+      },
+    },
   },
   plugins: [new CleanWebpackPlugin()],
 });

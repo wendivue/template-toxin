@@ -1,4 +1,10 @@
 @import '~Typography';
+@import '~Layout/main-layout';
+@import '~Blocks/icon-text-list/icon-text-list';
+@import '~Blocks/review/review';
+@import '~Blocks/bullet-list/bullet-list';
+@import '~Blocks/reservation/reservation';
+@import '~Blocks/pie-chart/pie-chart';
 
 .room-details {
   &__wrapper-img {

@@ -1,3 +1,7 @@
+@import '~Layout/main-layout';
+@import '~Blocks/page/page';
+@import '~Blocks/registration/registration';
+
 .landing-registration {
   &__content {
     width: 100%;

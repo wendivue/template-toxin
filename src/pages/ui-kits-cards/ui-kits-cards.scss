@@ -1,4 +1,11 @@
 @import '~Vars';
+@import '~Layout/main-layout';
+@import '~Blocks/col-4/col-4';
+@import '~Blocks/hotel-search/hotel-search';
+@import '~Blocks/registration/registration';
+@import '~Blocks/reservation/reservation';
+@import '~Blocks/sign-in/sign-in';
+@import '~Blocks/hotel-card/hotel-card';
 
 .ui-kits-cards {
   margin-top: 57px;

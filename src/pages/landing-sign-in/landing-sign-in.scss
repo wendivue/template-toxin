@@ -1,3 +1,7 @@
+@import '~Layout/main-layout';
+@import '~Blocks/page/page';
+@import '~Blocks/sign-in/sign-in';
+
 .landing-sign-in {
   &__content {
     width: 100%;

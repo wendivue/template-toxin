@@ -1,4 +1,13 @@
 @import '~Typography';
+@import '~Layout/main-layout';
+@import '~Blocks/date-picker/date-picker';
+@import '~Blocks/dropdown/dropdown';
+@import '~Blocks/range-slider/range-slider';
+@import '~Blocks/checkbox-buttons/checkbox-buttons';
+@import '~Blocks/bullet-list/bullet-list';
+@import '~Blocks/checkbox-list/checkbox-list';
+@import '~Blocks/hotel-card/hotel-card';
+@import '~Blocks/pagination/pagination';
 
 .search-room {
   &__layout-body {

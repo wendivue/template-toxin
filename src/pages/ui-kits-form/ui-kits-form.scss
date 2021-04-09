@@ -1,4 +1,21 @@
 @import '~Typography';
+@import '~Layout/main-layout';
+@import '~Blocks/col-4/col-4';
+@import '~Blocks/text-field/text-field';
+@import '~Blocks/dropdown/dropdown';
+@import '~Blocks/date-picker/date-picker';
+@import '~Blocks/checkbox-list/checkbox-list';
+@import '~Blocks/icon-text-list/icon-text-list';
+@import '~Blocks/checkbox-buttons/checkbox-buttons';
+@import '~Blocks/radio-buttons/radio-buttons';
+@import '~Blocks/toggle/toggle';
+@import '~Blocks/like-button/like-button';
+@import '~Blocks/rate-button/rate-button';
+@import '~Blocks/range-slider/range-slider';
+@import '~Blocks/button/button';
+@import '~Blocks/pagination/pagination';
+@import '~Blocks/bullet-list/bullet-list';
+@import '~Blocks/review/review';
 
 .ui-kits-form {
   margin-top: 50px;
