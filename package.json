@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack-dev-server --mode-development --env development --open --config webpack.development.config.js",
     "build": "webpack --mode-production --env production --config webpack.production.config.js",
-    "lint": "eslint ."
+    "lint": "eslint src"
   },
   "author": "Vladimir Sakai",
   "license": "ISC",
