@@ -115,6 +115,7 @@ class Dropdown {
     this.val3 = this.validateValue(this.val3);
 
     this.input[2].value = this.val3;
+    this.updateValue(ROOM);
   }
 
   changeValueBathRoomDecrease() {
@@ -124,6 +125,7 @@ class Dropdown {
     this.val3 = this.validateValue(this.val3);
 
     this.input[2].value = this.val3;
+    this.updateValue(ROOM);
   }
 
   changeValuePeopleIncrease(index) {
@@ -157,26 +159,41 @@ class Dropdown {
   getValue() {
     const dropdownMenu = this.anchor.querySelector('.js-text-field__input');
 
-    let fullVal = parseFloat(dropdownMenu.value.replace(/[^0-9]/g, '')).toString();
-    let val1 = parseFloat(fullVal.replace(/\d/, ''));
-    let val2 = parseFloat(fullVal.replace(/\d$/, ''));
+    let fullVal = parseFloat(dropdownMenu.value.replace(/[^0-9]/g, ''));
+    let val1 = parseFloat(this.input[1].value);
+    let val2 = parseFloat(this.input[0].value);
+    let val3 = parseFloat(this.input[2].value);
 
-    if (Number.isNaN(val1) || Number.isNaN(val2) || Number.isNaN(fullVal)) {
+    if (Number.isNaN(val1) || Number.isNaN(val2) || Number.isNaN(val3) || Number.isNaN(fullVal)) {
       val1 = 0;
       val2 = 0;
+      val3 = 0;
       fullVal = 0;
     }
 
     this.fullVal = fullVal;
     this.val1 = val1;
     this.val2 = val2;
+    this.val3 = val3;
+  }
+
+  getString() {
+    const str1 = this.validateTextRoom();
+    const str2 = this.validateTextBed();
+    const str3 = this.validateTextBath();
+    const str4 = this.validateTextGuest();
+
+    return { str1, str2, str3, str4 };
   }
 
   updateValue(type) {
-    const dropdownMenu = this.anchor.querySelector('.js-text-field__input');
     let string;
-    if (ROOM === type) string = `${this.val2} спальни ${this.val1} кровати...`;
-    if (PEOPLE === type) string = `${this.fullVal} гостя`;
+    const { str1, str2, str3, str4 } = this.getString();
+    const dropdownMenu = this.anchor.querySelector('.js-text-field__input');
+
+    if (ROOM === type) string = `${str1}${str2}${str3}`;
+    if (string === '') string = 'Сколько комнат';
+    if (PEOPLE === type) string = `${str4}`;
 
     dropdownMenu.value = string;
   }
@@ -247,6 +264,78 @@ class Dropdown {
     }
 
     return curValue;
+  }
+
+  validateTextRoom() {
+    let value;
+
+    if (this.val2 === 1) {
+      value = `${this.val2} спальня `;
+    }
+    if (this.val2 >= 2 && this.val2 <= 4) {
+      value = `${this.val2} спальни `;
+    }
+    if (this.val2 >= 5) {
+      value = `${this.val2} спален `;
+    }
+    if (this.val2 === 0) {
+      value = '';
+    }
+    return value;
+  }
+
+  validateTextBed() {
+    let value;
+
+    if (this.val1 === 1) {
+      value = `${this.val1} кровать `;
+    }
+    if (this.val1 >= 2 && this.val1 <= 4) {
+      value = `${this.val1} кровати `;
+    }
+    if (this.val1 >= 5) {
+      value = `${this.val1} кроватей `;
+    }
+    if (this.val1 === 0) {
+      value = '';
+    }
+    return value;
+  }
+
+  validateTextBath() {
+    let value;
+
+    if (this.val3 === 1) {
+      value = `${this.val3} ванная`;
+    }
+    if (this.val3 >= 2 && this.val3 <= 4) {
+      value = `${this.val3} ванные`;
+    }
+    if (this.val3 >= 5) {
+      value = `${this.val3} ванных`;
+    }
+    if (this.val3 === 0) {
+      value = '';
+    }
+    return value;
+  }
+
+  validateTextGuest() {
+    let value;
+
+    if (this.fullVal === 1) {
+      value = `${this.fullVal} гость`;
+    }
+    if (this.fullVal >= 2 && this.fullVal <= 4) {
+      value = `${this.fullVal} гостя`;
+    }
+    if (this.fullVal >= 5) {
+      value = `${this.fullVal} гостей`;
+    }
+    if (this.fullVal === 0) {
+      value = 'Сколько гостей';
+    }
+    return value;
   }
 }
 
