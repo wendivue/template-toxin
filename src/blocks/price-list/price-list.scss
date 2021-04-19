@@ -23,7 +23,7 @@
 
     &--big {
       @include typo-h2;
-      width: 22%;
+      width: 24%;
     }
   }
 
@@ -49,7 +49,7 @@
     &:before {
       position: absolute;
       content: '';
-      width: 55%;
+      width: 50%;
       height: 1px;
       bottom: 6px;
       left: 70px;

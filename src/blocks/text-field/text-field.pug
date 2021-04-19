@@ -1,9 +1,9 @@
-mixin text-field({ state, size, themeIcon, id, stateMenu, text, textState, isDropdown, type, value, name, isDateRange, isDatepicker, placeholder, iconText, isDateStart})
+mixin text-field({ state, size, themeIcon, id, stateMenu, text, textState, isDropdown, type, value, name, isDateRange, isDatepicker, placeholder, iconText, isDateStart, isDateEnd})
   - const inputStateClass = state ? "text-field__input--" + state + " " : "";
   - const inputOpenClass = stateMenu ? " text-field__input--open" : "";
   - const textFieldSizeClass = size ? "text-field--" + size : "";
   - const iconThemeClass = themeIcon ? "text-field__icon--" + themeIcon : "";
-  - const dateTypeClass = isDateStart ? "js-text-field__datepicker-start" : "js-text-field__datepicker-end";
+  - const dateTypeClass = isDateStart ? "js-text-field__datepicker-start" : isDateEnd ? "js-text-field__datepicker-end" : "";
   - id = id ? "text-field-" + id : "";
 
   div(class="text-field " + textFieldSizeClass)

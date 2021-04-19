@@ -8,7 +8,7 @@ mixin hotel-search({ title, link, itemsList})
 
     .hotel-search__date-picker
       +date-picker({ text: 'прибытие', placeholder: 'ДД.ММ.ГГГГ', state: 'date', type: 'text', name: 'arrival', id: 'start', iconText: 'expand_more', isDateRange: true, isDateStart: true })
-      +date-picker({ text: 'выезд', placeholder: 'ДД.ММ.ГГГГ', state: 'date', type: 'text', name: 'departure', id: 'end', iconText: 'expand_more', isDateRange: true })
+      +date-picker({ text: 'выезд', placeholder: 'ДД.ММ.ГГГГ', state: 'date', type: 'text', name: 'departure', id: 'end', iconText: 'expand_more', isDateRange: true, isDateEnd: true })
 
     .hotel-search__dropdown
       +dropdown({ text: 'гости', name: 'people', value: 'Сколько гостей', id: 'dropdown-people', iconText: 'expand_more', isItemsPeople: true, isButtonMenu: true, isDropdown: true, isHideButtonCleans: true, itemsList })

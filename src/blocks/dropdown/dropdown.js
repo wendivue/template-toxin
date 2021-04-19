@@ -11,6 +11,7 @@ class Dropdown {
   init() {
     this.getElement();
     this.getValue();
+    this.bindEventDocumentClick();
     this.bindEventClick(
       this.buttonPeopleIncrease,
       this.buttonPeopleDecrease,
@@ -69,6 +70,10 @@ class Dropdown {
     elements.forEach((element) => {
       element.addEventListener('click', this.clear.bind(this));
     });
+  }
+
+  bindEventDocumentClick() {
+    document.addEventListener('click', this.handleDocumentClick);
   }
 
   changeValueBedRoomIncrease() {
@@ -200,6 +205,21 @@ class Dropdown {
 
   removeDecrease(element, index) {
     return element[index].classList.remove('dropdown__button--no-active');
+  }
+
+  handleDocumentClick(event) {
+    const dropdownMenu = document.querySelectorAll('.js-dropdown__menu');
+    const textFields = document.querySelectorAll('.js-text-field__input');
+
+    const target = event.target.closest('.dropdown');
+    if (!target) {
+      textFields.forEach((element) => {
+        element.classList.remove('text-field__input--open');
+      });
+      dropdownMenu.forEach((element) => {
+        element.classList.remove('dropdown__menu--active');
+      });
+    }
   }
 
   toggle(event) {

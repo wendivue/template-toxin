@@ -8,7 +8,6 @@ const developmentConfig = merge(baseConfig, {
     index: 'index.html',
     contentBase: path.join(__dirname, './dist'),
     compress: true,
-    hot: true,
     port: 8079,
   },
 });

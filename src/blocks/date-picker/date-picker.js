@@ -5,15 +5,17 @@ function datePicker(element) {
     navTitles: {
       days: 'MM yyyy',
     },
+    startDate: new Date(),
     prevHtml: '<button class="date-picker__icon">arrow_back</button>',
     nextHtml: '<button class="date-picker__icon">arrow_forward</button>',
   });
 
   $('.js-text-field__date-range').datepicker({
     range: true,
+    minDate: new Date(),
   });
 
-  $('.js-text-field__datepicker-start').datepicker({
+  $('.js-text-field__datepicker-start, .js-text-field__datepicker-end').datepicker({
     range: true,
     onSelect: (fd) => {
       $('.js-text-field__datepicker-start').val(fd.split('-')[0]);
