@@ -48,7 +48,7 @@ mixin footer-copyright({ linkLogo, textLogo, type='full', itemList1, itemList2, 
         img.footer-copyright__logo(src='img/logo.svg', alt='logo')
       .footer-copyright__wrapper-copyright
         p.footer-copyright__text= copyright
-      ul.footer-copyright__social
+      ul.footer-copyright__social.footer-copyright__social--creative
         each item in iconList
           - const { link, icon } = item;
           li.footer-copyright__item

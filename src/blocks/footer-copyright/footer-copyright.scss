@@ -16,7 +16,6 @@
 
     @media (max-width: $breakpoint-md) {
       max-width: 447px;
-      padding: 10px 0;
     }
   }
 
@@ -35,6 +34,10 @@
 
   &__text-logo {
     @include typo-body;
+
+    @media (max-width: $breakpoint-md) {
+      display: none;
+    }
   }
 
   &__wrapper-copyright {
@@ -49,8 +52,7 @@
     flex-flow: wrap;
 
     @media (max-width: $breakpoint-md) {
-      width: auto;
-      padding: 10px 0;
+      display: none;
     }
   }
 
@@ -89,7 +91,7 @@
     margin-top: 4px;
 
     @media (max-width: $breakpoint-md) {
-      width: auto;
+      display: none;
     }
   }
 
@@ -122,22 +124,25 @@
     border-top: 1px solid $dark-shade-5;
     margin-top: 64px;
     padding: 9px 0 7px 0;
+
+    @media (max-width: $breakpoint-md) {
+      padding: 0;
+      margin: 0;
+      border: none;
+    }
   }
 
   &__social {
     display: flex;
+    padding-top: 20px;
 
-    @media (max-width: $breakpoint-md) {
-      padding-top: 10px;
+    &--creative {
+      padding-top: 0;
     }
   }
 
   &--full {
     padding: 85px 0 0 0;
-
-    @media (max-width: $breakpoint-xs) {
-      padding: 25px 0 0 0;
-    }
   }
 
   &--creative {
@@ -145,5 +150,20 @@
     flex-flow: column;
     align-items: center;
     padding: 120px 0 110px 0;
+  }
+
+  @media (max-width: $breakpoint-md) {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding: 120px 0 110px 0;
+
+    .page {
+      padding: 0;
+    }
+  }
+
+  @media (max-width: $breakpoint-xs) {
+    padding: 120px 15px 110px 15px;
   }
 }
