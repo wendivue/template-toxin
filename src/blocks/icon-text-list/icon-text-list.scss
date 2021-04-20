@@ -17,7 +17,8 @@
     font-size: 48px;
     background-image: $gradient-primary;
     background-clip: text;
-    color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   &__title {

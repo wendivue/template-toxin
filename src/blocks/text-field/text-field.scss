@@ -79,9 +79,10 @@
     &--submit {
       background-image: $gradient-primary;
       background-clip: text;
-      color: transparent;
       pointer-events: painted;
       cursor: pointer;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
   }
 

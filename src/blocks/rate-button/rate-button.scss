@@ -7,6 +7,7 @@
     @include material-icons;
     background-image: $gradient-primary;
     background-clip: text;
-    color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 }
