@@ -14,17 +14,17 @@ mixin hotel-card({ number, itemList, price, isLux, link, reviews, star })
     .hotel-card__description
       .hotel-card__wrapper-head
         .hotel-card__items-number
-          p.hotel-card__number.hotel-card__number--small №
-            span.hotel-card__number.hotel-card__number--big= number
+          p.hotel-card__number.hotel-card__number_small №
+            span.hotel-card__number.hotel-card__number_big= number
             if (isLux)
-              span.hotel-card__number.hotel-card__number--primary-color люкс
+              span.hotel-card__number.hotel-card__number_primary-color люкс
         .hotel-card__items-price
-          span.hotel-card__text.hotel-card__text--bold= price
+          span.hotel-card__text.hotel-card__text_bold= price
           p.hotel-card__text в сутки
 
       .hotel-card__wrapper-reviews
         .hotel-card__rate-button
           +rate-button({ star })
         .hotel-card__reviews
-          span.hotel-card__text.hotel-card__text--bold= reviews
+          span.hotel-card__text.hotel-card__text_bold= reviews
           p.hotel-card__text Отзывов

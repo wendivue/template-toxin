@@ -18,7 +18,7 @@
   &__items {
     display: none;
 
-    &--open {
+    &_open {
       display: block;
     }
   }
@@ -68,7 +68,7 @@
     @include material-icons;
     cursor: pointer;
 
-    &--open {
+    &_open {
       transform: rotate(-180deg);
     }
   }

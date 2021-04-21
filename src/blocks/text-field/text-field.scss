@@ -42,16 +42,16 @@
 
     &:hover,
     &:focus,
-    &--active {
+    &_active {
       color: $dark-shade-75;
       border: 1px solid $dark-shade-50;
     }
 
-    &--open {
+    &_open {
       border-radius: 4px 4px 0 0;
     }
 
-    &--date {
+    &_date {
       max-width: 150px;
 
       @media (max-width: $breakpoint-xxs) {
@@ -59,7 +59,7 @@
       }
     }
 
-    &--dropdown {
+    &_dropdown {
       color: $dark-shade-75;
       cursor: pointer;
     }
@@ -76,7 +76,7 @@
       width: 40px;
     }
 
-    &--submit {
+    &_submit {
       background-image: $gradient-primary;
       background-clip: text;
       pointer-events: painted;
@@ -86,7 +86,7 @@
     }
   }
 
-  &--small {
+  &_small {
     max-width: 266px;
   }
 }

@@ -15,9 +15,9 @@ mixin header({ itemList, size, textLogin, loginButton, loginLink, registerButton
             ul.header__list
               each item in itemList
                 - let { state, link, text, isIcon, subItemList } = item;
-                - const linkStateClass = state ? " header__link--" + state : "";
-                - const itemSizeClass = size ? " header__item--" + size : "";
-                - const iconSizeClass = size ? " header__icon--" + size : "";
+                - const linkStateClass = state ? " header__link_" + state : "";
+                - const itemSizeClass = size ? " header__item_" + size : "";
+                - const iconSizeClass = size ? " header__icon_" + size : "";
                 li(class="header__item" + itemSizeClass)
                   a(class="header__link" + linkStateClass, href=link)= text
                     if (subItemList)
@@ -32,7 +32,7 @@ mixin header({ itemList, size, textLogin, loginButton, loginLink, registerButton
             .header__login
               p.header__text-login= textLogin
           else
-            - const buttonSizeClass = size ? " header__wrapper-button--" + size : "";
+            - const buttonSizeClass = size ? " header__wrapper-button_" + size : "";
             div(class="header__wrapper-button" + buttonSizeClass)
               .header__button
                 +button(loginButton)

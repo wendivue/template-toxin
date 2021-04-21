@@ -7,9 +7,9 @@ mixin reservation({ number, price, link, itemsList })
   form.reservation(action=link)
     .reservation__wrapper-head
       .reservation__items-number
-        p.reservation__number.reservation__number--small №
-          span.reservation__number.reservation__number--big= number
-          span.reservation__number.reservation__number--primary-color люкс
+        p.reservation__number.reservation__number_small №
+          span.reservation__number.reservation__number_big= number
+          span.reservation__number.reservation__number_primary-color люкс
       .reservation__items-price
         span.reservation__price= price
         p.reservation__days в сутки

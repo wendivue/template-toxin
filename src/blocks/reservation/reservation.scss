@@ -37,17 +37,17 @@
       padding-left: 3px;
     }
 
-    &--big {
+    &_big {
       font-size: 20px;
     }
 
-    &--small {
+    &_small {
       @include typo-body;
       font-weight: bold;
       color: $dark-shade-100;
     }
 
-    &--primary-color {
+    &_primary-color {
       color: $color-primary;
     }
   }

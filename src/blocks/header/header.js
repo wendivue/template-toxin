@@ -27,7 +27,7 @@ class Header {
 
   toggleBurder() {
     const menu = this.anchor.querySelector('.js-header__menu');
-    menu.classList.toggle('header__menu--active');
+    menu.classList.toggle('header__menu_active');
   }
 
   handleDocumentClick(event) {
@@ -37,7 +37,7 @@ class Header {
 
     if (!targetBurger && !targetMenu) {
       menu.forEach((element) => {
-        element.classList.remove('header__menu--active');
+        element.classList.remove('header__menu_active');
       });
     }
   }

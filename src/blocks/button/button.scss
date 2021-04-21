@@ -15,7 +15,7 @@
   box-sizing: border-box;
 
   &:hover,
-  &--active {
+  &_active {
     opacity: 0.5;
   }
 
@@ -27,7 +27,7 @@
     color: #fff;
   }
 
-  &--border {
+  &_border {
     padding: 12.5px 17.5px;
     background: #fff;
     color: $color-primary;
@@ -48,7 +48,7 @@
     }
 
     &:hover,
-    &--active {
+    &_active {
       opacity: 1;
 
       &:before {
@@ -57,13 +57,13 @@
     }
   }
 
-  &--active-border {
+  &_active-border {
     &:before {
       opacity: 0.5;
     }
   }
 
-  &--icon-link {
+  &_icon-link {
     padding: 0;
     min-width: auto;
     color: $color-primary;
@@ -77,15 +77,15 @@
     }
   }
 
-  &--large {
+  &_large {
     width: 100%;
   }
 
-  &--small {
+  &_small {
     padding: 9.5px 19.5px;
   }
 
-  &--small-border {
+  &_small-border {
     min-width: auto;
     padding: 7.5px 17.5px;
   }

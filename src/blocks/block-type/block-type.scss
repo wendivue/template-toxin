@@ -15,23 +15,23 @@
     text-transform: none;
   }
 
-  &--h1 {
+  &_h1 {
     @include typo-h1;
     margin-left: 8px;
   }
 
-  &--h2 {
+  &_h2 {
     @include typo-h2;
     margin-left: 9.5px;
   }
 
-  &--h3 {
+  &_h3 {
     @include typo-h3;
     margin-left: 20px;
     margin-bottom: 47px;
   }
 
-  &--body {
+  &_body {
     @include typo-body;
     width: 380px;
   }

@@ -81,7 +81,7 @@
     line-height: 15px;
 
     &:hover,
-    &--active {
+    &_active {
       color: $dark-shade-75;
       font-weight: bold;
     }
@@ -137,16 +137,16 @@
     display: flex;
     padding-top: 20px;
 
-    &--creative {
+    &_creative {
       padding-top: 0;
     }
   }
 
-  &--full {
+  &_full {
     padding: 85px 0 0 0;
   }
 
-  &--creative {
+  &_creative {
     display: flex;
     flex-flow: column;
     align-items: center;

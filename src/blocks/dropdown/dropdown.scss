@@ -17,11 +17,11 @@
     border-radius: 0 0 4px 4px;
     z-index: 10;
 
-    &--active {
+    &_active {
       display: block;
     }
 
-    &--small {
+    &_small {
       width: 244px;
       padding: 3px 7px 4px 13px;
     }
@@ -50,7 +50,7 @@
     border-radius: 22px;
     cursor: pointer;
 
-    &--no-active {
+    &_no-active {
       pointer-events: none;
       border: 1px solid $dark-shade-25;
       color: $dark-shade-25;
@@ -75,16 +75,16 @@
     background: #fff;
     cursor: pointer;
 
-    &--cleans {
+    &_cleans {
       color: $dark-shade-50;
     }
 
-    &--hide {
+    &_hide {
       opacity: 0;
     }
   }
 
-  &--small {
+  &_small {
     width: 266px;
   }
 }

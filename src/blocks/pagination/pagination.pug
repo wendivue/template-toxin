@@ -2,7 +2,7 @@ mixin pagination({ itemList, nextPage, text })
   ul.pagination
     each item in itemList
       - const { isCurrentPage, link, text } = item;
-      - const numberStateClass = isCurrentPage ? "pagination__number--current" : "";
+      - const numberStateClass = isCurrentPage ? "pagination__number_current" : "";
       li.pagination__item
         a.pagination__number(class=numberStateClass, href=link)= text
 

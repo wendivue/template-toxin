@@ -1,66 +1,66 @@
 @import '~Vars';
 
-$font-family--h1: 'Montserrat';
-$font-family--h2: 'Montserrat';
-$font-family--h3: 'Montserrat';
-$font-family--body: 'Montserrat';
+$font-family_h1: 'Montserrat';
+$font-family_h2: 'Montserrat';
+$font-family_h3: 'Montserrat';
+$font-family_body: 'Montserrat';
 
-$font-size--h1: 24px;
-$font-size--h1-xs: 22px;
-$font-size--h2: 19px;
-$font-size--h2-xs: 17px;
-$font-size--h3: 12px;
-$font-size--body: 14px;
+$font-size_h1: 24px;
+$font-size_h1-xs: 22px;
+$font-size_h2: 19px;
+$font-size_h2-xs: 17px;
+$font-size_h3: 12px;
+$font-size_body: 14px;
 
-$font-weight--h1: 700;
-$font-weight--h2: 700;
-$font-weight--h3: 700;
-$font-weight--body: 400;
+$font-weight_h1: 700;
+$font-weight_h2: 700;
+$font-weight_h3: 700;
+$font-weight_body: 400;
 
-$line-height--h1: 30px;
-$line-height--h2: 24px;
-$line-height--h3: 15px;
-$line-height--body: 24px;
+$line-height_h1: 30px;
+$line-height_h2: 24px;
+$line-height_h3: 15px;
+$line-height_body: 24px;
 
 @mixin typo-h1 {
-  font-size: $font-size--h1;
-  font-family: $font-family--h1;
-  font-weight: $font-weight--h1;
-  line-height: $line-height--h1;
+  font-size: $font-size_h1;
+  font-family: $font-family_h1;
+  font-weight: $font-weight_h1;
+  line-height: $line-height_h1;
   color: $dark-shade-100;
   text-transform: capitalize;
 
   @media (max-width: $breakpoint-xs) {
-    font-size: $font-size--h1-xs;
+    font-size: $font-size_h1-xs;
   }
 }
 
 @mixin typo-h2 {
-  font-size: $font-size--h2;
-  font-family: $font-family--h2;
-  font-weight: $font-weight--h2;
-  line-height: $line-height--h2;
+  font-size: $font-size_h2;
+  font-family: $font-family_h2;
+  font-weight: $font-weight_h2;
+  line-height: $line-height_h2;
   color: $dark-shade-100;
 
   @media (max-width: $breakpoint-xs) {
-    font-size: $font-size--h2-xs;
+    font-size: $font-size_h2-xs;
   }
 }
 
 @mixin typo-h3 {
-  font-size: $font-size--h3;
-  font-family: $font-family--h3;
-  font-weight: $font-weight--h3;
-  line-height: $line-height--h3;
+  font-size: $font-size_h3;
+  font-family: $font-family_h3;
+  font-weight: $font-weight_h3;
+  line-height: $line-height_h3;
   color: $dark-shade-100;
   text-transform: uppercase;
 }
 
 @mixin typo-body {
-  font-size: $font-size--body;
-  font-family: $font-family--body;
-  font-weight: $font-weight--body;
-  line-height: $line-height--body;
+  font-size: $font-size_body;
+  font-family: $font-family_body;
+  font-weight: $font-weight_body;
+  line-height: $line-height_body;
   color: $dark-shade-75;
 }
 

@@ -49,16 +49,16 @@
     font-weight: bold;
     color: $dark-shade-100;
 
-    &--primary-color {
+    &_primary-color {
       color: $color-primary;
       margin-left: 8px;
     }
 
-    &--big {
+    &_big {
       font-size: 16px;
     }
 
-    &--small {
+    &_small {
       @include typo-body;
       font-weight: bold;
       color: $dark-shade-100;
@@ -70,7 +70,7 @@
     font-size: 12px;
     color: $dark-shade-50;
 
-    &--bold {
+    &_bold {
       font-size: 14px;
       font-weight: bold;
       padding-right: 5px;

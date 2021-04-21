@@ -26,16 +26,16 @@ class Dropdown {
     this.input = this.anchor.querySelectorAll('.js-dropdown__input');
     this.dropdownInput = this.anchor.querySelectorAll('.js-text-field__input');
     this.button = this.anchor.querySelectorAll('.js-dropdown__button');
-    this.buttonIncrease = this.anchor.querySelectorAll('.js-dropdown__button--increase');
-    this.buttonDecrease = this.anchor.querySelectorAll('.js-dropdown__button--decrease');
+    this.buttonIncrease = this.anchor.querySelectorAll('.js-dropdown__button_increase');
+    this.buttonDecrease = this.anchor.querySelectorAll('.js-dropdown__button_decrease');
     this.buttonPeopleIncrease = this.anchor.querySelectorAll(
-      '.js-dropdown__button-people--increase'
+      '.js-dropdown__button-people_increase'
     );
     this.buttonPeopleDecrease = this.anchor.querySelectorAll(
-      '.js-dropdown__button-people--decrease'
+      '.js-dropdown__button-people_decrease'
     );
-    this.buttonComplete = this.anchor.querySelectorAll('.js-dropdown__button-menu--complete');
-    this.buttonCleans = this.anchor.querySelectorAll('.js-dropdown__button-menu--cleans');
+    this.buttonComplete = this.anchor.querySelectorAll('.js-dropdown__button-menu_complete');
+    this.buttonCleans = this.anchor.querySelectorAll('.js-dropdown__button-menu_cleans');
   }
 
   bindEventClick(peopleIncrease, peopleDecrease, elementsIncrease, elementsDecrease) {
@@ -134,7 +134,7 @@ class Dropdown {
   }
 
   changeValuePeopleIncrease(index) {
-    this.buttonCleans[0].classList.remove('dropdown__button-menu--hide');
+    this.buttonCleans[0].classList.remove('dropdown__button-menu_hide');
     this.removeDecrease(this.buttonPeopleDecrease, index);
 
     this.fullVal = parseFloat(this.increase(parseFloat(this.fullVal)));
@@ -148,14 +148,14 @@ class Dropdown {
   }
 
   changeValuePeopleDecrease(index) {
-    this.buttonCleans[0].classList.remove('dropdown__button-menu--hide');
+    this.buttonCleans[0].classList.remove('dropdown__button-menu_hide');
 
     this.fullVal = parseFloat(this.decrease(parseFloat(this.fullVal)));
     this.fullVal = this.validatePeopleValue(this.fullVal, index);
     let { value } = this.input[index];
     value = parseFloat(this.decrease(parseFloat(value)));
     value = this.validateValue(value);
-    if (value === 0) this.buttonPeopleDecrease[index].classList.add('dropdown__button--no-active');
+    if (value === 0) this.buttonPeopleDecrease[index].classList.add('dropdown__button_no-active');
 
     this.input[index].value = value;
     this.updateValue(PEOPLE);
@@ -204,7 +204,7 @@ class Dropdown {
   }
 
   removeDecrease(element, index) {
-    return element[index].classList.remove('dropdown__button--no-active');
+    return element[index].classList.remove('dropdown__button_no-active');
   }
 
   handleDocumentClick(event) {
@@ -214,10 +214,10 @@ class Dropdown {
     const target = event.target.closest('.dropdown');
     if (!target) {
       textFields.forEach((element) => {
-        element.classList.remove('text-field__input--open');
+        element.classList.remove('text-field__input_open');
       });
       dropdownMenu.forEach((element) => {
-        element.classList.remove('dropdown__menu--active');
+        element.classList.remove('dropdown__menu_active');
       });
     }
   }
@@ -225,12 +225,12 @@ class Dropdown {
   toggle(event) {
     const element = event.target;
     const dropdownMenu = this.anchor.querySelector('.js-dropdown__menu');
-    element.classList.toggle('text-field__input--open');
-    dropdownMenu.classList.toggle('dropdown__menu--active');
+    element.classList.toggle('text-field__input_open');
+    dropdownMenu.classList.toggle('dropdown__menu_active');
   }
 
   clear() {
-    this.buttonCleans[0].classList.add('dropdown__button-menu--hide');
+    this.buttonCleans[0].classList.add('dropdown__button-menu_hide');
     this.dropdownInput[0].value = 'Сколько гостей';
 
     this.input.forEach((element) => {
@@ -239,7 +239,7 @@ class Dropdown {
     });
 
     this.buttonPeopleDecrease.forEach((element) => {
-      element.classList.add('dropdown__button--no-active');
+      element.classList.add('dropdown__button_no-active');
     });
 
     this.val1 = 0;

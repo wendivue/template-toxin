@@ -21,8 +21,8 @@ class Checkbox {
   }
 
   toggle() {
-    this.icon.classList.toggle('checkbox-list__icon--open');
-    this.menu.classList.toggle('checkbox-list__items--open');
+    this.icon.classList.toggle('checkbox-list__icon_open');
+    this.menu.classList.toggle('checkbox-list__items_open');
   }
 }
 

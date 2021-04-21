@@ -1,8 +1,8 @@
 mixin button({ theme, size, state, themeHeader, isButtonLarge, link, text, isButton, type })
-  - const themeClass = theme ? " button--" + theme : "";
-  - const sizeClass = size ? " button--" + size : "";
-  - const stateClass = state ? " button--" + state : "";
-  - const themeHeaderClass = themeHeader ? " button--" + themeHeader : "";
+  - const themeClass = theme ? " button_" + theme : "";
+  - const sizeClass = size ? " button_" + size : "";
+  - const stateClass = state ? " button_" + state : "";
+  - const themeHeaderClass = themeHeader ? " button_" + themeHeader : "";
   - type = type ? type : "";
 
   if (isButton)
@@ -14,7 +14,7 @@ mixin button({ theme, size, state, themeHeader, isButtonLarge, link, text, isBut
       )= text
     else
       button(
-        class="button button--large" + themeClass + sizeClass + stateClass + themeHeaderClass,
+        class="button button_large" + themeClass + sizeClass + stateClass + themeHeaderClass,
         href=link,
         type=type
       )= text
@@ -23,5 +23,5 @@ mixin button({ theme, size, state, themeHeader, isButtonLarge, link, text, isBut
     if (!isButtonLarge)
       a(class="button" + themeClass + sizeClass + stateClass + themeHeaderClass, href=link)= text
     else
-      a(class="button button--large" + themeClass + sizeClass + stateClass + themeHeaderClass, href=link)= text
+      a(class="button button_large" + themeClass + sizeClass + stateClass + themeHeaderClass, href=link)= text
         i.button__icon arrow_forward
