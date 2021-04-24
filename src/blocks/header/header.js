@@ -8,16 +8,16 @@ class Header {
   init() {
     this.getElement();
     this.bindEventDocumentClick();
-    this.bindEventClickBurder(this.burder);
+    this.bindEventClickBurger(this.burger);
   }
 
   getElement() {
-    this.burder = this.anchor.querySelectorAll('.js-header__burder');
+    this.burger = this.anchor.querySelectorAll('.js-header__burger');
   }
 
-  bindEventClickBurder(elements) {
+  bindEventClickBurger(elements) {
     elements.forEach((element) => {
-      element.addEventListener('click', this.toggleBurder.bind(this));
+      element.addEventListener('click', this.toggleBurger.bind(this));
     });
   }
 
@@ -25,13 +25,13 @@ class Header {
     document.addEventListener('click', this.handleDocumentClick);
   }
 
-  toggleBurder() {
+  toggleBurger() {
     const menu = this.anchor.querySelector('.js-header__menu');
     menu.classList.toggle('header__menu_active');
   }
 
   handleDocumentClick(event) {
-    const targetBurger = event.target.closest('.js-header__burder');
+    const targetBurger = event.target.closest('.js-header__burger');
     const targetMenu = event.target.closest('.js-header__menu');
     const menu = document.querySelectorAll('.js-header__menu');
 

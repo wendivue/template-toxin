@@ -1,5 +1,5 @@
 import Checkbox from './checkbox-list';
 
-const checkboxs = document.querySelectorAll('.js-checkbox-list');
+const checkboxes = document.querySelectorAll('.js-checkbox-list');
 
-checkboxs.forEach((anchor) => new Checkbox(anchor));
+checkboxes.forEach((anchor) => new Checkbox(anchor));

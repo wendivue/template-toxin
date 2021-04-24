@@ -10,7 +10,7 @@ mixin header({ itemList, size, textLogin, loginButton, loginLink, registerButton
           img.header__logo(src='img/logo.svg', alt='logo')
 
         .header__wrapper-menu
-          .header__burder.js-header__burder menu
+          .header__burger.js-header__burger menu
           nav.header__menu.js-header__menu
             ul.header__list
               each item in itemList
@@ -23,7 +23,7 @@ mixin header({ itemList, size, textLogin, loginButton, loginLink, registerButton
                     if (subItemList)
                       i(class="header__icon" + iconSizeClass) expand_more
                   if (subItemList)
-                    ul.header__submenu
+                    ul.header__sub-menu
                       each subItem in subItemList
                         li.header__subitem
                           a.header__link(href=subItem.link)= subItem.text

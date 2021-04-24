@@ -25,7 +25,7 @@
     height: 40px;
   }
 
-  &__burder {
+  &__burger {
     @include material-icons;
     display: none;
     font-size: 35px;
@@ -88,7 +88,7 @@
       }
     }
 
-    &:hover .header__submenu {
+    &:hover .header__sub-menu {
       display: block;
     }
 
@@ -120,7 +120,7 @@
     }
   }
 
-  &__submenu {
+  &__sub-menu {
     position: absolute;
     display: none;
     padding: 5px;

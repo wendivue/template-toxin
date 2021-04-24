@@ -15,11 +15,11 @@ function datePicker(element) {
     minDate: new Date(),
   });
 
-  $('.js-text-field__datepicker-start, .js-text-field__datepicker-end').datepicker({
+  $('.js-text-field__date-picker-start, .js-text-field__date-picker-end').datepicker({
     range: true,
     onSelect: (fd) => {
-      $('.js-text-field__datepicker-start').val(fd.split('-')[0]);
-      $('.js-text-field__datepicker-end').val(fd.split('-')[1]);
+      $('.js-text-field__date-picker-start').val(fd.split('-')[0]);
+      $('.js-text-field__date-picker-end').val(fd.split('-')[1]);
     },
   });
 
