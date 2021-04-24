@@ -25,7 +25,7 @@ function datePicker(element) {
 
   $('.datepicker').append(
     `<div class='date-picker__wrapper-button'>
-    <button class= 'datepicker_button date-picker__button date-picker__button_cleans ' data-action='clear' > очистить</button >
+    <button class= 'datepicker--button date-picker__button date-picker__button_cleans ' data-action='clear' > очистить</button >
     <button class='date-picker__button js-date-picker__button'>применить</button></div >`
   );
 

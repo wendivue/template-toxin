@@ -34,8 +34,8 @@
     width: 100%;
     min-height: 44px;
     padding-left: 15px;
-    padding-right: 35px;
-    color: $dark-shade-25;
+    padding-right: 15px;
+    color: $dark-shade-75;
     border: 1px solid $dark-shade-25;
     border-radius: 4px;
     box-sizing: border-box;
@@ -51,16 +51,21 @@
       border-radius: 4px 4px 0 0;
     }
 
-    &_date {
+    &_small-date {
       max-width: 150px;
+      cursor: pointer;
 
       @media (max-width: $breakpoint-xxs) {
         max-width: 140px;
       }
     }
 
-    &_dropdown {
-      color: $dark-shade-75;
+    &_date {
+      cursor: pointer;
+    }
+
+    &_icon {
+      padding-right: 40px;
       cursor: pointer;
     }
   }
