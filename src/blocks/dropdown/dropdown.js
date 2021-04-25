@@ -42,10 +42,10 @@ class Dropdown {
     if (elementsIncrease[0] === undefined) {
       peopleIncrease[0].addEventListener('click', this.changeValuePeopleIncrease.bind(this, 0));
       peopleIncrease[1].addEventListener('click', this.changeValuePeopleIncrease.bind(this, 1));
-      peopleIncrease[2].addEventListener('click', this.changeValuePeopleIncrease.bind(this, 2));
+      peopleIncrease[2].addEventListener('click', this.changeValueBabyIncrease.bind(this));
       peopleDecrease[0].addEventListener('click', this.changeValuePeopleDecrease.bind(this, 0));
       peopleDecrease[1].addEventListener('click', this.changeValuePeopleDecrease.bind(this, 1));
-      peopleDecrease[2].addEventListener('click', this.changeValuePeopleDecrease.bind(this, 2));
+      peopleDecrease[2].addEventListener('click', this.changeValueBabyDecrease.bind(this));
     } else {
       elementsIncrease[0].addEventListener('click', this.changeValueBedRoomIncrease.bind(this));
       elementsIncrease[1].addEventListener('click', this.changeValueBedIncrease.bind(this));
@@ -81,6 +81,7 @@ class Dropdown {
 
     this.val2 = this.increase(this.val2);
     this.val2 = this.validateValue(this.val2);
+    if (this.val2 === 0) this.addDecrease(this.buttonDecrease, 0);
 
     this.input[0].value = this.val2;
     this.updateValue(ROOM);
@@ -89,6 +90,7 @@ class Dropdown {
   changeValueBedRoomDecrease() {
     this.val2 = this.decrease(this.val2);
     this.val2 = this.validateValue(this.val2);
+    if (this.val2 === 0) this.addDecrease(this.buttonDecrease, 0);
 
     this.input[0].value = this.val2;
     this.updateValue(ROOM);
@@ -99,6 +101,7 @@ class Dropdown {
 
     this.val1 = this.increase(this.val1);
     this.val1 = this.validateValue(this.val1);
+    if (this.val1 === 0) this.addDecrease(this.buttonDecrease, 1);
 
     this.input[1].value = this.val1;
     this.updateValue(ROOM);
@@ -107,6 +110,7 @@ class Dropdown {
   changeValueBedDecrease() {
     this.val1 = this.decrease(this.val1);
     this.val1 = this.validateValue(this.val1);
+    if (this.val1 === 0) this.addDecrease(this.buttonDecrease, 1);
 
     this.input[1].value = this.val1;
     this.updateValue(ROOM);
@@ -114,20 +118,19 @@ class Dropdown {
 
   changeValueBathRoomIncrease() {
     this.removeDecrease(this.buttonDecrease, 2);
-    this.val3 = parseFloat(this.input[2].value);
 
     this.val3 = this.increase(this.val3);
     this.val3 = this.validateValue(this.val3);
+    if (this.val3 === 0) this.addDecrease(this.buttonDecrease, 2);
 
     this.input[2].value = this.val3;
     this.updateValue(ROOM);
   }
 
   changeValueBathRoomDecrease() {
-    this.val3 = parseFloat(this.input[2].value);
-
     this.val3 = this.decrease(this.val3);
     this.val3 = this.validateValue(this.val3);
+    if (this.val3 === 0) this.addDecrease(this.buttonDecrease, 2);
 
     this.input[2].value = this.val3;
     this.updateValue(ROOM);
@@ -137,11 +140,12 @@ class Dropdown {
     this.buttonCleans[0].classList.remove('dropdown__button-menu_hide');
     this.removeDecrease(this.buttonPeopleDecrease, index);
 
-    this.fullVal = parseFloat(this.increase(parseFloat(this.fullVal)));
-    this.fullVal = this.validatePeopleValue(this.fullVal, index);
-    let { value } = this.input[index];
-    value = parseFloat(this.increase(parseFloat(value)));
+    let value = this.getPeopleValue(index);
+    value = this.increase(value);
     value = this.validateValue(value);
+    if (value === 0) this.addDecrease(this.buttonPeopleDecrease, index);
+    this.setPeopleValue(index, value);
+    this.setPeopleValueFullValue();
 
     this.input[index].value = value;
     this.updateValue(PEOPLE);
@@ -150,33 +154,52 @@ class Dropdown {
   changeValuePeopleDecrease(index) {
     this.buttonCleans[0].classList.remove('dropdown__button-menu_hide');
 
-    this.fullVal = parseFloat(this.decrease(parseFloat(this.fullVal)));
-    this.fullVal = this.validatePeopleValue(this.fullVal, index);
-    let { value } = this.input[index];
-    value = parseFloat(this.decrease(parseFloat(value)));
+    let value = this.getPeopleValue(index);
+    value = this.decrease(value);
     value = this.validateValue(value);
-    if (value === 0) this.buttonPeopleDecrease[index].classList.add('dropdown__button_no-active');
+    if (value === 0) this.addDecrease(this.buttonPeopleDecrease, index);
+    this.setPeopleValue(index, value);
+    this.setPeopleValueFullValue();
 
     this.input[index].value = value;
     this.updateValue(PEOPLE);
   }
 
-  getValue() {
-    const dropdownMenu = this.anchor.querySelector('.js-text-field__input');
+  changeValueBabyIncrease() {
+    this.buttonCleans[0].classList.remove('dropdown__button-menu_hide');
+    this.removeDecrease(this.buttonPeopleDecrease, 2);
 
-    let fullVal = parseFloat(dropdownMenu.value.replace(/[^0-9]/g, ''));
+    this.val3 = this.increase(this.val3);
+    this.val3 = this.validateValue(this.val3);
+    if (this.val3 === 0) this.addDecrease(this.buttonPeopleDecrease, 2);
+
+    this.input[2].value = this.val3;
+    this.updateValue(PEOPLE);
+  }
+
+  changeValueBabyDecrease() {
+    this.buttonCleans[0].classList.remove('dropdown__button-menu_hide');
+
+    this.val3 = this.decrease(this.val3);
+    this.val3 = this.validateValue(this.val3);
+    if (this.val3 === 0) this.addDecrease(this.buttonPeopleDecrease, 2);
+
+    this.input[2].value = this.val3;
+    this.updateValue(PEOPLE);
+  }
+
+  getValue() {
     let val1 = parseFloat(this.input[1].value);
     let val2 = parseFloat(this.input[0].value);
     let val3 = parseFloat(this.input[2].value);
 
-    if (Number.isNaN(val1) || Number.isNaN(val2) || Number.isNaN(val3) || Number.isNaN(fullVal)) {
+    if (Number.isNaN(val1) || Number.isNaN(val2) || Number.isNaN(val3)) {
       val1 = 0;
       val2 = 0;
       val3 = 0;
-      fullVal = 0;
     }
 
-    this.fullVal = fullVal;
+    this.fullVal = val1 + val2;
     this.val1 = val1;
     this.val2 = val2;
     this.val3 = val3;
@@ -187,24 +210,32 @@ class Dropdown {
     const str2 = this.validateTextBed();
     const str3 = this.validateTextBath();
     const str4 = this.validateTextGuest();
+    const str5 = this.validateTextBaby();
 
-    return { str1, str2, str3, str4 };
+    return { str1, str2, str3, str4, str5 };
   }
 
   updateValue(type) {
     let string;
-    const { str1, str2, str3, str4 } = this.getString();
+    const { str1, str2, str3, str4, str5 } = this.getString();
     const dropdownMenu = this.anchor.querySelector('.js-text-field__input');
+    const arrRoom = [str1, str2, str3];
+    const arrPeople = [str4, str5];
 
-    if (ROOM === type) string = `${str1}${str2}${str3}`;
+    if (ROOM === type) string = arrRoom.filter(Boolean).join(', ');
     if (string === '') string = 'Сколько комнат';
-    if (PEOPLE === type) string = `${str4}`;
+    if (PEOPLE === type) string = arrPeople.filter(Boolean).join(', ');
+    if (string === '') string = 'Сколько гостей';
 
     dropdownMenu.value = string;
   }
 
   removeDecrease(element, index) {
     return element[index].classList.remove('dropdown__button_no-active');
+  }
+
+  addDecrease(element, index) {
+    return element[index].classList.add('dropdown__button_no-active');
   }
 
   handleDocumentClick(event) {
@@ -262,6 +293,31 @@ class Dropdown {
     return curValue;
   }
 
+  setPeopleValueFullValue() {
+    this.fullVal = this.val1 + this.val2;
+  }
+
+  setPeopleValue(index, value) {
+    if (index === 0) {
+      this.val2 = value;
+    }
+    if (index === 1) {
+      this.val1 = value;
+    }
+  }
+
+  getPeopleValue(index) {
+    let value;
+    if (index === 0) {
+      value = this.val2;
+    }
+    if (index === 1) {
+      value = this.val1;
+    }
+
+    return value;
+  }
+
   validateValue(value) {
     let curValue = value;
     if (value > 9) curValue = 0;
@@ -270,33 +326,17 @@ class Dropdown {
     return curValue;
   }
 
-  validatePeopleValue(value, index) {
-    let curValue = value;
-    if (value > 9) {
-      this.input[0].value = 0;
-      this.input[1].value = 0;
-      this.input[2].value = 0;
-      this.input[index].value = -1;
-      curValue = 0;
-    }
-    if (value < 0) {
-      curValue = 0;
-    }
-
-    return curValue;
-  }
-
   validateTextRoom() {
     let value;
 
     if (this.val2 === 1) {
-      value = `${this.val2} спальня `;
+      value = `${this.val2} спальня`;
     }
     if (this.val2 >= 2 && this.val2 <= 4) {
-      value = `${this.val2} спальни `;
+      value = `${this.val2} спальни`;
     }
     if (this.val2 >= 5) {
-      value = `${this.val2} спален `;
+      value = `${this.val2} спален`;
     }
     if (this.val2 === 0) {
       value = '';
@@ -308,13 +348,13 @@ class Dropdown {
     let value;
 
     if (this.val1 === 1) {
-      value = `${this.val1} кровать `;
+      value = `${this.val1} кровать`;
     }
     if (this.val1 >= 2 && this.val1 <= 4) {
-      value = `${this.val1} кровати `;
+      value = `${this.val1} кровати`;
     }
     if (this.val1 >= 5) {
-      value = `${this.val1} кроватей `;
+      value = `${this.val1} кроватей`;
     }
     if (this.val1 === 0) {
       value = '';
@@ -346,14 +386,32 @@ class Dropdown {
     if (this.fullVal === 1) {
       value = `${this.fullVal} гость`;
     }
-    if (this.fullVal >= 2 && this.fullVal <= 4) {
+    if (this.fullVal >= 2 && this.val2 <= 4) {
       value = `${this.fullVal} гостя`;
     }
     if (this.fullVal >= 5) {
       value = `${this.fullVal} гостей`;
     }
     if (this.fullVal === 0) {
-      value = 'Сколько гостей';
+      value = '';
+    }
+    return value;
+  }
+
+  validateTextBaby() {
+    let value;
+
+    if (this.val3 === 1) {
+      value = `${this.val3} младенец`;
+    }
+    if (this.val3 >= 2 && this.val3 <= 4) {
+      value = `${this.val3} младенца`;
+    }
+    if (this.val3 >= 5) {
+      value = `${this.val3} младенцев`;
+    }
+    if (this.val3 === 0) {
+      value = '';
     }
     return value;
   }
