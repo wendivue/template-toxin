@@ -9,6 +9,7 @@
   &__like-button {
     align-self: baseline;
     margin-top: 6px;
+    min-width: 56px;
 
     @media (max-width: $breakpoint-xs) {
       align-self: center;
