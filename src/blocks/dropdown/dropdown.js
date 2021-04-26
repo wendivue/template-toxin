@@ -223,9 +223,10 @@ class Dropdown {
     const arrPeople = [str4, str5];
 
     if (ROOM === type) string = arrRoom.filter(Boolean).join(', ');
-    if (string === '') string = 'Сколько комнат';
+    string = this.validateEmptyString(string, 'Сколько комнат');
+
     if (PEOPLE === type) string = arrPeople.filter(Boolean).join(', ');
-    if (string === '') string = 'Сколько гостей';
+    string = this.validateEmptyString(string, 'Сколько гостей');
 
     dropdownMenu.value = string;
   }
@@ -322,6 +323,18 @@ class Dropdown {
     let curValue = value;
     if (value > 9) curValue = 0;
     if (value < 0) curValue = 0;
+
+    return curValue;
+  }
+
+  validateEmptyString(value, string) {
+    let curValue = value;
+    if (value === '') {
+      curValue = string;
+      if (this.buttonCleans[0]) {
+        this.buttonCleans[0].classList.add('dropdown__button-menu_hide');
+      }
+    }
 
     return curValue;
   }

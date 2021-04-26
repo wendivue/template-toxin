@@ -10,7 +10,7 @@ mixin dropdown-item({ isItemsRoom, itemsList })
             class="dropdown__button js-dropdown__button js-dropdown__button js-dropdown__button_decrease dropdown__button_decrease" + buttonStateClass,
             type='button'
           ) -
-          input.dropdown__input.js-dropdown__input(value=value, name=name)
+          input.dropdown__input.js-dropdown__input(value=value, name=name, readonly)
           button.dropdown__button.dropdown__button_increase.js-dropdown__button.js-dropdown__button_increase(
             type='button'
           ) +
@@ -19,7 +19,7 @@ mixin dropdown-item({ isItemsRoom, itemsList })
             class="dropdown__button js-dropdown__button js-dropdown__button-people_decrease dropdown__button-people_decrease" + buttonStateClass,
             type='button'
           ) -
-          input.dropdown__input.js-dropdown__input(value=value, name=name)
+          input.dropdown__input.js-dropdown__input(value=value, name=name, readonly)
           button.dropdown__button.dropdown__button-people_increase.js-dropdown__button.js-dropdown__button-people_increase(
             type='button'
           ) +
