@@ -114,7 +114,7 @@
 
   &__items-review {
     @include typo-body;
-    margin-top: 16px;
+    margin-top: 17px;
   }
 
   &__review {
@@ -147,6 +147,7 @@
 
   &__cancel {
     max-width: 345px;
+    padding-right: 7px;
 
     @media (max-width: $breakpoint-xs) {
       margin-top: 10px;

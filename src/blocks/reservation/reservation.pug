@@ -19,6 +19,6 @@ mixin reservation({ number, price, link, itemsList })
     .reservation__dropdown
       +dropdown({ text: 'гости', name: 'people', value: '3 гостя', id: 'dropdown', iconText: 'expand_more', isItemsPeople: true, isButtonMenu: true, isDropdown: true, itemsList })
     .reservation__price-list
-      +price-list({ itemList: [ {description: '9 990₽ х 4 суток', price: '39 960'}, {description: 'Сбор за услуги: скидка 2 179₽', price: '0', icon: true}, {description: 'Сбор за дополнительные услуги', price: '300', icon: true} ], description: 'Итого', price: '38 081' })
+      +price-list({ itemList: [ {description: '9 990₽ х 4 суток', price: '39 960'}, {description: 'Сбор за услуги: скидка 2 179₽', price: '0', isIcon: true}, {description: 'Сбор за доп. услуги', price: '300', isIcon: true} ], description: 'Итого', price: '38 081' })
     .reservation__button
       +button({ text: 'забронировать', isButtonLarge: true, isButton: true, type: 'submit' })

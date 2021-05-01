@@ -5,16 +5,17 @@
 .landing-registration {
   &__content {
     width: 100%;
-    height: 687px;
-    padding-top: 15px;
+    height: 679px;
+    padding-top: 4px;
     background: url('img/landing-registration-1.png') 100% 100% no-repeat;
     background-size: cover;
+  }
 
-    &__registration {
-      max-width: 1160px;
-      display: flex;
-      flex: 1 1 100%;
-      justify-content: center;
-    }
+  &__registration {
+    max-width: 1160px;
+    display: flex;
+    flex: 1 1 100%;
+    justify-content: center;
+    margin-left: 5px;
   }
 }

@@ -10,10 +10,10 @@ block variables
 
 block content
   include ~Blocks/hotel-search/hotel-search.pug
-  +page
+  +page({})
     +center-block
       .landing-page__hotel-search
         +hotel-search({ title: 'Найдём номера под ваши пожелания', link: 'search-room.html', itemsList: itemsPeople })
-  +page
+  +page({})
     .landing-page__wrapper-text
       p.landing-page__text Лучшие номера для вашей работы, отдыха и просто вдохновения

@@ -10,8 +10,11 @@
 
   &__wrapper-checkbox {
     display: flex;
-    align-items: center;
     margin-bottom: 5.4px;
+
+    &_rich {
+      margin-bottom: 9px;
+    }
   }
 
   &__wrapper-text {
@@ -51,12 +54,15 @@
 
   &__info {
     @include typo-body;
+    padding-top: 4px;
     color: $dark-shade-50;
     line-height: 18px;
     text-transform: none;
     cursor: pointer;
 
     &_small {
+      padding-top: 0;
+      margin-top: 2px;
       font-size: 12px;
       line-height: 14px;
     }

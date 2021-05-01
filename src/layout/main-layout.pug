@@ -30,7 +30,7 @@ html(lang='ru')
     main(class=classMain)
       div(class=classWrapper)
         if (isPageCenter)
-          +page
+          +page({})
             +center-block
               block content
         else

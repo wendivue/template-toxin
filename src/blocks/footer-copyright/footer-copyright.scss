@@ -48,7 +48,7 @@
 
   &__wrapper-list {
     display: flex;
-    width: 555px;
+    width: 560px;
     justify-content: space-between;
     flex-flow: wrap;
 
@@ -135,7 +135,10 @@
 
   &__social {
     display: flex;
-    padding-top: 20px;
+
+    @media (max-width: $breakpoint-md) {
+      padding-top: 20px;
+    }
 
     &_creative {
       padding-top: 0;

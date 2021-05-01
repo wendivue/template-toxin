@@ -6,7 +6,7 @@ include ./footer-list/footer-list.pug
 mixin footer-copyright({ linkLogo, textLogo, type='full', itemList1, itemList2, itemList3, titleSub, textSub, placeholder, copyright, iconList })
   if (type === 'full')
     footer.footer-copyright.footer-copyright_full
-      +page
+      +page({})
         +center-block
           .footer-copyright__wrapper-logo
             a(href=linkLogo) 
@@ -29,7 +29,7 @@ mixin footer-copyright({ linkLogo, textLogo, type='full', itemList1, itemList2, 
             .footer-copyright__subscribe
               +text-field({ placeholder: placeholder, type: 'email', size: 'small', iconText: 'arrow_forward', themeIcon: 'submit', name: 'email' })
       .footer-copyright__bottom-footer
-        +page
+        +page({})
           +center-block
             p.footer-copyright__text= copyright
             ul.footer-copyright__social

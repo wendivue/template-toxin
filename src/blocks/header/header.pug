@@ -4,7 +4,7 @@ include ../center-block/center-block.pug
 
 mixin header({ itemList, size, textLogin, loginButton, loginLink, registerButton })
   header.header.js-header
-    +page
+    +page({ state: "small" })
       +center-block
         a(href=loginLink) 
           img.header__logo(src='img/logo.svg', alt='logo')
