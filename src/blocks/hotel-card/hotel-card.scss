@@ -32,12 +32,11 @@
   &__wrapper-reviews {
     display: flex;
     justify-content: space-between;
-    margin-top: 8px;
+    margin-top: 9px;
   }
 
   &__reviews {
     display: flex;
-    padding-right: 10px;
   }
 
   &__icon {
@@ -77,6 +76,10 @@
       font-size: 14px;
       font-weight: bold;
       padding-right: 5px;
+    }
+
+    &_big {
+      font-size: 14px;
     }
   }
 }
