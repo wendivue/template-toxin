@@ -23,6 +23,13 @@ function datePicker(element) {
     },
   });
 
+  $('.js-text-field__date-picker-single').datepicker({
+    dateFormat: 'd M',
+    onSelect: (fd) => {
+      $('.js-text-field__date-picker-single').val(fd.toLowerCase());
+    },
+  });
+
   $('.datepicker').append(
     `<div class='date-picker__wrapper-button'>
     <button class= 'datepicker--button date-picker__button date-picker__button_cleans ' data-action='clear' > очистить</button >

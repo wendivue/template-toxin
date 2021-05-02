@@ -4,7 +4,7 @@ mixin text-field({ state, size, themeIcon, id, stateMenu, text, textState, isDro
   - const inputIconClass = iconText ? " text-field__input_icon" : "";
   - const textFieldSizeClass = size ? "text-field_" + size : "";
   - const iconThemeClass = themeIcon ? "text-field__icon_" + themeIcon : "";
-  - const dateTypeClass = isDateStart ? "js-text-field__date-picker-start" : isDateEnd ? "js-text-field__date-picker-end" : "";
+  - const dateTypeClass = isDateStart ? "js-text-field__date-picker-start" : isDateEnd ? "js-text-field__date-picker-end" : "js-text-field__date-picker-single";
   - id = id ? "text-field-" + id : "";
 
   div(class="text-field " + textFieldSizeClass)
