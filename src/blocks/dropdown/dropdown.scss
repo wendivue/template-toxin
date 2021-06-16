@@ -17,6 +17,10 @@
     border-radius: 0 0 4px 4px;
     z-index: 10;
 
+    @media (max-width: $breakpoint-xxs) {
+      max-width: 268px;
+    }
+
     &_active {
       display: block;
     }

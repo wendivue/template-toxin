@@ -5,7 +5,7 @@
 @import '~Blocks/button/button';
 
 .reservation {
-  min-width: 320px;
+  width: 320px;
   padding: 46px 29px 29px 29px;
   background-color: #fff;
   border: 1px solid rgba(0, 0, 0, 0.12);
@@ -13,8 +13,8 @@
   border-radius: 4px;
 
   @media (max-width: $breakpoint-xxs) {
-    padding: 44px 39px 29px 9px;
-    width: 300px;
+    padding: 44px 9px 29px 9px;
+    width: 290px;
   }
 
   &__wrapper-head {
@@ -68,6 +68,10 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 15px;
+
+    @media (max-width: $breakpoint-xxs) {
+      display: flex;
+    }
   }
 
   &__dropdown {

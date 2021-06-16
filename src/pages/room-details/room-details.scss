@@ -80,11 +80,14 @@
     width: 351px;
 
     @media (max-width: $breakpoint-sm) {
+      display: flex;
+      flex-flow: column;
+      align-items: center;
       margin-top: 15px;
     }
 
     @media (max-width: $breakpoint-xs) {
-      width: 320px;
+      width: 100%;
     }
   }
 
