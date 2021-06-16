@@ -3,10 +3,11 @@
 .page {
   position: relative;
   max-width: 1920px;
-  min-width: 300px;
+  min-width: 320px;
   display: flex;
   justify-content: center;
   padding: 15px;
+  box-sizing: border-box;
 
   &_small {
     padding: 13.5px 15px 13.5px 15px;
