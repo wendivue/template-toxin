@@ -25,6 +25,10 @@
     display: flex;
     justify-content: space-between;
     margin-top: 15px;
+
+    @media (max-width: $breakpoint-md) {
+      flex-flow: column;
+    }
   }
 
   &__dropdown {
