@@ -11,8 +11,7 @@ class LikeButton {
 
   getElement() {
     this.checkbox = this.anchor.querySelector('.js-like-button__checkbox');
-    this.text = this.anchor.querySelector('.js-like-button__number');
-    this.label = this.anchor.querySelector('.js-like-button__label');
+    this.label = this.anchor.querySelector('.js-like-button__number');
   }
 
   bindEventClick(element) {
@@ -20,15 +19,14 @@ class LikeButton {
   }
 
   increase() {
-    let value = parseFloat(this.text.innerText);
+    let value = parseFloat(this.label.innerText);
     if (this.checkbox.checked) {
       value += 1;
     } else {
       value -= 1;
     }
 
-    this.text.innerText = value;
-    this.label.classList.toggle('like-button__label_active');
+    this.label.innerText = value;
   }
 }
 
