@@ -1,51 +1,60 @@
 @import '~Typography';
 
 .like-button {
-  position: relative;
-  display: flex;
-  align-items: center;
-  user-select: none;
-
-  &__checkbox {
-    @include material-icons;
-    -webkit-appearance: none;
-    width: 40px;
-    height: 20px;
+  &__label {
+    position: relative;
     display: flex;
     align-items: center;
-    padding: 0 4px;
+    justify-content: center;
+    width: 40px;
+    height: 20px;
+    line-height: 0;
+    color: $dark-shade-25;
     border: 1px solid $dark-shade-25;
     border-radius: 10px;
     cursor: pointer;
+    user-select: none;
+    box-sizing: border-box;
+
+    &_active {
+      border: 1px solid $color-primary;
+      color: $color-primary;
+    }
+  }
+
+  &__checkbox {
+    -webkit-appearance: none;
+    margin: 0;
+    height: 0;
+  }
+
+  &__checkbox:checked + &__icon {
+    &:after {
+      content: 'favorite';
+      color: $color-primary;
+    }
+  }
+
+  &__icon {
+    @include material-icons;
+
+    position: absolute;
+    bottom: 4px;
+    left: 4px;
+    font-size: 10px;
 
     &:after {
       content: 'favorite_border';
-      font-size: 10px;
       color: $dark-shade-25;
     }
-
-    &:checked {
-      color: $color-primary;
-      border: 1px solid $color-primary;
-
-      &:after {
-        content: 'favorite';
-        font-size: 10px;
-        color: $color-primary;
-      }
-    }
-  }
-
-  &__checkbox:checked + &__number {
-    color: $color-primary;
   }
 
   &__number {
-    position: relative;
-    right: 23px;
+    margin-top: -1px;
+    padding-left: 8px;
     font-family: $font-family_body;
     font-size: 10px;
-    color: $dark-shade-25;
+    line-height: 0;
     cursor: pointer;
   }
 }
