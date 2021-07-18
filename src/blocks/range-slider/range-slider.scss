@@ -21,6 +21,7 @@
 
   .irs {
     display: block;
+    cursor: pointer;
   }
 
   .irs--flat {
@@ -33,14 +34,12 @@
       background-color: white;
       border: 1px solid $dark-shade-25;
       border-radius: 10px;
-      cursor: pointer;
     }
 
     .irs-bar {
       height: 6.5px;
       background: $gradient-secondary;
       border-radius: 10px;
-      cursor: pointer;
     }
 
     .irs-handle {
@@ -58,20 +57,16 @@
     }
 
     .irs-single {
-      @include typo-body;
-
       display: block;
       top: -13px;
       right: 0;
       left: auto !important;
       visibility: visible !important;
       font-size: $font-size_h3;
-      font-family: $font-family_body, $font-family_second-body;
-      line-height: 12px;
       color: $dark-shade-50;
       background-color: inherit;
       pointer-events: none;
-      padding-right: 2px;
+      padding-right: 0;
     }
 
     .irs-from:before,
