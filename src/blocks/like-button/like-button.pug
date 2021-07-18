@@ -1,10 +1,13 @@
 mixin like-button({ id, number, name, isChecked })
-  - id = id ? "like-button-" + id : "";
+  - const isActiveStateLabel = isChecked ? "like-button__label_active" : "";
 
   .like-button.js-like-button
-    if (isChecked)
-      input.like-button__checkbox.js-like-button__checkbox(id=id, name=name, type='checkbox', checked)
-    else
-      input.like-button__checkbox.js-like-button__checkbox(id=id, name=name, type='checkbox')
-
-    label.like-button__number.js-like-button__number(for=id)= number
+    label.like-button__label.js-like-button__label(class=isActiveStateLabel)
+      if (isChecked)
+        input.like-button__checkbox.js-like-button__checkbox(name=name, type='checkbox', checked)
+        p.like-button__icon
+        p.like-button__number.js-like-button__number= number
+      else
+        input.like-button__checkbox.js-like-button__checkbox(name=name, type='checkbox')
+        p.like-button__icon
+        p.like-button__number.js-like-button__number= number
