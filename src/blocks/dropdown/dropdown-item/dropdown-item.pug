@@ -7,7 +7,7 @@ mixin dropdown-item({ isItemsRoom, itemsList })
       .dropdown__wrapper-input
         if (isItemsRoom)
           button(
-            class="dropdown__button js-dropdown__button js-dropdown__button js-dropdown__button_decrease dropdown__button_decrease" + buttonStateClass,
+            class="dropdown__button js-dropdown__button js-dropdown__button_decrease dropdown__button_decrease" + buttonStateClass,
             type='button'
           ) -
           input.dropdown__input.js-dropdown__input(value=value, name=name, readonly)
