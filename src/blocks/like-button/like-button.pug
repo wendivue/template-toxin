@@ -1,8 +1,8 @@
 mixin like-button({ id, number, name, isChecked })
-  - const labelStateClass = isChecked ? "like-button__label_active" : "";
+  - const isActiveStateLabel = isChecked ? "like-button__label_active" : "";
 
   .like-button.js-like-button
-    label.like-button__label.js-like-button__label(class=labelStateClass)
+    label.like-button__label.js-like-button__label(class=isActiveStateLabel)
       if (isChecked)
         input.like-button__checkbox.js-like-button__checkbox(name=name, type='checkbox', checked)
         p.like-button__icon
