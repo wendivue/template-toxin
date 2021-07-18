@@ -22,7 +22,7 @@
     background: #fff;
     cursor: pointer;
 
-    &_cleans {
+    &:hover {
       color: $dark-shade-50;
     }
   }
