@@ -27,7 +27,7 @@ block variables
 block content
   aside.search-room__sidebar
     .search-room__date-picker
-      +date-picker({ text: 'даты пребывания в отеле', placeholder: '19 авг - 23 авг', type: 'text', name: 'date', id: 'date', size: 'small', isDateRange: true })
+      +date-picker({ text: 'даты пребывания в отеле', placeholder: '19 авг - 23 авг', type: 'text', name: 'date', id: 'date', size: 'small' })
     .search-room__dropdown
       +dropdown({ text: 'гости', value: '3 гостя, 1 младенец', iconText: 'expand_more', size: 'small', id: 'dropdown-people', isItemsPeople: true, isButtonMenu: true, isDropdown: true, itemsList: itemsPeople })
     .search-room__range-slider

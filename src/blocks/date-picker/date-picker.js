@@ -10,23 +10,24 @@ function datePicker(element) {
     nextHtml: '<button class="date-picker__icon">arrow_forward</button>',
   });
 
-  $('.js-text-field__date-range').datepicker({
+  $('.js-date-picker__input-range').datepicker({
     range: true,
     minDate: new Date(),
   });
 
-  $('.js-text-field__date-picker-start, .js-text-field__date-picker-end').datepicker({
+  $('.js-date-picker__input-start, .js-date-picker__input-end').datepicker({
     range: true,
+    minDate: new Date(),
     onSelect: (fd) => {
-      $('.js-text-field__date-picker-start').val(fd.split('-')[0]);
-      $('.js-text-field__date-picker-end').val(fd.split('-')[1]);
+      $('.js-date-picker__input-start').val(fd.split('-')[0]);
+      $('.js-date-picker__input-end').val(fd.split('-')[1]);
     },
   });
 
-  $('.js-text-field__date-picker-single').datepicker({
+  $('.js-date-picker__input-single').datepicker({
     dateFormat: 'd M',
     onSelect: (fd) => {
-      $('.js-text-field__date-picker-single').val(fd.toLowerCase());
+      $('.js-date-picker__input-single').val(fd.toLowerCase());
     },
   });
 

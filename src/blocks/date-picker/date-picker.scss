@@ -11,6 +11,35 @@
     padding-bottom: 20px;
   }
 
+  &__wrapper-range {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 20px;
+  }
+
+  &__wrapper-input {
+    position: relative;
+  }
+
+  &__wrapper-text {
+    height: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__text-state {
+    @include typo-h3;
+    padding-top: 3px;
+    align-self: baseline;
+    color: $dark-shade-50;
+    font-weight: normal;
+  }
+
+  &__label {
+    @include typo-h3;
+  }
+
   &__button {
     @include typo-h3;
     display: block;
@@ -27,13 +56,45 @@
     }
   }
 
+  &__input {
+    @include typo-body;
+    width: 100%;
+    min-height: 44px;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: $dark-shade-75;
+    border: 1px solid $dark-shade-25;
+    border-radius: 4px;
+    box-sizing: border-box;
+    cursor: pointer;
+
+    &:hover,
+    &:focus,
+    &_active {
+      color: $dark-shade-75;
+      border: 1px solid $dark-shade-50;
+    }
+
+    &_icon {
+      padding-right: 40px;
+      cursor: pointer;
+    }
+  }
+
   &__icon {
     @include material-icons;
-    background-image: $gradient-primary;
-    background-clip: text;
-    cursor: pointer;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    position: absolute;
+    padding: 10px;
+    pointer-events: none;
+    right: 0;
+
+    @media (max-width: $breakpoint-xxs) {
+      width: 40px;
+    }
+  }
+
+  &_small {
+    max-width: 266px;
   }
 }
 

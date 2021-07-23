@@ -46,16 +46,15 @@ block content
         .ui-kits-form__masked
           +date-picker({ text: 'masked text field', placeholder: 'ДД.ММ.ГГГГ', type: 'text', name: 'date', id: 'date-1', textState:'Default', isDatePicker: true })
         .ui-kits-form__date-picker
-          +date-picker({ text: 'date Dropdown', placeholder: 'ДД.ММ.ГГГГ', state: 'small-date', type: 'text', name: 'arrival', id: 'start', iconText: 'expand_more', isDateRange: true, isDateStart: true })
-          +date-picker({ text: 'date Dropdown', placeholder: '19.08.2019', state: 'small-date', type: 'text', name: 'departure', id: 'end', iconText: 'expand_more', isDateRange: true, isDateEnd: true })
+          +date-picker({ text: ['date Dropdown', 'date Dropdown'], placeholder: ['ДД.ММ.ГГГГ', 'ДД.ММ.ГГГГ'], type: 'text', name: ['arrival', 'departure'], id: ['start', 'end'], iconText: 'expand_more', isDateRange: true })
         .ui-kits-form__filter-date
-          +date-picker({ text: 'filter date dropdown', placeholder: '19 авг - 23 авг', type: 'text', id: 'date-2', name: 'filterDate', size: 'small', iconText: 'expand_more', isDateRange: true })
+          +date-picker({ text: 'filter date dropdown', placeholder: '19 авг - 23 авг', type: 'text', id: 'date-2', name: 'filterDate', size: 'small', iconText: 'expand_more' })
         .ui-kits-form__subscription
           +text-field({ text: 'subscription text field', placeholder: 'Email', type: 'email', name: 'email', size: 'small', id: 'email', iconText: 'arrow_forward', themeIcon: 'submit' })
         .ui-kits-form__dropdown-room
           +dropdown({ text: 'Dropdown', name: 'room-1', value: '2 спальни, 2 кровати', iconText: 'expand_more', id: 'dropdown-2', textState:'Default', size:'small', isItemsRoom: true, isDropdown: true, itemsList: itemsPeople })
         .ui-kits-form__dropdown-room-expanded
-          +dropdown({ text: 'Dropdown', name: 'room-2', value: '2 спальни, 2 кровати', iconText: 'expand_more', id: 'dropdown-3', textState:'expanded', size:'small', isItemsRoom: true, stateMenu: 'active', isDropdown: true, itemsList: itemsRoom })
+          +dropdown({ text: 'Dropdown', name: 'room-2', value: '2 спальни, 2 кровати', iconText: 'expand_more', id: 'dropdown-3', textState:'expanded', size:'small', isItemsRoom: true, isOpenMenu: true, isDropdown: true, itemsList: itemsRoom })
         .ui-kits-form__checkbox-list
           +checkbox-list({ text: 'expandable checkbox list', checkboxList: checkboxList1 })
         .ui-kits-form__checkbox-list-open
@@ -86,7 +85,7 @@ block content
             .ui-kits-form__rate-button-item
               +rate-button({star: 5})
         .ui-kits-form__dropdown-people
-          +dropdown({ text: 'dropdown', name: 'people-2', value: 'Сколько гостей', id: 'dropdown-4', iconText: 'expand_more', isButtonMenu: true, isDropdown: true, stateMenu: 'active', isHideButtonCleans: true, itemsList: itemsPeopleNull })
+          +dropdown({ text: 'dropdown', name: 'people-2', value: 'Сколько гостей', id: 'dropdown-4', iconText: 'expand_more', isButtonMenu: true, isDropdown: true, isOpenMenu: true, isHideButtonCleans: true, itemsList: itemsPeopleNull })
         .ui-kits-form__rich-checkbox-buttons
           +checkbox-buttons({ caption: 'Rich Checkbox Buttons', isRich: true, checkboxButtons: checkboxButtons1 })
       +col-4
@@ -113,7 +112,7 @@ block content
           h3.ui-kits-form__title pagination
           +pagination({ itemList: [ {text: '1', link: '/mock-address/change-me', isCurrentPage: true}, {text: '2', link: '/mock-address/change-me'}, {text: '3', link: '/mock-address/change-me'}, {text: '...'}, {text: '15', link: '/mock-address/change-me'} ], nextPage: '/mock-address/change-me', text: '1 – 12 из 100+ вариантов аренды' })
         .ui-kits-form__dropdown-people-expanded
-          +dropdown({ text: 'dropdown', name: 'people-3', value: '3 гостя', id: 'dropdown-5', iconText: 'expand_more', isButtonMenu: true, isDropdown: true, stateMenu: 'active', itemsList: itemsPeople})
+          +dropdown({ text: 'dropdown', name: 'people-3', value: '3 гостя', id: 'dropdown-5', iconText: 'expand_more', isButtonMenu: true, isDropdown: true, isOpenMenu: true, itemsList: itemsPeople})
         .ui-kits-form__bullet-list
           h3.ui-kits-form__title bullet list
           +bullet-list({ itemList: [ {text: 'Нельзя с питомцами'}, {text: 'Без вечеринок и мероприятий '}, {text: 'Время прибытия — после 13:00, а выезд до 12:00'} ] })

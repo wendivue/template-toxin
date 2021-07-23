@@ -7,8 +7,7 @@ mixin hotel-search({ title, link, itemsList})
     h1.hotel-search__title= title
 
     .hotel-search__date-picker
-      +date-picker({ text: 'прибытие', placeholder: 'ДД.ММ.ГГГГ', state: 'small-date', type: 'text', name: 'arrival', id: 'start', iconText: 'expand_more', isDateRange: true, isDateStart: true })
-      +date-picker({ text: 'выезд', placeholder: 'ДД.ММ.ГГГГ', state: 'small-date', type: 'text', name: 'departure', id: 'end', iconText: 'expand_more', isDateRange: true, isDateEnd: true })
+      +date-picker({ text: ['прибытие', 'выезд'], placeholder: ['ДД.ММ.ГГГГ', 'ДД.ММ.ГГГГ'], type: 'text', name: ['arrival', 'departure'], id:['start', 'end'], iconText: 'expand_more', isDateRange: true })
 
     .hotel-search__dropdown
       +dropdown({ text: 'гости', name: 'people', value: 'Сколько гостей', id: 'dropdown-people', iconText: 'expand_more', isItemsPeople: true, isButtonMenu: true, isDropdown: true, isHideButtonCleans: true, itemsList })

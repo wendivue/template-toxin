@@ -51,20 +51,6 @@
       border-radius: 4px 4px 0 0;
     }
 
-    &_small-date {
-      max-width: 150px;
-      cursor: pointer;
-
-      @media (max-width: $breakpoint-md) {
-        max-width: none;
-        width: 100%;
-      }
-    }
-
-    &_date {
-      cursor: pointer;
-    }
-
     &_icon {
       padding-right: 40px;
       cursor: pointer;

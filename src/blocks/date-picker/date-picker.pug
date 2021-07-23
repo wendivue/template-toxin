@@ -1,5 +1,70 @@
 include ../text-field/text-field.pug
 
-mixin date-picker({ state, size, themeIcon, id, stateMenu, text, textState, isDropdown, type, value, name, isDateRange, isDatePicker, placeholder, iconText, isDateStart, isDateEnd })
-  .date-picker
-    +text-field({ state, size, themeIcon, id, stateMenu, text, textState, isDropdown, type, value, name, isDateRange, isDatePicker, placeholder, iconText, isDateStart, isDateEnd })
+mixin date-picker({ state, size, id, text, textState, type, name, isDateRange, placeholder, iconText })
+  -
+    let datePickerClass;
+    let inputClass;
+
+    if (['small'].includes(size)) datePickerClass +=' date-picker_' + size;
+     if (['active'].includes(state)) inputClass += ' date-picker__input_' + state;
+    if (iconText) inputClass += ' date-picker__input_icon';
+
+  .date-picker(class=datePickerClass)
+    if (isDateRange)
+      .date-picker__wrapper-range 
+        label.date-picker__label
+          if (text)
+            .date-picker__wrapper-text
+              h3.date-picker__label= text[0]
+              if (textState)
+                p.date-picker__text-state= textState
+          .date-picker__wrapper-input
+            input.date-picker__input.js-date-picker__input-start(
+              id=id[0],
+              class=inputClass,
+              type=type,
+              placeholder=placeholder[0],
+              name=name[0],
+              data-multiple-dates-separator=' - ',
+              readonly
+            )
+            if (iconText)
+              button.date-picker__icon= iconText
+
+        label.date-picker__label
+          if (text)
+            .date-picker__wrapper-text
+              h3.date-picker__label= text[1]
+              if (textState)
+                p.date-picker__text-state= textState
+          .date-picker__wrapper-input
+            input.date-picker__input.js-date-picker__input-end(
+              id=id[1],
+              class=inputClass,
+              type=type,
+              placeholder=placeholder[1],
+              name=name[1],
+              data-multiple-dates-separator=' - ',
+              readonly
+            )
+            if (iconText)
+              button.date-picker__icon= iconText
+    else
+      label.date-picker__label
+        if (text)
+          .date-picker__wrapper-text
+            h3.date-picker__label= text
+            if (textState)
+              p.date-picker__text-state= textState
+        .date-picker__wrapper-input
+          input.date-picker__input.js-date-picker__input-range.js-date-picker__input-single(
+            id=id,
+            class=inputClass,
+            type=type,
+            placeholder=placeholder,
+            name=name,
+            data-multiple-dates-separator=' - ',
+            readonly
+          )
+          if (iconText)
+            button.date-picker__icon= iconText
