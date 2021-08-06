@@ -1,9 +1,9 @@
 mixin text-field({ state, size, themeIcon, id, isOpenMenu, text, textState, isDropdown, type, value, name, placeholder, iconText, readonly })
   -
-    let textFieldClass;
-    let inputClass;
-    let iconClass;
-    id = id ? "text-field-" + id : "";
+    let textFieldClass = '';
+    let inputClass = '';
+    let iconClass = '';
+    id = id ? 'text-field-' + id : '';
 
     if (['small'].includes(size)) textFieldClass +=' text-field_' + size;
     if (['active'].includes(state)) inputClass += ' text-field__input_' + state;

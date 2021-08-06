@@ -1,9 +1,14 @@
 mixin icon-text-list({ iconList })
   ul.icon-text-list
     each item in iconList
-      - const { theme, icon, title, text } = item;
-      - const itemThemeClass = theme ? "icon-text-list__item_" + theme : "";
-      li(class="icon-text-list__item " + itemThemeClass)
+      -
+        const { theme, icon, title, text } = item;
+        let itemClass = '';
+        const themeSetting = ['border'];
+
+        if(themeSetting.includes(theme)) itemClass += ' icon-text-list__item_' + theme;
+
+      li.icon-text-list__item(class=itemClass)
         i.icon-text-list__icon= icon
         .icon-text-list__wrapper-text
           h3.icon-text-list__title= title

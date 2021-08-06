@@ -3,12 +3,13 @@ include ./dropdown-item/dropdown-item.pug
 
 mixin dropdown({ isOpenMenu, size, isButtonMenu, value, text, isItemsRoom, state, id, type, name, iconText, themeIcon, textState, isDropdown, itemsList, isHideButtonCleans })
   -
-    const buttonCleansHideClass = isHideButtonCleans ? "dropdown__button-menu_hide" : "";
-    let dropdownClass;
-    let menuClass;
+    const buttonCleansHideClass = isHideButtonCleans ? 'dropdown__button-menu_hide' : '';
+    let dropdownClass = '';
+    let menuClass = '';
+    let sizeSetting = ['small'];
 
-    if(['small'].includes(size)) dropdownClass += ' dropdown_' + size;
-    if(['small'].includes(size)) menuClass += ' dropdown__menu_' + size;
+    if(sizeSetting.includes(size)) dropdownClass += ' dropdown_' + size;
+    if(sizeSetting.includes(size)) menuClass += ' dropdown__menu_' + size;
     if(isOpenMenu) menuClass += ' dropdown__menu_active';
 
   .dropdown.js-dropdown(class=dropdownClass)

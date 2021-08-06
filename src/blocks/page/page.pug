@@ -1,5 +1,9 @@
 mixin page({ state })
-  - const pageStateClass = state ? "page_" + state : "";
+  -
+    let pageClass = '';
+    let stateSetting = ['small'];
 
-  .page(class=pageStateClass)
+    if(stateSetting.includes(state)) pageClass += ' page_' + state;
+
+  .page(class=pageClass)
     block

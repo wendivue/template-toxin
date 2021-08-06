@@ -6,7 +6,7 @@ mixin date-picker({ state, size, id, text, textState, type, name, isDateRange, p
     let inputClass;
 
     if (['small'].includes(size)) datePickerClass +=' date-picker_' + size;
-     if (['active'].includes(state)) inputClass += ' date-picker__input_' + state;
+    if (['active'].includes(state)) inputClass += ' date-picker__input_' + state;
     if (iconText) inputClass += ' date-picker__input_icon';
 
   .date-picker(class=datePickerClass)

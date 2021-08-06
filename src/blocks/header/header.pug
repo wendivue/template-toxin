@@ -14,14 +14,25 @@ mixin header({ itemList, size, textLogin, loginButton, loginLink, registerButton
           nav.header__menu.js-header__menu
             ul.header__list
               each item in itemList
-                - let { state, link, text, isIcon, subItemList } = item;
-                - const linkStateClass = state ? " header__link_" + state : "";
-                - const itemSizeClass = size ? " header__item_" + size : "";
-                - const iconSizeClass = size ? " header__icon_" + size : "";
-                li(class="header__item" + itemSizeClass)
-                  a(class="header__link" + linkStateClass, href=link)= text
+                -
+                  let { state, link, text, isIcon, subItemList } = item;
+                  let itemClass = '';
+                  let linkClass = '';
+                  let iconClass = '';
+                  let wrapperButtonClass = '';
+                  const sizeSetting = ['small'];
+                  const stateSetting = ['active'];
+
+                  if(sizeSetting.includes(size)) itemClass += ' header__item_' + size;
+                  if(sizeSetting.includes(size)) iconClass += ' header__icon_' + size;
+                  if(sizeSetting.includes(size)) wrapperButtonClass += ' header__wrapper-button_' + size;
+                  if(stateSetting.includes(state)) linkClass += ' header__link_' + state;
+
+
+                li.header__item(class=itemClass)
+                  a.header__link(class=linkClass, href=link)= text
                     if (subItemList)
-                      i(class="header__icon" + iconSizeClass) expand_more
+                      i.header__icon(class=iconClass) expand_more
                   if (subItemList)
                     ul.header__sub-menu
                       each subItem in subItemList
@@ -32,8 +43,7 @@ mixin header({ itemList, size, textLogin, loginButton, loginLink, registerButton
             .header__login
               p.header__text-login= textLogin
           else
-            - const buttonSizeClass = size ? " header__wrapper-button_" + size : "";
-            div(class="header__wrapper-button" + buttonSizeClass)
+            .header__wrapper-button(class=wrapperButtonClass)
               .header__button
                 +button(loginButton)
               .header__button

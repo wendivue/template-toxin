@@ -25,7 +25,7 @@ mixin registration({ title, link })
     .registration__toggle
       +toggle({ title: 'Toggle', text: 'Получать спецпредложения', id: '1', name: 'special' })
     .registration__button
-      +button({ text: 'зарегистрироваться', isButtonLarge: true, isButton: true, type: 'submit' })
+      +button({ text: 'зарегистрироваться', size: 'large', isIcon: true, isButton: true, type: 'submit' })
     .registration__sign-in
       p.registration__text-sign-in Уже есть аккаунт на Toxin
       +button({ text: 'войти', link: 'landing-sign-in.html', theme: 'border' })

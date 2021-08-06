@@ -4,8 +4,5 @@ mixin radio-buttons({ radioButtonsList })
       each item in radioButtonsList
         - const { isChecked, value, name, text } = item;
         li.radio-buttons__item
-          if (isChecked)
-            input.radio-buttons__radio(id=value, type='radio', name=name, value=value, checked)
-          else
-            input.radio-buttons__radio(id=value, type='radio', name=name, value=value)
+          input.radio-buttons__radio(id=value, type='radio', name=name, value=value, checked=isChecked)
           label.radio-buttons__label(for=value)= text

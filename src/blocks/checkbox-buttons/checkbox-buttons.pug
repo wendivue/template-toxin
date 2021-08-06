@@ -5,15 +5,14 @@ mixin checkbox-buttons({ caption, isRich, checkboxButtons })
 
     ul.checkbox-buttons__items
       each item in checkboxButtons
-        - let checkboxTypeRichClass = isRich ? "checkbox-buttons__wrapper-checkbox_rich" : "";
-        - let { text, id, title, name, isChecked } = item;
+        - let checkboxWrapperCheckboxClass = "";
+        - let { text, id, title, name, isChecked = false } = item;
         - id = id ? "checkbox-buttons-" + id : "";
 
-        li.checkbox-buttons__wrapper-checkbox(class=checkboxTypeRichClass)
-          if (isChecked)
-            input.checkbox-buttons__checkbox(id=id, name=name, type='checkbox', checked)
-          else
-            input.checkbox-buttons__checkbox(id=id, name=name, type='checkbox')
+        - if (isRich) checkboxWrapperCheckboxClass += "checkbox-buttons__wrapper-checkbox_rich";
+
+        li.checkbox-buttons__wrapper-checkbox(class=checkboxWrapperCheckboxClass)
+          input.checkbox-buttons__checkbox(id=id, name=name, type='checkbox', checked=isChecked)
 
           if (isRich)
             label.checkbox-buttons__wrapper-text(for=id)

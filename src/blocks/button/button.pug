@@ -1,27 +1,20 @@
-mixin button({ theme, size, state, themeHeader, isButtonLarge, link, text, isButton, type })
-  - const themeClass = theme ? " button_" + theme : "";
-  - const sizeClass = size ? " button_" + size : "";
-  - const stateClass = state ? " button_" + state : "";
-  - const themeHeaderClass = themeHeader ? " button_" + themeHeader : "";
-  - type = type ? type : "";
+mixin button({ theme, size, state, themeHeader, isIcon, link, text, isButton, type })
+  -
+    let mainClass = '';
+    type = type ? type : '';
+    const themeSetting = ['border', 'active-border', 'icon-link'];
+    const sizeSetting = ['large', 'small', 'small-border'];
+    const stateSetting = ['active', 'active-border', 'icon-link-active'];
+
+    if(themeSetting.includes(theme)) mainClass += ' button_' + theme;
+    if(sizeSetting.includes(size)) mainClass += ' button_' + size;
+    if(stateSetting.includes(state)) mainClass += ' button_' + state;
 
   if (isButton)
-    if (!isButtonLarge)
-      button(
-        class="button" + themeClass + sizeClass + stateClass + themeHeaderClass,
-        href=link,
-        type=type
-      )= text
-    else
-      button(
-        class="button button_large" + themeClass + sizeClass + stateClass + themeHeaderClass,
-        href=link,
-        type=type
-      )= text
+    button.button(class=mainClass, href=link, type=type)= text
+      if (isIcon)
         i.button__icon arrow_forward
   else
-    if (!isButtonLarge)
-      a(class="button" + themeClass + sizeClass + stateClass + themeHeaderClass, href=link)= text
-    else
-      a(class="button button_large" + themeClass + sizeClass + stateClass + themeHeaderClass, href=link)= text
+    a.button(class=mainClass)= text
+      if (isIcon)
         i.button__icon arrow_forward

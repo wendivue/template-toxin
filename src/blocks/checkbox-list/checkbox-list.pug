@@ -1,20 +1,21 @@
 mixin checkbox-list({ state, text, checkboxList })
-  - const itemsStateClass = state ? "checkbox-list__items_" + state : "";
-  - const iconStateClass = state ? "checkbox-list__icon_" + state : "";
+  -
+    let iconClass = '';
+    let itemsClass = '';
+    let stateSetting = ['open'];
+
+    if(stateSetting.includes(state)) itemsClass += ' checkbox-list__items_' + state
+    if(stateSetting.includes(state)) iconClass += ' checkbox-list__icon_' + state
 
   .checkbox-list.js-checkbox-list
     .checkbox-list__wrapper-header.js-checkbox-list__wrapper-header
       h3.checkbox-list__title= text
-      button(class="js-checkbox-list__icon checkbox-list__icon " + iconStateClass)= "expand_more"
+      button.checkbox-list__icon.js-checkbox-list__icon(class=iconClass)= "expand_more"
 
-    ul(class="js-checkbox-list__items checkbox-list__items " + itemsStateClass)
+    ul.checkbox-list__items.js-checkbox-list__items(class=itemsClass)
       each item in checkboxList
-        - let { id, text, name, isChecked } = item;
+        - let { id, text, name, isChecked = false } = item;
         - id = id ? "checkbox-list-" + id : "";
           li.checkbox-list__wrapper-checkbox
-            if (isChecked)
-              input.checkbox-list__checkbox(id=id, name=name, type='checkbox', checked)
-            else
-              input.checkbox-list__checkbox(id=id, name=name, type='checkbox')
-
+            input.checkbox-list__checkbox(id=id, name=name, type='checkbox', checked=isChecked)
             label.checkbox-list__label(for=id)= text
