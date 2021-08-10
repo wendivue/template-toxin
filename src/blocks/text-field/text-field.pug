@@ -1,4 +1,4 @@
-mixin text-field({ state, size, themeIcon, id, isOpenMenu, text, textState, isDropdown, type, value, name, placeholder, iconText, readonly })
+mixin text-field({ state, size, themeIcon, id, isOpenMenu, text, textState, isDropdown, type, value, name, placeholder, iconText, readonly, mask })
   -
     let textFieldClass = '';
     let inputClass = '';
@@ -15,7 +15,7 @@ mixin text-field({ state, size, themeIcon, id, isOpenMenu, text, textState, isDr
       inputClass += ' js-text-field__input';
     }
 
-  .text-field(class=textFieldClass)
+  .text-field.js-text-field(class=textFieldClass)
     if (text)
       .text-field__wrapper-text
         label.text-field__label(for=id)= text
@@ -23,14 +23,16 @@ mixin text-field({ state, size, themeIcon, id, isOpenMenu, text, textState, isDr
           p.text-field__text-state= textState
 
     .text-field__input-wrapper
-      input.text-field__input(
+      input.text-field__input.js-text-field__input(
         class=inputClass,
         id=id,
         type=type,
         value=value,
         placeholder=placeholder,
         name=name,
-        readonly=readonly
+        readonly=readonly,
+        data-inputmask=mask,
+        required
       )
 
       if (iconText)

@@ -44,7 +44,7 @@ block content
         .ui-kits-form__dropdown
           +dropdown({ text: 'Dropdown', name: 'people-1', value: 'Сколько гостей', iconText: 'expand_more', id: 'dropdown-1', textState:'Default', isButtonMenu: true, isDropdown: true, isHideButtonCleans: true, itemsList: itemsPeopleNull })
         .ui-kits-form__masked
-          +date-picker({ text: 'masked text field', placeholder: 'ДД.ММ.ГГГГ', type: 'text', name: 'date', id: 'date-1', textState:'Default', isDatePicker: true })
+          +text-field({ text: 'masked text field', placeholder: 'ДД.ММ.ГГГГ', type: 'text', name: 'date', id: 'date-1', textState:'Default', mask:"'alias': 'datetime', 'inputFormat': 'dd/mm/yyyy', 'placeholder': 'ДД.ММ.ГГГГ'"})
         .ui-kits-form__date-picker
           +date-picker({ text: ['date Dropdown', 'date Dropdown'], placeholder: ['ДД.ММ.ГГГГ', 'ДД.ММ.ГГГГ'], type: 'text', name: ['arrival', 'departure'], id: ['start', 'end'], iconText: 'expand_more', isDateRange: true })
         .ui-kits-form__filter-date
