@@ -51,4 +51,4 @@ block content
           +hotel-card({number, itemList, price, isLux, link, reviews, star})
 
     .search-room__pagination
-      +pagination({ itemList: [ {text: '1', link: '/mock-address/change-me', isCurrentPage: true}, {text: '2', link: '/mock-address/change-me'}, {text: '3', link: '/mock-address/change-me'}, {text: '...'}, {text: '15', link: '/mock-address/change-me'} ], nextPage: '/mock-address/change-me', text: '1 – 12 из 100+ вариантов аренды' })
+      +pagination({text: ['из', 'вариантов аренды'], items: 180, itemsOnPage: 12, })

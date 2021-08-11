@@ -1,15 +1,14 @@
-mixin pagination({ itemList, nextPage, text })
-  ul.pagination
-    each item in itemList
-      -
-        const { isCurrentPage, link, text } = item;
-        let numberClass = '';
-        if(isCurrentPage) numberClass += ' pagination__number_current';
+mixin pagination({ itemsOnPage, items, currentPage = 1, text })
+  -
+    const firstItemsOnPage = itemsOnPage * (currentPage - 1) + 1;
+    const lastItemsOnPage = currentPage * itemsOnPage;
+    const moreItemsOnPage = items < 100 ? itemsNumber : '100+';
+    const fullText = `${firstItemsOnPage} – ${lastItemsOnPage} ${text[0]} ${moreItemsOnPage} ${text[1]}`
 
-      li.pagination__item
-        a.pagination__number(class=numberClass, href=link)= text
-
-    li.pagination__next-item
-      a.pagination__next-page(href=nextPage) arrow_forward
-
-  p.pagination__text= text
+  .pagination.js-pagination(
+    data-items-on-page=itemsOnPage,
+    data-items=items,
+    data-current-page=currentPage
+  )
+    ul.pagination__pages.js-pagination__pages
+    p.pagination__text= fullText

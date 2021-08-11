@@ -110,7 +110,7 @@ block content
           +button({ text: 'перейти к оплате', link: '/mock-address/change-me', size: 'large', isIcon: true })
         .ui-kits-form__pagination
           h3.ui-kits-form__title pagination
-          +pagination({ itemList: [ {text: '1', link: '/mock-address/change-me', isCurrentPage: true}, {text: '2', link: '/mock-address/change-me'}, {text: '3', link: '/mock-address/change-me'}, {text: '...'}, {text: '15', link: '/mock-address/change-me'} ], nextPage: '/mock-address/change-me', text: '1 – 12 из 100+ вариантов аренды' })
+          +pagination({text: ['из', 'вариантов аренды'], items: 180, itemsOnPage: 12, })
         .ui-kits-form__dropdown-people-expanded
           +dropdown({ text: 'dropdown', name: 'people-3', value: '3 гостя', id: 'dropdown-5', iconText: 'expand_more', isButtonMenu: true, isDropdown: true, isOpenMenu: true, itemsList: itemsPeople})
         .ui-kits-form__bullet-list
