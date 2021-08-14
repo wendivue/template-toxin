@@ -3,16 +3,17 @@
 .pie-chart {
   display: flex;
 
-  &__wrapper-img {
-    width: 120px;
-    height: 120px;
+  &__wrapper-canvas {
     position: relative;
+    width: 124px;
+    height: 124px;
   }
 
   &__wrapper-text-diagram {
     position: absolute;
-    top: 34%;
+    top: 33.5%;
     left: 26%;
+    z-index: -1;
   }
 
   &__text-diagram {
@@ -31,7 +32,7 @@
 
   &__list {
     padding-top: 28px;
-    padding-left: 30px;
+    padding-left: 28px;
 
     @media (max-width: $breakpoint-xxs) {
       padding-left: 10px;

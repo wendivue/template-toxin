@@ -1,7 +1,20 @@
 mixin pie-chart({ img, votes, pieChartList })
-  .pie-chart
-    .pie-chart__wrapper-img
-      img.pie-chart__img-diagram(src=img)
+  -
+    const [votesGreat, votesGood, votesNorm, votesDisappoint] = [pieChartList[0].votes, pieChartList[1].votes, pieChartList[2].votes, pieChartList[3].votes];
+    const [colorsGreat, colorsGood, colorsNorm, colorsDisappoint] = [pieChartList[0].theme, pieChartList[1].theme, pieChartList[2].theme, pieChartList[3].theme];
+
+  .pie-chart.js-pie-chart(
+    data-votes-great=votesGreat,
+    data-votes-good=votesGood,
+    data-votes-norm=votesNorm,
+    data-votes-disappoint=votesDisappoint,
+    data-colors-great=colorsGreat,
+    data-colors-good=colorsGood,
+    data-colors-norm=colorsNorm,
+    data-colors-disappoint=colorsDisappoint
+  )
+    .pie-chart__wrapper-canvas
+      canvas.pie-chart__canvas.js-pie-chart__canvas
       .pie-chart__wrapper-text-diagram
         p.pie-chart__text-diagram.pie-chart__text-diagram_big= votes
         p.pie-chart__text-diagram голосов
