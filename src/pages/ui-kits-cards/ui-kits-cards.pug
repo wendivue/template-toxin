@@ -15,6 +15,7 @@ block variables
   - const mainLink = "index.html";
   - const itemsPeopleNull = [{text: 'взрослые', value: '0', name: 'adults'}, {text: 'дети', value: '0', name: 'children'}, {text: 'младенцы', value: '0', name: 'babies'}];
   - const itemsPeople = [{text: 'взрослые', value: '2', name: 'adults'}, {text: 'дети', value: '1', name: 'children'}, {text: 'младенцы', value: '0', name: 'babies'}];
+  - const textHotelCards = { typeText: "люкс", period: "в сутки", reviewText: "Отзывов" };
 
 block content
   +col-4
@@ -24,7 +25,7 @@ block content
       +registration({ title: 'Регистрация аккаунта', link: '/mock-address/change-me' })
   +col-4
     .ui-kits-cards__reservation
-      +reservation({ number: '888', price: '9 990₽', link: '/mock-address/change-me', itemsList: itemsPeople })
+      +reservation({ number: '888', price: '9 990₽', link: '/mock-address/change-me', itemsList: itemsPeople, text: textHotelCards })
     .ui-kits-cards__sign-in
       +sign-in({ title: 'войти', link: '/mock-address/change-me' })
   +col-4
@@ -32,6 +33,6 @@ block content
       .ui-kits-cards__date-picker
         .datepicker-here
     .ui-kits-cards__hotel-card
-      +hotel-card({ number: '888', price: '9 990₽', isLux: true, star: '5', reviews: '145', link: '/mock-address/change-me', itemList: [ {img: 'img/hotel-1.png'}, {img: 'img/hotel-1.png'}, {img: 'img/hotel-1.png'}, {img: 'img/hotel-1.png'} ] })
+      +hotel-card({ number: '888', price: '9 990₽', isLux: true, star: '5', reviews: '145', link: '/mock-address/change-me', itemList: [ {img: 'img/hotel-1.png'}, {img: 'img/hotel-1.png'}, {img: 'img/hotel-1.png'}, {img: 'img/hotel-1.png'} ], text: textHotelCards })
     .ui-kits-cards__hotel-card
-      +hotel-card({ number: '840', price: '9 990₽', star: '4', reviews: '65', link: '/mock-address/change-me', itemList: [ {img: 'img/hotel-2.png'}, {img: 'img/hotel-2.png'}, {img: 'img/hotel-2.png'}, {img: 'img/hotel-2.png'} ] })
+      +hotel-card({ number: '840', price: '9 990₽', star: '4', reviews: '65', link: '/mock-address/change-me', itemList: [ {img: 'img/hotel-2.png'}, {img: 'img/hotel-2.png'}, {img: 'img/hotel-2.png'}, {img: 'img/hotel-2.png'} ], text: textHotelCards })

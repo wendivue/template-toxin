@@ -1,7 +1,10 @@
 include ../rate-button/rate-button.pug
 
-mixin hotel-card({ number, itemList, price, isLux, link, reviews, star })
-  - const altText = "image-люкс-" + number;
+mixin hotel-card({ number, itemList, price, isLux, link, reviews, star, text })
+  -
+    const altText = "image-люкс-" + number;
+    const { typeText, period, reviewText } = text;
+
 
   .hotel-card
     .hotel-card__slider
@@ -17,14 +20,14 @@ mixin hotel-card({ number, itemList, price, isLux, link, reviews, star })
           p.hotel-card__number.hotel-card__number_small №
             span.hotel-card__number.hotel-card__number_big= number
             if (isLux)
-              span.hotel-card__number.hotel-card__number_primary-color люкс
+              span.hotel-card__number.hotel-card__number_primary-color= typeText
         .hotel-card__items-price
           span.hotel-card__text.hotel-card__text_bold= price
-          p.hotel-card__text в сутки
+          p.hotel-card__text= period
 
       .hotel-card__wrapper-reviews
         .hotel-card__rate-button
           +rate-button({ star })
         .hotel-card__reviews
           span.hotel-card__text.hotel-card__text_bold= reviews
-          p.hotel-card__text.hotel-card__text_big Отзывов
+          p.hotel-card__text.hotel-card__text_big= reviewText

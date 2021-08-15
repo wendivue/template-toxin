@@ -1,4 +1,4 @@
-mixin pie-chart({ img, votes, pieChartList })
+mixin pie-chart({ img, votes, votesText, pieChartList })
   -
     const [votesGreat, votesGood, votesNorm, votesDisappoint] = [pieChartList[0].votes, pieChartList[1].votes, pieChartList[2].votes, pieChartList[3].votes];
     const [colorsGreat, colorsGood, colorsNorm, colorsDisappoint] = [pieChartList[0].theme, pieChartList[1].theme, pieChartList[2].theme, pieChartList[3].theme];
@@ -17,7 +17,7 @@ mixin pie-chart({ img, votes, pieChartList })
       canvas.pie-chart__canvas.js-pie-chart__canvas
       .pie-chart__wrapper-text-diagram
         p.pie-chart__text-diagram.pie-chart__text-diagram_big= votes
-        p.pie-chart__text-diagram голосов
+        p.pie-chart__text-diagram= votesText
 
     ul.pie-chart__list
       each item in pieChartList
@@ -28,4 +28,4 @@ mixin pie-chart({ img, votes, pieChartList })
 
           if (themeSetting.includes(theme)) itemClass += " pie-chart__item_" + theme;
 
-        li(class="pie-chart__item" + itemClass)= text
+        li.pie-chart__item(class=itemClass)= text

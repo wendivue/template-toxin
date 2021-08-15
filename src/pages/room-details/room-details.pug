@@ -14,6 +14,7 @@ block variables
   - const itemsPeople = [{text: 'взрослые', value: '2', name: 'adults'}, {text: 'дети', value: '1', name: 'children'}, {text: 'младенцы', value: '0', name: 'babies'}];
   - const iconList = [{ icon: "insert_emoticon", title: "Комфорт", text: "Шумопоглощающие стены", theme: "border" }, { icon: "location_city", title: "Удобство", text: "Окно в каждой из спален", theme: "border" }, { icon: "whatshot", title: "Уют", text: "Номер оснащён камином" }];
   - const pieChartList = [{text: 'Великолепно', theme: 'great', votes: 65}, {text: 'Хорошо', theme: 'good', votes: 65}, {text: 'Удовлетворительно', theme: 'norm', votes: 130} , {text: 'Разочарован', theme: 'disappoint', votes: 0}];
+  - const textHotelCards = { typeText: "люкс", period: "в сутки", reviewText: "Отзывов" };
 
 block content
   .room-details__wrapper-img
@@ -32,7 +33,7 @@ block content
             section.room-details__diagram
               h2.room-details__title Впечатления от номера
               .room-details__pie-chart
-                +pie-chart({ img: 'img/pie.svg', votes: '260' , pieChartList})
+                +pie-chart({ img: 'img/pie.svg', votes: '260', votesText: 'голосов' , pieChartList})
           section.room-details__details__reviews
             .room-details__wrapper-title
               h2.room-details__title Отзывы посетителей номера
@@ -50,4 +51,4 @@ block content
               h2.room-details__title-cancel Отмена
               p.room-details__text-cancel.room-details__text-cancel_small Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
         .room-details__reservation
-          +reservation({ number: '888', price: '9 990₽', link: '/mock-address/change-me', itemsList: itemsPeople })
+          +reservation({ number: '888', price: '9 990₽', link: '/mock-address/change-me', itemsList: itemsPeople, text: textHotelCards })

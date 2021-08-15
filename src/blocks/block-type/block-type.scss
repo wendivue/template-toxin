@@ -1,9 +1,6 @@
 @import '~Typography';
 
 .block-type {
-  display: flex;
-  margin-bottom: 50px;
-
   &__title {
     margin-right: 30px;
     font-family: Montserrat;
@@ -15,24 +12,33 @@
     text-transform: none;
   }
 
-  &_h1 {
-    @include typo-h1;
-    margin-left: 8px;
-  }
+  &__item {
+    display: flex;
+    margin-bottom: 50px;
 
-  &_h2 {
-    @include typo-h2;
-    margin-left: 9.5px;
-  }
+    &_h1 {
+      @include typo-h1;
 
-  &_h3 {
-    @include typo-h3;
-    margin-left: 20px;
-    margin-bottom: 47px;
-  }
+      margin-left: 8px;
+    }
 
-  &_body {
-    @include typo-body;
-    width: 380px;
+    &_h2 {
+      @include typo-h2;
+
+      margin-left: 9.5px;
+    }
+
+    &_h3 {
+      @include typo-h3;
+
+      margin-left: 20px;
+      margin-bottom: 47px;
+    }
+
+    &_body {
+      @include typo-body;
+
+      width: 380px;
+    }
   }
 }

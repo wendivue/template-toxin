@@ -1,11 +1,12 @@
 mixin block-type({ itemList })
-  each item in itemList
-    -
-      let { theme, title, text } = item;
-      let mainClass = '';
-      const themeSetting = ['h1', 'h2', 'h3', 'body'];
-      if(themeSetting.includes(theme)) mainClass += ' block-type_' + theme;
+  ul.block-type
+    each item in itemList
+      -
+        let { theme, title, text } = item;
+        let itemClass = '';
+        const themeSetting = ['h1', 'h2', 'h3', 'body'];
+        if(themeSetting.includes(theme)) itemClass += ' block-type__item_' + theme;
 
-    li.block-type(class=mainClass)
-      p.block-type__title= title
-      p.block-type__text= text
+      li.block-type__item(class=itemClass)
+        p.block-type__title= title
+        p.block-type__text= text

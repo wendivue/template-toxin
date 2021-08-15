@@ -1,9 +1,11 @@
 @import '~Typography';
 
 .block-color {
-  display: flex;
-  margin-bottom: 20px;
-  margin-left: 3px;
+  &__item {
+    display: flex;
+    margin-bottom: 20px;
+    margin-left: 3px;
+  }
 
   &__wrapper-text {
     margin-top: 8px;
