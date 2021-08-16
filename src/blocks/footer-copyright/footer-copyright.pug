@@ -1,7 +1,6 @@
 include ../page/page.pug
 include ../center-block/center-block.pug
 include ../text-field/text-field.pug
-include ./footer-list/footer-list.pug
 
 mixin footer-copyright({ linkLogo, textLogo, type='full', itemList1, itemList2, itemList3, titleSub, textSub, placeholder, copyright, iconList })
   if (type === 'full')
@@ -13,15 +12,18 @@ mixin footer-copyright({ linkLogo, textLogo, type='full', itemList1, itemList2, 
               img.footer-copyright__logo(src='img/logo.svg', alt='logo')
             p.footer-copyright__text-logo= textLogo
           ul.footer-copyright__wrapper-list
-            li.footer-copyright__lists
-              ul.footer-copyright__list
-                +footer-list(itemList1)
-            li.footer-copyright__lists
-              ul.footer-copyright__list
-                +footer-list(itemList2)
-            li.footer-copyright__lists
-              ul.footer-copyright__list
-                +footer-list(itemList3)
+            each list in [itemList1, itemList2, itemList3]
+              li.footer-copyright__lists
+                ul.footer-copyright__list
+                  each item in list
+                    - const { title, link, text } = item;
+
+                    li.footer-copyright__list-item
+                      if (title)
+                        h3.footer-copyright__title= title
+                      else
+                        a.footer-copyright__link(href=link)= text
+
           .footer-copyright__wrapper-subscribe
             .footer-copyright__wrapper-text
               h3.footer-copyright__title-subscribe= titleSub

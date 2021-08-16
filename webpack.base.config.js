@@ -38,6 +38,7 @@ const config = {
       Blocks: path.resolve(__dirname, `${PATHS.src}/blocks`),
       Pages: path.resolve(__dirname, `${PATHS.src}/pages`),
       Fonts: path.resolve(__dirname, `${PATHS.src}/fonts`),
+      Helpers: path.resolve(__dirname, `${PATHS.src}/helpers`),
     },
   },
 

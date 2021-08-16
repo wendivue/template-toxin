@@ -1,5 +1,12 @@
+import { getDeclension } from 'Helpers/getDeclension';
+
 const ROOM = 'room';
 const PEOPLE = 'people';
+const guestDeclension = ['гость', 'гостя', 'гостей'];
+const roomDeclension = ['спальня', 'спальни', 'спален'];
+const bedDeclension = ['кровать', 'кровати', 'кроватей'];
+const bathDeclension = ['ванная', 'ванные', 'ванных'];
+const babyDeclension = ['младенец', 'младенца', 'младенцев'];
 
 class Dropdown {
   constructor(anchor) {
@@ -10,14 +17,10 @@ class Dropdown {
 
   init() {
     this.getElement();
+    this.getAttribute();
     this.getValue();
     this.bindEventDocumentClick();
-    this.bindEventClick(
-      this.buttonPeopleIncrease,
-      this.buttonPeopleDecrease,
-      this.buttonIncrease,
-      this.buttonDecrease
-    );
+    this.bindEventClick(this.buttonIncrease, this.buttonDecrease);
     this.bindEventToggle(this.dropdownInput, this.buttonComplete);
     this.bindEventClear(this.buttonCleans);
   }
@@ -28,18 +31,16 @@ class Dropdown {
     this.button = this.anchor.querySelectorAll('.js-dropdown__button');
     this.buttonIncrease = this.anchor.querySelectorAll('.js-dropdown__button_increase');
     this.buttonDecrease = this.anchor.querySelectorAll('.js-dropdown__button_decrease');
-    this.buttonPeopleIncrease = this.anchor.querySelectorAll(
-      '.js-dropdown__button-people_increase'
-    );
-    this.buttonPeopleDecrease = this.anchor.querySelectorAll(
-      '.js-dropdown__button-people_decrease'
-    );
     this.buttonComplete = this.anchor.querySelectorAll('.js-dropdown__button-menu_complete');
     this.buttonCleans = this.anchor.querySelectorAll('.js-dropdown__button-menu_cleans');
   }
 
-  bindEventClick(peopleIncrease, peopleDecrease, elementsIncrease, elementsDecrease) {
-    if (elementsIncrease[0] === undefined) {
+  getAttribute() {
+    this.type = this.anchor.getAttribute('data-type');
+  }
+
+  bindEventClick(peopleIncrease, peopleDecrease) {
+    if (this.type === 'people') {
       peopleIncrease[0].addEventListener('click', this.changeValuePeopleIncrease.bind(this, 0));
       peopleIncrease[1].addEventListener('click', this.changeValuePeopleIncrease.bind(this, 1));
       peopleIncrease[2].addEventListener('click', this.changeValueBabyIncrease.bind(this));
@@ -47,12 +48,12 @@ class Dropdown {
       peopleDecrease[1].addEventListener('click', this.changeValuePeopleDecrease.bind(this, 1));
       peopleDecrease[2].addEventListener('click', this.changeValueBabyDecrease.bind(this));
     } else {
-      elementsIncrease[0].addEventListener('click', this.changeValueBedRoomIncrease.bind(this));
-      elementsIncrease[1].addEventListener('click', this.changeValueBedIncrease.bind(this));
-      elementsIncrease[2].addEventListener('click', this.changeValueBathRoomIncrease.bind(this));
-      elementsDecrease[0].addEventListener('click', this.changeValueBedRoomDecrease.bind(this));
-      elementsDecrease[1].addEventListener('click', this.changeValueBedDecrease.bind(this));
-      elementsDecrease[2].addEventListener('click', this.changeValueBathRoomDecrease.bind(this));
+      peopleIncrease[0].addEventListener('click', this.changeValueRoomIncrease.bind(this, 0));
+      peopleIncrease[1].addEventListener('click', this.changeValueRoomIncrease.bind(this, 1));
+      peopleIncrease[2].addEventListener('click', this.changeValueRoomIncrease.bind(this, 2));
+      peopleDecrease[0].addEventListener('click', this.changeValueRoomDecrease.bind(this, 0));
+      peopleDecrease[1].addEventListener('click', this.changeValueRoomDecrease.bind(this, 1));
+      peopleDecrease[2].addEventListener('click', this.changeValueRoomDecrease.bind(this, 2));
     }
   }
 
@@ -76,76 +77,40 @@ class Dropdown {
     document.addEventListener('click', this.handleDocumentClick);
   }
 
-  changeValueBedRoomIncrease() {
-    this.removeDecrease(this.buttonDecrease, 0);
+  changeValueRoomIncrease(index) {
+    this.removeDecrease(this.buttonDecrease, index);
 
-    this.val2 = this.increase(this.val2);
-    this.val2 = this.validateValue(this.val2);
-    if (this.val2 === 0) this.addDecrease(this.buttonDecrease, 0);
+    let value = this.getMenuValue(index);
+    value = this.increase(value);
+    value = this.validateValue(value);
+    if (value === 0) this.addDecrease(this.buttonDecrease, index);
+    this.setValue(index, value);
 
-    this.input[0].value = this.val2;
+    this.input[index].value = value;
     this.updateValue(ROOM);
   }
 
-  changeValueBedRoomDecrease() {
-    this.val2 = this.decrease(this.val2);
-    this.val2 = this.validateValue(this.val2);
-    if (this.val2 === 0) this.addDecrease(this.buttonDecrease, 0);
+  changeValueRoomDecrease(index) {
+    let value = this.getMenuValue(index);
+    value = this.decrease(value);
+    value = this.validateValue(value);
+    if (value === 0) this.addDecrease(this.buttonDecrease, index);
+    this.setValue(index, value);
 
-    this.input[0].value = this.val2;
-    this.updateValue(ROOM);
-  }
-
-  changeValueBedIncrease() {
-    this.removeDecrease(this.buttonDecrease, 1);
-
-    this.val1 = this.increase(this.val1);
-    this.val1 = this.validateValue(this.val1);
-    if (this.val1 === 0) this.addDecrease(this.buttonDecrease, 1);
-
-    this.input[1].value = this.val1;
-    this.updateValue(ROOM);
-  }
-
-  changeValueBedDecrease() {
-    this.val1 = this.decrease(this.val1);
-    this.val1 = this.validateValue(this.val1);
-    if (this.val1 === 0) this.addDecrease(this.buttonDecrease, 1);
-
-    this.input[1].value = this.val1;
-    this.updateValue(ROOM);
-  }
-
-  changeValueBathRoomIncrease() {
-    this.removeDecrease(this.buttonDecrease, 2);
-
-    this.val3 = this.increase(this.val3);
-    this.val3 = this.validateValue(this.val3);
-    if (this.val3 === 0) this.addDecrease(this.buttonDecrease, 2);
-
-    this.input[2].value = this.val3;
-    this.updateValue(ROOM);
-  }
-
-  changeValueBathRoomDecrease() {
-    this.val3 = this.decrease(this.val3);
-    this.val3 = this.validateValue(this.val3);
-    if (this.val3 === 0) this.addDecrease(this.buttonDecrease, 2);
-
-    this.input[2].value = this.val3;
+    this.input[index].value = value;
     this.updateValue(ROOM);
   }
 
   changeValuePeopleIncrease(index) {
     this.buttonCleans[0].classList.remove('dropdown__button-menu_hide');
-    this.removeDecrease(this.buttonPeopleDecrease, index);
+    this.removeDecrease(this.buttonDecrease, index);
 
-    let value = this.getPeopleValue(index);
+    let value = this.getMenuValue(index);
     value = this.increase(value);
     value = this.validateValue(value);
-    if (value === 0) this.addDecrease(this.buttonPeopleDecrease, index);
-    this.setPeopleValue(index, value);
-    this.setPeopleValueFullValue();
+    if (value === 0) this.addDecrease(this.buttonDecrease, index);
+    this.setValue(index, value);
+    this.setValueFullValue();
 
     this.input[index].value = value;
     this.updateValue(PEOPLE);
@@ -154,12 +119,12 @@ class Dropdown {
   changeValuePeopleDecrease(index) {
     this.buttonCleans[0].classList.remove('dropdown__button-menu_hide');
 
-    let value = this.getPeopleValue(index);
+    let value = this.getMenuValue(index);
     value = this.decrease(value);
     value = this.validateValue(value);
-    if (value === 0) this.addDecrease(this.buttonPeopleDecrease, index);
-    this.setPeopleValue(index, value);
-    this.setPeopleValueFullValue();
+    if (value === 0) this.addDecrease(this.buttonDecrease, index);
+    this.setValue(index, value);
+    this.setValueFullValue();
 
     this.input[index].value = value;
     this.updateValue(PEOPLE);
@@ -167,11 +132,11 @@ class Dropdown {
 
   changeValueBabyIncrease() {
     this.buttonCleans[0].classList.remove('dropdown__button-menu_hide');
-    this.removeDecrease(this.buttonPeopleDecrease, 2);
+    this.removeDecrease(this.buttonDecrease, 2);
 
     this.val3 = this.increase(this.val3);
     this.val3 = this.validateValue(this.val3);
-    if (this.val3 === 0) this.addDecrease(this.buttonPeopleDecrease, 2);
+    if (this.val3 === 0) this.addDecrease(this.buttonDecrease, 2);
 
     this.input[2].value = this.val3;
     this.updateValue(PEOPLE);
@@ -182,7 +147,7 @@ class Dropdown {
 
     this.val3 = this.decrease(this.val3);
     this.val3 = this.validateValue(this.val3);
-    if (this.val3 === 0) this.addDecrease(this.buttonPeopleDecrease, 2);
+    if (this.val3 === 0) this.addDecrease(this.buttonDecrease, 2);
 
     this.input[2].value = this.val3;
     this.updateValue(PEOPLE);
@@ -206,11 +171,11 @@ class Dropdown {
   }
 
   getString() {
-    const str1 = this.validateTextRoom();
-    const str2 = this.validateTextBed();
-    const str3 = this.validateTextBath();
-    const str4 = this.validateTextGuest();
-    const str5 = this.validateTextBaby();
+    const str1 = getDeclension(this.val2, roomDeclension);
+    const str2 = getDeclension(this.val1, bedDeclension);
+    const str3 = getDeclension(this.val3, bathDeclension);
+    const str4 = getDeclension(this.fullVal, guestDeclension);
+    const str5 = getDeclension(this.val3, babyDeclension);
 
     return { str1, str2, str3, str4, str5 };
   }
@@ -270,7 +235,7 @@ class Dropdown {
       input.value = 0;
     });
 
-    this.buttonPeopleDecrease.forEach((element) => {
+    this.buttonDecrease.forEach((element) => {
       element.classList.add('dropdown__button_no-active');
     });
 
@@ -294,27 +259,21 @@ class Dropdown {
     return curValue;
   }
 
-  setPeopleValueFullValue() {
+  setValueFullValue() {
     this.fullVal = this.val1 + this.val2;
   }
 
-  setPeopleValue(index, value) {
-    if (index === 0) {
-      this.val2 = value;
-    }
-    if (index === 1) {
-      this.val1 = value;
-    }
+  setValue(index, value) {
+    if (index === 0) this.val2 = value;
+    if (index === 1) this.val1 = value;
+    if (index === 2) this.val3 = value;
   }
 
-  getPeopleValue(index) {
+  getMenuValue(index) {
     let value;
-    if (index === 0) {
-      value = this.val2;
-    }
-    if (index === 1) {
-      value = this.val1;
-    }
+    if (index === 0) value = this.val2;
+    if (index === 1) value = this.val1;
+    if (index === 2) value = this.val3;
 
     return value;
   }
@@ -337,96 +296,6 @@ class Dropdown {
     }
 
     return curValue;
-  }
-
-  validateTextRoom() {
-    let value;
-
-    if (this.val2 === 1) {
-      value = `${this.val2} спальня`;
-    }
-    if (this.val2 >= 2 && this.val2 <= 4) {
-      value = `${this.val2} спальни`;
-    }
-    if (this.val2 >= 5) {
-      value = `${this.val2} спален`;
-    }
-    if (this.val2 === 0) {
-      value = '';
-    }
-    return value;
-  }
-
-  validateTextBed() {
-    let value;
-
-    if (this.val1 === 1) {
-      value = `${this.val1} кровать`;
-    }
-    if (this.val1 >= 2 && this.val1 <= 4) {
-      value = `${this.val1} кровати`;
-    }
-    if (this.val1 >= 5) {
-      value = `${this.val1} кроватей`;
-    }
-    if (this.val1 === 0) {
-      value = '';
-    }
-    return value;
-  }
-
-  validateTextBath() {
-    let value;
-
-    if (this.val3 === 1) {
-      value = `${this.val3} ванная`;
-    }
-    if (this.val3 >= 2 && this.val3 <= 4) {
-      value = `${this.val3} ванные`;
-    }
-    if (this.val3 >= 5) {
-      value = `${this.val3} ванных`;
-    }
-    if (this.val3 === 0) {
-      value = '';
-    }
-    return value;
-  }
-
-  validateTextGuest() {
-    let value;
-
-    if (this.fullVal === 1) {
-      value = `${this.fullVal} гость`;
-    }
-    if (this.fullVal >= 2 && this.val2 <= 4) {
-      value = `${this.fullVal} гостя`;
-    }
-    if (this.fullVal >= 5) {
-      value = `${this.fullVal} гостей`;
-    }
-    if (this.fullVal === 0) {
-      value = '';
-    }
-    return value;
-  }
-
-  validateTextBaby() {
-    let value;
-
-    if (this.val3 === 1) {
-      value = `${this.val3} младенец`;
-    }
-    if (this.val3 >= 2 && this.val3 <= 4) {
-      value = `${this.val3} младенца`;
-    }
-    if (this.val3 >= 5) {
-      value = `${this.val3} младенцев`;
-    }
-    if (this.val3 === 0) {
-      value = '';
-    }
-    return value;
   }
 }
 
