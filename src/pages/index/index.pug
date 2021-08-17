@@ -1,13 +1,16 @@
 extends ~Layout/main-layout.pug
 
 block variables
+  - data = require("./index.json");
+
   - const pageTitle = "Main";
   - const classMain = "main";
   - const isPageCenter = true;
-  - const itemListLink = [{ link: "landing-page.html" }, { link: "landing-registration.html" }, { link: "landing-sign-in.html" }, { link: "room-details.html" }, { link: "search-room.html" }, { link: "ui-kits-cards.html" }, { link: "ui-kits-color.html" }, { link: "ui-kits-form.html" }, { link: "ui-kits-header-footer.html" }];
+  - headerProps = false;
+  - footerProps = false;
 
 block content
   ul.main__list
-    each item in itemListLink
+    each item in data.linkList
       li.main__item
         a.main__link(href=item.link)= item.link

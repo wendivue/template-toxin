@@ -1,0 +1,260 @@
+{
+  "datePicker": {
+    "text": "даты пребывания в отеле",
+    "placeholder": "19 авг - 23 авг",
+    "type": "text",
+    "name": "date",
+    "id": "date",
+    "size": "small"
+  },
+  "dropdownPeople": {
+    "text": "гости",
+    "value": "3 гостя, 1 младенец",
+    "iconText": "expand_more",
+    "size": "small",
+    "id": "dropdown-people",
+    "isItemsPeople": true,
+    "isButtonMenu": true,
+    "isDropdown": true,
+    "itemsList": [
+      { "text": "взрослые", "value": "2", "name": "adults" },
+      { "text": "дети", "value": "1", "name": "children" },
+      { "text": "младенцы", "value": "1", "name": "babies" }
+    ]
+  },
+  "rangeSlider": {
+    "text": "диапазон цены",
+    "rangeConfig": { "dataMin": 0, "dataMax": 15500, "dataFrom": 5000, "dataTo": 10000 }
+  },
+  "textRangeSlider": "Стоимость за сутки пребывания в номере",
+  "checkboxButtonsRules": {
+    "caption": "Правила дома",
+    "checkboxButtons": [
+      { "text": "Можно курить", "id": "1", "name": "smoke" },
+      { "text": "Можно с питомцами", "id": "2", "name": "pet", "isChecked": true },
+      {
+        "text": "Можно пригласить гостей (до 10 человек)",
+        "id": "3",
+        "name": "guests",
+        "isChecked": true
+      }
+    ]
+  },
+  "checkboxButtonsRich": {
+    "caption": "доступность",
+    "isRich": true,
+    "checkboxButtons": [
+      {
+        "text": "Ширина коридоров в номере не менее 91 см.",
+        "id": "4",
+        "title": "Широкий коридор",
+        "name": "hall"
+      },
+      {
+        "text": "На 1 этаже вас встретит специалист и проводит до номера.",
+        "id": "5",
+        "title": "Помощник для инвалидов",
+        "name": "assistant"
+      }
+    ]
+  },
+  "dropdownRoom": {
+    "text": "удобства номера",
+    "value": "2 спальни, 2 кровати",
+    "id": "dropdown-room",
+    "iconText": "expand_more",
+    "size": "small",
+    "isItemsRoom": true,
+    "isDropdown": true,
+    "itemsList": [
+      { "text": "спальни", "value": "2", "name": "bedrooms" },
+      { "text": "кровати", "value": "2", "name": "bed" },
+      { "text": "ванные комнаты", "value": "0", "name": "bathrooms" }
+    ]
+  },
+  "checkboxList": {
+    "text": "дополнительные удобства",
+    "checkboxList": [
+      { "text": "Завтрак", "id": "1", "name": "breakfast" },
+      { "text": "Письменный стол", "id": "2", "name": "desk", "isChecked": true },
+      { "text": "Стул для кормления", "id": "3", "name": "chair", "isChecked": true },
+      { "text": "Кроватка", "id": "4", "name": "crib", "isChecked": true },
+      { "text": "Телевизор", "id": "5", "name": "tv" },
+      { "text": "Шампунь", "id": "6", "name": "shampoo" }
+    ]
+  },
+  "title": "Номера, которые мы для вас подобрали",
+  "pagination": { "text": ["из", "вариантов аренды"], "items": 180, "itemsOnPage": 12 },
+  "hotelCards": [
+    {
+      "number": "888",
+      "price": "9 990₽",
+      "isLux": true,
+      "star": "5",
+      "reviews": "145",
+      "link": "/mock-address/change-me",
+      "itemList": [
+        { "img": "img/hotel-1.png" },
+        { "img": "img/hotel-1.png" },
+        { "img": "img/hotel-1.png" },
+        { "img": "img/hotel-1.png" }
+      ],
+      "text": { "typeText": "люкс", "period": "в сутки", "reviewText": "Отзывов" }
+    },
+    {
+      "number": "840",
+      "price": "9 990₽",
+      "star": "4",
+      "reviews": "65",
+      "link": "/mock-address/change-me",
+      "itemList": [
+        { "img": "img/hotel-2.png" },
+        { "img": "img/hotel-2.png" },
+        { "img": "img/hotel-2.png" },
+        { "img": "img/hotel-2.png" }
+      ],
+      "text": { "typeText": "люкс", "period": "в сутки", "reviewText": "Отзывов" }
+    },
+    {
+      "number": "980",
+      "price": "8 500₽",
+      "isLux": true,
+      "star": "3",
+      "reviews": "35",
+      "link": "/mock-address/change-me",
+      "itemList": [
+        { "img": "img/hotel-3.png" },
+        { "img": "img/hotel-3.png" },
+        { "img": "img/hotel-3.png" },
+        { "img": "img/hotel-3.png" }
+      ],
+      "text": { "typeText": "люкс", "period": "в сутки", "reviewText": "Отзывов" }
+    },
+    {
+      "number": "856",
+      "price": "7 300₽",
+      "star": "5",
+      "reviews": "19",
+      "link": "/mock-address/change-me",
+      "itemList": [
+        { "img": "img/hotel-4.png" },
+        { "img": "img/hotel-4.png" },
+        { "img": "img/hotel-4.png" },
+        { "img": "img/hotel-4.png" }
+      ],
+      "text": { "typeText": "люкс", "period": "в сутки", "reviewText": "Отзывов" }
+    },
+    {
+      "number": "740",
+      "price": "6 000₽",
+      "star": "4",
+      "reviews": "44",
+      "link": "/mock-address/change-me",
+      "itemList": [
+        { "img": "img/hotel-5.png" },
+        { "img": "img/hotel-5.png" },
+        { "img": "img/hotel-5.png" },
+        { "img": "img/hotel-5.png" }
+      ],
+      "text": { "typeText": "люкс", "period": "в сутки", "reviewText": "Отзывов" }
+    },
+    {
+      "number": "982",
+      "price": "5 800₽",
+      "star": "3",
+      "reviews": "56",
+      "link": "/mock-address/change-me",
+      "itemList": [
+        { "img": "img/hotel-6.png" },
+        { "img": "img/hotel-6.png" },
+        { "img": "img/hotel-6.png" },
+        { "img": "img/hotel-6.png" }
+      ],
+      "text": { "typeText": "люкс", "period": "в сутки", "reviewText": "Отзывов" }
+    },
+    {
+      "number": "678",
+      "price": "5 500₽",
+      "star": "5",
+      "reviews": "45",
+      "link": "/mock-address/change-me",
+      "itemList": [
+        { "img": "img/hotel-7.png" },
+        { "img": "img/hotel-7.png" },
+        { "img": "img/hotel-7.png" },
+        { "img": "img/hotel-7.png" }
+      ],
+      "text": { "typeText": "люкс", "period": "в сутки", "reviewText": "Отзывов" }
+    },
+    {
+      "number": "450",
+      "price": "5 300₽",
+      "star": "4",
+      "reviews": "39",
+      "link": "/mock-address/change-me",
+      "itemList": [
+        { "img": "img/hotel-8.png" },
+        { "img": "img/hotel-8.png" },
+        { "img": "img/hotel-8.png" },
+        { "img": "img/hotel-8.png" }
+      ],
+      "text": { "typeText": "люкс", "period": "в сутки", "reviewText": "Отзывов" }
+    },
+    {
+      "number": "350",
+      "price": "5 000₽",
+      "star": "3",
+      "reviews": "77",
+      "link": "/mock-address/change-me",
+      "itemList": [
+        { "img": "img/hotel-9.png" },
+        { "img": "img/hotel-9.png" },
+        { "img": "img/hotel-9.png" },
+        { "img": "img/hotel-9.png" }
+      ],
+      "text": { "typeText": "люкс", "period": "в сутки", "reviewText": "Отзывов" }
+    },
+    {
+      "number": "666",
+      "price": "5 000₽",
+      "star": "5",
+      "reviews": "25",
+      "link": "/mock-address/change-me",
+      "itemList": [
+        { "img": "img/hotel-10.png" },
+        { "img": "img/hotel-10.png" },
+        { "img": "img/hotel-10.png" },
+        { "img": "img/hotel-10.png" }
+      ],
+      "text": { "typeText": "люкс", "period": "в сутки", "reviewText": "Отзывов" }
+    },
+    {
+      "number": "444",
+      "price": "5 000₽",
+      "star": "3",
+      "reviews": "15",
+      "link": "/mock-address/change-me",
+      "itemList": [
+        { "img": "img/hotel-11.png" },
+        { "img": "img/hotel-11.png" },
+        { "img": "img/hotel-11.png" },
+        { "img": "img/hotel-11.png" }
+      ],
+      "text": { "typeText": "люкс", "period": "в сутки", "reviewText": "Отзывов" }
+    },
+    {
+      "number": "352",
+      "price": "5 000₽",
+      "star": "3",
+      "reviews": "55",
+      "link": "/mock-address/change-me",
+      "itemList": [
+        { "img": "img/hotel-12.png" },
+        { "img": "img/hotel-12.png" },
+        { "img": "img/hotel-12.png" },
+        { "img": "img/hotel-12.png" }
+      ],
+      "text": { "typeText": "люкс", "period": "в сутки", "reviewText": "Отзывов" }
+    }
+  ]
+}

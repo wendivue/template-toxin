@@ -1,0 +1,13 @@
+{
+  "linkList": [
+    { "link": "landing-page.html" },
+    { "link": "landing-registration.html" },
+    { "link": "landing-sign-in.html" },
+    { "link": "room-details.html" },
+    { "link": "search-room.html" },
+    { "link": "ui-kits-cards.html" },
+    { "link": "ui-kits-color.html" },
+    { "link": "ui-kits-form.html" },
+    { "link": "ui-kits-header-footer.html" }
+  ]
+}

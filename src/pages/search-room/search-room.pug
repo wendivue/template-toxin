@@ -10,46 +10,38 @@ block variables
   include ~Blocks/hotel-card/hotel-card.pug
   include ~Blocks/pagination/pagination.pug
 
+  - data = require("./search-room.json");
+
   - const pageTitle = "Search-room";
   - const classMain = "search-room";
   - const classWrapper = "search-room__layout-body";
   - const isPageCenter = true;
-  - const headerProps = { loginLink: 'index.html', itemList: [ {text: 'О нас', link: '/mock-address/change-me'}, {text: 'Услуги', link: '/mock-address/change-me', subItemList: [ {text: 'бронирование', link: '/mock-address/change-me'}, {text: 'съем квартиры', link: '/mock-address/change-me'}, {text: 'продажа квартиры', link: '/mock-address/change-me'} ]}, {text: 'Вакансии', link: '/mock-address/change-me'}, {text: 'Новости', link: '/mock-address/change-me'}, {text: 'Соглашения', link: '/mock-address/change-me', subItemList: [ {text: 'правила', link: '/mock-address/change-me'}, {text: 'договор', link: '/mock-address/change-me'} ]} ], loginButton: { text: 'войти', link: 'landing-sign-in.html', theme: 'border', size: 'small-border' }, registerButton: { text: 'зарегистрироваться', link: 'landing-registration.html', size: 'small' }, subItemList1: [ {text: 'бронирование', link: '/mock-address/change-me'}, {text: 'съем квартиры', link: '/mock-address/change-me'}, {text: 'продажа квартиры', link: '/mock-address/change-me'} ] };
-  - const footerProps = { linkLogo: 'index.html', textLogo: 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»', placeholder: 'Email', itemList1: [ {title: 'навигация'}, {text: 'О нас', link: '/mock-address/change-me'}, {text: 'Новости', link: '/mock-address/change-me'}, {text: 'Служба поддержки', link: '/mock-address/change-me'}, {text: 'Услуги', link: '/mock-address/change-me'} ], itemList2: [ {title: 'о нас'}, {text: 'О сервисе', link: '/mock-address/change-me'}, {text: 'Наша команда', link: '/mock-address/change-me'}, {text: 'Вакансии', link: '/mock-address/change-me'}, {text: 'Инвесторы', link: '/mock-address/change-me'} ], itemList3: [ {title: 'Служба поддержки'}, {text: 'Соглашения', link: '/mock-address/change-me'}, {text: 'Сообщества', link: '/mock-address/change-me'}, {text: 'Связь с нами', link: '/mock-address/change-me'} ], titleSub: 'Подписка', textSub: 'Получайте специальные предложения и новости сервиса', copyright: 'Copyright © 2018 Toxin отель. Все права зачищены', iconList: [ {link: '/mock-address/change-me', icon: 'fa-twitter'}, {link: '/mock-address/change-me', icon: 'fa-facebook-square'}, {link: '/mock-address/change-me', icon: 'fa-instagram'} ] };
-  - const checkboxList = [{text: 'Завтрак', id: '1', name: 'breakfast'},{text: 'Письменный стол', id: '2', name: 'desk', isChecked: true},{text: 'Стул для кормления', id: '3', name: 'chair', isChecked: true},{text: 'Кроватка', id: '4', name: 'crib', isChecked: true},{text: 'Телевизор', id: '5', name: 'tv'},{text: 'Шампунь', id: '6', name: 'shampoo'}];
-  - const checkboxButtonsRich = [{text: 'Ширина коридоров в номере не менее 91 см.', id: '4', title: 'Широкий коридор', name: 'hall'}, {text: 'На 1 этаже вас встретит специалист и проводит до номера.', id: '5', title: 'Помощник для инвалидов', name: 'assistant'}];
-  - const checkboxButtons = [{text: 'Можно курить', id: '1', name: 'smoke'}, {text: 'Можно с питомцами', id: '2', name:'pet', isChecked: true}, {text: 'Можно пригласить гостей (до 10 человек)', id: '3', name: 'guests', isChecked: true}];
-  - const itemsRoom = [{text: 'спальни', value: '2', name: 'bedrooms'}, {text: 'кровати', value: '2', name: 'bed'}, {text: 'ванные комнаты', value: '0', name: 'bathrooms'}];
-  - const itemsPeople = [{text: 'взрослые', value: '2', name: 'adults'}, {text: 'дети', value: '1', name: 'children'}, {text: 'младенцы', value: '1', name: 'babies'}];
-  - const rangeConfig = { dataMin: 0, dataMax: 15500, dataFrom: 5000, dataTo: 10000 };
-  - const textHotelCards = { typeText: "люкс", period: "в сутки", reviewText: "Отзывов" };
-  - const hotelCards = [{ number: '888', price: '9 990₽', isLux: true, star: '5', reviews: '145', link: '/mock-address/change-me', itemList: [ {img: 'img/hotel-1.png'}, {img: 'img/hotel-1.png'}, {img: 'img/hotel-1.png'}, {img: 'img/hotel-1.png'} ], text: textHotelCards }, { number: '840', price: '9 990₽', star: '4', reviews: '65', link: '/mock-address/change-me', itemList: [ {img: 'img/hotel-2.png'}, {img: 'img/hotel-2.png'}, {img: 'img/hotel-2.png'}, {img: 'img/hotel-2.png'} ], text: textHotelCards }, { number: '980', price: '8 500₽', isLux: true, star: '3', reviews: '35', link: '/mock-address/change-me', itemList: [ {img: 'img/hotel-3.png'}, {img: 'img/hotel-3.png'}, {img: 'img/hotel-3.png'}, {img: 'img/hotel-3.png'} ], text: textHotelCards }, { number: '856', price: '7 300₽', star: '5', reviews: '19', link: '/mock-address/change-me', itemList: [ {img: 'img/hotel-4.png'}, {img: 'img/hotel-4.png'}, {img: 'img/hotel-4.png'}, {img: 'img/hotel-4.png'} ], text: textHotelCards }, { number: '740', price: '6 000₽', star: '4', reviews: '44', link: '/mock-address/change-me', itemList: [ {img: 'img/hotel-5.png'}, {img: 'img/hotel-5.png'}, {img: 'img/hotel-5.png'}, {img: 'img/hotel-5.png'} ], text: textHotelCards }, { number: '982', price: '5 800₽', star: '3', reviews: '56', link: '/mock-address/change-me', itemList: [ {img: 'img/hotel-6.png'}, {img: 'img/hotel-6.png'}, {img: 'img/hotel-6.png'}, {img: 'img/hotel-6.png'} ], text: textHotelCards }, { number: '678', price: '5 500₽', star: '5', reviews: '45', link: '/mock-address/change-me', itemList: [ {img: 'img/hotel-7.png'}, {img: 'img/hotel-7.png'}, {img: 'img/hotel-7.png'}, {img: 'img/hotel-7.png'} ], text: textHotelCards }, { number: '450', price: '5 300₽', star: '4', reviews: '39', link: '/mock-address/change-me', itemList: [ {img: 'img/hotel-8.png'}, {img: 'img/hotel-8.png'}, {img: 'img/hotel-8.png'}, {img: 'img/hotel-8.png'} ], text: textHotelCards }, { number: '350', price: '5 000₽', star: '3', reviews: '77', link: '/mock-address/change-me', itemList: [ {img: 'img/hotel-9.png'}, {img: 'img/hotel-9.png'}, {img: 'img/hotel-9.png'}, {img: 'img/hotel-9.png'} ], text: textHotelCards }, { number: '666', price: '5 000₽', star: '5', reviews: '25', link: '/mock-address/change-me', itemList: [ {img: 'img/hotel-10.png'}, {img: 'img/hotel-10.png'}, {img: 'img/hotel-10.png'}, {img: 'img/hotel-10.png'} ], text: textHotelCards }, { number: '444', price: '5 000₽', star: '3', reviews: '15', link: '/mock-address/change-me', itemList: [ {img: 'img/hotel-11.png'}, {img: 'img/hotel-11.png'}, {img: 'img/hotel-11.png'}, {img: 'img/hotel-11.png'} ], text: textHotelCards }, { number: '352', price: '5 000₽', star: '3', reviews: '55', link: '/mock-address/change-me', itemList: [ {img: 'img/hotel-12.png'}, {img: 'img/hotel-12.png'}, {img: 'img/hotel-12.png'}, {img: 'img/hotel-12.png'} ], text: textHotelCards }];
 
 block content
   aside.search-room__sidebar
     .search-room__date-picker
-      +date-picker({ text: 'даты пребывания в отеле', placeholder: '19 авг - 23 авг', type: 'text', name: 'date', id: 'date', size: 'small' })
+      +date-picker(data.datePicker)
     .search-room__dropdown
-      +dropdown({ text: 'гости', value: '3 гостя, 1 младенец', iconText: 'expand_more', size: 'small', id: 'dropdown-people', isItemsPeople: true, isButtonMenu: true, isDropdown: true, itemsList: itemsPeople })
+      +dropdown(data.dropdownPeople)
     .search-room__range-slider
-      +range-slider({ text: 'диапазон цены', rangeConfig })
-    p.search-room__text-range-slider Стоимость за сутки пребывания в номере
+      +range-slider(data.rangeSlider)
+    p.search-room__text-range-slider= data.textRangeSlider
     .search-room__checkbox-buttons
-      +checkbox-buttons({ caption: 'Правила дома', checkboxButtons: checkboxButtons })
+      +checkbox-buttons(data.checkboxButtonsRules)
     .search-room__rich
-      +checkbox-buttons({ caption: 'доступность', isRich: true, checkboxButtons: checkboxButtonsRich })
+      +checkbox-buttons(data.checkboxButtonsRich)
     .search-room__dropdown-room
-      +dropdown({ text: 'удобства номера', value: '2 спальни, 2 кровати', id: 'dropdown-room', iconText: 'expand_more', size:'small', isItemsRoom: true, isDropdown: true, itemsList: itemsRoom })
+      +dropdown(data.dropdownRoom)
     .search-room__checkbox-list
-      +checkbox-list({ text: 'дополнительные удобства', checkboxList })
+      +checkbox-list(data.checkboxList)
 
   article.search-room__content
-    h1.search-room__title Номера, которые мы для вас подобрали
+    h1.search-room__title= data.title
     ul.search-room__wrapper-hotel-card
-      each item in hotelCards
+      each item in data.hotelCards
         - const { number, itemList, price, isLux, link, reviews, star, text } = item;
         li.search-room__hotel-card
           +hotel-card({number, itemList, price, isLux, link, reviews, star, text})
 
     .search-room__pagination
-      +pagination({text: ['из', 'вариантов аренды'], items: 180, itemsOnPage: 12, })
+      +pagination(data.pagination)

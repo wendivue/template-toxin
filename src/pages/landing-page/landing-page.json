@@ -1,0 +1,12 @@
+{
+  "hotelSearch": {
+    "title": "Найдём номера под ваши пожелания",
+    "link": "search-room.html",
+    "itemsList": [
+      { "text": "взрослые", "value": "0", "name": "adults" },
+      { "text": "дети", "value": "0", "name": "children" },
+      { "text": "младенцы", "value": "0", "name": "babies" }
+    ]
+  },
+  "text": "Лучшие номера для вашей работы, отдыха и просто вдохновения"
+}

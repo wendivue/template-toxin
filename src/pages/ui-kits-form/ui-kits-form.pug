@@ -18,107 +18,88 @@ block variables
   include ~Blocks/bullet-list/bullet-list.pug
   include ~Blocks/review/review.pug
 
+  - data = require("./ui-kits-form.json");
+
   - const pageTitle = "Form Elements";
   - const classMain = "ui-kits-form";
   - const classImg = "ui-kits-form__img";
   - const mainLink = "index.html";
-  - const checkboxList1 = [{text: 'Завтрак', id: '1', name: 'breakfast'},{text: 'Письменный стол', id: '2', name: 'desk', isChecked: true},{text: 'Стул для кормления', id: '3', name: 'chair', isChecked: true},{text: 'Кроватка', id: '4', name: 'crib', isChecked: true},{text: 'Телевизор', id: '5', name: 'tv'},{text: 'Шампунь', id: '6', name: 'shampoo'}];
-  - const checkboxList2 = [{text: 'Завтрак', id: '7', name: 'breakfast'},{text: 'Письменный стол', id: '8', name: 'desk', isChecked: true},{text: 'Стул для кормления', id: '9', name: 'chair', isChecked: true},{text: 'Кроватка', id: '10', name: 'crib', isChecked: true},{text: 'Телевизор', id: '11', name: 'tv'},{text: 'Шампунь', id: '12', name: 'shampoo'}];
-  - const checkboxButtons1 = [{text: 'Ширина коридоров в номере не менее 91 см.', id: '4', title: 'Широкий коридор', name: 'hall'}, {text: 'На 1 этаже вас встретит специалист и проводит до номера.', id: '5', title: 'Помощник для инвалидов', name: 'assistant'}];
-  - const checkboxButtons2 = [{text: 'Можно курить', id: '1', name: 'smoke'}, {text: 'Можно с питомцами', id: '2', name:'pet', isChecked: true}, {text: 'Можно пригласить гостей (до 10 человек)', id: '3', name: 'guests', isChecked: true}];
-  - const itemsRoom = [{text: 'спальни', value: '2', name: 'bedrooms-1'}, {text: 'кровати', value: '2', name: 'bed-1'}, {text: 'ванные комнаты', value: '0', name: 'bathrooms-1'}];
-  - const itemsPeople = [{text: 'взрослые', value: '2', name: 'adults-1' }, {text: 'дети', value: '1', name: 'children-1'}, {text: 'младенцы', value: '0', name: 'babies-1'}];
-  - const itemsPeopleNull = [{text: 'взрослые', value: '0',  name: 'adults-2'}, {text: 'дети', value: '0', name: 'children-2'}, {text: 'младенцы', value: '0', name: 'babies-2'}];
-  - const iconList = [{ icon: "insert_emoticon", title: "Комфорт", text: "Шумопоглощающие стены", theme: "border" }, { icon: "location_city", title: "Удобство", text: "Окно в каждой из спален", theme: "border" }];
-  - const radioButtonsList = [{text: 'Мужчина', value: 'male', name: 'gender', isChecked: true}, {text: 'Женщина', name: 'gender', value: 'female'}];
-  - const rangeConfig = { dataMin: 0, dataMax: 15500, dataFrom: 5000, dataTo: 10000 };
+  - headerProps = false;
+  - footerProps = false;
 
 block content
   +page({})
     +center-block
       +col-4
         .ui-kits-form__text-field
-          +text-field({ text: 'Text Field', value: 'Email', type: 'text', name: 'text-1', id: 'text-1', textState:'Default' })
+          +text-field(data.textFieldDefault)
         .ui-kits-form__text-field-hover
-          +text-field({ text: 'Text Field', placeholder: 'This is pretty awesome', name: 'text-2', id: 'text-2', state: 'active', textState:'Hover / Focus' })
+          +text-field(data.textFieldHover)
         .ui-kits-form__dropdown
-          +dropdown({ text: 'Dropdown', name: 'people-1', value: 'Сколько гостей', iconText: 'expand_more', id: 'dropdown-1', textState:'Default', isButtonMenu: true, isDropdown: true, isHideButtonCleans: true, itemsList: itemsPeopleNull })
+          +dropdown(data.dropdownDefaultPeople)
         .ui-kits-form__masked
-          +text-field({ text: 'masked text field', placeholder: 'ДД.ММ.ГГГГ', type: 'text', name: 'date', id: 'date-1', textState:'Default', mask:"'alias': 'datetime', 'inputFormat': 'dd/mm/yyyy', 'placeholder': 'ДД.ММ.ГГГГ'"})
+          +text-field(data.textFieldMasked)
         .ui-kits-form__date-picker
-          +date-picker({ text: ['date Dropdown', 'date Dropdown'], placeholder: ['ДД.ММ.ГГГГ', 'ДД.ММ.ГГГГ'], type: 'text', name: ['arrival', 'departure'], id: ['start', 'end'], iconText: 'expand_more', isDateRange: true })
+          +date-picker(data.datePickerRange)
         .ui-kits-form__filter-date
-          +date-picker({ text: 'filter date dropdown', placeholder: '19 авг - 23 авг', type: 'text', id: 'date-2', name: 'filterDate', size: 'small', iconText: 'expand_more' })
+          +date-picker(data.datePickerFilter)
         .ui-kits-form__subscription
-          +text-field({ text: 'subscription text field', placeholder: 'Email', type: 'email', name: 'email', size: 'small', id: 'email', iconText: 'arrow_forward', themeIcon: 'submit' })
+          +text-field(data.textFieldSubscription)
         .ui-kits-form__dropdown-room
-          +dropdown({ text: 'Dropdown', name: 'room-1', value: '2 спальни, 2 кровати', iconText: 'expand_more', id: 'dropdown-2', textState:'Default', size:'small', isItemsRoom: true, isDropdown: true, itemsList: itemsPeople })
+          +dropdown(data.dropdownRoom)
         .ui-kits-form__dropdown-room-expanded
-          +dropdown({ text: 'Dropdown', name: 'room-2', value: '2 спальни, 2 кровати', iconText: 'expand_more', id: 'dropdown-3', textState:'expanded', size:'small', isItemsRoom: true, isOpenMenu: true, isDropdown: true, itemsList: itemsRoom })
+          +dropdown(data.dropdownRoomExpanded)
         .ui-kits-form__checkbox-list
-          +checkbox-list({ text: 'expandable checkbox list', checkboxList: checkboxList1 })
+          +checkbox-list(data.checkboxList)
         .ui-kits-form__checkbox-list-open
-          +checkbox-list({ text: 'expandable checkbox list', state: 'open', checkboxList: checkboxList2 })
+          +checkbox-list(data.checkboxListOpen)
       .ui-kits-form__col-4
-        +checkbox-buttons({ caption: 'Checkbox Buttons', checkboxButtons: checkboxButtons2 })
+        +checkbox-buttons(data.checkboxButtons)
         .ui-kits-form__radio-buttons
-          h3.ui-kits-form__title.ui-kits-form__title_radio-button Radio Buttons
-          +radio-buttons({radioButtonsList})
+          h3.ui-kits-form__title.ui-kits-form__title_radio-button= data.titleRadioButton
+          +radio-buttons(data.radioButtons)
         .ui-kits-form__toggle
-          h3.ui-kits-form__title Toggle
-          .ui-kits-form__toggle-item
-            +toggle({ title:'Toggle', text: 'Получать спецпредложения', isChecked: true, name: 'special-1', id: '1' })
-          .ui-kits-form__toggle-item
-            +toggle({ title:'Toggle', text: 'Получать спецпредложения', id: '2', name: 'special-2' })
+          h3.ui-kits-form__title= data.titleToggle
+          each item in data.toggleList
+            .ui-kits-form__toggle-item
+              +toggle(item)
         .ui-kits-form__like-button
-          h3.ui-kits-form__title.ui-kits-form__title_like-button like button
+          h3.ui-kits-form__title.ui-kits-form__title_like-button= data.titleLikeButton
           .ui-kits-form__like-button-items
-            .ui-kits-form__like-button-item
-              +like-button({ number: '2', id: '1', name: 'liked-1' })
-            .ui-kits-form__like-button-item
-              +like-button({ number: '12', id: '2', name: 'liked-2', isChecked: true })
+            each item in data.likeButtonList
+              .ui-kits-form__like-button-item
+                +like-button(item)
         .ui-kits-form__rate-button
-          h3.ui-kits-form__title rate button
+          h3.ui-kits-form__title= data.titleRate
           .ui-kits-form__rate-button-items
-            .ui-kits-form__rate-button-item
-              +rate-button({star: 4})
-            .ui-kits-form__rate-button-item
-              +rate-button({star: 5})
+            each item in data.rateButtonList
+              .ui-kits-form__rate-button-item
+                +rate-button(item)
         .ui-kits-form__dropdown-people
-          +dropdown({ text: 'dropdown', name: 'people-2', value: 'Сколько гостей', id: 'dropdown-4', iconText: 'expand_more', isButtonMenu: true, isDropdown: true, isOpenMenu: true, isHideButtonCleans: true, itemsList: itemsPeopleNull })
+          +dropdown(data.dropdownDefaultPeopleOpen)
         .ui-kits-form__rich-checkbox-buttons
-          +checkbox-buttons({ caption: 'Rich Checkbox Buttons', isRich: true, checkboxButtons: checkboxButtons1 })
+          +checkbox-buttons(data.checkboxButtonsRich)
       +col-4
-        +range-slider({text: 'Range Slider', rangeConfig})
+        +range-slider(data.rangeSlider)
         .ui-kits-form__buttons
-          h3.ui-kits-form__title buttons
-          .ui-kits-form__buttons-items
-            .ui-kits-form__buttons-item
-              +button({ text: 'CLICK ME', link: '/mock-address/change-me' })
-            .ui-kits-form__buttons-item
-              +button({ text: 'CLICK ME', link: '/mock-address/change-me', state: 'active' })
-          .ui-kits-form__buttons-items
-            .ui-kits-form__buttons-item
-              +button({ text: 'CLICK ME', link: '/mock-address/change-me', theme: 'border' })
-            .ui-kits-form__buttons-item
-              +button({ text: 'CLICK ME', link: '/mock-address/change-me', theme: 'border', state: 'active-border' })
-          .ui-kits-form__buttons-items
-            .ui-kits-form__buttons-item
-              +button({ text: 'CLICK ME', link: '/mock-address/change-me', theme: 'icon-link' })
-            .ui-kits-form__buttons-item
-              +button({ text: 'CLICK ME', link: '/mock-address/change-me', theme: 'icon-link', state: 'icon-link-active' })
-          +button({ text: 'перейти к оплате', link: '/mock-address/change-me', size: 'large', isIcon: true })
+          h3.ui-kits-form__title= data.titleButtons
+          each list in data.buttonList
+            .ui-kits-form__buttons-items
+              each item in list
+                .ui-kits-form__buttons-item
+                  +button(item)
+          +button(data.buttonLarge)
         .ui-kits-form__pagination
-          h3.ui-kits-form__title pagination
-          +pagination({text: ['из', 'вариантов аренды'], items: 180, itemsOnPage: 12, })
+          h3.ui-kits-form__title= data.titlePagination
+          +pagination(data.pagination)
         .ui-kits-form__dropdown-people-expanded
-          +dropdown({ text: 'dropdown', name: 'people-3', value: '3 гостя', id: 'dropdown-5', iconText: 'expand_more', isButtonMenu: true, isDropdown: true, isOpenMenu: true, itemsList: itemsPeople})
+          +dropdown(data.dropdownPeopleExpanded)
         .ui-kits-form__bullet-list
-          h3.ui-kits-form__title bullet list
-          +bullet-list({ itemList: [ {text: 'Нельзя с питомцами'}, {text: 'Без вечеринок и мероприятий '}, {text: 'Время прибытия — после 13:00, а выезд до 12:00'} ] })
+          h3.ui-kits-form__title= data.titleBulletList
+          +bullet-list(data.bulletList)
   +page({})
     +center-block
       .ui-kits-form__col-8
-        +icon-text-list({iconList})
+        +icon-text-list(data.iconTextList)
         .ui-kits-form__review
-          +review({ img: 'img/review-image-1.png', username: 'Мурад Сарафанов', date: '5 дней назад', text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.', number: '12', id: 'review-1', name: 'liked-3', isChecked: true })
+          +review(data.review)

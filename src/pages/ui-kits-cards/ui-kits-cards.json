@@ -1,0 +1,55 @@
+{
+  "hotelSearch": {
+    "title": "Найдём номера под ваши пожелания",
+    "link": "/mock-address/change-me",
+    "itemsList": [
+      { "text": "взрослые", "value": "0", "name": "adults" },
+      { "text": "дети", "value": "0", "name": "children" },
+      { "text": "младенцы", "value": "0", "name": "babies" }
+    ]
+  },
+  "registration": { "title": "Регистрация аккаунта", "link": "/mock-address/change-me" },
+  "reservation": {
+    "number": "888",
+    "price": "9 990₽",
+    "link": "/mock-address/change-me",
+    "itemsList": [
+      { "text": "взрослые", "value": "2", "name": "adults" },
+      { "text": "дети", "value": "1", "name": "children" },
+      { "text": "младенцы", "value": "0", "name": "babies" }
+    ],
+    "text": { "typeText": "люкс", "period": "в сутки", "reviewText": "Отзывов" }
+  },
+  "signIn": { "title": "войти", "link": "/mock-address/change-me" },
+  "hotelList": [
+    {
+      "number": "888",
+      "price": "9 990₽",
+      "isLux": true,
+      "star": "5",
+      "reviews": "145",
+      "link": "/mock-address/change-me",
+      "itemList": [
+        { "img": "img/hotel-1.png" },
+        { "img": "img/hotel-1.png" },
+        { "img": "img/hotel-1.png" },
+        { "img": "img/hotel-1.png" }
+      ],
+      "text": { "typeText": "люкс", "period": "в сутки", "reviewText": "Отзывов" }
+    },
+    {
+      "number": "840",
+      "price": "9 990₽",
+      "star": "4",
+      "reviews": "65",
+      "link": "/mock-address/change-me",
+      "itemList": [
+        { "img": "img/hotel-2.png" },
+        { "img": "img/hotel-2.png" },
+        { "img": "img/hotel-2.png" },
+        { "img": "img/hotel-2.png" }
+      ],
+      "text": { "typeText": "люкс", "period": "в сутки", "reviewText": "Отзывов" }
+    }
+  ]
+}

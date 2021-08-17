@@ -3,6 +3,11 @@ include ~Blocks/center-block/center-block.pug
 include ~Blocks/header/header.pug
 include ~Blocks/footer-copyright/footer-copyright.pug
 
+- data = require("Layout/main-layout.json");
+
+- let headerProps = data.header;
+- let footerProps = data.footer;
+
 block variables
 
 doctype html

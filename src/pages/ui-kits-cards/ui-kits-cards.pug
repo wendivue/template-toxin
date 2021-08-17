@@ -8,31 +8,32 @@ block variables
   include ~Blocks/sign-in/sign-in.pug
   include ~Blocks/hotel-card/hotel-card.pug
 
+  - data = require("./ui-kits-cards.json");
+
   - const pageTitle = "Cards";
   - const classMain = "ui-kits-cards";
   - const isPageCenter = true;
   - const classImg = "ui-kits-cards__img";
   - const mainLink = "index.html";
-  - const itemsPeopleNull = [{text: 'взрослые', value: '0', name: 'adults'}, {text: 'дети', value: '0', name: 'children'}, {text: 'младенцы', value: '0', name: 'babies'}];
-  - const itemsPeople = [{text: 'взрослые', value: '2', name: 'adults'}, {text: 'дети', value: '1', name: 'children'}, {text: 'младенцы', value: '0', name: 'babies'}];
-  - const textHotelCards = { typeText: "люкс", period: "в сутки", reviewText: "Отзывов" };
+  - headerProps = false;
+  - footerProps = false;
 
 block content
   +col-4
     .ui-kits-cards__hotel-search
-      +hotel-search({ title: 'Найдём номера под ваши пожелания', link: '/mock-address/change-me', itemsList: itemsPeopleNull })
+      +hotel-search(data.hotelSearch)
     .ui-kits-cards__registration
-      +registration({ title: 'Регистрация аккаунта', link: '/mock-address/change-me' })
+      +registration(data.registration)
   +col-4
     .ui-kits-cards__reservation
-      +reservation({ number: '888', price: '9 990₽', link: '/mock-address/change-me', itemsList: itemsPeople, text: textHotelCards })
+      +reservation(data.reservation)
     .ui-kits-cards__sign-in
-      +sign-in({ title: 'войти', link: '/mock-address/change-me' })
+      +sign-in(data.signIn)
   +col-4
     .ui-kits-cards__wrapper-col
       .ui-kits-cards__date-picker
         .datepicker-here
-    .ui-kits-cards__hotel-card
-      +hotel-card({ number: '888', price: '9 990₽', isLux: true, star: '5', reviews: '145', link: '/mock-address/change-me', itemList: [ {img: 'img/hotel-1.png'}, {img: 'img/hotel-1.png'}, {img: 'img/hotel-1.png'}, {img: 'img/hotel-1.png'} ], text: textHotelCards })
-    .ui-kits-cards__hotel-card
-      +hotel-card({ number: '840', price: '9 990₽', star: '4', reviews: '65', link: '/mock-address/change-me', itemList: [ {img: 'img/hotel-2.png'}, {img: 'img/hotel-2.png'}, {img: 'img/hotel-2.png'}, {img: 'img/hotel-2.png'} ], text: textHotelCards })
+    each item in data.hotelList
+      - const { number, itemList, price, isLux, link, reviews, star, text } = item;
+      .ui-kits-cards__hotel-card
+        +hotel-card({number, itemList, price, isLux, link, reviews, star, text})

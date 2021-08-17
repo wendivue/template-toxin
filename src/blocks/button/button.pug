@@ -15,6 +15,6 @@ mixin button({ theme, size, state, themeHeader, isIcon, link, text, isButton, ty
       if (isIcon)
         i.button__icon arrow_forward
   else
-    a.button(class=mainClass)= text
+    a.button(class=mainClass, href=link)= text
       if (isIcon)
         i.button__icon arrow_forward

@@ -1,0 +1,291 @@
+{
+  "textFieldDefault": {
+    "text": "Text Field",
+    "value": "Email",
+    "type": "text",
+    "name": "text-1",
+    "id": "text-1",
+    "textState": "Default"
+  },
+  "textFieldHover": {
+    "text": "Text Field",
+    "placeholder": "This is pretty awesome",
+    "name": "text-2",
+    "id": "text-2",
+    "state": "active",
+    "textState": "Hover / Focus"
+  },
+  "dropdownDefaultPeople": {
+    "text": "Dropdown",
+    "name": "people-1",
+    "value": "Сколько гостей",
+    "iconText": "expand_more",
+    "id": "dropdown-1",
+    "textState": "Default",
+    "isButtonMenu": true,
+    "isDropdown": true,
+    "isHideButtonCleans": true,
+    "itemsList": [
+      { "text": "взрослые", "value": "0", "name": "adults-2" },
+      { "text": "дети", "value": "0", "name": "children-2" },
+      { "text": "младенцы", "value": "0", "name": "babies-2" }
+    ]
+  },
+  "textFieldMasked": {
+    "text": "masked text field",
+    "placeholder": "ДД.ММ.ГГГГ",
+    "type": "text",
+    "name": "date",
+    "id": "date-1",
+    "textState": "Default",
+    "mask": "'alias': 'datetime', 'inputFormat': 'dd/mm/yyyy', 'placeholder': 'ДД.ММ.ГГГГ'"
+  },
+  "datePickerRange": {
+    "text": ["date Dropdown", "date Dropdown"],
+    "placeholder": ["ДД.ММ.ГГГГ", "ДД.ММ.ГГГГ"],
+    "type": "text",
+    "name": ["arrival", "departure"],
+    "id": ["start", "end"],
+    "iconText": "expand_more",
+    "isDateRange": true
+  },
+  "datePickerFilter": {
+    "text": "filter date dropdown",
+    "placeholder": "19 авг - 23 авг",
+    "type": "text",
+    "id": "date-2",
+    "name": "filterDate",
+    "size": "small",
+    "iconText": "expand_more"
+  },
+  "textFieldSubscription": {
+    "text": "subscription text field",
+    "placeholder": "Email",
+    "type": "email",
+    "name": "email",
+    "size": "small",
+    "id": "email",
+    "iconText": "arrow_forward",
+    "themeIcon": "submit"
+  },
+  "dropdownRoom": {
+    "text": "Dropdown",
+    "name": "room-1",
+    "value": "2 спальни, 2 кровати",
+    "iconText": "expand_more",
+    "id": "dropdown-2",
+    "textState": "Default",
+    "size": "small",
+    "isItemsRoom": true,
+    "isDropdown": true,
+    "itemsList": [
+      { "text": "спальни", "value": "2", "name": "bedrooms-1" },
+      { "text": "кровати", "value": "2", "name": "bed-1" },
+      { "text": "ванные комнаты", "value": "0", "name": "bathrooms-1" }
+    ]
+  },
+  "dropdownRoomExpanded": {
+    "text": "Dropdown",
+    "name": "room-2",
+    "value": "2 спальни, 2 кровати",
+    "iconText": "expand_more",
+    "id": "dropdown-3",
+    "textState": "expanded",
+    "size": "small",
+    "isItemsRoom": true,
+    "isOpenMenu": true,
+    "isDropdown": true,
+    "itemsList": [
+      { "text": "спальни", "value": "2", "name": "bedrooms-1" },
+      { "text": "кровати", "value": "2", "name": "bed-1" },
+      { "text": "ванные комнаты", "value": "0", "name": "bathrooms-1" }
+    ]
+  },
+  "checkboxList": {
+    "text": "expandable checkbox list",
+    "checkboxList": [
+      { "text": "Завтрак", "id": "1", "name": "breakfast" },
+      { "text": "Письменный стол", "id": "2", "name": "desk", "isChecked": true },
+      { "text": "Стул для кормления", "id": "3", "name": "chair", "isChecked": true },
+      { "text": "Кроватка", "id": "4", "name": "crib", "isChecked": true },
+      { "text": "Телевизор", "id": "5", "name": "tv" },
+      { "text": "Шампунь", "id": "6", "name": "shampoo" }
+    ]
+  },
+  "checkboxListOpen": {
+    "text": "expandable checkbox list",
+    "state": "open",
+    "checkboxList": [
+      { "text": "Завтрак", "id": "7", "name": "breakfast" },
+      { "text": "Письменный стол", "id": "8", "name": "desk", "isChecked": true },
+      { "text": "Стул для кормления", "id": "9", "name": "chair", "isChecked": true },
+      { "text": "Кроватка", "id": "10", "name": "crib", "isChecked": true },
+      { "text": "Телевизор", "id": "11", "name": "tv" },
+      { "text": "Шампунь", "id": "12", "name": "shampoo" }
+    ]
+  },
+  "checkboxButtons": {
+    "caption": "Checkbox Buttons",
+    "checkboxButtons": [
+      { "text": "Можно курить", "id": "1", "name": "smoke" },
+      { "text": "Можно с питомцами", "id": "2", "name": "pet", "isChecked": true },
+      {
+        "text": "Можно пригласить гостей (до 10 человек)",
+        "id": "3",
+        "name": "guests",
+        "isChecked": true
+      }
+    ]
+  },
+  "titleRadioButton": "Radio Buttons",
+  "radioButtons": {
+    "radioButtonsList": [
+      { "text": "Мужчина", "value": "male", "name": "gender", "isChecked": true },
+      { "text": "Женщина", "name": "gender", "value": "female" }
+    ]
+  },
+  "titleToggle": "Toggle",
+  "toggleList": [
+    {
+      "title": "Toggle",
+      "text": "Получать спецпредложения",
+      "isChecked": true,
+      "name": "special-1",
+      "id": "1"
+    },
+    {
+      "title": "Toggle",
+      "text": "Получать спецпредложения",
+      "id": "2",
+      "name": "special-2"
+    }
+  ],
+  "titleLikeButton": "like button",
+  "likeButtonList": [
+    { "number": "2", "id": "1", "name": "liked-1" },
+    { "number": "12", "id": "2", "name": "liked-2", "isChecked": true }
+  ],
+  "rateButtonList": [{ "star": 4 }, { "star": 5 }],
+  "dropdownDefaultPeopleOpen": {
+    "text": "Dropdown",
+    "name": "people-1",
+    "value": "Сколько гостей",
+    "iconText": "expand_more",
+    "id": "dropdown-1",
+    "textState": "Default",
+    "isOpenMenu": true,
+    "isButtonMenu": true,
+    "isDropdown": true,
+    "isHideButtonCleans": true,
+    "itemsList": [
+      { "text": "взрослые", "value": "0", "name": "adults-2" },
+      { "text": "дети", "value": "0", "name": "children-2" },
+      { "text": "младенцы", "value": "0", "name": "babies-2" }
+    ]
+  },
+  "checkboxButtonsRich": {
+    "caption": "Rich Checkbox Buttons",
+    "isRich": true,
+    "checkboxButtons": [
+      {
+        "text": "Ширина коридоров в номере не менее 91 см.",
+        "id": "4",
+        "title": "Широкий коридор",
+        "name": "hall"
+      },
+      {
+        "text": "На 1 этаже вас встретит специалист и проводит до номера.",
+        "id": "5",
+        "title": "Помощник для инвалидов",
+        "name": "assistant"
+      }
+    ]
+  },
+  "titleRate": "rate button",
+  "rangeSlider": {
+    "text": "Range Slider",
+    "rangeConfig": { "dataMin": 0, "dataMax": 15500, "dataFrom": 5000, "dataTo": 10000 }
+  },
+  "titleButtons": "buttons",
+  "buttonList": [
+    [
+      { "text": "CLICK ME", "link": "/mock-address/change-me" },
+      { "text": "CLICK ME", "link": "/mock-address/change-me", "state": "active" }
+    ],
+    [
+      { "text": "CLICK ME", "link": "/mock-address/change-me", "theme": "border" },
+      {
+        "text": "CLICK ME",
+        "link": "/mock-address/change-me",
+        "theme": "border",
+        "state": "active-border"
+      }
+    ],
+    [
+      { "text": "CLICK ME", "link": "/mock-address/change-me", "theme": "icon-link" },
+      {
+        "text": "CLICK ME",
+        "link": "/mock-address/change-me",
+        "theme": "icon-link",
+        "state": "icon-link-active"
+      }
+    ]
+  ],
+  "buttonLarge": {
+    "text": "перейти к оплате",
+    "link": "/mock-address/change-me",
+    "size": "large",
+    "isIcon": true
+  },
+  "titlePagination": "pagination",
+  "pagination": { "text": ["из", "вариантов аренды"], "items": 180, "itemsOnPage": 12 },
+  "dropdownPeopleExpanded": {
+    "text": "dropdown",
+    "name": "people-3",
+    "value": "3 гостя",
+    "id": "dropdown-5",
+    "iconText": "expand_more",
+    "isButtonMenu": true,
+    "isDropdown": true,
+    "isOpenMenu": true,
+    "itemsList": [
+      { "text": "взрослые", "value": "2", "name": "adults-1" },
+      { "text": "дети", "value": "1", "name": "children-1" },
+      { "text": "младенцы", "value": "0", "name": "babies-1" }
+    ]
+  },
+  "titleBulletList": "bullet list",
+  "bulletList": {
+    "itemList": [
+      { "text": "Нельзя с питомцами" },
+      { "text": "Без вечеринок и мероприятий " },
+      { "text": "Время прибытия — после 13:00, а выезд до 12:00" }
+    ]
+  },
+  "iconTextList": {
+    "iconList": [
+      {
+        "icon": "insert_emoticon",
+        "title": "Комфорт",
+        "text": "Шумопоглощающие стены",
+        "theme": "border"
+      },
+      {
+        "icon": "location_city",
+        "title": "Удобство",
+        "text": "Окно в каждой из спален",
+        "theme": "border"
+      }
+    ]
+  },
+  "review": {
+    "img": "img/review-image-1.png",
+    "username": "Мурад Сарафанов",
+    "date": "5 дней назад",
+    "text": "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.",
+    "number": "12",
+    "id": "review-1",
+    "name": "liked-3",
+    "isChecked": true
+  }
+}
