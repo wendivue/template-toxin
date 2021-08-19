@@ -60,7 +60,15 @@
   },
   "textFieldSubscription": {
     "text": "subscription text field",
-    "placeholder": "Email",
+    "img": "img/logo.svg",
+    "textField": {
+      "placeholder": "Email",
+      "type": "email",
+      "size": "small",
+      "iconText": "arrow_forward",
+      "themeIcon": "submit",
+      "name": "email"
+    },
     "type": "email",
     "name": "email",
     "size": "small",

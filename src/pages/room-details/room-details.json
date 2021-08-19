@@ -67,11 +67,51 @@
     "number": "888",
     "price": "9 990₽",
     "link": "/mock-address/change-me",
-    "itemsList": [
-      { "text": "взрослые", "value": "2", "name": "adults" },
-      { "text": "дети", "value": "1", "name": "children" },
-      { "text": "младенцы", "value": "0", "name": "babies" }
-    ],
-    "text": { "typeText": "люкс", "period": "в сутки", "reviewText": "Отзывов" }
+    "text": { "typeText": "люкс", "period": "в сутки", "reviewText": "Отзывов" },
+    "datePicker": {
+      "text": ["прибытие", "выезд"],
+      "placeholder": ["19.08.2019", "23.08.2019"],
+      "name": ["arrival", "departure"],
+      "type": "text",
+      "id": ["start2", "end2"],
+      "iconText": "expand_more",
+      "isDateRange": true
+    },
+    "dropdown": {
+      "text": "гости",
+      "name": "people",
+      "value": "3 гостя",
+      "id": "dropdown",
+      "iconText": "expand_more",
+      "isItemsPeople": true,
+      "isButtonMenu": true,
+      "isDropdown": true,
+      "itemsList": [
+        { "text": "взрослые", "value": "2", "name": "adults" },
+        { "text": "дети", "value": "1", "name": "children" },
+        { "text": "младенцы", "value": "0", "name": "babies" }
+      ]
+    },
+    "priceList": {
+      "itemList": [
+        { "description": "9 990₽ х 4 суток", "price": "39 960" },
+        {
+          "description": "Сбор за услуги: скидка 2 179₽",
+          "price": "0",
+          "size": "large",
+          "isIcon": true
+        },
+        { "description": "Сбор за доп. услуги", "size": "large", "price": "300", "isIcon": true }
+      ],
+      "description": "Итого",
+      "price": "38 081"
+    },
+    "buttonSubmit": {
+      "text": "забронировать",
+      "size": "large",
+      "isIcon": true,
+      "isButton": true,
+      "type": "submit"
+    }
   }
 }

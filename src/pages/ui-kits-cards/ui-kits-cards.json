@@ -2,25 +2,152 @@
   "hotelSearch": {
     "title": "Найдём номера под ваши пожелания",
     "link": "/mock-address/change-me",
-    "itemsList": [
-      { "text": "взрослые", "value": "0", "name": "adults" },
-      { "text": "дети", "value": "0", "name": "children" },
-      { "text": "младенцы", "value": "0", "name": "babies" }
-    ]
+    "datePicker": {
+      "text": ["прибытие", "выезд"],
+      "placeholder": ["ДД.ММ.ГГГГ", "ДД.ММ.ГГГГ"],
+      "type": "text",
+      "name": ["arrival", "departure"],
+      "id": ["start", "end"],
+      "iconText": "expand_more",
+      "isDateRange": true
+    },
+    "dropdown": {
+      "text": "гости",
+      "name": "people",
+      "value": "Сколько гостей",
+      "id": "dropdown-people",
+      "iconText": "expand_more",
+      "isItemsPeople": true,
+      "isButtonMenu": true,
+      "isDropdown": true,
+      "isHideButtonCleans": true,
+      "itemsList": [
+        { "text": "взрослые", "value": "0", "name": "adults" },
+        { "text": "дети", "value": "0", "name": "children" },
+        { "text": "младенцы", "value": "0", "name": "babies" }
+      ]
+    },
+    "button": {
+      "text": "подобрать номер",
+      "size": "large",
+      "iconText": "arrow_forward",
+      "isButton": true,
+      "type": "submit"
+    }
   },
-  "registration": { "title": "Регистрация аккаунта", "link": "/mock-address/change-me" },
+  "registration": {
+    "title": "Регистрация аккаунта",
+    "link": "/mock-address/change-me",
+    "textFieldName": { "placeholder": "Имя", "name": "firstName", "type": "text" },
+    "textFieldSurName": { "placeholder": "Фамилия", "name": "lastName", "type": "text" },
+    "radioButtons": {
+      "radioButtonsList": [
+        { "text": "Мужчина", "value": "male", "name": "gender", "isChecked": true },
+        { "text": "Женщина", "name": "gender", "value": "female" }
+      ]
+    },
+    "textFieldDate": {
+      "text": "дата рождения",
+      "placeholder": "ДД.ММ.ГГГГ",
+      "id": "date",
+      "type": "text",
+      "name": "date",
+      "mask": "'alias': 'datetime', 'inputFormat': 'dd/mm/yyyy', 'placeholder': 'ДД.ММ.ГГГГ'"
+    },
+    "textFieldEmail": {
+      "text": "данные для входа в сервис",
+      "placeholder": "Email",
+      "id": "email",
+      "name": "email",
+      "type": "email"
+    },
+    "textFieldPassword": { "placeholder": "Пароль", "name": "password", "type": "password" },
+    "toggle": {
+      "title": "Toggle",
+      "text": "Получать спецпредложения",
+      "id": "1",
+      "name": "special"
+    },
+    "buttonSubmit": {
+      "text": "зарегистрироваться",
+      "size": "large",
+      "isIcon": true,
+      "isButton": true,
+      "type": "submit"
+    },
+    "textSignIn": "Уже есть аккаунт на Toxin",
+    "buttonSign": { "text": "войти", "link": "landing-sign-in.html", "theme": "border" }
+  },
   "reservation": {
     "number": "888",
     "price": "9 990₽",
     "link": "/mock-address/change-me",
-    "itemsList": [
-      { "text": "взрослые", "value": "2", "name": "adults" },
-      { "text": "дети", "value": "1", "name": "children" },
-      { "text": "младенцы", "value": "0", "name": "babies" }
-    ],
-    "text": { "typeText": "люкс", "period": "в сутки", "reviewText": "Отзывов" }
+    "text": { "typeText": "люкс", "period": "в сутки", "reviewText": "Отзывов" },
+    "datePicker": {
+      "text": ["прибытие", "выезд"],
+      "placeholder": ["19.08.2019", "23.08.2019"],
+      "name": ["arrival", "departure"],
+      "type": "text",
+      "id": ["start2", "end2"],
+      "iconText": "expand_more",
+      "isDateRange": true
+    },
+    "dropdown": {
+      "text": "гости",
+      "name": "people",
+      "value": "3 гостя",
+      "id": "dropdown",
+      "iconText": "expand_more",
+      "isItemsPeople": true,
+      "isButtonMenu": true,
+      "isDropdown": true,
+      "itemsList": [
+        { "text": "взрослые", "value": "2", "name": "adults" },
+        { "text": "дети", "value": "1", "name": "children" },
+        { "text": "младенцы", "value": "0", "name": "babies" }
+      ]
+    },
+    "priceList": {
+      "itemList": [
+        { "description": "9 990₽ х 4 суток", "price": "39 960" },
+        {
+          "description": "Сбор за услуги: скидка 2 179₽",
+          "price": "0",
+          "size": "large",
+          "isIcon": true
+        },
+        { "description": "Сбор за доп. услуги", "size": "large", "price": "300", "isIcon": true }
+      ],
+      "description": "Итого",
+      "price": "38 081"
+    },
+    "buttonSubmit": {
+      "text": "забронировать",
+      "size": "large",
+      "isIcon": true,
+      "isButton": true,
+      "type": "submit"
+    }
   },
-  "signIn": { "title": "войти", "link": "/mock-address/change-me" },
+  "signIn": {
+    "title": "войти",
+    "link": "/mock-address/change-me",
+    "text": "Нет аккаунта на Toxin?",
+    "textFieldEmail": { "placeholder": "Email", "name": "email", "type": "email" },
+    "textFieldPassword": { "placeholder": "Пароль", "name": "password", "type": "password" },
+    "buttonSubmit": {
+      "text": "войти",
+      "size": "large",
+      "isIcon": true,
+      "isButton": true,
+      "type": "submit"
+    },
+    "buttonRegistration": {
+      "text": "создать",
+      "link": "landing-registration.html",
+      "theme": "border"
+    }
+  },
   "hotelList": [
     {
       "number": "888",

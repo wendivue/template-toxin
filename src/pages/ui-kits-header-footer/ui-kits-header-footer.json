@@ -113,7 +113,15 @@
       { "text": "Сообщества", "link": "/mock-address/change-me" },
       { "text": "Связь с нами", "link": "/mock-address/change-me" }
     ],
-    "placeholder": "Email",
+    "img": "img/logo.svg",
+    "textField": {
+      "placeholder": "Email",
+      "type": "email",
+      "size": "small",
+      "iconText": "arrow_forward",
+      "themeIcon": "submit",
+      "name": "email"
+    },
     "titleSub": "Подписка",
     "textSub": "Получайте специальные предложения и новости сервиса",
     "copyright": "Copyright © 2018 Toxin отель. Все права зачищены.",

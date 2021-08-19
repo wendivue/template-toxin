@@ -2,15 +2,15 @@ include ../date-picker/date-picker.pug
 include ../dropdown/dropdown.pug
 include ../button/button.pug
 
-mixin hotel-search({ title, link, itemsList})
+mixin hotel-search({ title, link, datePicker, dropdown, button})
   form.hotel-search(action=link)
     h1.hotel-search__title= title
 
     .hotel-search__date-picker
-      +date-picker({ text: ['прибытие', 'выезд'], placeholder: ['ДД.ММ.ГГГГ', 'ДД.ММ.ГГГГ'], type: 'text', name: ['arrival', 'departure'], id:['start', 'end'], iconText: 'expand_more', isDateRange: true })
+      +date-picker(datePicker)
 
     .hotel-search__dropdown
-      +dropdown({ text: 'гости', name: 'people', value: 'Сколько гостей', id: 'dropdown-people', iconText: 'expand_more', isItemsPeople: true, isButtonMenu: true, isDropdown: true, isHideButtonCleans: true, itemsList })
+      +dropdown(dropdown)
 
     .hotel-search__button
-      +button({ text: 'подобрать номер', size: 'large', iconText: 'arrow_forward', isButton: true, type: 'submit'})
+      +button(button)

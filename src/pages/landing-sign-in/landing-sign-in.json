@@ -1,3 +1,21 @@
 {
-  "signIn": { "title": "войти", "link": "/mock-address/change-me" }
+  "signIn": {
+    "title": "войти",
+    "link": "/mock-address/change-me",
+    "text": "Нет аккаунта на Toxin?",
+    "textFieldEmail": { "placeholder": "Email", "name": "email", "type": "email" },
+    "textFieldPassword": { "placeholder": "Пароль", "name": "password", "type": "password" },
+    "buttonSubmit": {
+      "text": "войти",
+      "size": "large",
+      "isIcon": true,
+      "isButton": true,
+      "type": "submit"
+    },
+    "buttonRegistration": {
+      "text": "создать",
+      "link": "landing-registration.html",
+      "theme": "border"
+    }
+  }
 }

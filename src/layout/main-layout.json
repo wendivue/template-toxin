@@ -43,7 +43,15 @@
   "footer": {
     "linkLogo": "index.html",
     "textLogo": "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»",
-    "placeholder": "Email",
+    "img": "img/logo.svg",
+    "textField": {
+      "placeholder": "Email",
+      "type": "email",
+      "size": "small",
+      "iconText": "arrow_forward",
+      "themeIcon": "submit",
+      "name": "email"
+    },
     "itemList1": [
       { "title": "навигация" },
       { "text": "О нас", "link": "/mock-address/change-me" },

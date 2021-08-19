@@ -1,3 +1,45 @@
 {
-  "registration": { "title": "Регистрация аккаунта", "link": "/mock-address/change-me" }
+  "registration": {
+    "title": "Регистрация аккаунта",
+    "link": "/mock-address/change-me",
+    "textFieldName": { "placeholder": "Имя", "name": "firstName", "type": "text" },
+    "textFieldSurName": { "placeholder": "Фамилия", "name": "lastName", "type": "text" },
+    "radioButtons": {
+      "radioButtonsList": [
+        { "text": "Мужчина", "value": "male", "name": "gender", "isChecked": true },
+        { "text": "Женщина", "name": "gender", "value": "female" }
+      ]
+    },
+    "textFieldDate": {
+      "text": "дата рождения",
+      "placeholder": "ДД.ММ.ГГГГ",
+      "id": "date",
+      "type": "text",
+      "name": "date",
+      "mask": "'alias': 'datetime', 'inputFormat': 'dd/mm/yyyy', 'placeholder': 'ДД.ММ.ГГГГ'"
+    },
+    "textFieldEmail": {
+      "text": "данные для входа в сервис",
+      "placeholder": "Email",
+      "id": "email",
+      "name": "email",
+      "type": "email"
+    },
+    "textFieldPassword": { "placeholder": "Пароль", "name": "password", "type": "password" },
+    "toggle": {
+      "title": "Toggle",
+      "text": "Получать спецпредложения",
+      "id": "1",
+      "name": "special"
+    },
+    "buttonSubmit": {
+      "text": "зарегистрироваться",
+      "size": "large",
+      "isIcon": true,
+      "isButton": true,
+      "type": "submit"
+    },
+    "textSignIn": "Уже есть аккаунт на Toxin",
+    "buttonSign": { "text": "войти", "link": "landing-sign-in.html", "theme": "border" }
+  }
 }

@@ -1,16 +1,16 @@
 include ../text-field/text-field.pug
 include ../button/button.pug
 
-mixin sign-in({ title, link })
+mixin sign-in({ title, text, link, textFieldEmail, textFieldPassword, buttonSubmit, buttonRegistration })
   form.sign-in(action=link)
     h1.sign-in__title= title
 
     .sign-in__text-field
-      +text-field({ placeholder: 'Email', name: 'email', type: 'email' })
+      +text-field(textFieldEmail)
     .sign-in__text-field
-      +text-field({ placeholder: 'Пароль', name: 'password', type: 'password' })
+      +text-field(textFieldPassword)
     .sign-in__button
-      +button({ text: 'войти', size: 'large', isIcon: true, isButton: true, type: 'submit' })
+      +button(buttonSubmit)
     .sign-in__create
-      p.sign-in__text Нет аккаунта на Toxin?
-      +button({ text: 'создать', link: 'landing-registration.html', theme: 'border' })
+      p.sign-in__text= text
+      +button(buttonRegistration)

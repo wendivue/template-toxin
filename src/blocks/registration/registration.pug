@@ -4,28 +4,26 @@ include ../radio-buttons/radio-buttons.pug
 include ../toggle/toggle.pug
 include ../button/button.pug
 
-- const radioButtonsList = [{text: 'Мужчина', value: 'male', name: 'gender', isChecked: true}, {text: 'Женщина', name: 'gender', value: 'female'}];
-
-mixin registration({ title, link })
+mixin registration({ title, link, textFieldName, textFieldSurName, radioButtons, textFieldDate, textFieldEmail, textFieldPassword, toggle, buttonSubmit, textSignIn, buttonSign})
   form.registration(action=link)
     h1.registration__title= title
 
     .registration__text-field
-      +text-field({ placeholder: 'Имя', name: 'firstName', type: 'text' })
+      +text-field(textFieldName)
     .registration__text-field
-      +text-field({ placeholder: 'Фамилия', name: 'lastName', type: 'text' })
+      +text-field(textFieldSurName)
     .registration__radio-buttons
-      +radio-buttons({ radioButtonsList })
+      +radio-buttons(radioButtons)
     .registration__date-picker
-      +text-field({ text: 'дата рождения', placeholder: 'ДД.ММ.ГГГГ', id: 'date', type: 'text', name: 'date', mask:"'alias': 'datetime', 'inputFormat': 'dd/mm/yyyy', 'placeholder': 'ДД.ММ.ГГГГ'" })
+      +text-field(textFieldDate)
     .registration__text-field
-      +text-field({ text: 'данные для входа в сервис', placeholder: 'Email', id: 'email', name: 'email', type: 'email' })
+      +text-field(textFieldEmail)
     .registration__text-field
-      +text-field({ placeholder: 'Пароль', name: 'password', type: 'password' })
+      +text-field(textFieldPassword)
     .registration__toggle
-      +toggle({ title: 'Toggle', text: 'Получать спецпредложения', id: '1', name: 'special' })
+      +toggle(toggle)
     .registration__button
-      +button({ text: 'зарегистрироваться', size: 'large', isIcon: true, isButton: true, type: 'submit' })
+      +button(buttonSubmit)
     .registration__sign-in
-      p.registration__text-sign-in Уже есть аккаунт на Toxin
-      +button({ text: 'войти', link: 'landing-sign-in.html', theme: 'border' })
+      p.registration__text-sign-in= textSignIn
+      +button(buttonSign)
