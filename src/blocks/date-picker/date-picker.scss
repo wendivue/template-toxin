@@ -3,14 +3,6 @@
 @import '~Blocks/text-field/text-field';
 
 .date-picker {
-  &__wrapper-button {
-    max-width: 320px;
-    display: flex;
-    justify-content: space-between;
-    margin: 0 20px;
-    padding-bottom: 20px;
-  }
-
   &__wrapper-range {
     display: flex;
     justify-content: space-between;
@@ -30,6 +22,7 @@
 
   &__text-state {
     @include typo-h3;
+
     padding-top: 3px;
     align-self: baseline;
     color: $dark-shade-50;
@@ -40,24 +33,9 @@
     @include typo-h3;
   }
 
-  &__button {
-    @include typo-h3;
-    display: block;
-    flex: none;
-    padding: 0;
-    height: 0;
-    color: $color-primary;
-    border: none;
-    background: #fff;
-    cursor: pointer;
-
-    &:hover {
-      color: $dark-shade-50;
-    }
-  }
-
   &__input {
     @include typo-body;
+
     width: 100%;
     min-height: 44px;
     padding-left: 15px;
@@ -83,6 +61,7 @@
 
   &__icon {
     @include material-icons;
+
     position: absolute;
     padding: 10px;
     pointer-events: none;
@@ -90,6 +69,11 @@
 
     @media (max-width: $breakpoint-xxs) {
       width: 40px;
+    }
+
+    &_row {
+      position: relative;
+      color: $color-primary;
     }
   }
 
@@ -118,8 +102,11 @@
     padding: 16px 16px 10px 16px;
   }
 
-  &--nav-title {
+  &--nav-title,
+  i {
     @include typo-h2;
+
+    text-transform: capitalize;
   }
 
   &--content {
@@ -128,7 +115,9 @@
 
   &--day-name {
     @include typo-h3;
+
     color: $color-primary;
+    text-transform: capitalize;
   }
 
   &--pointer {
@@ -137,6 +126,7 @@
 
   &--cell {
     @include typo-h3;
+
     height: 40px;
     font-weight: normal;
     color: $dark-shade-50;
@@ -149,6 +139,40 @@
 
     &.-in-range- {
       background: rgba($color-primary, 0.25);
+    }
+  }
+
+  &--buttons {
+    justify-content: space-between;
+    flex-flow: row-reverse;
+    margin: 0 20px;
+    padding: 0 0 20px 0;
+    border: none;
+  }
+
+  &--button {
+    @include typo-h3;
+
+    &:first-child {
+      font-size: 0;
+
+      &:after {
+        content: 'применить';
+        font-size: 12px;
+      }
+    }
+
+    display: block;
+    flex: none;
+    padding: 0;
+    height: 0;
+    color: $color-primary;
+    border: none;
+    background: #fff;
+    cursor: pointer;
+
+    &:hover {
+      color: $dark-shade-50;
     }
   }
 }

@@ -28,8 +28,15 @@
     "itemsList": [
       { "text": "взрослые", "value": "0", "name": "adults-2" },
       { "text": "дети", "value": "0", "name": "children-2" },
-      { "text": "младенцы", "value": "0", "name": "babies-2" }
-    ]
+      {
+        "text": "младенцы",
+        "value": "0",
+        "name": "babies-2",
+        "declension": ["младенец", "младенца", "младенцев"]
+      }
+    ],
+    "defaultValue": "Сколько гостей",
+    "commonWord": ["гость", "гостя", "гостей"]
   },
   "textFieldMasked": {
     "text": "masked text field",
@@ -56,25 +63,17 @@
     "id": "date-2",
     "name": "filterDate",
     "size": "small",
-    "iconText": "expand_more"
+    "iconText": "expand_more",
+    "dateFormat": "d M"
   },
   "textFieldSubscription": {
     "text": "subscription text field",
-    "img": "img/logo.svg",
-    "textField": {
-      "placeholder": "Email",
-      "type": "email",
-      "size": "small",
-      "iconText": "arrow_forward",
-      "themeIcon": "submit",
-      "name": "email"
-    },
+    "placeholder": "Email",
     "type": "email",
-    "name": "email",
     "size": "small",
-    "id": "email",
     "iconText": "arrow_forward",
-    "themeIcon": "submit"
+    "themeIcon": "submit",
+    "name": "email"
   },
   "dropdownRoom": {
     "text": "Dropdown",
@@ -87,10 +86,26 @@
     "isItemsRoom": true,
     "isDropdown": true,
     "itemsList": [
-      { "text": "спальни", "value": "2", "name": "bedrooms-1" },
-      { "text": "кровати", "value": "2", "name": "bed-1" },
-      { "text": "ванные комнаты", "value": "0", "name": "bathrooms-1" }
-    ]
+      {
+        "text": "спальни",
+        "value": "2",
+        "name": "bedrooms-1",
+        "declension": ["спальня", "спальни", "спален"]
+      },
+      {
+        "text": "кровати",
+        "value": "2",
+        "name": "bed-1",
+        "declension": ["кровать", "кровати", "кроватей"]
+      },
+      {
+        "text": "ванные комнаты",
+        "value": "0",
+        "name": "bathrooms-1",
+        "declension": ["ванная", "ванные", "ванных"]
+      }
+    ],
+    "defaultValue": "Сколько комнат"
   },
   "dropdownRoomExpanded": {
     "text": "Dropdown",
@@ -104,10 +119,26 @@
     "isOpenMenu": true,
     "isDropdown": true,
     "itemsList": [
-      { "text": "спальни", "value": "2", "name": "bedrooms-1" },
-      { "text": "кровати", "value": "2", "name": "bed-1" },
-      { "text": "ванные комнаты", "value": "0", "name": "bathrooms-1" }
-    ]
+      {
+        "text": "спальни",
+        "value": "2",
+        "name": "bedrooms-1",
+        "declension": ["спальня", "спальни", "спален"]
+      },
+      {
+        "text": "кровати",
+        "value": "2",
+        "name": "bed-1",
+        "declension": ["кровать", "кровати", "кроватей"]
+      },
+      {
+        "text": "ванные комнаты",
+        "value": "0",
+        "name": "bathrooms-1",
+        "declension": ["ванная", "ванные", "ванных"]
+      }
+    ],
+    "defaultValue": "Сколько комнат"
   },
   "checkboxList": {
     "text": "expandable checkbox list",
@@ -188,8 +219,15 @@
     "itemsList": [
       { "text": "взрослые", "value": "0", "name": "adults-2" },
       { "text": "дети", "value": "0", "name": "children-2" },
-      { "text": "младенцы", "value": "0", "name": "babies-2" }
-    ]
+      {
+        "text": "младенцы",
+        "value": "0",
+        "name": "babies-2",
+        "declension": ["младенец", "младенца", "младенцев"]
+      }
+    ],
+    "defaultValue": "Сколько гостей",
+    "commonWord": ["гость", "гостя", "гостей"]
   },
   "checkboxButtonsRich": {
     "caption": "Rich Checkbox Buttons",
@@ -259,8 +297,15 @@
     "itemsList": [
       { "text": "взрослые", "value": "2", "name": "adults-1" },
       { "text": "дети", "value": "1", "name": "children-1" },
-      { "text": "младенцы", "value": "0", "name": "babies-1" }
-    ]
+      {
+        "text": "младенцы",
+        "value": "0",
+        "name": "babies-1",
+        "declension": ["младенец", "младенца", "младенцев"]
+      }
+    ],
+    "defaultValue": "Сколько гостей",
+    "commonWord": ["гость", "гостя", "гостей"]
   },
   "titleBulletList": "bullet list",
   "bulletList": {

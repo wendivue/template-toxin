@@ -7,6 +7,7 @@ block variables
   include ~Blocks/reservation/reservation.pug
   include ~Blocks/sign-in/sign-in.pug
   include ~Blocks/hotel-card/hotel-card.pug
+  include ~Blocks/date-picker/date-picker.pug
 
   - data = require("./ui-kits-cards.json");
 
@@ -32,7 +33,7 @@ block content
   +col-4
     .ui-kits-cards__wrapper-col
       .ui-kits-cards__date-picker
-        .datepicker-here
+        +date-picker(data.datePicker)
     each item in data.hotelList
       - const { number, itemList, price, isLux, link, reviews, star, text } = item;
       .ui-kits-cards__hotel-card

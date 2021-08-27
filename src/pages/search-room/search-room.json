@@ -5,7 +5,9 @@
     "type": "text",
     "name": "date",
     "id": "date",
-    "size": "small"
+    "size": "small",
+    "iconText": "expand_more",
+    "dateFormat": "d M"
   },
   "dropdownPeople": {
     "text": "гости",
@@ -19,8 +21,15 @@
     "itemsList": [
       { "text": "взрослые", "value": "2", "name": "adults" },
       { "text": "дети", "value": "1", "name": "children" },
-      { "text": "младенцы", "value": "1", "name": "babies" }
-    ]
+      {
+        "text": "младенцы",
+        "value": "1",
+        "name": "babies",
+        "declension": ["младенец", "младенца", "младенцев"]
+      }
+    ],
+    "defaultValue": "Сколько гостей",
+    "commonWord": ["гость", "гостя", "гостей"]
   },
   "rangeSlider": {
     "text": "диапазон цены",
@@ -67,10 +76,26 @@
     "isItemsRoom": true,
     "isDropdown": true,
     "itemsList": [
-      { "text": "спальни", "value": "2", "name": "bedrooms" },
-      { "text": "кровати", "value": "2", "name": "bed" },
-      { "text": "ванные комнаты", "value": "0", "name": "bathrooms" }
-    ]
+      {
+        "text": "спальни",
+        "value": "2",
+        "name": "bedrooms",
+        "declension": ["спальня", "спальни", "спален"]
+      },
+      {
+        "text": "кровати",
+        "value": "2",
+        "name": "bed",
+        "declension": ["кровать", "кровати", "кроватей"]
+      },
+      {
+        "text": "ванные комнаты",
+        "value": "0",
+        "name": "bathrooms",
+        "declension": ["ванная", "ванные", "ванных"]
+      }
+    ],
+    "defaultValue": "Сколько комнат"
   },
   "checkboxList": {
     "text": "дополнительные удобства",

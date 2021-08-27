@@ -24,10 +24,34 @@
     "votes": "260",
     "votesText": "голосов",
     "pieChartList": [
-      { "text": "Великолепно", "theme": "great", "votes": 65 },
-      { "text": "Хорошо", "theme": "good", "votes": 65 },
-      { "text": "Удовлетворительно", "theme": "norm", "votes": 130 },
-      { "text": "Разочарован", "theme": "disappoint", "votes": 0 }
+      {
+        "text": "Великолепно",
+        "theme": "great",
+        "votes": 65,
+        "colorFirst": "#BC9CFF",
+        "colorSecond": "#8BA4F9"
+      },
+      {
+        "text": "Хорошо",
+        "theme": "good",
+        "votes": 65,
+        "colorFirst": "#6FCF97",
+        "colorSecond": "#66D2EA"
+      },
+      {
+        "text": "Удовлетворительно",
+        "theme": "norm",
+        "votes": 130,
+        "colorFirst": "#FFE39C",
+        "colorSecond": "#FFE39C"
+      },
+      {
+        "text": "Разочарован",
+        "theme": "disappoint",
+        "votes": 0,
+        "colorFirst": "#919191",
+        "colorSecond": "#3d4975"
+      }
     ]
   },
   "reviewsTitle": "Отзывы посетителей номера",
@@ -89,8 +113,15 @@
       "itemsList": [
         { "text": "взрослые", "value": "2", "name": "adults" },
         { "text": "дети", "value": "1", "name": "children" },
-        { "text": "младенцы", "value": "0", "name": "babies" }
-      ]
+        {
+          "text": "младенцы",
+          "value": "0",
+          "name": "babies",
+          "declension": ["младенец", "младенца", "младенцев"]
+        }
+      ],
+      "defaultValue": "Сколько гостей",
+      "commonWord": ["гость", "гостя", "гостей"]
     },
     "priceList": {
       "itemList": [

@@ -1,18 +1,5 @@
 mixin pie-chart({ img, votes, votesText, pieChartList })
-  -
-    const [votesGreat, votesGood, votesNorm, votesDisappoint] = [pieChartList[0].votes, pieChartList[1].votes, pieChartList[2].votes, pieChartList[3].votes];
-    const [colorsGreat, colorsGood, colorsNorm, colorsDisappoint] = [pieChartList[0].theme, pieChartList[1].theme, pieChartList[2].theme, pieChartList[3].theme];
-
-  .pie-chart.js-pie-chart(
-    data-votes-great=votesGreat,
-    data-votes-good=votesGood,
-    data-votes-norm=votesNorm,
-    data-votes-disappoint=votesDisappoint,
-    data-colors-great=colorsGreat,
-    data-colors-good=colorsGood,
-    data-colors-norm=colorsNorm,
-    data-colors-disappoint=colorsDisappoint
-  )
+  .pie-chart.js-pie-chart
     .pie-chart__wrapper-canvas
       canvas.pie-chart__canvas.js-pie-chart__canvas
       .pie-chart__wrapper-text-diagram
@@ -22,10 +9,15 @@ mixin pie-chart({ img, votes, votesText, pieChartList })
     ul.pie-chart__list
       each item in pieChartList
         -
-          let { theme, text } = item;
+          let { theme, text, colorFirst, colorSecond, votes } = item;
           let itemClass = '';
           const themeSetting = ["great", "good", "norm", "disappoint"];
 
           if (themeSetting.includes(theme)) itemClass += " pie-chart__item_" + theme;
 
-        li.pie-chart__item(class=itemClass)= text
+        li.pie-chart__item.js-pie-chart__item(
+          class=itemClass,
+          data-votes=votes,
+          data-color-first=colorFirst,
+          data-color-second=colorSecond
+        )= text

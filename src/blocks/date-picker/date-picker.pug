@@ -1,15 +1,23 @@
 include ../text-field/text-field.pug
 
-mixin date-picker({ state, size, id, text, textState, type, name, isDateRange, placeholder, iconText })
+mixin date-picker({ state, size, id, text, textState, type, name, isDateRange, placeholder, iconText, dateFormat, dateNavTitles = 'MM yyyy', inline = false })
   -
     let datePickerClass;
     let inputClass;
+    let datePickerType;
 
     if (['small'].includes(size)) datePickerClass +=' date-picker_' + size;
     if (['active'].includes(state)) inputClass += ' date-picker__input_' + state;
     if (iconText) inputClass += ' date-picker__input_icon';
+    if(isDateRange) datePickerType = 'range';
 
-  .date-picker(class=datePickerClass)
+  .date-picker.js-date-picker(
+    class=datePickerClass,
+    data-type=datePickerType,
+    data-date-format=dateFormat,
+    data-date-nav-titles=dateNavTitles,
+    data-inline=inline.toString()
+  )
     if (isDateRange)
       .date-picker__wrapper-range 
         label.date-picker__label
@@ -19,7 +27,7 @@ mixin date-picker({ state, size, id, text, textState, type, name, isDateRange, p
               if (textState)
                 p.date-picker__text-state= textState
           .date-picker__wrapper-input
-            input.date-picker__input.js-date-picker__input-start(
+            input.date-picker__input.js-date-picker__input.js-date-picker__input-start(
               id=id[0],
               class=inputClass,
               type=type,
@@ -49,7 +57,7 @@ mixin date-picker({ state, size, id, text, textState, type, name, isDateRange, p
             )
             if (iconText)
               button.date-picker__icon= iconText
-    else
+    else if (!inline)
       label.date-picker__label
         if (text)
           .date-picker__wrapper-text
@@ -57,7 +65,7 @@ mixin date-picker({ state, size, id, text, textState, type, name, isDateRange, p
             if (textState)
               p.date-picker__text-state= textState
         .date-picker__wrapper-input
-          input.date-picker__input.js-date-picker__input-range.js-date-picker__input-single(
+          input.date-picker__input.js-date-picker__input.js-date-picker__input-single(
             id=id,
             class=inputClass,
             type=type,

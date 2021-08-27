@@ -1,29 +1,32 @@
 include ../text-field/text-field.pug
 
-mixin dropdown({ isOpenMenu, size, isButtonMenu, value, text, isItemsRoom, state, id, type, name, iconText, themeIcon, textState, isDropdown, itemsList, isHideButtonCleans, readonly = true })
+mixin dropdown({ isOpenMenu, size, isButtonMenu, value, text, state, id, type, name, iconText, themeIcon, textState, isDropdown, itemsList, isHideButtonCleans, readonly = true, defaultValue, commonWord })
   -
     const buttonCleansHideClass = isHideButtonCleans ? 'dropdown__button-menu_hide' : '';
     let dropdownClass = '';
     let menuClass = '';
-    let typeData = 'people';
     let sizeSetting = ['small'];
 
     if(sizeSetting.includes(size)) dropdownClass += ' dropdown_' + size;
     if(sizeSetting.includes(size)) menuClass += ' dropdown__menu_' + size;
     if(isOpenMenu) menuClass += ' dropdown__menu_active';
-    if(isItemsRoom) typeData = 'room';
 
-  .dropdown.js-dropdown(class=dropdownClass, data-type=typeData)
+  .dropdown.js-dropdown(
+    class=dropdownClass,
+    data-type=typeData,
+    data-default-value=defaultValue,
+    data-common-word=commonWord
+  )
     +text-field({ isOpenMenu, size, id, type, value, name, iconText, themeIcon, textState, isDropdown, text, readonly })
     .dropdown__menu.js-dropdown__menu(class=menuClass)
       ul.dropdown__list
         each item in itemsList
           -
-            let { value, text, name } = item;
+            let { value, text, name, declension } = item;
             let buttonDecreaseClass = '';
             if(value === "0") buttonDecreaseClass += " dropdown__button_no-active"
 
-          li.dropdown__item
+          li.dropdown__item.js-dropdown__item(data-declension=declension)
             p.dropdown__text= text
             .dropdown__wrapper-input
               button.dropdown__button.js-dropdown__button.dropdown__button_decrease.js-dropdown__button_decrease(

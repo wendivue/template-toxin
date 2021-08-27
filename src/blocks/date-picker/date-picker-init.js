@@ -1,3 +1,5 @@
-import datePicker from './date-picker';
+import DatePicker from './date-picker';
 
-datePicker('.js-text-field__datepicker');
+$('.js-date-picker').each(function datePicker() {
+  return new DatePicker($(this));
+});

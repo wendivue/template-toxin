@@ -1,45 +1,93 @@
 import 'air-datepicker/dist/js/datepicker';
 
-function datePicker(element) {
-  $(`${element}, .datepicker-here`).datepicker({
-    navTitles: {
-      days: 'MM yyyy',
-    },
-    startDate: new Date(),
-    prevHtml: '<button class="date-picker__icon">arrow_back</button>',
-    nextHtml: '<button class="date-picker__icon">arrow_forward</button>',
-  });
+class DatePicker {
+  constructor($anchor) {
+    this.$anchor = $anchor;
 
-  $('.js-date-picker__input-range').datepicker({
-    range: true,
-    minDate: new Date(),
-  });
+    this.init();
+  }
 
-  $('.js-date-picker__input-start, .js-date-picker__input-end').datepicker({
-    range: true,
-    minDate: new Date(),
-    onSelect: (fd) => {
-      $('.js-date-picker__input-start').val(fd.split('-')[0]);
-      $('.js-date-picker__input-end').val(fd.split('-')[1]);
-    },
-  });
+  init() {
+    this.getElement();
+    this.getAttribute();
+    this.createDatePicker();
+    this.bindEventButtonClick(this.$button);
+    this.bindEventEndClick(this.$end);
+  }
 
-  $('.js-date-picker__input-single').datepicker({
-    dateFormat: 'd M',
-    onSelect: (fd) => {
-      $('.js-date-picker__input-single').val(fd.toLowerCase());
-    },
-  });
+  getElement() {
+    this.$input = this.$anchor.find('.js-date-picker__input');
+    this.$start = this.$anchor.find('.js-date-picker__input-start');
+    this.$end = this.$anchor.find('.js-date-picker__input-end');
+    this.$single = this.$anchor.find('.js-date-picker__input-single');
+  }
 
-  $('.datepicker').append(
-    `<div class='date-picker__wrapper-button'>
-    <button class= 'datepicker--button date-picker__button date-picker__button_cleans ' data-action='clear' > очистить</button >
-    <button class='date-picker__button js-date-picker__button'>применить</button></div >`
-  );
+  getAttribute() {
+    this.dateRangeType = this.$anchor.attr('data-type');
+    this.dateFormat = this.$anchor.attr('data-date-format');
+    this.dateNavTitles = this.$anchor.attr('data-date-nav-titles');
+    this.inline = JSON.parse(this.$anchor.attr('data-inline'));
+  }
 
-  $('.js-date-picker__button').on('click', () => {
-    $('.datepicker-here').blur();
-  });
+  createDatePicker() {
+    const onSelect = this.addOnSelect();
+    if (this.inline) this.$input = this.$anchor;
+
+    this.datepicker = this.$input
+      .datepicker({
+        navTitles: {
+          days: this.dateNavTitles,
+        },
+        dateFormat: this.dateFormat,
+        range: true,
+        todayButton: true,
+        clearButton: true,
+        inline: this.inline,
+        startDate: new Date(),
+        minDate: new Date(),
+        prevHtml: '<button class="date-picker__icon date-picker__icon_row">arrow_back</button>',
+        nextHtml: '<button class="date-picker__icon date-picker__icon_row">arrow_forward</button>',
+        onSelect,
+      })
+      .data('datepicker');
+
+    this.$button = $('.datepicker--button');
+  }
+
+  addOnSelect() {
+    let onSelect = this.dateRangeType;
+
+    if (this.dateRangeType) {
+      onSelect = (fd) => {
+        this.$start.val(fd.split('-')[0]);
+        this.$end.val(fd.split('-')[1]);
+      };
+
+      return onSelect;
+    }
+
+    onSelect = (fd) => {
+      this.$single.val(fd.toLowerCase());
+    };
+
+    return onSelect;
+  }
+
+  bindEventButtonClick(element) {
+    element.on('click', this.hide.bind(this));
+  }
+
+  bindEventEndClick(element) {
+    element.on('click', this.show.bind(this));
+  }
+
+  hide() {
+    this.datepicker.hide();
+  }
+
+  show() {
+    this.datepicker.show();
+  }
 }
 
-export default datePicker;
+export default DatePicker;

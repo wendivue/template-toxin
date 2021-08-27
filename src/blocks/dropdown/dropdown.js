@@ -1,13 +1,5 @@
 import { getDeclension } from 'Helpers/getDeclension';
 
-const ROOM = 'room';
-const PEOPLE = 'people';
-const guestDeclension = ['гость', 'гостя', 'гостей'];
-const roomDeclension = ['спальня', 'спальни', 'спален'];
-const bedDeclension = ['кровать', 'кровати', 'кроватей'];
-const bathDeclension = ['ванная', 'ванные', 'ванных'];
-const babyDeclension = ['младенец', 'младенца', 'младенцев'];
-
 class Dropdown {
   constructor(anchor) {
     this.anchor = anchor;
@@ -28,6 +20,7 @@ class Dropdown {
   getElement() {
     this.input = this.anchor.querySelectorAll('.js-dropdown__input');
     this.dropdownInput = this.anchor.querySelectorAll('.js-text-field__input');
+    this.items = this.anchor.querySelectorAll('.js-dropdown__item');
     this.button = this.anchor.querySelectorAll('.js-dropdown__button');
     this.buttonIncrease = this.anchor.querySelectorAll('.js-dropdown__button_increase');
     this.buttonDecrease = this.anchor.querySelectorAll('.js-dropdown__button_decrease');
@@ -36,25 +29,26 @@ class Dropdown {
   }
 
   getAttribute() {
-    this.type = this.anchor.getAttribute('data-type');
+    this.defaultValue = this.anchor.getAttribute('data-default-value');
+    this.commonWord = JSON.parse(this.anchor.getAttribute('data-common-word'));
+
+    this.declension = [];
+
+    this.items.forEach((item) => {
+      if (item.getAttribute('data-declension')) {
+        this.declension.push(JSON.parse(item.getAttribute('data-declension')));
+      }
+    });
   }
 
-  bindEventClick(peopleIncrease, peopleDecrease) {
-    if (this.type === 'people') {
-      peopleIncrease[0].addEventListener('click', this.changeValuePeopleIncrease.bind(this, 0));
-      peopleIncrease[1].addEventListener('click', this.changeValuePeopleIncrease.bind(this, 1));
-      peopleIncrease[2].addEventListener('click', this.changeValueBabyIncrease.bind(this));
-      peopleDecrease[0].addEventListener('click', this.changeValuePeopleDecrease.bind(this, 0));
-      peopleDecrease[1].addEventListener('click', this.changeValuePeopleDecrease.bind(this, 1));
-      peopleDecrease[2].addEventListener('click', this.changeValueBabyDecrease.bind(this));
-    } else {
-      peopleIncrease[0].addEventListener('click', this.changeValueRoomIncrease.bind(this, 0));
-      peopleIncrease[1].addEventListener('click', this.changeValueRoomIncrease.bind(this, 1));
-      peopleIncrease[2].addEventListener('click', this.changeValueRoomIncrease.bind(this, 2));
-      peopleDecrease[0].addEventListener('click', this.changeValueRoomDecrease.bind(this, 0));
-      peopleDecrease[1].addEventListener('click', this.changeValueRoomDecrease.bind(this, 1));
-      peopleDecrease[2].addEventListener('click', this.changeValueRoomDecrease.bind(this, 2));
-    }
+  bindEventClick(elementIncrease, elementDecrease) {
+    elementIncrease.forEach((element, index) => {
+      element.addEventListener('click', this.changeValueIncrease.bind(this, index));
+    });
+
+    elementDecrease.forEach((element, index) => {
+      element.addEventListener('click', this.changeValueDecrease.bind(this, index));
+    });
   }
 
   bindEventToggle(elements, buttons) {
@@ -77,80 +71,33 @@ class Dropdown {
     document.addEventListener('click', this.handleDocumentClick);
   }
 
-  changeValueRoomIncrease(index) {
+  changeValueIncrease(index) {
     this.removeDecrease(this.buttonDecrease, index);
 
     let value = this.getMenuValue(index);
     value = this.increase(value);
     value = this.validateValue(value);
-    if (value === 0) this.addDecrease(this.buttonDecrease, index);
-    this.setValue(index, value);
 
-    this.input[index].value = value;
-    this.updateValue(ROOM);
+    this.update(value, index);
   }
 
-  changeValueRoomDecrease(index) {
+  changeValueDecrease(index) {
     let value = this.getMenuValue(index);
     value = this.decrease(value);
     value = this.validateValue(value);
+
+    this.update(value, index);
+  }
+
+  update(value, index) {
+    if (this.buttonCleans[0]) this.buttonCleans[0].classList.remove('dropdown__button-menu_hide');
+
     if (value === 0) this.addDecrease(this.buttonDecrease, index);
     this.setValue(index, value);
+    if (index !== 2) this.setValueFullValue();
 
     this.input[index].value = value;
-    this.updateValue(ROOM);
-  }
-
-  changeValuePeopleIncrease(index) {
-    this.buttonCleans[0].classList.remove('dropdown__button-menu_hide');
-    this.removeDecrease(this.buttonDecrease, index);
-
-    let value = this.getMenuValue(index);
-    value = this.increase(value);
-    value = this.validateValue(value);
-    if (value === 0) this.addDecrease(this.buttonDecrease, index);
-    this.setValue(index, value);
-    this.setValueFullValue();
-
-    this.input[index].value = value;
-    this.updateValue(PEOPLE);
-  }
-
-  changeValuePeopleDecrease(index) {
-    this.buttonCleans[0].classList.remove('dropdown__button-menu_hide');
-
-    let value = this.getMenuValue(index);
-    value = this.decrease(value);
-    value = this.validateValue(value);
-    if (value === 0) this.addDecrease(this.buttonDecrease, index);
-    this.setValue(index, value);
-    this.setValueFullValue();
-
-    this.input[index].value = value;
-    this.updateValue(PEOPLE);
-  }
-
-  changeValueBabyIncrease() {
-    this.buttonCleans[0].classList.remove('dropdown__button-menu_hide');
-    this.removeDecrease(this.buttonDecrease, 2);
-
-    this.val3 = this.increase(this.val3);
-    this.val3 = this.validateValue(this.val3);
-    if (this.val3 === 0) this.addDecrease(this.buttonDecrease, 2);
-
-    this.input[2].value = this.val3;
-    this.updateValue(PEOPLE);
-  }
-
-  changeValueBabyDecrease() {
-    this.buttonCleans[0].classList.remove('dropdown__button-menu_hide');
-
-    this.val3 = this.decrease(this.val3);
-    this.val3 = this.validateValue(this.val3);
-    if (this.val3 === 0) this.addDecrease(this.buttonDecrease, 2);
-
-    this.input[2].value = this.val3;
-    this.updateValue(PEOPLE);
+    this.updateValue();
   }
 
   getValue() {
@@ -171,27 +118,28 @@ class Dropdown {
   }
 
   getString() {
-    const str1 = getDeclension(this.val2, roomDeclension);
-    const str2 = getDeclension(this.val1, bedDeclension);
-    const str3 = getDeclension(this.val3, bathDeclension);
-    const str4 = getDeclension(this.fullVal, guestDeclension);
-    const str5 = getDeclension(this.val3, babyDeclension);
+    const arrayValue = [this.val2, this.val1, this.val3];
+    const stringList = [];
 
-    return { str1, str2, str3, str4, str5 };
+    if (this.declension.length < 2) {
+      stringList.push(getDeclension(this.fullVal, this.commonWord));
+      stringList.push(getDeclension(arrayValue[2], this.declension[0]));
+    } else {
+      arrayValue.forEach((value, index) => {
+        stringList.push(getDeclension(value, this.declension[index]));
+      });
+    }
+
+    return stringList;
   }
 
-  updateValue(type) {
+  updateValue() {
     let string;
-    const { str1, str2, str3, str4, str5 } = this.getString();
     const dropdownMenu = this.anchor.querySelector('.js-text-field__input');
-    const arrRoom = [str1, str2, str3];
-    const arrPeople = [str4, str5];
+    const arr = this.getString();
 
-    if (ROOM === type) string = arrRoom.filter(Boolean).join(', ');
-    string = this.validateEmptyString(string, 'Сколько комнат');
-
-    if (PEOPLE === type) string = arrPeople.filter(Boolean).join(', ');
-    string = this.validateEmptyString(string, 'Сколько гостей');
+    string = arr.filter(Boolean).join(', ');
+    string = this.validateEmptyString(string, this.defaultValue);
 
     dropdownMenu.value = string;
   }
@@ -228,7 +176,7 @@ class Dropdown {
 
   clear() {
     this.buttonCleans[0].classList.add('dropdown__button-menu_hide');
-    this.dropdownInput[0].value = 'Сколько гостей';
+    this.dropdownInput[0].value = this.defaultValue;
 
     this.input.forEach((element) => {
       const input = element;

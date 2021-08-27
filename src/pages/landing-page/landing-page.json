@@ -24,8 +24,15 @@
       "itemsList": [
         { "text": "взрослые", "value": "0", "name": "adults" },
         { "text": "дети", "value": "0", "name": "children" },
-        { "text": "младенцы", "value": "0", "name": "babies" }
-      ]
+        {
+          "text": "младенцы",
+          "value": "0",
+          "name": "babies",
+          "declension": ["младенец", "младенца", "младенцев"]
+        }
+      ],
+      "defaultValue": "Сколько гостей",
+      "commonWord": ["гость", "гостя", "гостей"]
     },
     "button": {
       "text": "подобрать номер",

@@ -15,35 +15,35 @@ class PieChart {
 
   getElement() {
     this.canvas = this.anchor.querySelector('.js-pie-chart__canvas').getContext('2d');
+    this.items = this.anchor.querySelectorAll('.js-pie-chart__item');
   }
 
   getAttribute() {
-    this.votesGreat = this.anchor.getAttribute('data-votes-great');
-    this.votesGood = this.anchor.getAttribute('data-votes-good');
-    this.votesNorm = this.anchor.getAttribute('data-votes-norm');
-    this.votesDisappoint = this.anchor.getAttribute('data-votes-disappoint');
-    this.colorsGreat = this.anchor.getAttribute('data-colors-great');
-    this.colorsGood = this.anchor.getAttribute('data-colors-good');
-    this.colorsNorm = this.anchor.getAttribute('data-colors-norm');
-    this.colorsDisappoint = this.anchor.getAttribute('data-colors-disappoint');
+    this.votes = [];
+    this.colors = [];
+
+    this.items.forEach((item) => {
+      const color = [];
+
+      this.votes.push(item.getAttribute('data-votes'));
+      color.push(item.getAttribute('data-color-first'));
+      color.push(item.getAttribute('data-color-second'));
+      this.colors = [...this.colors, color];
+    });
   }
 
   createChart() {
-    const colorsGreatList = this.validateColor(this.colorsGreat);
-    const colorsGoodList = this.validateColor(this.colorsGood);
-    const colorsNormList = this.validateColor(this.colorsNorm);
-    const colorsDisappointList = this.validateColor(this.colorsDisappoint);
+    const gradientList = [];
+
+    this.colors.forEach((item) => {
+      gradientList.push(this.createGradient(item));
+    });
 
     const data = {
       datasets: [
         {
-          data: [this.votesGreat, this.votesGood, this.votesNorm, this.votesDisappoint],
-          backgroundColor: [
-            this.createGradient(colorsGreatList),
-            this.createGradient(colorsGoodList),
-            this.createGradient(colorsNormList),
-            this.createGradient(colorsDisappointList),
-          ],
+          data: this.votes,
+          backgroundColor: gradientList,
           cutout: '90%',
         },
       ],
@@ -78,16 +78,6 @@ class PieChart {
     gradient.addColorStop(0, firstColor);
     gradient.addColorStop(1, secondColor);
     return gradient;
-  }
-
-  validateColor(theme) {
-    let colorList;
-    if (theme === 'great') colorList = ['#BC9CFF', '#8BA4F9'];
-    if (theme === 'good') colorList = ['#6FCF97', '#66D2EA'];
-    if (theme === 'norm') colorList = ['#FFE39C', '#FFBA9C'];
-    if (theme === 'disappoint') colorList = ['#919191', '#3d4975'];
-
-    return colorList;
   }
 }
 
