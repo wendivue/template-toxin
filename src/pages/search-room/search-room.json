@@ -33,7 +33,16 @@
   },
   "rangeSlider": {
     "text": "диапазон цены",
-    "rangeConfig": { "dataMin": 0, "dataMax": 15500, "dataFrom": 5000, "dataTo": 10000 }
+    "rangeConfig": {
+      "dataMin": 0,
+      "dataMax": 15500,
+      "dataFrom": 5000,
+      "dataTo": 10000,
+      "dataType": "double",
+      "dataPostfix": "₽",
+      "dataStep": 100,
+      "dataValuesSeparator": " - "
+    }
   },
   "textRangeSlider": "Стоимость за сутки пребывания в номере",
   "checkboxButtonsRules": {
@@ -124,7 +133,8 @@
         { "img": "img/hotel-1.png" },
         { "img": "img/hotel-1.png" }
       ],
-      "text": { "typeText": "люкс", "period": "в сутки", "reviewText": "Отзывов" }
+      "text": { "typeText": "люкс", "period": "в сутки", "reviewText": "Отзывов" },
+      "carousel": { "dataNav": true, "dataItems": 1, "dataDots": true }
     },
     {
       "number": "840",
@@ -138,7 +148,8 @@
         { "img": "img/hotel-2.png" },
         { "img": "img/hotel-2.png" }
       ],
-      "text": { "typeText": "люкс", "period": "в сутки", "reviewText": "Отзывов" }
+      "text": { "typeText": "люкс", "period": "в сутки", "reviewText": "Отзывов" },
+      "carousel": { "dataNav": true, "dataItems": 1, "dataDots": true }
     },
     {
       "number": "980",
@@ -153,7 +164,8 @@
         { "img": "img/hotel-3.png" },
         { "img": "img/hotel-3.png" }
       ],
-      "text": { "typeText": "люкс", "period": "в сутки", "reviewText": "Отзывов" }
+      "text": { "typeText": "люкс", "period": "в сутки", "reviewText": "Отзывов" },
+      "carousel": { "dataNav": true, "dataItems": 1, "dataDots": true }
     },
     {
       "number": "856",
@@ -167,7 +179,8 @@
         { "img": "img/hotel-4.png" },
         { "img": "img/hotel-4.png" }
       ],
-      "text": { "typeText": "люкс", "period": "в сутки", "reviewText": "Отзывов" }
+      "text": { "typeText": "люкс", "period": "в сутки", "reviewText": "Отзывов" },
+      "carousel": { "dataNav": true, "dataItems": 1, "dataDots": true }
     },
     {
       "number": "740",
@@ -181,7 +194,8 @@
         { "img": "img/hotel-5.png" },
         { "img": "img/hotel-5.png" }
       ],
-      "text": { "typeText": "люкс", "period": "в сутки", "reviewText": "Отзывов" }
+      "text": { "typeText": "люкс", "period": "в сутки", "reviewText": "Отзывов" },
+      "carousel": { "dataNav": true, "dataItems": 1, "dataDots": true }
     },
     {
       "number": "982",
@@ -195,7 +209,8 @@
         { "img": "img/hotel-6.png" },
         { "img": "img/hotel-6.png" }
       ],
-      "text": { "typeText": "люкс", "period": "в сутки", "reviewText": "Отзывов" }
+      "text": { "typeText": "люкс", "period": "в сутки", "reviewText": "Отзывов" },
+      "carousel": { "dataNav": true, "dataItems": 1, "dataDots": true }
     },
     {
       "number": "678",
@@ -209,7 +224,8 @@
         { "img": "img/hotel-7.png" },
         { "img": "img/hotel-7.png" }
       ],
-      "text": { "typeText": "люкс", "period": "в сутки", "reviewText": "Отзывов" }
+      "text": { "typeText": "люкс", "period": "в сутки", "reviewText": "Отзывов" },
+      "carousel": { "dataNav": true, "dataItems": 1, "dataDots": true }
     },
     {
       "number": "450",
@@ -223,7 +239,8 @@
         { "img": "img/hotel-8.png" },
         { "img": "img/hotel-8.png" }
       ],
-      "text": { "typeText": "люкс", "period": "в сутки", "reviewText": "Отзывов" }
+      "text": { "typeText": "люкс", "period": "в сутки", "reviewText": "Отзывов" },
+      "carousel": { "dataNav": true, "dataItems": 1, "dataDots": true }
     },
     {
       "number": "350",
@@ -237,7 +254,8 @@
         { "img": "img/hotel-9.png" },
         { "img": "img/hotel-9.png" }
       ],
-      "text": { "typeText": "люкс", "period": "в сутки", "reviewText": "Отзывов" }
+      "text": { "typeText": "люкс", "period": "в сутки", "reviewText": "Отзывов" },
+      "carousel": { "dataNav": true, "dataItems": 1, "dataDots": true }
     },
     {
       "number": "666",
@@ -251,7 +269,8 @@
         { "img": "img/hotel-10.png" },
         { "img": "img/hotel-10.png" }
       ],
-      "text": { "typeText": "люкс", "period": "в сутки", "reviewText": "Отзывов" }
+      "text": { "typeText": "люкс", "period": "в сутки", "reviewText": "Отзывов" },
+      "carousel": { "dataNav": true, "dataItems": 1, "dataDots": true }
     },
     {
       "number": "444",
@@ -265,7 +284,8 @@
         { "img": "img/hotel-11.png" },
         { "img": "img/hotel-11.png" }
       ],
-      "text": { "typeText": "люкс", "period": "в сутки", "reviewText": "Отзывов" }
+      "text": { "typeText": "люкс", "period": "в сутки", "reviewText": "Отзывов" },
+      "carousel": { "dataNav": true, "dataItems": 1, "dataDots": true }
     },
     {
       "number": "352",
@@ -279,7 +299,8 @@
         { "img": "img/hotel-12.png" },
         { "img": "img/hotel-12.png" }
       ],
-      "text": { "typeText": "люкс", "period": "в сутки", "reviewText": "Отзывов" }
+      "text": { "typeText": "люкс", "period": "в сутки", "reviewText": "Отзывов" },
+      "carousel": { "dataNav": true, "dataItems": 1, "dataDots": true }
     }
   ]
 }

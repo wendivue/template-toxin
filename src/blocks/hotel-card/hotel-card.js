@@ -1,15 +1,34 @@
 import 'owl.carousel';
 
-function hotelCard(element) {
-  $(element).owlCarousel({
-    nav: true,
-    items: 1,
-    dots: true,
-    navText: [
-      '<button class="hotel-card__icon">expand_more</button>',
-      '<button class="hotel-card__icon">expand_more</button>',
-    ],
-  });
+class HotelCard {
+  constructor($anchor) {
+    this.$anchor = $anchor;
+
+    this.init();
+  }
+
+  init() {
+    this.getAttribute();
+    this.createSlider();
+  }
+
+  getAttribute() {
+    this.dataNav = JSON.parse(this.$anchor.attr('data-nav'));
+    this.dataItems = this.$anchor.attr('data-items');
+    this.dataDots = JSON.parse(this.$anchor.attr('data-dots'));
+  }
+
+  createSlider() {
+    this.$anchor.owlCarousel({
+      nav: this.dataNav,
+      items: this.dataItems,
+      dots: this.dataDots,
+      navText: [
+        '<button class="hotel-card__icon">expand_more</button>',
+        '<button class="hotel-card__icon">expand_more</button>',
+      ],
+    });
+  }
 }
 
-export default hotelCard;
+export default HotelCard;

@@ -1,14 +1,19 @@
 include ../rate-button/rate-button.pug
 
-mixin hotel-card({ number, itemList, price, isLux, link, reviews, star, text })
+mixin hotel-card({ number, itemList, price, isLux, link, reviews, star, text, carousel })
   -
     const altText = "hotel-" + number;
     const { typeText, period, reviewText } = text;
+    const { dataNav, dataItems, dataDots } = carousel;
 
 
   .hotel-card
     .hotel-card__slider
-      ul.owl-carousel.owl-theme.js-owl-carousel
+      ul.owl-carousel.js-owl-carousel(
+        data-nav=dataNav.toString(),
+        data-items=dataItems,
+        data-dots=dataDots.toString()
+      )
         each item in itemList
           li.hotel-card__item
             a.hotel-card__link(href=link)

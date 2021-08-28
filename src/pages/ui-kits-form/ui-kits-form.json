@@ -250,7 +250,16 @@
   "titleRate": "rate button",
   "rangeSlider": {
     "text": "Range Slider",
-    "rangeConfig": { "dataMin": 0, "dataMax": 15500, "dataFrom": 5000, "dataTo": 10000 }
+    "rangeConfig": {
+      "dataMin": 0,
+      "dataMax": 15500,
+      "dataFrom": 5000,
+      "dataTo": 10000,
+      "dataType": "double",
+      "dataPostfix": "₽",
+      "dataStep": 100,
+      "dataValuesSeparator": " - "
+    }
   },
   "titleButtons": "buttons",
   "buttonList": [

@@ -1,3 +1,5 @@
-import hotelCard from './hotel-card';
+import HotelCard from './hotel-card';
 
-hotelCard('.js-owl-carousel');
+$('.js-owl-carousel').each(function hotelCard() {
+  return new HotelCard($(this));
+});

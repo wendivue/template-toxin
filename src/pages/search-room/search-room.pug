@@ -39,9 +39,9 @@ block content
     h1.search-room__title= data.title
     ul.search-room__wrapper-hotel-card
       each item in data.hotelCards
-        - const { number, itemList, price, isLux, link, reviews, star, text } = item;
+        - const { number, itemList, price, isLux, link, reviews, star, text, carousel } = item;
         li.search-room__hotel-card
-          +hotel-card({number, itemList, price, isLux, link, reviews, star, text})
+          +hotel-card({number, itemList, price, isLux, link, reviews, star, text, carousel})
 
     .search-room__pagination
       +pagination(data.pagination)
