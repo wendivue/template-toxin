@@ -1,8 +1,9 @@
+include ../radio-button/radio-button.pug
+
 mixin radio-buttons({ radioButtonsList })
   .radio-buttons
     ul.radio-buttons__items
       each item in radioButtonsList
         - const { isChecked, value, name, text } = item;
         li.radio-buttons__item
-          input.radio-buttons__radio(id=value, type='radio', name=name, value=value, checked=isChecked)
-          label.radio-buttons__label(for=value)= text
+          +radio-button({isChecked, value, name, text})

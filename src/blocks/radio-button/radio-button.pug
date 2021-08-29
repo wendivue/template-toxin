@@ -1,0 +1,4 @@
+mixin radio-button({ isChecked, value, name, text })
+  .radio-button
+    input.radio-button__radio(id=value, type='radio', name=name, value=value, checked=isChecked)
+    label.radio-button__label(for=value)= text
