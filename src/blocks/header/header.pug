@@ -2,7 +2,7 @@ include ../button/button.pug
 include ../page/page.pug
 include ../center-block/center-block.pug
 
-mixin header({ itemList, size, textLogin, loginButton, loginLink, registerButton })
+mixin header({ list, size, textLogin, loginButton, loginLink, registerButton })
   header.header.js-header
     +page({ state: "small" })
       +center-block
@@ -13,9 +13,9 @@ mixin header({ itemList, size, textLogin, loginButton, loginLink, registerButton
           .header__burger.js-header__burger menu
           nav.header__menu.js-header__menu
             ul.header__list
-              each item in itemList
+              each item in list
                 -
-                  let { state, link, text, isIcon, subItemList } = item;
+                  let { state, link, text, hasIcon, subList } = item;
                   let itemClass = '';
                   let linkClass = '';
                   let iconClass = '';
@@ -31,11 +31,11 @@ mixin header({ itemList, size, textLogin, loginButton, loginLink, registerButton
 
                 li.header__item(class=itemClass)
                   a.header__link(class=linkClass, href=link)= text
-                    if (subItemList)
+                    if (subList)
                       i.header__icon(class=iconClass) expand_more
-                  if (subItemList)
+                  if (subList)
                     ul.header__sub-menu
-                      each subItem in subItemList
+                      each subItem in subList
                         li.header__subitem
                           a.header__link(href=subItem.link)= subItem.text
 

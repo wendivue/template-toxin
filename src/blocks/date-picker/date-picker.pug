@@ -1,24 +1,27 @@
 include ../text-field/text-field.pug
 
-mixin date-picker({ state, size, id, text, textState, type, name, isDateRange, placeholder, iconText, dateFormat, dateNavTitles = 'MM yyyy', inline = false })
+mixin date-picker({ state, size, id, text, textState, type, name, isRange, placeholder, iconText, dateFormat, dateNavTitles = 'MM yyyy', isInline = false })
   -
-    let datePickerClass;
-    let inputClass;
+    let datePickerClass = '';
+    let inputClass = '';
     let datePickerType;
 
-    if (['small'].includes(size)) datePickerClass +=' date-picker_' + size;
-    if (['active'].includes(state)) inputClass += ' date-picker__input_' + state;
+    let sizeSetting = ['small'];
+    let stateSetting = ['active'];
+
+    if (sizeSetting.includes(size)) datePickerClass +=' date-picker_' + size;
+    if (stateSetting.includes(state)) inputClass += ' date-picker__input_' + state;
     if (iconText) inputClass += ' date-picker__input_icon';
-    if(isDateRange) datePickerType = 'range';
+    if(isRange) datePickerType = 'range';
 
   .date-picker.js-date-picker(
     class=datePickerClass,
     data-type=datePickerType,
     data-date-format=dateFormat,
     data-date-nav-titles=dateNavTitles,
-    data-inline=inline.toString()
+    data-isInline=isInline.toString()
   )
-    if (isDateRange)
+    if (isRange)
       .date-picker__wrapper-range 
         label.date-picker__label
           if (text)
@@ -57,7 +60,7 @@ mixin date-picker({ state, size, id, text, textState, type, name, isDateRange, p
             )
             if (iconText)
               button.date-picker__icon= iconText
-    else if (!inline)
+    else if (!isInline)
       label.date-picker__label
         if (text)
           .date-picker__wrapper-text

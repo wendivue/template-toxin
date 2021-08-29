@@ -1,6 +1,6 @@
 include ../rate-button/rate-button.pug
 
-mixin hotel-card({ number, itemList, price, isLux, link, reviews, star, text, carousel })
+mixin hotel-card({ number, list, price, isLux, link, reviews, star, text, carousel })
   -
     const altText = "hotel-" + number;
     const { typeText, period, reviewText } = text;
@@ -14,7 +14,7 @@ mixin hotel-card({ number, itemList, price, isLux, link, reviews, star, text, ca
         data-items=dataItems,
         data-dots=dataDots.toString()
       )
-        each item in itemList
+        each item in list
           li.hotel-card__item
             a.hotel-card__link(href=link)
               img.hotel-card__img(src=item.img, alt=altText)

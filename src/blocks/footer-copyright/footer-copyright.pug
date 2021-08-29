@@ -2,7 +2,7 @@ include ../page/page.pug
 include ../center-block/center-block.pug
 include ../text-field/text-field.pug
 
-mixin footer-copyright({ linkLogo, textLogo, type='full', itemList1, itemList2, itemList3, titleSub, textSub, img, copyright, iconList, textField })
+mixin footer-copyright({ linkLogo, textLogo, type='full', list1, list2, list3, titleSub, textSub, img, copyright, iconList, textField })
   if (type === 'full')
     footer.footer-copyright.footer-copyright_full
       +page({})
@@ -12,7 +12,7 @@ mixin footer-copyright({ linkLogo, textLogo, type='full', itemList1, itemList2, 
               img.footer-copyright__logo(src=img, alt='logo')
             p.footer-copyright__text-logo= textLogo
           ul.footer-copyright__wrapper-list
-            each list in [itemList1, itemList2, itemList3]
+            each list in [list1, list2, list3]
               li.footer-copyright__lists
                 ul.footer-copyright__list
                   each item in list

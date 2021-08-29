@@ -16,9 +16,9 @@
     "size": "small",
     "id": "dropdown-people",
     "isItemsPeople": true,
-    "isButtonMenu": true,
-    "isDropdown": true,
-    "itemsList": [
+    "hasButtons": true,
+    "hasDropdown": true,
+    "list": [
       { "text": "взрослые", "value": "2", "name": "adults" },
       { "text": "дети", "value": "1", "name": "children" },
       {
@@ -47,7 +47,7 @@
   "textRangeSlider": "Стоимость за сутки пребывания в номере",
   "checkboxButtonsRules": {
     "caption": "Правила дома",
-    "checkboxButtons": [
+    "list": [
       { "text": "Можно курить", "id": "1", "name": "smoke" },
       { "text": "Можно с питомцами", "id": "2", "name": "pet", "isChecked": true },
       {
@@ -61,7 +61,7 @@
   "checkboxButtonsRich": {
     "caption": "доступность",
     "isRich": true,
-    "checkboxButtons": [
+    "list": [
       {
         "text": "Ширина коридоров в номере не менее 91 см.",
         "id": "4",
@@ -82,9 +82,8 @@
     "id": "dropdown-room",
     "iconText": "expand_more",
     "size": "small",
-    "isItemsRoom": true,
-    "isDropdown": true,
-    "itemsList": [
+    "hasDropdown": true,
+    "list": [
       {
         "text": "спальни",
         "value": "2",
@@ -108,7 +107,7 @@
   },
   "checkboxList": {
     "text": "дополнительные удобства",
-    "checkboxList": [
+    "list": [
       { "text": "Завтрак", "id": "1", "name": "breakfast" },
       { "text": "Письменный стол", "id": "2", "name": "desk", "isChecked": true },
       { "text": "Стул для кормления", "id": "3", "name": "chair", "isChecked": true },
@@ -127,7 +126,7 @@
       "star": "5",
       "reviews": "145",
       "link": "/mock-address/change-me",
-      "itemList": [
+      "list": [
         { "img": "img/hotel-1.png" },
         { "img": "img/hotel-1.png" },
         { "img": "img/hotel-1.png" },
@@ -142,7 +141,7 @@
       "star": "4",
       "reviews": "65",
       "link": "/mock-address/change-me",
-      "itemList": [
+      "list": [
         { "img": "img/hotel-2.png" },
         { "img": "img/hotel-2.png" },
         { "img": "img/hotel-2.png" },
@@ -158,7 +157,7 @@
       "star": "3",
       "reviews": "35",
       "link": "/mock-address/change-me",
-      "itemList": [
+      "list": [
         { "img": "img/hotel-3.png" },
         { "img": "img/hotel-3.png" },
         { "img": "img/hotel-3.png" },
@@ -173,7 +172,7 @@
       "star": "5",
       "reviews": "19",
       "link": "/mock-address/change-me",
-      "itemList": [
+      "list": [
         { "img": "img/hotel-4.png" },
         { "img": "img/hotel-4.png" },
         { "img": "img/hotel-4.png" },
@@ -188,7 +187,7 @@
       "star": "4",
       "reviews": "44",
       "link": "/mock-address/change-me",
-      "itemList": [
+      "list": [
         { "img": "img/hotel-5.png" },
         { "img": "img/hotel-5.png" },
         { "img": "img/hotel-5.png" },
@@ -203,7 +202,7 @@
       "star": "3",
       "reviews": "56",
       "link": "/mock-address/change-me",
-      "itemList": [
+      "list": [
         { "img": "img/hotel-6.png" },
         { "img": "img/hotel-6.png" },
         { "img": "img/hotel-6.png" },
@@ -218,7 +217,7 @@
       "star": "5",
       "reviews": "45",
       "link": "/mock-address/change-me",
-      "itemList": [
+      "list": [
         { "img": "img/hotel-7.png" },
         { "img": "img/hotel-7.png" },
         { "img": "img/hotel-7.png" },
@@ -233,7 +232,7 @@
       "star": "4",
       "reviews": "39",
       "link": "/mock-address/change-me",
-      "itemList": [
+      "list": [
         { "img": "img/hotel-8.png" },
         { "img": "img/hotel-8.png" },
         { "img": "img/hotel-8.png" },
@@ -248,7 +247,7 @@
       "star": "3",
       "reviews": "77",
       "link": "/mock-address/change-me",
-      "itemList": [
+      "list": [
         { "img": "img/hotel-9.png" },
         { "img": "img/hotel-9.png" },
         { "img": "img/hotel-9.png" },
@@ -263,7 +262,7 @@
       "star": "5",
       "reviews": "25",
       "link": "/mock-address/change-me",
-      "itemList": [
+      "list": [
         { "img": "img/hotel-10.png" },
         { "img": "img/hotel-10.png" },
         { "img": "img/hotel-10.png" },
@@ -278,7 +277,7 @@
       "star": "3",
       "reviews": "15",
       "link": "/mock-address/change-me",
-      "itemList": [
+      "list": [
         { "img": "img/hotel-11.png" },
         { "img": "img/hotel-11.png" },
         { "img": "img/hotel-11.png" },
@@ -293,7 +292,7 @@
       "star": "3",
       "reviews": "55",
       "link": "/mock-address/change-me",
-      "itemList": [
+      "list": [
         { "img": "img/hotel-12.png" },
         { "img": "img/hotel-12.png" },
         { "img": "img/hotel-12.png" },

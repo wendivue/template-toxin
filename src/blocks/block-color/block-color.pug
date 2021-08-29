@@ -1,6 +1,6 @@
-mixin block-color({ itemList })
+mixin block-color({ list })
   ul.block-color
-    each item in itemList
+    each item in list
       -
         let { theme, title, text } = item;
         let squareClass = '';

@@ -1,6 +1,6 @@
 {
   "blockColor": {
-    "itemList": [
+    "list": [
       { "title": "Dark Shade 100%", "text": "#1F2041" },
       { "title": "Dark Shade 75%", "text": "#1F2041", "theme": "dark-shade-75" },
       { "title": "Dark Shade 50%", "text": "#1F2041", "theme": "dark-shade-50" },
@@ -11,7 +11,7 @@
     ]
   },
   "blockType": {
-    "itemList": [
+    "list": [
       { "title": "h1", "theme": "h1", "text": "This one is the sub-section or widget title" },
       { "title": "h2", "theme": "h2", "text": "Next one is the item title inside widgets" },
       { "title": "h3", "theme": "h3", "text": "THIS IS A LABEL OR CTA TEXT" },

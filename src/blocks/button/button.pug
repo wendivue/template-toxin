@@ -1,4 +1,4 @@
-mixin button({ theme, size, state, themeHeader, isIcon, link, text, isButton, type })
+mixin button({ theme, size, state, themeHeader, hasIcon, link, text, isButton, type })
   -
     let mainClass = '';
     type = type ? type : '';
@@ -12,9 +12,9 @@ mixin button({ theme, size, state, themeHeader, isIcon, link, text, isButton, ty
 
   if (isButton)
     button.button(class=mainClass, href=link, type=type)= text
-      if (isIcon)
+      if (hasIcon)
         i.button__icon arrow_forward
   else
     a.button(class=mainClass, href=link)= text
-      if (isIcon)
+      if (hasIcon)
         i.button__icon arrow_forward

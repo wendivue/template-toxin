@@ -1,6 +1,6 @@
-mixin block-type({ itemList })
+mixin block-type({ list })
   ul.block-type
-    each item in itemList
+    each item in list
       -
         let { theme, title, text } = item;
         let itemClass = '';

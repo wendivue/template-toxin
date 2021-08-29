@@ -26,12 +26,12 @@ class DatePicker {
     this.dateRangeType = this.$anchor.attr('data-type');
     this.dateFormat = this.$anchor.attr('data-date-format');
     this.dateNavTitles = this.$anchor.attr('data-date-nav-titles');
-    this.inline = JSON.parse(this.$anchor.attr('data-inline'));
+    this.isInline = JSON.parse(this.$anchor.attr('data-isInline'));
   }
 
   createDatePicker() {
     const onSelect = this.addOnSelect();
-    if (this.inline) this.$input = this.$anchor;
+    if (this.isInline) this.$input = this.$anchor;
 
     this.datepicker = this.$input
       .datepicker({
@@ -42,7 +42,7 @@ class DatePicker {
         range: true,
         todayButton: true,
         clearButton: true,
-        inline: this.inline,
+        isInline: this.isInline,
         startDate: new Date(),
         minDate: new Date(),
         prevHtml: '<button class="date-picker__icon date-picker__icon_row">arrow_back</button>',

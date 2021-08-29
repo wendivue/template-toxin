@@ -1,4 +1,4 @@
-mixin text-field({ state, size, themeIcon, id, isOpenMenu, text, textState, type, value, name, placeholder, iconText, readonly, mask })
+mixin text-field({ state, size, themeIcon, id, isOpen, text, textState, type, value, name, placeholder, iconText, readonly, mask })
   -
     let textFieldClass = '';
     let inputClass = '';
@@ -9,7 +9,7 @@ mixin text-field({ state, size, themeIcon, id, isOpenMenu, text, textState, type
     if (['active'].includes(state)) inputClass += ' text-field__input_' + state;
     if (['submit'].includes(themeIcon)) iconClass += ' text-field__icon_' + themeIcon;
     if (iconText) inputClass += ' text-field__input_icon';
-    if (isOpenMenu) inputClass += ' text-field__input_open';
+    if (isOpen) inputClass += ' text-field__input_open';
 
   .text-field.js-text-field(class=textFieldClass)
     if (text)

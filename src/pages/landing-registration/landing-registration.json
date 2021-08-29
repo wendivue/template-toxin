@@ -5,7 +5,7 @@
     "textFieldName": { "placeholder": "Имя", "name": "firstName", "type": "text" },
     "textFieldSurName": { "placeholder": "Фамилия", "name": "lastName", "type": "text" },
     "radioButtons": {
-      "radioButtonsList": [
+      "list": [
         { "text": "Мужчина", "value": "male", "name": "gender", "isChecked": true },
         { "text": "Женщина", "name": "gender", "value": "female" }
       ]
@@ -35,7 +35,7 @@
     "buttonSubmit": {
       "text": "зарегистрироваться",
       "size": "large",
-      "isIcon": true,
+      "hasIcon": true,
       "isButton": true,
       "type": "submit"
     },

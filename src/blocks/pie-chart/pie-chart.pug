@@ -1,4 +1,4 @@
-mixin pie-chart({ img, votes, votesText, pieChartList })
+mixin pie-chart({ img, votes, votesText, list })
   .pie-chart.js-pie-chart
     .pie-chart__wrapper-canvas
       canvas.pie-chart__canvas.js-pie-chart__canvas
@@ -7,7 +7,7 @@ mixin pie-chart({ img, votes, votesText, pieChartList })
         p.pie-chart__text-diagram= votesText
 
     ul.pie-chart__list
-      each item in pieChartList
+      each item in list
         -
           let { theme, text, colorFirst, colorSecond, votes } = item;
           let itemClass = '';

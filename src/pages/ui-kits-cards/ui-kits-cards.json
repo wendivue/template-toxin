@@ -9,7 +9,7 @@
       "name": ["arrival", "departure"],
       "id": ["start", "end"],
       "iconText": "expand_more",
-      "isDateRange": true
+      "isRange": true
     },
     "dropdown": {
       "text": "гости",
@@ -18,10 +18,10 @@
       "id": "dropdown-people",
       "iconText": "expand_more",
       "isItemsPeople": true,
-      "isButtonMenu": true,
-      "isDropdown": true,
-      "isHideButtonCleans": true,
-      "itemsList": [
+      "hasButtons": true,
+      "hasDropdown": true,
+      "hasHideButtonCleans": true,
+      "list": [
         { "text": "взрослые", "value": "0", "name": "adults" },
         { "text": "дети", "value": "0", "name": "children" },
         {
@@ -48,7 +48,7 @@
     "textFieldName": { "placeholder": "Имя", "name": "firstName", "type": "text" },
     "textFieldSurName": { "placeholder": "Фамилия", "name": "lastName", "type": "text" },
     "radioButtons": {
-      "radioButtonsList": [
+      "list": [
         { "text": "Мужчина", "value": "male", "name": "gender", "isChecked": true },
         { "text": "Женщина", "name": "gender", "value": "female" }
       ]
@@ -78,7 +78,7 @@
     "buttonSubmit": {
       "text": "зарегистрироваться",
       "size": "large",
-      "isIcon": true,
+      "hasIcon": true,
       "isButton": true,
       "type": "submit"
     },
@@ -98,7 +98,7 @@
       "type": "text",
       "id": ["start2", "end2"],
       "iconText": "expand_more",
-      "isDateRange": true
+      "isRange": true
     },
     "dropdown": {
       "text": "гости",
@@ -107,9 +107,9 @@
       "id": "dropdown",
       "iconText": "expand_more",
       "isItemsPeople": true,
-      "isButtonMenu": true,
-      "isDropdown": true,
-      "itemsList": [
+      "hasButtons": true,
+      "hasDropdown": true,
+      "list": [
         { "text": "взрослые", "value": "2", "name": "adults" },
         { "text": "дети", "value": "1", "name": "children" },
         {
@@ -123,15 +123,15 @@
       "commonWord": ["гость", "гостя", "гостей"]
     },
     "priceList": {
-      "itemList": [
+      "list": [
         { "description": "9 990₽ х 4 суток", "price": "39 960" },
         {
           "description": "Сбор за услуги: скидка 2 179₽",
           "price": "0",
           "size": "large",
-          "isIcon": true
+          "hasIcon": true
         },
-        { "description": "Сбор за доп. услуги", "size": "large", "price": "300", "isIcon": true }
+        { "description": "Сбор за доп. услуги", "size": "large", "price": "300", "hasIcon": true }
       ],
       "description": "Итого",
       "price": "38 081"
@@ -139,7 +139,7 @@
     "buttonSubmit": {
       "text": "забронировать",
       "size": "large",
-      "isIcon": true,
+      "hasIcon": true,
       "isButton": true,
       "type": "submit"
     }
@@ -153,7 +153,7 @@
     "buttonSubmit": {
       "text": "войти",
       "size": "large",
-      "isIcon": true,
+      "hasIcon": true,
       "isButton": true,
       "type": "submit"
     },
@@ -164,7 +164,7 @@
     }
   },
   "datePicker": {
-    "inline": true
+    "isInline": true
   },
   "hotelList": [
     {
@@ -174,7 +174,7 @@
       "star": "5",
       "reviews": "145",
       "link": "/mock-address/change-me",
-      "itemList": [
+      "list": [
         { "img": "img/hotel-1.png" },
         { "img": "img/hotel-1.png" },
         { "img": "img/hotel-1.png" },
@@ -189,7 +189,7 @@
       "star": "4",
       "reviews": "65",
       "link": "/mock-address/change-me",
-      "itemList": [
+      "list": [
         { "img": "img/hotel-2.png" },
         { "img": "img/hotel-2.png" },
         { "img": "img/hotel-2.png" },

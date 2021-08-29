@@ -1,5 +1,5 @@
-mixin bullet-list({ itemList })
+mixin bullet-list({ list })
   ul.bullet-list
-    each item in itemList
+    each item in list
       - const { text } = item;
       li.bullet-list__item= text

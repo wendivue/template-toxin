@@ -1,9 +1,9 @@
-mixin price-list({ itemList, description, price })
+mixin price-list({ list, description, price })
   ul.price-list
-    each item in itemList
-      - const { isIcon, description, price } = item;
+    each item in list
+      - const { hasIcon, description, price } = item;
       li.price-list__item
-        if (isIcon)
+        if (hasIcon)
           .price-list__wrapper-text
             p.price-list__text= description
             i.price-list__icon i

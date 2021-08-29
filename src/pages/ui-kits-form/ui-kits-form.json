@@ -22,10 +22,10 @@
     "iconText": "expand_more",
     "id": "dropdown-1",
     "textState": "Default",
-    "isButtonMenu": true,
-    "isDropdown": true,
-    "isHideButtonCleans": true,
-    "itemsList": [
+    "hasButtons": true,
+    "hasDropdown": true,
+    "hasHideButtonCleans": true,
+    "list": [
       { "text": "взрослые", "value": "0", "name": "adults-2" },
       { "text": "дети", "value": "0", "name": "children-2" },
       {
@@ -54,7 +54,7 @@
     "name": ["arrival", "departure"],
     "id": ["start", "end"],
     "iconText": "expand_more",
-    "isDateRange": true
+    "isRange": true
   },
   "datePickerFilter": {
     "text": "filter date dropdown",
@@ -83,9 +83,8 @@
     "id": "dropdown-2",
     "textState": "Default",
     "size": "small",
-    "isItemsRoom": true,
-    "isDropdown": true,
-    "itemsList": [
+    "hasDropdown": true,
+    "list": [
       {
         "text": "спальни",
         "value": "2",
@@ -115,10 +114,9 @@
     "id": "dropdown-3",
     "textState": "expanded",
     "size": "small",
-    "isItemsRoom": true,
-    "isOpenMenu": true,
-    "isDropdown": true,
-    "itemsList": [
+    "isOpen": true,
+    "hasDropdown": true,
+    "list": [
       {
         "text": "спальни",
         "value": "2",
@@ -142,7 +140,7 @@
   },
   "checkboxList": {
     "text": "expandable checkbox list",
-    "checkboxList": [
+    "list": [
       { "text": "Завтрак", "id": "1", "name": "breakfast" },
       { "text": "Письменный стол", "id": "2", "name": "desk", "isChecked": true },
       { "text": "Стул для кормления", "id": "3", "name": "chair", "isChecked": true },
@@ -154,7 +152,7 @@
   "checkboxListOpen": {
     "text": "expandable checkbox list",
     "state": "open",
-    "checkboxList": [
+    "list": [
       { "text": "Завтрак", "id": "7", "name": "breakfast" },
       { "text": "Письменный стол", "id": "8", "name": "desk", "isChecked": true },
       { "text": "Стул для кормления", "id": "9", "name": "chair", "isChecked": true },
@@ -163,9 +161,9 @@
       { "text": "Шампунь", "id": "12", "name": "shampoo" }
     ]
   },
-  "checkboxButtons": {
+  "checkboxButtonsDefault": {
     "caption": "Checkbox Buttons",
-    "checkboxButtons": [
+    "list": [
       { "text": "Можно курить", "id": "1", "name": "smoke" },
       { "text": "Можно с питомцами", "id": "2", "name": "pet", "isChecked": true },
       {
@@ -178,7 +176,7 @@
   },
   "titleRadioButton": "Radio Buttons",
   "radioButtons": {
-    "radioButtonsList": [
+    "list": [
       { "text": "Мужчина", "value": "male", "name": "gender", "isChecked": true },
       { "text": "Женщина", "name": "gender", "value": "female" }
     ]
@@ -212,11 +210,11 @@
     "iconText": "expand_more",
     "id": "dropdown-1",
     "textState": "Default",
-    "isOpenMenu": true,
-    "isButtonMenu": true,
-    "isDropdown": true,
-    "isHideButtonCleans": true,
-    "itemsList": [
+    "isOpen": true,
+    "hasButtons": true,
+    "hasDropdown": true,
+    "hasHideButtonCleans": true,
+    "list": [
       { "text": "взрослые", "value": "0", "name": "adults-2" },
       { "text": "дети", "value": "0", "name": "children-2" },
       {
@@ -232,7 +230,7 @@
   "checkboxButtonsRich": {
     "caption": "Rich Checkbox Buttons",
     "isRich": true,
-    "checkboxButtons": [
+    "list": [
       {
         "text": "Ширина коридоров в номере не менее 91 см.",
         "id": "4",
@@ -290,7 +288,7 @@
     "text": "перейти к оплате",
     "link": "/mock-address/change-me",
     "size": "large",
-    "isIcon": true
+    "hasIcon": true
   },
   "titlePagination": "pagination",
   "pagination": { "text": ["из", "вариантов аренды"], "items": 180, "itemsOnPage": 12 },
@@ -300,10 +298,10 @@
     "value": "3 гостя",
     "id": "dropdown-5",
     "iconText": "expand_more",
-    "isButtonMenu": true,
-    "isDropdown": true,
-    "isOpenMenu": true,
-    "itemsList": [
+    "hasButtons": true,
+    "hasDropdown": true,
+    "isOpen": true,
+    "list": [
       { "text": "взрослые", "value": "2", "name": "adults-1" },
       { "text": "дети", "value": "1", "name": "children-1" },
       {
@@ -318,14 +316,14 @@
   },
   "titleBulletList": "bullet list",
   "bulletList": {
-    "itemList": [
+    "list": [
       { "text": "Нельзя с питомцами" },
       { "text": "Без вечеринок и мероприятий " },
       { "text": "Время прибытия — после 13:00, а выезд до 12:00" }
     ]
   },
   "iconTextList": {
-    "iconList": [
+    "list": [
       {
         "icon": "insert_emoticon",
         "title": "Комфорт",

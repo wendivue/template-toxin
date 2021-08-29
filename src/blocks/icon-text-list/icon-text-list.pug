@@ -1,6 +1,6 @@
-mixin icon-text-list({ iconList })
+mixin icon-text-list({ list })
   ul.icon-text-list
-    each item in iconList
+    each item in list
       -
         const { theme, icon, title, text } = item;
         let itemClass = '';

@@ -1,9 +1,9 @@
 include ../radio-button/radio-button.pug
 
-mixin radio-buttons({ radioButtonsList })
+mixin radio-buttons({ list })
   .radio-buttons
     ul.radio-buttons__items
-      each item in radioButtonsList
+      each item in list
         - const { isChecked, value, name, text } = item;
         li.radio-buttons__item
           +radio-button({isChecked, value, name, text})

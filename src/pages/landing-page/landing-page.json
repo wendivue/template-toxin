@@ -9,7 +9,7 @@
       "name": ["arrival", "departure"],
       "id": ["start", "end"],
       "iconText": "expand_more",
-      "isDateRange": true
+      "isRange": true
     },
     "dropdown": {
       "text": "гости",
@@ -18,10 +18,10 @@
       "id": "dropdown-people",
       "iconText": "expand_more",
       "isItemsPeople": true,
-      "isButtonMenu": true,
-      "isDropdown": true,
-      "isHideButtonCleans": true,
-      "itemsList": [
+      "hasButtons": true,
+      "hasDropdown": true,
+      "hasHideButtonCleans": true,
+      "list": [
         { "text": "взрослые", "value": "0", "name": "adults" },
         { "text": "дети", "value": "0", "name": "children" },
         {

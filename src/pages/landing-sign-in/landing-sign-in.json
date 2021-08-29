@@ -8,7 +8,7 @@
     "buttonSubmit": {
       "text": "войти",
       "size": "large",
-      "isIcon": true,
+      "hasIcon": true,
       "isButton": true,
       "type": "submit"
     },

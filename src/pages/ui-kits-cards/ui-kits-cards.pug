@@ -35,6 +35,6 @@ block content
       .ui-kits-cards__date-picker
         +date-picker(data.datePicker)
     each item in data.hotelList
-      - const { number, itemList, price, isLux, link, reviews, star, text, carousel } = item;
+      - const { number, list, price, isLux, link, reviews, star, text, carousel } = item;
       .ui-kits-cards__hotel-card
-        +hotel-card({number, itemList, price, isLux, link, reviews, star, text, carousel})
+        +hotel-card({number, list, price, isLux, link, reviews, star, text, carousel})
