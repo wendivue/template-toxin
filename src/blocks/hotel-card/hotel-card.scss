@@ -11,7 +11,7 @@
   }
 
   &__description {
-    padding: 29px 18px 19px 20px;
+    padding: 29px 18px 16px 20px;
     background-color: #fff;
     box-shadow: 0px 10px 20px $dark-shade-5;
     border-radius: 0 0 4px 4px;
@@ -41,12 +41,14 @@
 
   &__icon {
     @include material-icons;
+
     color: #fff;
     cursor: pointer;
   }
 
   &__number {
     @include typo-h3;
+
     font-weight: bold;
     color: $dark-shade-100;
 
@@ -62,6 +64,7 @@
 
     &_small {
       @include typo-body;
+
       font-weight: bold;
       color: $dark-shade-100;
     }
@@ -69,6 +72,7 @@
 
   &__text {
     @include typo-body;
+
     font-size: 12px;
     color: $dark-shade-50;
 

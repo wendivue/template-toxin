@@ -78,12 +78,14 @@
 
   &__diagram {
     width: 351px;
+    margin-left: 30px;
 
     @media (max-width: $breakpoint-sm) {
       display: flex;
       flex-flow: column;
       align-items: center;
       margin-top: 15px;
+      margin-left: 0;
     }
 
     @media (max-width: $breakpoint-xs) {
@@ -113,11 +115,13 @@
 
   &__text-review {
     @include typo-body;
+
     color: $dark-shade-50;
   }
 
   &__items-review {
     @include typo-body;
+
     margin-top: 17px;
   }
 
@@ -139,9 +143,12 @@
 
   &__rule {
     max-width: 255px;
+    margin-right: 30px;
 
     @media (max-width: $breakpoint-xs) {
       width: 100%;
+      margin-right: 0;
+      margin-bottom: 20px;
     }
 
     @media (max-width: $breakpoint-xxs) {
@@ -163,6 +170,7 @@
 
     @media (max-width: $breakpoint-xs) {
       width: 300px;
+      text-align: center;
     }
 
     &_small {
@@ -170,19 +178,34 @@
     }
   }
 
-  &__title-rule,
-  &__title-cancel {
+  &__title-rule {
     @include typo-h2;
+
     margin-bottom: 18px;
+    padding-left: 19px;
+
+    @media (max-width: $breakpoint-xs) {
+      text-align: center;
+      padding-left: 0;
+    }
   }
 
-  &__title-rule {
-    padding-left: 19px;
+  &__title-cancel {
+    @include typo-h2;
+
+    margin-bottom: 18px;
+
+    @media (max-width: $breakpoint-xs) {
+      text-align: center;
+    }
   }
 
   &__reservation {
+    margin-left: 20px;
+
     @media (max-width: $breakpoint-md) {
-      margin-top: 10px;
+      margin-top: 30px;
+      margin-left: 0;
     }
   }
 }

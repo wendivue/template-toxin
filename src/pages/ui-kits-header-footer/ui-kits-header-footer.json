@@ -134,6 +134,7 @@
   "footerCreative": {
     "linkLogo": "index.html",
     "type": "creative",
+    "img": "img/logo.svg",
     "copyright": "Copyright © 2018 Toxin отель. Все права зачищены.",
     "iconList": [
       { "link": "/mock-address/change-me", "icon": "fa-twitter" },

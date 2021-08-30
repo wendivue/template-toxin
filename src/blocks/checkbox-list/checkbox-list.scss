@@ -59,6 +59,7 @@
 
   &__label {
     @include typo-body;
+
     color: $dark-shade-50;
     text-transform: none;
     cursor: pointer;
@@ -66,6 +67,7 @@
 
   &__icon {
     @include material-icons;
+
     cursor: pointer;
 
     &_open {

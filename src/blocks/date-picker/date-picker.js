@@ -26,7 +26,7 @@ class DatePicker {
     this.dateRangeType = this.$anchor.attr('data-type');
     this.dateFormat = this.$anchor.attr('data-date-format');
     this.dateNavTitles = this.$anchor.attr('data-date-nav-titles');
-    this.isInline = JSON.parse(this.$anchor.attr('data-isInline'));
+    this.isInline = JSON.parse(this.$anchor.attr('data-inline'));
   }
 
   createDatePicker() {

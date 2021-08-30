@@ -11,6 +11,11 @@
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
 
+  @media (max-width: $breakpoint-xs) {
+    padding: 40px 20px 29px 20px;
+    width: 290px;
+  }
+
   @media (max-width: $breakpoint-xxs) {
     padding: 44px 9px 29px 9px;
     width: 290px;

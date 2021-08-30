@@ -40,13 +40,14 @@
 
   &__text {
     @include typo-body;
+
     max-width: 300px;
     margin-top: 287px;
     align-self: flex-end;
     text-align: right;
 
     @media (max-width: $breakpoint-md) {
-      text-align: left;
+      text-align: center;
       margin: 0;
     }
   }

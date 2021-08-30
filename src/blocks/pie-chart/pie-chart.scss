@@ -18,12 +18,14 @@
 
   &__text-diagram {
     @include typo-body;
+
     color: $color-primary;
     text-align: center;
     line-height: 21px;
 
     &_big {
       @include typo-h1;
+
       color: $color-primary;
       text-align: center;
       line-height: 21px;
@@ -41,6 +43,7 @@
 
   &__item {
     @include typo-body;
+
     display: flex;
     align-items: center;
     text-transform: none;

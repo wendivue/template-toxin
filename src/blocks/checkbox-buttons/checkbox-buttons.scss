@@ -54,6 +54,7 @@
 
   &__info {
     @include typo-body;
+
     padding-top: 4px;
     color: $dark-shade-50;
     line-height: 18px;
@@ -74,6 +75,7 @@
 
   &__text {
     @include typo-body;
+
     font-weight: bold;
     text-transform: none;
   }

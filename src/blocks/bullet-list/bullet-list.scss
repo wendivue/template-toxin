@@ -3,6 +3,7 @@
 .bullet-list {
   &__item {
     @include typo-body;
+
     display: flex;
     align-items: center;
     text-transform: none;

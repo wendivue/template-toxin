@@ -27,6 +27,7 @@
 
   &__burger {
     @include material-icons;
+
     display: none;
     font-size: 35px;
     cursor: pointer;
@@ -99,6 +100,7 @@
 
   &__link {
     @include typo-body;
+
     display: flex;
     color: $dark-shade-50;
     text-decoration: none;
@@ -112,6 +114,7 @@
 
   &__icon {
     @include material-icons;
+
     position: relative;
     color: $dark-shade-50;
 
@@ -154,6 +157,7 @@
 
   &__text-login {
     @include typo-body;
+
     color: $dark-shade-50;
   }
 

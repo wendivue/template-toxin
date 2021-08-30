@@ -13,6 +13,7 @@
 
   &__icon {
     @include material-icons;
+
     margin-right: 10px;
     font-size: 48px;
     background-image: $gradient-primary;
@@ -23,11 +24,13 @@
 
   &__title {
     @include typo-body;
+
     font-weight: bold;
   }
 
   &__text {
     @include typo-body;
+
     text-transform: none;
   }
 }

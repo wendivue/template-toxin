@@ -42,11 +42,13 @@
 
   &__username {
     @include typo-body;
+
     font-weight: 600;
   }
 
   &__text {
     @include typo-body;
+
     margin-top: 7px;
     margin-left: 2px;
 

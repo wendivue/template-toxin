@@ -31,6 +31,8 @@
 
   &__text {
     @include typo-body;
+
+    text-align: center;
   }
 
   &__text-logo {
@@ -50,7 +52,7 @@
     display: flex;
     width: 560px;
     justify-content: space-between;
-    flex-flow: wrap;
+    margin: 0 25px;
 
     @media (max-width: $breakpoint-md) {
       display: none;
@@ -76,6 +78,7 @@
 
   &__link {
     @include typo-body;
+
     color: $dark-shade-50;
     text-decoration: none;
     line-height: 15px;
@@ -102,6 +105,7 @@
 
   &__text-subscribe {
     @include typo-body;
+
     padding-top: 18px;
   }
 

@@ -5,6 +5,7 @@
 
   &__icon {
     @include material-icons;
+
     background-image: $gradient-primary;
     background-clip: text;
     -webkit-background-clip: text;

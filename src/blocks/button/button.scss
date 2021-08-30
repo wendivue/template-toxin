@@ -2,6 +2,7 @@
 
 .button {
   @include typo-h3;
+
   position: relative;
   min-width: 99px;
   display: inline-block;
@@ -22,6 +23,7 @@
 
   &__icon {
     @include material-icons;
+
     top: 10px;
     right: 10px;
     position: absolute;

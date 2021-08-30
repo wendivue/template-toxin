@@ -15,6 +15,11 @@
   border-radius: 4px;
   z-index: 1;
 
+  @media (max-width: $breakpoint-xs) {
+    padding: 40px 20px 29px 20px;
+    width: 290px;
+  }
+
   @media (max-width: $breakpoint-xxs) {
     padding: 44px 9px 29px 9px;
     width: 285px;
@@ -22,6 +27,7 @@
 
   &__title {
     @include typo-h1;
+
     margin-bottom: 19px;
     text-transform: none;
   }
@@ -56,6 +62,8 @@
 
   &__text-sign-in {
     @include typo-body;
+
     color: $dark-shade-100;
+    margin-right: 7px;
   }
 }
