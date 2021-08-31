@@ -1,4 +1,5 @@
 {
+  "centerBlockProps": { "screenSize": "large" },
   "datePicker": {
     "text": "даты пребывания в отеле",
     "placeholder": "19 авг - 23 авг",

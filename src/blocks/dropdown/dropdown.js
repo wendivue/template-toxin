@@ -11,10 +11,7 @@ class Dropdown {
     this.getElement();
     this.getAttribute();
     this.getValue();
-    this.bindEventDocumentClick();
-    this.bindEventClick(this.buttonIncrease, this.buttonDecrease);
-    this.bindEventToggle(this.dropdownInput, this.buttonComplete);
-    this.bindEventClear(this.buttonCleans);
+    this.bindEvents();
   }
 
   getElement() {
@@ -39,6 +36,13 @@ class Dropdown {
         this.declension.push(JSON.parse(item.getAttribute('data-declension')));
       }
     });
+  }
+
+  bindEvents() {
+    this.bindEventDocumentClick();
+    this.bindEventClick(this.buttonIncrease, this.buttonDecrease);
+    this.bindEventToggle(this.dropdownInput, this.buttonComplete);
+    this.bindEventClear(this.buttonCleans);
   }
 
   bindEventClick(elementIncrease, elementDecrease) {

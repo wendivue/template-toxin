@@ -7,6 +7,7 @@ include ~Blocks/footer-copyright/footer-copyright.pug
 
 - let headerProps = data.header;
 - let footerProps = data.footer;
+- let centerBlockProps = {};
 
 block variables
 
@@ -36,7 +37,7 @@ html(lang='ru')
       div(class=classWrapper)
         if (isPageCenter)
           +page({})
-            +center-block
+            +center-block(centerBlockProps)
               block content
         else
           block content

@@ -29,7 +29,7 @@ block variables
 
 block content
   +page({})
-    +center-block
+    +center-block({})
       +col-4
         .ui-kits-form__text-field
           +text-field(data.textFieldDefault)
@@ -98,7 +98,7 @@ block content
           h3.ui-kits-form__title= data.titleBulletList
           +bullet-list(data.bulletList)
   +page({})
-    +center-block
+    +center-block({})
       .ui-kits-form__col-8
         +icon-text-list(data.iconTextList)
         .ui-kits-form__review

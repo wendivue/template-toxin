@@ -86,62 +86,62 @@
       font-size: 14px;
     }
   }
-}
 
-.owl-carousel {
-  &:hover {
-    .owl-nav {
+  .owl-carousel {
+    &:hover {
+      .owl-nav {
+        display: block;
+      }
+    }
+
+    .owl-dot span {
+      width: 5px;
+      height: 5px;
+      margin: 5px 2px;
+      border: 1px solid #fff;
       display: block;
+      border-radius: 30px;
+      transition: opacity 0.2s ease;
+    }
+
+    .active span {
+      width: 5px;
+      height: 5px;
+      background: #fff;
     }
   }
-}
 
-.owl-nav {
-  display: none;
-}
+  .owl-nav {
+    display: none;
 
-.owl-nav > button {
-  margin-top: -26px;
-  position: absolute;
-  top: 61%;
-  font-size: 24px;
-  color: #cdcbcd;
-  outline: none;
-}
+    i {
+      font-size: 24px;
+      color: #fff;
+    }
 
-.owl-nav i {
-  font-size: 24px;
-  color: #fff;
-}
+    .owl-prev {
+      left: 3px;
+      transform: rotate(90deg);
+    }
 
-.owl-nav .owl-prev {
-  left: 3px;
-  transform: rotate(90deg);
-}
+    .owl-next {
+      right: 3px;
+      transform: rotate(-90deg);
+    }
+  }
 
-.owl-nav .owl-next {
-  right: 3px;
-  transform: rotate(-90deg);
-}
+  .owl-nav > button {
+    margin-top: -26px;
+    position: absolute;
+    top: 61%;
+    font-size: 24px;
+    color: #cdcbcd;
+    outline: none;
+  }
 
-.owl-dots {
-  position: relative;
-  margin-top: -27px;
-  margin-left: 212px;
-}
-
-.owl-carousel .owl-dot span {
-  width: 5px;
-  height: 5px;
-  margin: 5px 2px;
-  border: 1px solid #fff;
-  display: block;
-  border-radius: 30px;
-  transition: opacity 0.2s ease;
-}
-
-.owl-carousel .active span {
-  width: 5px;
-  height: 5px;
-  background: #fff;
+  .owl-dots {
+    position: relative;
+    margin-top: -27px;
+    margin-left: 212px;
+  }
 }

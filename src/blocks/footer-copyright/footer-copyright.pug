@@ -6,7 +6,7 @@ mixin footer-copyright({ linkLogo, textLogo, type='full', list1, list2, list3, t
   if (type === 'full')
     footer.footer-copyright.footer-copyright_full
       +page({})
-        +center-block
+        +center-block({})
           .footer-copyright__wrapper-logo
             a(href=linkLogo) 
               img.footer-copyright__logo(src=img, alt='logo')
@@ -32,7 +32,7 @@ mixin footer-copyright({ linkLogo, textLogo, type='full', list1, list2, list3, t
               +text-field(textField)
       .footer-copyright__bottom-footer
         +page({})
-          +center-block
+          +center-block({})
             p.footer-copyright__text= copyright
             ul.footer-copyright__social
               each icons in iconList

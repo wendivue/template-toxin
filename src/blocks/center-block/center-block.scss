@@ -11,4 +11,12 @@
     align-items: center;
     justify-content: center;
   }
+
+  &_screen-size_large {
+    @media (max-width: $breakpoint-lg) {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  }
 }
