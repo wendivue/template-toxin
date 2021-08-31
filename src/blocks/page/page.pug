@@ -3,7 +3,7 @@ mixin page({ state })
     let pageClass = '';
     let stateSetting = ['small'];
 
-    if(stateSetting.includes(state)) pageClass += ' page_' + state;
+    if(stateSetting.includes(state)) pageClass += ' page_size_' + state;
 
   .page(class=pageClass)
     block

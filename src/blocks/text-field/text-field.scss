@@ -81,7 +81,9 @@
     }
   }
 
-  &_small {
-    max-width: 266px;
+  &_size {
+    &_small {
+      max-width: 266px;
+    }
   }
 }

@@ -3,7 +3,7 @@ mixin pie-chart({ img, votes, votesText, list })
     .pie-chart__wrapper-canvas
       canvas.pie-chart__canvas.js-pie-chart__canvas
       .pie-chart__wrapper-text-diagram
-        p.pie-chart__text-diagram.pie-chart__text-diagram_big= votes
+        p.pie-chart__text-diagram.pie-chart__text-diagram_size_big= votes
         p.pie-chart__text-diagram= votesText
 
     ul.pie-chart__list
@@ -13,7 +13,7 @@ mixin pie-chart({ img, votes, votesText, list })
           let itemClass = '';
           const themeSetting = ["great", "good", "norm", "disappoint"];
 
-          if (themeSetting.includes(theme)) itemClass += " pie-chart__item_" + theme;
+          if (themeSetting.includes(theme)) itemClass += " pie-chart__item_theme_" + theme;
 
         li.pie-chart__item.js-pie-chart__item(
           class=itemClass,

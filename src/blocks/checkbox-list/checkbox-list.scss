@@ -69,6 +69,7 @@
     @include material-icons;
 
     cursor: pointer;
+    margin-right: 6px;
 
     &_open {
       transform: rotate(-180deg);

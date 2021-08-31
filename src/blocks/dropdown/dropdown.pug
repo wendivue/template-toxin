@@ -8,8 +8,8 @@ mixin dropdown({ isOpen, size, hasButtons, value, text, state, id, type, name, i
 
     let sizeSetting = ['small'];
 
-    if(sizeSetting.includes(size)) dropdownClass += ' dropdown_' + size;
-    if(sizeSetting.includes(size)) menuClass += ' dropdown__menu_' + size;
+    if(sizeSetting.includes(size)) dropdownClass += ' dropdown_size_' + size;
+    if(sizeSetting.includes(size)) menuClass += ' dropdown__menu_size_' + size;
     if(isOpen) menuClass += ' dropdown__menu_active';
     if(hasHideButtonCleans) buttonCleansClass += ' dropdown__button-menu_hide';
 

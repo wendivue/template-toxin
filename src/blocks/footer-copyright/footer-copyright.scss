@@ -149,15 +149,17 @@
     }
   }
 
-  &_full {
-    padding: 85px 0 0 0;
-  }
+  &_theme {
+    &_full {
+      padding: 85px 0 0 0;
+    }
 
-  &_creative {
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    padding: 120px 0 110px 0;
+    &_creative {
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      padding: 120px 0 110px 0;
+    }
   }
 
   @media (max-width: $breakpoint-md) {

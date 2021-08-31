@@ -9,8 +9,10 @@
   padding: 15px;
   box-sizing: border-box;
 
-  &_small {
-    padding: 13.5px 15px 13.5px 15px;
+  &_size {
+    &_small {
+      padding: 13.5px 15px 13.5px 15px;
+    }
   }
 
   @media (max-width: $breakpoint-xxs) {

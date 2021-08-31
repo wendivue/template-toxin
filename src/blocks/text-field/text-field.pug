@@ -5,7 +5,7 @@ mixin text-field({ state, size, themeIcon, id, isOpen, text, textState, type, va
     let iconClass = '';
     id = id ? 'text-field-' + id : '';
 
-    if (['small'].includes(size)) textFieldClass +=' text-field_' + size;
+    if (['small'].includes(size)) textFieldClass +=' text-field_size_' + size;
     if (['active'].includes(state)) inputClass += ' text-field__input_' + state;
     if (['submit'].includes(themeIcon)) iconClass += ' text-field__icon_' + themeIcon;
     if (iconText) inputClass += ' text-field__input_icon';

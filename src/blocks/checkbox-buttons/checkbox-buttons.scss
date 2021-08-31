@@ -61,11 +61,13 @@
     text-transform: none;
     cursor: pointer;
 
-    &_small {
-      padding-top: 0;
-      margin-top: 2px;
-      font-size: 12px;
-      line-height: 14px;
+    &_size {
+      &_small {
+        padding-top: 0;
+        margin-top: 2px;
+        font-size: 12px;
+        line-height: 14px;
+      }
     }
   }
 

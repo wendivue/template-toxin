@@ -9,7 +9,7 @@ mixin date-picker({ state, size, id, text, textState, type, name, isRange, place
     let sizeSetting = ['small'];
     let stateSetting = ['active'];
 
-    if (sizeSetting.includes(size)) datePickerClass +=' date-picker_' + size;
+    if (sizeSetting.includes(size)) datePickerClass +=' date-picker_size_' + size;
     if (stateSetting.includes(state)) inputClass += ' date-picker__input_' + state;
     if (iconText) inputClass += ' date-picker__input_icon';
     if(isRange) datePickerType = 'range';

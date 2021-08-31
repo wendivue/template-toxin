@@ -22,10 +22,12 @@
       text-align: right;
     }
 
-    &_big {
-      @include typo-h2;
+    &_size {
+      &_big {
+        @include typo-h2;
 
-      width: 24%;
+        width: 24%;
+      }
     }
   }
 

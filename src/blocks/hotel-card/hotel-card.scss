@@ -52,21 +52,25 @@
     font-weight: bold;
     color: $dark-shade-100;
 
-    &_primary-color {
-      color: $color-primary;
-      margin-left: 8px;
+    &_theme {
+      &_primary-color {
+        color: $color-primary;
+        margin-left: 8px;
+      }
     }
 
-    &_big {
-      padding-left: 3px;
-      font-size: 20px;
-    }
+    &_size {
+      &_big {
+        padding-left: 3px;
+        font-size: 20px;
+      }
 
-    &_small {
-      @include typo-body;
+      &_small {
+        @include typo-body;
 
-      font-weight: bold;
-      color: $dark-shade-100;
+        font-weight: bold;
+        color: $dark-shade-100;
+      }
     }
   }
 
@@ -76,14 +80,16 @@
     font-size: 12px;
     color: $dark-shade-50;
 
-    &_bold {
-      font-size: 14px;
-      font-weight: bold;
-      padding-right: 5px;
-    }
+    &_size {
+      &_bold {
+        font-size: 14px;
+        font-weight: bold;
+        padding-right: 5px;
+      }
 
-    &_big {
-      font-size: 14px;
+      &_big {
+        font-size: 14px;
+      }
     }
   }
 

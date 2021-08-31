@@ -6,8 +6,8 @@ mixin button({ theme, size, state, themeHeader, hasIcon, link, text, isButton, t
     const sizeSetting = ['large', 'small', 'small-border'];
     const stateSetting = ['active', 'active-border', 'icon-link-active'];
 
-    if(themeSetting.includes(theme)) mainClass += ' button_' + theme;
-    if(sizeSetting.includes(size)) mainClass += ' button_' + size;
+    if(themeSetting.includes(theme)) mainClass += ' button_theme_' + theme;
+    if(sizeSetting.includes(size)) mainClass += ' button_size_' + size;
     if(stateSetting.includes(state)) mainClass += ' button_' + state;
 
   if (isButton)

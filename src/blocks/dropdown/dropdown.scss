@@ -25,9 +25,11 @@
       display: block;
     }
 
-    &_small {
-      width: 244px;
-      padding: 3px 7px 4px 13px;
+    &_size {
+      &_small {
+        width: 244px;
+        padding: 3px 7px 4px 13px;
+      }
     }
   }
 
@@ -100,7 +102,9 @@
     }
   }
 
-  &_small {
-    width: 266px;
+  &_size {
+    &_small {
+      width: 266px;
+    }
   }
 }

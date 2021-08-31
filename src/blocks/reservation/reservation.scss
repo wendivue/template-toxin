@@ -43,20 +43,24 @@
       padding-left: 3px;
     }
 
-    &_big {
-      font-size: 24px;
-      margin-right: 6px;
+    &_size {
+      &_big {
+        font-size: 24px;
+        margin-right: 6px;
+      }
+
+      &_small {
+        @include typo-body;
+
+        font-weight: bold;
+        color: $dark-shade-100;
+      }
     }
 
-    &_small {
-      @include typo-body;
-
-      font-weight: bold;
-      color: $dark-shade-100;
-    }
-
-    &_primary-color {
-      color: $color-primary;
+    &_theme {
+      &_primary-color {
+        color: $color-primary;
+      }
     }
   }
 

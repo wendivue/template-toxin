@@ -5,7 +5,8 @@ mixin block-color({ list })
         let { theme, title, text } = item;
         let squareClass = '';
         const themeSetting= ['color-secondary', 'color-primary', 'dark-shade-5', 'dark-shade-25', 'dark-shade-50', 'dark-shade-75 '];
-        if(themeSetting.includes(theme)) squareClass +=  ' block-color__square_' + theme;
+
+        if(themeSetting.includes(theme)) squareClass +=  ' block-color__square_theme_' + theme;
 
       li.block-color__item
         .block-color__square(class=squareClass)

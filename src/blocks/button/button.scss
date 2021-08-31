@@ -21,6 +21,17 @@
     opacity: 0.5;
   }
 
+  &_icon-link-active {
+    opacity: 1;
+    color: $dark-shade-50;
+  }
+
+  &_active-border {
+    &:before {
+      opacity: 0.5;
+    }
+  }
+
   &__icon {
     @include material-icons;
 
@@ -30,66 +41,63 @@
     color: #fff;
   }
 
-  &_border {
-    padding: 12.5px 17.5px;
-    background: #fff;
-    color: $color-primary;
-    background-clip: padding-box;
-    border: solid 2px transparent;
-
-    &:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      z-index: -1;
-      margin: -2px;
-      border-radius: inherit;
-      background: $gradient-primary;
-    }
-
-    &:hover,
-    &_active {
-      opacity: 1;
+  &_theme {
+    &_border {
+      padding: 12.5px 17.5px;
+      background: #fff;
+      color: $color-primary;
+      background-clip: padding-box;
+      border: solid 2px transparent;
 
       &:before {
-        opacity: 0.5;
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        margin: -2px;
+        border-radius: inherit;
+        background: $gradient-primary;
+      }
+
+      &:hover,
+      &_active {
+        opacity: 1;
+
+        &:before {
+          opacity: 0.5;
+        }
+      }
+    }
+
+    &_icon-link {
+      padding: 0;
+      min-width: auto;
+      color: $color-primary;
+      background: none;
+      text-align: left;
+
+      &:hover {
+        opacity: 1;
+        color: $dark-shade-50;
       }
     }
   }
 
-  &_active-border {
-    &:before {
-      opacity: 0.5;
+  &_size {
+    &_large {
+      width: 100%;
     }
-  }
 
-  &_icon-link {
-    padding: 0;
-    min-width: auto;
-    color: $color-primary;
-    background: none;
-    text-align: left;
-
-    &:hover,
-    &-active {
-      opacity: 1;
-      color: $dark-shade-50;
+    &_small {
+      padding: 9.5px 19.5px;
     }
-  }
 
-  &_large {
-    width: 100%;
-  }
-
-  &_small {
-    padding: 9.5px 19.5px;
-  }
-
-  &_small-border {
-    min-width: auto;
-    padding: 7.5px 17.5px;
+    &_small-border {
+      min-width: auto;
+      padding: 7.5px 17.5px;
+    }
   }
 }

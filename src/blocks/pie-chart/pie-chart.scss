@@ -23,12 +23,14 @@
     text-align: center;
     line-height: 21px;
 
-    &_big {
-      @include typo-h1;
+    &_size {
+      &_big {
+        @include typo-h1;
 
-      color: $color-primary;
-      text-align: center;
-      line-height: 21px;
+        color: $color-primary;
+        text-align: center;
+        line-height: 21px;
+      }
     }
   }
 
@@ -63,27 +65,29 @@
       margin: 0;
     }
 
-    &_great {
-      &:before {
-        background: linear-gradient(180deg, #ffe39c 0%, #ffba9c 100%);
+    &_theme {
+      &_great {
+        &:before {
+          background: linear-gradient(180deg, #ffe39c 0%, #ffba9c 100%);
+        }
       }
-    }
 
-    &_good {
-      &:before {
-        background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+      &_good {
+        &:before {
+          background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+        }
       }
-    }
 
-    &_norm {
-      &:before {
-        background: $gradient-primary;
+      &_norm {
+        &:before {
+          background: $gradient-primary;
+        }
       }
-    }
 
-    &_disappoint {
-      &:before {
-        background: linear-gradient(180deg, #919191 0%, #3d4975 100%);
+      &_disappoint {
+        &:before {
+          background: linear-gradient(180deg, #919191 0%, #3d4975 100%);
+        }
       }
     }
   }

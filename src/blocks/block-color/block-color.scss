@@ -22,28 +22,30 @@
     background: #1f2041;
     border-radius: 6px;
 
-    &_dark-shade-75 {
-      background: $dark-shade-75;
-    }
+    &_theme {
+      &_dark-shade-75 {
+        background: $dark-shade-75;
+      }
 
-    &_dark-shade-50 {
-      background: $dark-shade-50;
-    }
+      &_dark-shade-50 {
+        background: $dark-shade-50;
+      }
 
-    &_dark-shade-25 {
-      background: $dark-shade-25;
-    }
+      &_dark-shade-25 {
+        background: $dark-shade-25;
+      }
 
-    &_dark-shade-5 {
-      background: $dark-shade-5;
-    }
+      &_dark-shade-5 {
+        background: $dark-shade-5;
+      }
 
-    &_color-primary {
-      background: $color-primary;
-    }
+      &_color-primary {
+        background: $color-primary;
+      }
 
-    &_color-secondary {
-      background: $color-secondary;
+      &_color-secondary {
+        background: $color-secondary;
+      }
     }
   }
 
