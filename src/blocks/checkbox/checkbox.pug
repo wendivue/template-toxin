@@ -1,0 +1,10 @@
+mixin checkbox({ text, id, title, name, isChecked, isRich })
+  .checkbox
+    input.checkbox__input(id=id, name=name, type='checkbox', checked=isChecked)
+
+    if (isRich)
+      label.checkbox__wrapper-text(for=id)
+        h3.checkbox__text= title
+        p.checkbox__info.checkbox__info_size_small= text
+    else
+      label.checkbox__info(for=id)= text

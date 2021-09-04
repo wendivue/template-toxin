@@ -1,0 +1,66 @@
+@import '~Typography';
+
+.checkbox {
+  display: flex;
+
+  &__input {
+    -webkit-appearance: none;
+    align-self: start;
+    min-width: 20px;
+    height: 20px;
+    margin-left: 0;
+    margin-right: 9px;
+    background-color: #fff;
+    border: 1px solid $dark-shade-25;
+    box-sizing: border-box;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:checked {
+      line-height: 14px;
+      position: relative;
+      color: $color-primary;
+      border: 1px solid $color-primary;
+    }
+
+    &:checked:after {
+      position: absolute;
+      top: 5px;
+      left: 4px;
+      width: 10px;
+      height: 10px;
+      content: '';
+      background: url('img/vector.svg') no-repeat;
+    }
+  }
+
+  &__wrapper-text {
+    cursor: pointer;
+  }
+
+  &__text {
+    @include typo-body;
+
+    font-weight: bold;
+    text-transform: none;
+  }
+
+  &__info {
+    @include typo-body;
+
+    padding-top: 4px;
+    color: $dark-shade-50;
+    line-height: 18px;
+    text-transform: none;
+    cursor: pointer;
+
+    &_size {
+      &_small {
+        padding-top: 0;
+        margin-top: 2px;
+        font-size: 12px;
+        line-height: 14px;
+      }
+    }
+  }
+}

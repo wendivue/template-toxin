@@ -1,3 +1,5 @@
+include ~Blocks/checkbox/checkbox.pug
+
 mixin checkbox-list({ state, text, list })
   -
     let iconClass = '';
@@ -14,8 +16,6 @@ mixin checkbox-list({ state, text, list })
 
     ul.checkbox-list__items.js-checkbox-list__items(class=itemsClass)
       each item in list
-        - let { id, text, name, isChecked = false } = item;
-        - id = id ? "checkbox-list-" + id : "";
-          li.checkbox-list__wrapper-checkbox
-            input.checkbox-list__checkbox(id=id, name=name, type='checkbox', checked=isChecked)
-            label.checkbox-list__label(for=id)= text
+        - let { id, text, name, isChecked = false, isRich } = item;
+          li.checkbox-list__item
+            +checkbox({text, id, title, name, isChecked, isRich})

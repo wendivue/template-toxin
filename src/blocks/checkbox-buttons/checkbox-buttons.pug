@@ -1,3 +1,5 @@
+include ~Blocks/checkbox/checkbox.pug
+
 mixin checkbox-buttons({ caption, isRich, list })
   .checkbox-buttons
     .checkbox-buttons__wrapper-header
@@ -5,18 +7,10 @@ mixin checkbox-buttons({ caption, isRich, list })
 
     ul.checkbox-buttons__items
       each item in list
-        - let wrapperCheckboxClass = "";
+        - let itemClass = "";
         - let { text, id, title, name, isChecked = false } = item;
         - id = id ? "checkbox-buttons-" + id : "";
+        - if (isRich) itemClass += "checkbox-buttons__item_rich";
 
-        - if (isRich) wrapperCheckboxClass += "checkbox-buttons__wrapper-checkbox_rich";
-
-        li.checkbox-buttons__wrapper-checkbox(class=wrapperCheckboxClass)
-          input.checkbox-buttons__checkbox(id=id, name=name, type='checkbox', checked=isChecked)
-
-          if (isRich)
-            label.checkbox-buttons__wrapper-text(for=id)
-              h3.checkbox-buttons__text= title
-              p.checkbox-buttons__info.checkbox-buttons__info_size_small= text
-          else
-            label.checkbox-buttons__info(for=id)= text
+        li.checkbox-buttons__item(class=itemClass)
+          +checkbox({text, id, title, name, isChecked, isRich})
