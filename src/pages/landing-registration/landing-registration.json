@@ -13,6 +13,11 @@
     "textFieldDate": {
       "text": "дата рождения",
       "placeholder": "ДД.ММ.ГГГГ",
+      "selectedDate": [
+        [2022, 7, 19],
+        [2022, 7, 23]
+      ],
+      "buttons": ["Очистить", "Применить"],
       "id": "date",
       "type": "text",
       "name": "date",

@@ -1,9 +1,10 @@
 include ../text-field/text-field.pug
 
-mixin date-picker({ state, size, id, text, textState, type, name, isRange, placeholder, iconText, dateFormat, dateNavTitles = 'MM yyyy', isInline = false })
+mixin date-picker({ state, size, id, text, textState, type, name, isRange, placeholder, iconText, dateFormat, dateNavTitles = 'MM yyyy', isInline = false, selectedDate = [], buttons })
   -
     let datePickerClass = '';
     let inputClass = '';
+    let calendarClass = '';
     let datePickerType;
 
     let sizeSetting = ['small'];
@@ -13,13 +14,16 @@ mixin date-picker({ state, size, id, text, textState, type, name, isRange, place
     if (stateSetting.includes(state)) inputClass += ' date-picker__input_' + state;
     if (iconText) inputClass += ' date-picker__input_icon';
     if(isRange) datePickerType = 'range';
+    if(!isInline) calendarClass += 'date-picker__calendar_hidden';
+    if(isInline) calendarClass += 'date-picker__calendar_inline';
 
   .date-picker.js-date-picker(
     class=datePickerClass,
     data-type=datePickerType,
     data-date-format=dateFormat,
     data-date-nav-titles=dateNavTitles,
-    data-inline=isInline.toString()
+    data-inline=isInline.toString(),
+    data-selected=selectedDate
   )
     if (isRange)
       .date-picker__wrapper-range 
@@ -36,7 +40,6 @@ mixin date-picker({ state, size, id, text, textState, type, name, isRange, place
               type=type,
               placeholder=placeholder[0],
               name=name[0],
-              data-multiple-dates-separator=' - ',
               readonly
             )
             if (iconText)
@@ -49,13 +52,12 @@ mixin date-picker({ state, size, id, text, textState, type, name, isRange, place
               if (textState)
                 p.date-picker__text-state= textState
           .date-picker__wrapper-input
-            input.date-picker__input.js-date-picker__input-end(
+            input.date-picker__input.js-date-picker__input.js-date-picker__input-end(
               id=id[1],
               class=inputClass,
               type=type,
               placeholder=placeholder[1],
               name=name[1],
-              data-multiple-dates-separator=' - ',
               readonly
             )
             if (iconText)
@@ -74,8 +76,12 @@ mixin date-picker({ state, size, id, text, textState, type, name, isRange, place
             type=type,
             placeholder=placeholder,
             name=name,
-            data-multiple-dates-separator=' - ',
             readonly
           )
           if (iconText)
             button.date-picker__icon= iconText
+
+    .date-picker__calendar.js-date-picker__calendar(class=calendarClass)
+      .date-picker__wrapper-buttons
+        button.date-picker__button.js-date-picker__button(type='button')= buttons[0]
+        button.date-picker__button.js-date-picker__button(type='button')= buttons[1]

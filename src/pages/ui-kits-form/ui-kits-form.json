@@ -50,6 +50,11 @@
   "datePickerRange": {
     "text": ["date Dropdown", "date Dropdown"],
     "placeholder": ["ДД.ММ.ГГГГ", "ДД.ММ.ГГГГ"],
+    "selectedDate": [
+      [2022, 7, 19],
+      [2022, 7, 23]
+    ],
+    "buttons": ["Очистить", "Применить"],
     "type": "text",
     "name": ["arrival", "departure"],
     "id": ["start", "end"],
@@ -58,7 +63,12 @@
   },
   "datePickerFilter": {
     "text": "filter date dropdown",
-    "placeholder": "19 авг - 23 авг",
+    "placeholder": "ДД.ММ.ГГГГ",
+    "selectedDate": [
+      [2022, 7, 19],
+      [2022, 7, 23]
+    ],
+    "buttons": ["Очистить", "Применить"],
     "type": "text",
     "id": "date-2",
     "name": "filterDate",

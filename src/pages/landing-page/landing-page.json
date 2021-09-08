@@ -5,6 +5,11 @@
     "datePicker": {
       "text": ["прибытие", "выезд"],
       "placeholder": ["ДД.ММ.ГГГГ", "ДД.ММ.ГГГГ"],
+      "selectedDate": [
+        [2022, 7, 19],
+        [2022, 7, 23]
+      ],
+      "buttons": ["Очистить", "Применить"],
       "type": "text",
       "name": ["arrival", "departure"],
       "id": ["start", "end"],

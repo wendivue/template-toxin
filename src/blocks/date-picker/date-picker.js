@@ -11,15 +11,16 @@ class DatePicker {
     this.getElement();
     this.getAttribute();
     this.createDatePicker();
-    this.bindEventButtonClick(this.$button);
-    this.bindEventEndClick(this.$end);
+    this.bindEvents();
   }
 
   getElement() {
     this.$input = this.$anchor.find('.js-date-picker__input');
+    this.$calendar = this.$anchor.find('.js-date-picker__calendar');
     this.$start = this.$anchor.find('.js-date-picker__input-start');
     this.$end = this.$anchor.find('.js-date-picker__input-end');
     this.$single = this.$anchor.find('.js-date-picker__input-single');
+    this.$button = this.$anchor.find('.js-date-picker__button');
   }
 
   getAttribute() {
@@ -27,21 +28,22 @@ class DatePicker {
     this.dateFormat = this.$anchor.attr('data-date-format');
     this.dateNavTitles = this.$anchor.attr('data-date-nav-titles');
     this.isInline = JSON.parse(this.$anchor.attr('data-inline'));
+    this.selected = JSON.parse(this.$anchor.attr('data-selected'));
   }
 
   createDatePicker() {
+    this.todayButton = new Date();
     const onSelect = this.addOnSelect();
-    if (this.isInline) this.$input = this.$anchor;
+    const selectDates = this.createDates(this.selected);
 
-    this.datepicker = this.$input
+    this.datepicker = this.$calendar
       .datepicker({
         navTitles: {
           days: this.dateNavTitles,
         },
         dateFormat: this.dateFormat,
         range: true,
-        todayButton: true,
-        clearButton: true,
+        multipleDatesSeparator: ' - ',
         isInline: this.isInline,
         startDate: new Date(),
         minDate: new Date(),
@@ -51,7 +53,7 @@ class DatePicker {
       })
       .data('datepicker');
 
-    this.$button = $('.datepicker--button');
+    this.datepicker.selectDate(selectDates);
   }
 
   addOnSelect() {
@@ -73,20 +75,66 @@ class DatePicker {
     return onSelect;
   }
 
+  bindEvents() {
+    this.bindEventDocumentClick();
+    this.bindEventInputClick([this.$start, this.$end, this.$single]);
+    this.bindEventButtonClick(this.$button.last());
+    this.bindEventButtonClearClick(this.$button.first());
+  }
+
+  bindEventDocumentClick() {
+    document.addEventListener('click', this.handleDocumentClick.bind(this));
+  }
+
+  bindEventInputClick(elements) {
+    elements.forEach((element) => element.on('click', this.show.bind(this)));
+  }
+
   bindEventButtonClick(element) {
     element.on('click', this.hide.bind(this));
   }
 
-  bindEventEndClick(element) {
-    element.on('click', this.show.bind(this));
+  bindEventButtonClearClick(element) {
+    element.on('click', this.clear.bind(this));
+  }
+
+  handleDocumentClick(event) {
+    const targetDatepicker = event.target.closest('.js-date-picker');
+    const targetCell = event.target.closest('.datepicker--cell');
+    const targetNavTitle = event.target.closest('.datepicker--nav-title');
+    const targetNavAction = event.target.closest('.datepicker--nav-action');
+    const isTarget = !targetDatepicker && !targetCell && !targetNavTitle && !targetNavAction;
+
+    if (isTarget) this.hide();
   }
 
   hide() {
-    this.datepicker.hide();
+    this.$calendar.addClass('date-picker__calendar_hidden');
+    if (this.datepicker.selectedDates.length === 0) this.setNowDate();
   }
 
   show() {
-    this.datepicker.show();
+    this.$calendar.removeClass('date-picker__calendar_hidden');
+  }
+
+  clear() {
+    this.datepicker.clear();
+  }
+
+  setNowDate() {
+    this.datepicker.date = new Date();
+  }
+
+  createDates(dates) {
+    const newDates = [];
+
+    dates.forEach((date) => {
+      const [year, month, day] = date;
+
+      newDates.push(new Date(year, month, day));
+    });
+
+    return newDates;
   }
 }
 

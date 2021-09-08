@@ -89,7 +89,12 @@
     "carousel": { "dataNav": true, "dataItems": 1, "dataDots": true },
     "datePicker": {
       "text": ["прибытие", "выезд"],
-      "placeholder": ["19.08.2019", "23.08.2019"],
+      "placeholder": ["ДД.ММ.ГГГГ", "ДД.ММ.ГГГГ"],
+      "selectedDate": [
+        [2022, 7, 19],
+        [2022, 7, 23]
+      ],
+      "buttons": ["Очистить", "Применить"],
       "name": ["arrival", "departure"],
       "type": "text",
       "id": ["start2", "end2"],

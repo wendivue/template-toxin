@@ -2,8 +2,9 @@
 
 .datepicker {
   width: 320px;
-  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-  padding-bottom: 13px;
+  border: none;
+  border-radius: 0;
+  background: #fff;
 
   @media (max-width: $breakpoint-xxs) {
     width: 290px;
@@ -17,7 +18,7 @@
 
   &--nav {
     border: none;
-    padding: 16px 16px 10px 16px;
+    padding: 9px 16px 10px 16px;
   }
 
   &--nav-title,
@@ -28,7 +29,7 @@
   }
 
   &--content {
-    padding: 20px;
+    padding: 15px 20px 20px 20px;
   }
 
   &--day-name {
@@ -62,7 +63,6 @@
 
   &--buttons {
     justify-content: space-between;
-    flex-flow: row-reverse;
     margin: 0 20px;
     padding: 0 0 20px 0;
     border: none;
@@ -71,19 +71,11 @@
   &--button {
     @include typo-h3;
 
-    &:first-child {
-      font-size: 0;
-
-      &:after {
-        content: 'применить';
-        font-size: 12px;
-      }
-    }
-
     display: block;
     flex: none;
     padding: 0;
     height: 0;
+    font-size: 12px;
     color: $color-primary;
     border: none;
     background: #fff;
