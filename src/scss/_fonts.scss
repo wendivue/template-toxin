@@ -10,7 +10,19 @@
   }
 }
 
-@include font-face('Montserrat', normal, normal, swap, '~Fonts/montserrat-regular');
-@include font-face('Montserrat', normal, bold, swap, '~Fonts/montserrat-700');
-@include font-face('Material Icons', normal, normal, swap, '~Fonts/material-icons-regular');
-@include font-face('FontAwesome', normal, normal, swap, '~Fonts/font-awesome');
+@include font-face(
+  'Montserrat',
+  normal,
+  normal,
+  swap,
+  '~Fonts/montserrat-regular/montserrat-regular'
+);
+@include font-face('Montserrat', normal, bold, swap, '~Fonts/montserrat-700/montserrat-700');
+@include font-face(
+  'Material Icons',
+  normal,
+  normal,
+  swap,
+  '~Fonts/material-icons-regular/material-icons-regular'
+);
+@include font-face('FontAwesome', normal, normal, swap, '~Fonts/font-awesome/font-awesome');
