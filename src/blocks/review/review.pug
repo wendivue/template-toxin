@@ -2,13 +2,13 @@ include ../like-button/like-button.pug
 
 mixin review({ img, username, date, text, id, number, name, isChecked })
   .review
-    .review__wrapper
+    .review__row
       img.review__img(src=img)
       .review__wrapper-text
         p.review__username= username
         p.review__date= date
 
-    .review__wrapper
+    .review__row
       .review__like-button
         +like-button({ id, number, name, isChecked })
       p.review__text= text

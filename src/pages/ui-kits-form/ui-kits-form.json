@@ -212,7 +212,7 @@
     { "number": "2", "id": "1", "name": "liked-1" },
     { "number": "12", "id": "2", "name": "liked-2", "isChecked": true }
   ],
-  "rateButtonList": [{ "star": 4 }, { "star": 5 }],
+  "rateButtonList": [{ "rating": 4 }, { "rating": 5 }],
   "dropdownDefaultPeopleOpen": {
     "text": "Dropdown",
     "name": "people-1",

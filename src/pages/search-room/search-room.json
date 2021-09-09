@@ -129,7 +129,7 @@
       "number": "888",
       "price": "9 990₽",
       "isLux": true,
-      "star": "5",
+      "rating": "5",
       "reviews": "145",
       "link": "/mock-address/change-me",
       "list": [
@@ -144,7 +144,7 @@
     {
       "number": "840",
       "price": "9 990₽",
-      "star": "4",
+      "rating": "4",
       "reviews": "65",
       "link": "/mock-address/change-me",
       "list": [
@@ -160,7 +160,7 @@
       "number": "980",
       "price": "8 500₽",
       "isLux": true,
-      "star": "3",
+      "rating": "3",
       "reviews": "35",
       "link": "/mock-address/change-me",
       "list": [
@@ -175,7 +175,7 @@
     {
       "number": "856",
       "price": "7 300₽",
-      "star": "5",
+      "rating": "5",
       "reviews": "19",
       "link": "/mock-address/change-me",
       "list": [
@@ -190,7 +190,7 @@
     {
       "number": "740",
       "price": "6 000₽",
-      "star": "4",
+      "rating": "4",
       "reviews": "44",
       "link": "/mock-address/change-me",
       "list": [
@@ -205,7 +205,7 @@
     {
       "number": "982",
       "price": "5 800₽",
-      "star": "3",
+      "rating": "3",
       "reviews": "56",
       "link": "/mock-address/change-me",
       "list": [
@@ -220,7 +220,7 @@
     {
       "number": "678",
       "price": "5 500₽",
-      "star": "5",
+      "rating": "5",
       "reviews": "45",
       "link": "/mock-address/change-me",
       "list": [
@@ -235,7 +235,7 @@
     {
       "number": "450",
       "price": "5 300₽",
-      "star": "4",
+      "rating": "4",
       "reviews": "39",
       "link": "/mock-address/change-me",
       "list": [
@@ -250,7 +250,7 @@
     {
       "number": "350",
       "price": "5 000₽",
-      "star": "3",
+      "rating": "3",
       "reviews": "77",
       "link": "/mock-address/change-me",
       "list": [
@@ -265,7 +265,7 @@
     {
       "number": "666",
       "price": "5 000₽",
-      "star": "5",
+      "rating": "5",
       "reviews": "25",
       "link": "/mock-address/change-me",
       "list": [
@@ -280,7 +280,7 @@
     {
       "number": "444",
       "price": "5 000₽",
-      "star": "3",
+      "rating": "3",
       "reviews": "15",
       "link": "/mock-address/change-me",
       "list": [
@@ -295,7 +295,7 @@
     {
       "number": "352",
       "price": "5 000₽",
-      "star": "3",
+      "rating": "3",
       "reviews": "55",
       "link": "/mock-address/change-me",
       "list": [

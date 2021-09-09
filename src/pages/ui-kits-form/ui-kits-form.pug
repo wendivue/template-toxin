@@ -1,7 +1,7 @@
 extends ~Layout/main-layout.pug
 
 block variables
-  include ~Blocks/col-4/col-4.pug
+  include ~Blocks/column-4/column-4.pug
   include ~Blocks/text-field/text-field.pug
   include ~Blocks/dropdown/dropdown.pug
   include ~Blocks/date-picker/date-picker.pug
@@ -30,7 +30,7 @@ block variables
 block content
   +page({})
     +center-block({})
-      +col-4
+      +column-4
         .ui-kits-form__text-field
           +text-field(data.textFieldDefault)
         .ui-kits-form__text-field-hover
@@ -79,7 +79,7 @@ block content
           +dropdown(data.dropdownDefaultPeopleOpen)
         .ui-kits-form__rich-checkbox-buttons
           +checkbox-buttons(data.checkboxButtonsRich)
-      +col-4
+      +column-4
         +range-slider(data.rangeSlider)
         .ui-kits-form__buttons
           h3.ui-kits-form__title= data.titleButtons

@@ -182,7 +182,7 @@
       "number": "888",
       "price": "9 990₽",
       "isLux": true,
-      "star": "5",
+      "rating": "5",
       "reviews": "145",
       "link": "/mock-address/change-me",
       "list": [
@@ -197,7 +197,7 @@
     {
       "number": "840",
       "price": "9 990₽",
-      "star": "4",
+      "rating": "4",
       "reviews": "65",
       "link": "/mock-address/change-me",
       "list": [
