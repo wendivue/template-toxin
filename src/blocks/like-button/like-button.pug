@@ -1,10 +1,10 @@
 mixin like-button({ id, number, name, isChecked })
   -
-    let labelClass = '';
-    if(isChecked) labelClass += ' like-button__label_active';
+    let labelClasses = '';
+    if(isChecked) labelClasses += ' like-button__label_active';
 
   .like-button.js-like-button
-    label.like-button__label.js-like-button__label(class=labelClass)
+    label.like-button__label.js-like-button__label(class=labelClasses)
       input.like-button__checkbox.js-like-button__checkbox(
         name=name,
         type='checkbox',

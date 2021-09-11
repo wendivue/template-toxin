@@ -2,13 +2,12 @@ mixin icon-text-list({ list })
   ul.icon-text-list
     each item in list
       -
-        const { theme, icon, title, text } = item;
-        let itemClass = '';
-        const themeSetting = ['border'];
+        const { isOutlined, icon, title, text } = item;
+        let itemClasses = '';
 
-        if(themeSetting.includes(theme)) itemClass += ' icon-text-list__item_' + theme;
+        if(isOutlined) itemClasses += ' icon-text-list__item_outlined';
 
-      li.icon-text-list__item(class=itemClass)
+      li.icon-text-list__item(class=itemClasses)
         i.icon-text-list__icon= icon
         .icon-text-list__wrapper-text
           p.icon-text-list__title= title

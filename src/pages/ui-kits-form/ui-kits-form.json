@@ -12,7 +12,7 @@
     "placeholder": "This is pretty awesome",
     "name": "text-2",
     "id": "text-2",
-    "state": "active",
+    "isActive": true,
     "textState": "Hover / Focus"
   },
   "dropdownDefaultPeople": {
@@ -72,7 +72,7 @@
     "type": "text",
     "id": "date-2",
     "name": "filterDate",
-    "size": "small",
+    "isSmall": true,
     "iconText": "expand_more",
     "dateFormat": "d M"
   },
@@ -80,9 +80,9 @@
     "text": "subscription text field",
     "placeholder": "Email",
     "type": "email",
-    "size": "small",
+    "isSmall": true,
     "iconText": "arrow_forward",
-    "themeIcon": "submit",
+    "isSubmit": true,
     "name": "email"
   },
   "dropdownRoom": {
@@ -92,7 +92,7 @@
     "iconText": "expand_more",
     "id": "dropdown-2",
     "textState": "Default",
-    "size": "small",
+    "isSmall": true,
     "hasDropdown": true,
     "list": [
       {
@@ -123,7 +123,7 @@
     "iconText": "expand_more",
     "id": "dropdown-3",
     "textState": "expanded",
-    "size": "small",
+    "isSmall": true,
     "isOpen": true,
     "hasDropdown": true,
     "list": [
@@ -161,7 +161,7 @@
   },
   "checkboxListOpen": {
     "text": "expandable checkbox list",
-    "state": "open",
+    "isOpen": true,
     "list": [
       { "text": "Завтрак", "id": "7", "name": "breakfast" },
       { "text": "Письменный стол", "id": "8", "name": "desk", "isChecked": true },
@@ -338,13 +338,13 @@
         "icon": "insert_emoticon",
         "title": "Комфорт",
         "text": "Шумопоглощающие стены",
-        "theme": "border"
+        "isOutlined": true
       },
       {
         "icon": "location_city",
         "title": "Удобство",
         "text": "Окно в каждой из спален",
-        "theme": "border"
+        "isOutlined": true
       }
     ]
   },

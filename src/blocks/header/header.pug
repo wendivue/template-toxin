@@ -4,7 +4,7 @@ include ../center-block/center-block.pug
 
 mixin header({ list, size, textLogin, loginButton, loginLink, registerButton })
   header.header.js-header
-    +page({ state: "small" })
+    +page({ isSmall: true })
       +center-block({})
         a(href=loginLink) 
           img.header__logo(src='img/logo.svg', alt='logo')
@@ -16,23 +16,23 @@ mixin header({ list, size, textLogin, loginButton, loginLink, registerButton })
               each item in list
                 -
                   let { state, link, text, hasIcon, subList } = item;
-                  let itemClass = '';
-                  let linkClass = '';
-                  let iconClass = '';
-                  let wrapperButtonClass = '';
+                  let itemClasses = '';
+                  let linkClasses = '';
+                  let iconClasses = '';
+                  let wrapperButtonClasses = '';
                   const sizeSetting = ['small'];
                   const stateSetting = ['active'];
 
-                  if(sizeSetting.includes(size)) itemClass += ' header__item_size_' + size;
-                  if(sizeSetting.includes(size)) iconClass += ' header__icon_size_' + size;
-                  if(sizeSetting.includes(size)) wrapperButtonClass += ' header__wrapper-button_size_' + size;
-                  if(stateSetting.includes(state)) linkClass += ' header__link_' + state;
+                  if(sizeSetting.includes(size)) itemClasses += ' header__item_size_' + size;
+                  if(sizeSetting.includes(size)) iconClasses += ' header__icon_size_' + size;
+                  if(sizeSetting.includes(size)) wrapperButtonClasses += ' header__wrapper-button_size_' + size;
+                  if(stateSetting.includes(state)) linkClasses += ' header__link_' + state;
 
 
-                li.header__item(class=itemClass)
-                  a.header__link(class=linkClass, href=link)= text
+                li.header__item(class=itemClasses)
+                  a.header__link(class=linkClasses, href=link)= text
                     if (subList)
-                      i.header__icon(class=iconClass) expand_more
+                      i.header__icon(class=iconClasses) expand_more
                   if (subList)
                     ul.header__sub-menu
                       each subItem in subList
@@ -43,7 +43,7 @@ mixin header({ list, size, textLogin, loginButton, loginLink, registerButton })
             .header__login
               p.header__text-login= textLogin
           else
-            .header__wrapper-button(class=wrapperButtonClass)
+            .header__wrapper-button(class=wrapperButtonClasses)
               .header__button
                 +button(loginButton)
               .header__button

@@ -1,9 +1,8 @@
-mixin page({ state })
+mixin page({ isSmall })
   -
-    let pageClass = '';
-    let stateSetting = ['small'];
+    let pageClasses = '';
 
-    if(stateSetting.includes(state)) pageClass += ' page_size_' + state;
+    if(isSmall) pageClasses += ' page_size_small';
 
-  .page(class=pageClass)
+  .page(class=pageClasses)
     block

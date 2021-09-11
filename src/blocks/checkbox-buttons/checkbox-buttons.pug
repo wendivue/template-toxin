@@ -7,10 +7,10 @@ mixin checkbox-buttons({ caption, isRich, list })
 
     ul.checkbox-buttons__items
       each item in list
-        - let itemClass = "";
+        - let itemClasses = "";
         - let { text, id, title, name, isChecked = false } = item;
         - id = id ? "checkbox-buttons-" + id : "";
-        - if (isRich) itemClass += "checkbox-buttons__item_rich";
+        - if (isRich) itemClasses += "checkbox-buttons__item_rich";
 
-        li.checkbox-buttons__item(class=itemClass)
+        li.checkbox-buttons__item(class=itemClasses)
           +checkbox({text, id, title, name, isChecked, isRich})

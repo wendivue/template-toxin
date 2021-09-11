@@ -3,13 +3,13 @@ mixin block-color({ list })
     each item in list
       -
         let { theme, title, text } = item;
-        let squareClass = '';
+        let squareClasses = '';
         const themeSetting= ['color-secondary', 'color-primary', 'dark-shade-5', 'dark-shade-25', 'dark-shade-50', 'dark-shade-75 '];
 
-        if(themeSetting.includes(theme)) squareClass +=  ' block-color__square_theme_' + theme;
+        if(themeSetting.includes(theme)) squareClasses +=  ' block-color__square_theme_' + theme;
 
       li.block-color__item
-        .block-color__square(class=squareClass)
+        .block-color__square(class=squareClasses)
         .block-color__wrapper-text
           h2.block-color__title= title
           p.block-color__text= text

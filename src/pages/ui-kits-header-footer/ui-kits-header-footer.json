@@ -2,7 +2,7 @@
   "headerDefault": {
     "loginLink": "index.html",
     "list": [
-      { "text": "О нас", "link": "/mock-address/change-me", "state": "active" },
+      { "text": "О нас", "link": "/mock-address/change-me", "isActive": true },
       {
         "text": "Услуги",
         "link": "/mock-address/change-me",
@@ -39,7 +39,7 @@
   "header": {
     "loginLink": "index.html",
     "list": [
-      { "text": "О нас", "link": "/mock-address/change-me", "state": "active" },
+      { "text": "О нас", "link": "/mock-address/change-me", "isActive": true },
       {
         "text": "Услуги",
         "link": "/mock-address/change-me",
@@ -66,7 +66,7 @@
   "headerLogged": {
     "loginLink": "index.html",
     "list": [
-      { "text": "О нас", "link": "/mock-address/change-me", "state": "active" },
+      { "text": "О нас", "link": "/mock-address/change-me", "isActive": true },
       {
         "text": "Услуги",
         "link": "/mock-address/change-me",
@@ -117,9 +117,9 @@
     "textField": {
       "placeholder": "Email",
       "type": "email",
-      "size": "small",
+      "isSmall": true,
       "iconText": "arrow_forward",
-      "themeIcon": "submit",
+      "isSubmit": true,
       "name": "email"
     },
     "titleSub": "Подписка",

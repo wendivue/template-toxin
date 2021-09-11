@@ -1,9 +1,8 @@
-mixin center-block({ screenSize })
+mixin center-block({ isScreenLarge })
   -
-    let mainClass = '';
-    let screenSizeSetting = ['large'];
+    let mainClasses = '';
 
-    if(screenSizeSetting.includes(screenSize)) mainClass += ' center-block_screen-size_' + screenSize;
+    if(isScreenLarge) mainClasses += ' center-block_screen-size_large';
 
-  .center-block(class=mainClass)
+  .center-block(class=mainClasses)
     block

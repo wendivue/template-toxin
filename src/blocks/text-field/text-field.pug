@@ -1,17 +1,17 @@
-mixin text-field({ state, size, themeIcon, id, isOpen, text, textState, type, value, name, placeholder, iconText, readonly, mask })
+mixin text-field({ isActive, isSmall, isSubmit, id, isOpen, text, textState, type = 'text', value, name, placeholder, iconText, readonly, mask })
   -
-    let textFieldClass = '';
-    let inputClass = '';
-    let iconClass = '';
+    let textFieldClasses = '';
+    let inputClasses = '';
+    let iconClasses = '';
     id = id ? 'text-field-' + id : '';
 
-    if (['small'].includes(size)) textFieldClass +=' text-field_size_' + size;
-    if (['active'].includes(state)) inputClass += ' text-field__input_' + state;
-    if (['submit'].includes(themeIcon)) iconClass += ' text-field__icon_' + themeIcon;
-    if (iconText) inputClass += ' text-field__input_icon';
-    if (isOpen) inputClass += ' text-field__input_open';
+    if (isSmall) textFieldClasses +=' text-field_size_small';
+    if (isActive) inputClasses += ' text-field__input_active';
+    if (isSubmit) iconClasses += ' text-field__icon_submit';
+    if (iconText) inputClasses += ' text-field__input_icon';
+    if (isOpen) inputClasses += ' text-field__input_open';
 
-  .text-field.js-text-field(class=textFieldClass)
+  .text-field.js-text-field(class=textFieldClasses)
     if (text)
       .text-field__wrapper-text
         label.text-field__label(for=id)= text
@@ -20,7 +20,7 @@ mixin text-field({ state, size, themeIcon, id, isOpen, text, textState, type, va
 
     .text-field__input-wrapper
       input.text-field__input.js-text-field__input(
-        class=inputClass,
+        class=inputClasses,
         id=id,
         type=type,
         value=value,
@@ -32,4 +32,4 @@ mixin text-field({ state, size, themeIcon, id, isOpen, text, textState, type, va
       )
 
       if (iconText)
-        button.text-field__icon(class=iconClass)= iconText
+        button.text-field__icon(class=iconClasses)= iconText

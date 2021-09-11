@@ -8,13 +8,13 @@
         "icon": "insert_emoticon",
         "title": "Комфорт",
         "text": "Шумопоглощающие стены",
-        "theme": "border"
+        "isOutlined": true
       },
       {
         "icon": "location_city",
         "title": "Удобство",
         "text": "Окно в каждой из спален",
-        "theme": "border"
+        "isOutlined": true
       },
       { "icon": "whatshot", "title": "Уют", "text": "Номер оснащён камином" }
     ]

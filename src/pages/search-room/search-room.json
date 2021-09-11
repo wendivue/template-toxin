@@ -1,5 +1,5 @@
 {
-  "centerBlockProps": { "screenSize": "large" },
+  "centerBlockProps": { "isScreenLarge": "large" },
   "datePicker": {
     "text": "даты пребывания в отеле",
     "placeholder": "ДД.ММ.ГГГГ",
@@ -11,7 +11,7 @@
     "type": "text",
     "name": "date",
     "id": "date",
-    "size": "small",
+    "isSmall": true,
     "iconText": "expand_more",
     "dateFormat": "d M"
   },
@@ -19,7 +19,7 @@
     "text": "гости",
     "value": "3 гостя, 1 младенец",
     "iconText": "expand_more",
-    "size": "small",
+    "isSmall": true,
     "id": "dropdown-people",
     "isItemsPeople": true,
     "hasButtons": true,
@@ -87,7 +87,7 @@
     "value": "2 спальни, 2 кровати",
     "id": "dropdown-room",
     "iconText": "expand_more",
-    "size": "small",
+    "isSmall": true,
     "hasDropdown": true,
     "list": [
       {

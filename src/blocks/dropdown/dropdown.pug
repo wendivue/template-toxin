@@ -1,40 +1,36 @@
 include ../text-field/text-field.pug
 
-mixin dropdown({ isOpen, size, hasButtons, value, text, state, id, type, name, iconText, themeIcon, textState, hasDropdown, list, hasHideButtonCleans, readonly = true, defaultValue, commonWord })
+mixin dropdown({ isOpen, isSmall, hasButtons, value, text, state, id, type, name, iconText, themeIcon, textState, hasDropdown, list, hasHideButtonCleans, readonly = true, defaultValue, commonWord })
   -
-    let dropdownClass = '';
-    let menuClass = '';
-    let buttonCleansClass = '';
+    let dropdownClasses = '';
+    let menuClasses = '';
+    let buttonCleansClasses = '';
 
-    let sizeSetting = ['small'];
-
-    if(sizeSetting.includes(size)) dropdownClass += ' dropdown_size_' + size;
-    if(sizeSetting.includes(size)) menuClass += ' dropdown__menu_size_' + size;
-    if(isOpen) menuClass += ' dropdown__menu_active';
-    if(hasHideButtonCleans) buttonCleansClass += ' dropdown__button-menu_hide';
-
-
+    if(isSmall) dropdownClasses += ' dropdown_size_small';
+    if(isSmall) menuClasses += ' dropdown__menu_size_small';
+    if(isOpen) menuClasses += ' dropdown__menu_active';
+    if(hasHideButtonCleans) buttonCleansClasses += ' dropdown__button-menu_hide';
 
   .dropdown.js-dropdown(
-    class=dropdownClass,
+    class=dropdownClasses,
     data-type=typeData,
     data-default-value=defaultValue,
     data-common-word=commonWord
   )
     +text-field({ isOpen, size, id, type, value, name, iconText, themeIcon, textState, hasDropdown, text, readonly })
-    .dropdown__menu.js-dropdown__menu(class=menuClass)
+    .dropdown__menu.js-dropdown__menu(class=menuClasses)
       ul.dropdown__list
         each item in list
           -
             let { value, text, name, declension } = item;
-            let buttonDecreaseClass = '';
-            if(value === "0") buttonDecreaseClass += " dropdown__button_no-active"
+            let buttonDecreaseClasses = '';
+            if(value === "0") buttonDecreaseClasses += " dropdown__button_no-active"
 
           li.dropdown__item.js-dropdown__item(data-declension=declension)
             p.dropdown__text= text
             .dropdown__wrapper-input
               button.dropdown__button.js-dropdown__button.dropdown__button_decrease.js-dropdown__button_decrease(
-                class=buttonDecreaseClass,
+                class=buttonDecreaseClasses,
                 type='button'
               ) -
               input.dropdown__input.js-dropdown__input(value=value, name=name, readonly)
@@ -44,7 +40,7 @@ mixin dropdown({ isOpen, size, hasButtons, value, text, state, id, type, name, i
       if (hasButtons)
         .dropdown__wrapper-button-menu
           button.dropdown__button-menu.dropdown__button-menu_cleans.js-dropdown__button-menu_cleans(
-            class=buttonCleansClass,
+            class=buttonCleansClasses,
             type='button'
           ) очистить
           button.dropdown__button-menu.dropdown__button-menu_complete.js-dropdown__button-menu_complete(

@@ -61,8 +61,8 @@ class DatePicker {
 
     if (this.dateRangeType) {
       onSelect = (fd) => {
-        this.$start.val(fd.split('-')[0]);
-        this.$end.val(fd.split('-')[1]);
+        this.$start.val(fd.split(' - ')[0]);
+        this.$end.val(fd.split(' - ')[1]);
       };
 
       return onSelect;

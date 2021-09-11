@@ -47,9 +47,9 @@
     "textField": {
       "placeholder": "Email",
       "type": "email",
-      "size": "small",
+      "isSmall": true,
       "iconText": "arrow_forward",
-      "themeIcon": "submit",
+      "isSubmit": true,
       "name": "email"
     },
     "list1": [
