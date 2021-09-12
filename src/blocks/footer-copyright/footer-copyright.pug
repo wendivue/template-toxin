@@ -7,11 +7,11 @@ mixin footer-copyright({ linkLogo, textLogo, type='full', list1, list2, list3, t
     footer.footer-copyright.footer-copyright_theme_full
       +page({})
         +center-block({})
-          .footer-copyright__wrapper-logo
+          .footer-copyright__logo-wrapper
             a(href=linkLogo) 
               img.footer-copyright__logo(src=img, alt='logo')
             p.footer-copyright__text-logo= textLogo
-          ul.footer-copyright__wrapper-list
+          ul.footer-copyright__list-wrapper
             each list in [list1, list2, list3]
               li.footer-copyright__lists
                 ul.footer-copyright__list
@@ -24,8 +24,8 @@ mixin footer-copyright({ linkLogo, textLogo, type='full', list1, list2, list3, t
                       else
                         a.footer-copyright__link(href=link)= text
 
-          .footer-copyright__wrapper-subscribe
-            .footer-copyright__wrapper-text
+          .footer-copyright__subscribe-wrapper
+            .footer-copyright__text-wrapper
               h3.footer-copyright__title-subscribe= titleSub
               p.footer-copyright__text-subscribe= textSub
             .footer-copyright__subscribe
@@ -48,7 +48,7 @@ mixin footer-copyright({ linkLogo, textLogo, type='full', list1, list2, list3, t
     footer.footer-copyright.footer-copyright_theme_creative
       a(href=linkLogo) 
         img.footer-copyright__logo(src=img, alt='logo')
-      .footer-copyright__wrapper-copyright
+      .footer-copyright__copyright-wrapper
         p.footer-copyright__text= copyright
       ul.footer-copyright__social.footer-copyright__social_creative
         each item in iconList

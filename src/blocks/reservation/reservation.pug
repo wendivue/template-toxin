@@ -7,7 +7,7 @@ mixin reservation({ number, price, link, text, datePicker, dropdown, priceList, 
   - const { typeText, period } = text;
 
   form.reservation(action=link)
-    .reservation__wrapper-head
+    .reservation__head-wrapper
       .reservation__items-number
         p.reservation__number.reservation__number_size_small №
           span.reservation__number.reservation__number_size_big= number

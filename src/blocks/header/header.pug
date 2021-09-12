@@ -9,7 +9,7 @@ mixin header({ list, size, textLogin, loginButton, loginLink, registerButton })
         a(href=loginLink) 
           img.header__logo(src='img/logo.svg', alt='logo')
 
-        .header__wrapper-menu
+        .header__menu-wrapper
           .header__burger.js-header__burger menu
           nav.header__menu.js-header__menu
             ul.header__list
@@ -19,13 +19,13 @@ mixin header({ list, size, textLogin, loginButton, loginLink, registerButton })
                   let itemClasses = '';
                   let linkClasses = '';
                   let iconClasses = '';
-                  let wrapperButtonClasses = '';
+                  let ButtonWrapperClasses = '';
                   const sizeSetting = ['small'];
                   const stateSetting = ['active'];
 
                   if(sizeSetting.includes(size)) itemClasses += ' header__item_size_' + size;
                   if(sizeSetting.includes(size)) iconClasses += ' header__icon_size_' + size;
-                  if(sizeSetting.includes(size)) wrapperButtonClasses += ' header__wrapper-button_size_' + size;
+                  if(sizeSetting.includes(size)) ButtonWrapperClasses += ' header__button-wrapper_size_' + size;
                   if(stateSetting.includes(state)) linkClasses += ' header__link_' + state;
 
 
@@ -43,7 +43,7 @@ mixin header({ list, size, textLogin, loginButton, loginLink, registerButton })
             .header__login
               p.header__text-login= textLogin
           else
-            .header__wrapper-button(class=wrapperButtonClasses)
+            .header__button-wrapper(class=ButtonWrapperClasses)
               .header__button
                 +button(loginButton)
               .header__button

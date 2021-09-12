@@ -23,14 +23,14 @@ mixin date-picker({ isActive, isSmall, id, text, textState, type, name, isRange,
     data-selected=selectedDate
   )
     if (isRange)
-      .date-picker__wrapper-range 
+      .date-picker__range-wrapper
         label.date-picker__label
           if (text)
-            .date-picker__wrapper-text
+            .date-picker__text-wrapper
               h3.date-picker__label= text[0]
               if (textState)
                 p.date-picker__text-state= textState
-          .date-picker__wrapper-input
+          .date-picker__input-wrapper
             input.date-picker__input.js-date-picker__input.js-date-picker__input-start(
               id=id[0],
               class=inputClasses,
@@ -44,11 +44,11 @@ mixin date-picker({ isActive, isSmall, id, text, textState, type, name, isRange,
 
         label.date-picker__label
           if (text)
-            .date-picker__wrapper-text
+            .date-picker__text-wrapper
               h3.date-picker__label= text[1]
               if (textState)
                 p.date-picker__text-state= textState
-          .date-picker__wrapper-input
+          .date-picker__input-wrapper
             input.date-picker__input.js-date-picker__input.js-date-picker__input-end(
               id=id[1],
               class=inputClasses,
@@ -62,11 +62,11 @@ mixin date-picker({ isActive, isSmall, id, text, textState, type, name, isRange,
     else if (!isInline)
       label.date-picker__label
         if (text)
-          .date-picker__wrapper-text
+          .date-picker__text-wrapper
             h3.date-picker__label= text
             if (textState)
               p.date-picker__text-state= textState
-        .date-picker__wrapper-input
+        .date-picker__input-wrapper
           input.date-picker__input.js-date-picker__input.js-date-picker__input-single(
             id=id,
             class=inputClasses,
@@ -79,6 +79,6 @@ mixin date-picker({ isActive, isSmall, id, text, textState, type, name, isRange,
             button.date-picker__icon= iconText
 
     .date-picker__calendar.js-date-picker__calendar(class=calendarClasses)
-      .date-picker__wrapper-buttons
+      .date-picker__buttons-wrapper
         button.date-picker__button.js-date-picker__button(type='button')= buttons[0]
         button.date-picker__button.js-date-picker__button(type='button')= buttons[1]

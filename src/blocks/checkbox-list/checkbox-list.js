@@ -11,7 +11,7 @@ class Checkbox {
   }
 
   getElement() {
-    this.header = this.anchor.querySelector('.js-checkbox-list__wrapper-header');
+    this.header = this.anchor.querySelector('.js-checkbox-list__header-wrapper');
     this.icon = this.header.querySelector('.js-checkbox-list__icon');
     this.menu = this.anchor.querySelector('.js-checkbox-list__items');
   }

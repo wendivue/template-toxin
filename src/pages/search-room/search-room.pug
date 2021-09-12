@@ -38,7 +38,7 @@ block content
 
   article.search-room__content
     h1.search-room__title= data.title
-    ul.search-room__wrapper-hotel-card
+    ul.search-room__hotel-card-wrapper
       each item in data.hotelCards
         - const { number, list, price, isLux, link, reviews, rating, text, carousel } = item;
         li.search-room__hotel-card

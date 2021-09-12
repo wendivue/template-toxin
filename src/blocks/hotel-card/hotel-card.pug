@@ -20,7 +20,7 @@ mixin hotel-card({ number, list, price, isLux, link, reviews, rating, text, caro
               img.hotel-card__img(src=item.img, alt=altText)
 
     .hotel-card__description
-      .hotel-card__wrapper-head
+      .hotel-card__head-wrapper
         .hotel-card__items-number
           p.hotel-card__number.hotel-card__number_size_small №
             span.hotel-card__number.hotel-card__number_size_big= number
@@ -30,7 +30,7 @@ mixin hotel-card({ number, list, price, isLux, link, reviews, rating, text, caro
           span.hotel-card__text.hotel-card__text_size_bold= price
           p.hotel-card__text= period
 
-      .hotel-card__wrapper-reviews
+      .hotel-card__reviews-wrapper
         .hotel-card__rate-button
           +rate-button({ rating })
         .hotel-card__reviews

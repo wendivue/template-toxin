@@ -13,12 +13,12 @@ block variables
   - const classMain = "room-details";
 
 block content
-  .room-details__wrapper-img
+  .room-details__img-wrapper
     img.room-details__main-img(src='img/room-details-1.png')
     .room-details__col-img
       img.room-details__img(src='img/room-details-2.png')
       img.room-details__img(src='img/room-details-3.png')
-  .room-details__wrapper-content
+  .room-details__content-wrapper
     +page({})
       +center-block({})
         .room-details__content
@@ -31,7 +31,7 @@ block content
               .room-details__pie-chart
                 +pie-chart(data.pieChart)
           section.room-details__details__reviews
-            .room-details__wrapper-title
+            .room-details__title-wrapper
               h2.room-details__title= data.reviewsTitle
               p.room-details__text-review= data.reviewsText
             ul.room-details__items-review

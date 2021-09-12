@@ -7,7 +7,7 @@
 @import '~Blocks/pie-chart/pie-chart';
 
 .room-details {
-  &__wrapper-img {
+  &__img-wrapper {
     position: relative;
     display: flex;
     max-width: 1920px;
@@ -19,7 +19,7 @@
     }
   }
 
-  &__wrapper-content {
+  &__content-wrapper {
     margin-top: 55px;
     padding-bottom: 56px;
     border-bottom: 1px solid rgba(31, 32, 65, 0.1);
@@ -98,7 +98,7 @@
     margin-left: -2px;
   }
 
-  &__wrapper-title {
+  &__title-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: baseline;

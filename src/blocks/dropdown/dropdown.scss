@@ -72,13 +72,13 @@
     @include typo-h3;
   }
 
-  &__wrapper-input {
+  &__input-wrapper {
     display: flex;
     align-items: center;
     margin-top: 2px;
   }
 
-  &__wrapper-button-menu {
+  &__button-menu-wrapper {
     display: flex;
     justify-content: space-between;
     margin-top: 15px;

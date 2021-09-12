@@ -9,7 +9,7 @@ mixin checkbox-list({ isOpen, text, list })
     if(isOpen) iconClasses += ' checkbox-list__icon_open';
 
   .checkbox-list.js-checkbox-list
-    .checkbox-list__wrapper-header.js-checkbox-list__wrapper-header
+    .checkbox-list__header-wrapper.js-checkbox-list__header-wrapper
       h3.checkbox-list__title= text
       button.checkbox-list__icon.js-checkbox-list__icon(class=iconClasses)= "expand_more"
 

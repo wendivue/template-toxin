@@ -3,7 +3,7 @@ mixin checkbox({ text, id, title, name, isChecked, isRich })
     input.checkbox__input(id=id, name=name, type='checkbox', checked=isChecked)
 
     if (isRich)
-      label.checkbox__wrapper-text(for=id)
+      label.checkbox__text-wrapper(for=id)
         p.checkbox__text= title
         p.checkbox__info.checkbox__info_size_small= text
     else

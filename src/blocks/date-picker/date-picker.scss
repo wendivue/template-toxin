@@ -6,17 +6,17 @@
 .date-picker {
   position: relative;
 
-  &__wrapper-range {
+  &__range-wrapper {
     display: flex;
     justify-content: space-between;
     column-gap: 20px;
   }
 
-  &__wrapper-input {
+  &__input-wrapper {
     position: relative;
   }
 
-  &__wrapper-text {
+  &__text-wrapper {
     height: 25px;
     display: flex;
     justify-content: space-between;
@@ -114,7 +114,7 @@
     }
   }
 
-  &__wrapper-buttons {
+  &__buttons-wrapper {
     width: 100%;
     display: flex;
     justify-content: space-between;

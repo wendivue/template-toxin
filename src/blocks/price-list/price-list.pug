@@ -4,7 +4,7 @@ mixin price-list({ list, description, price })
       - const { hasIcon, description, price } = item;
       li.price-list__item
         if (hasIcon)
-          .price-list__wrapper-text
+          .price-list__text-wrapper
             p.price-list__text= description
             i.price-list__icon i
           p.price-list__text= price + "\u{20BD}"

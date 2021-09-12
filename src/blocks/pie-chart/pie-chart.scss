@@ -3,13 +3,13 @@
 .pie-chart {
   display: flex;
 
-  &__wrapper-canvas {
+  &__canvas-wrapper {
     position: relative;
     width: 124px;
     height: 124px;
   }
 
-  &__wrapper-text-diagram {
+  &__text-diagram-wrapper {
     position: absolute;
     top: 33.5%;
     left: 26%;

@@ -13,7 +13,7 @@ mixin text-field({ isActive, isSmall, isSubmit, id, isOpen, text, textState, typ
 
   .text-field.js-text-field(class=textFieldClasses)
     if (text)
-      .text-field__wrapper-text
+      .text-field__text-wrapper
         label.text-field__label(for=id)= text
         if (textState)
           p.text-field__text-state= textState

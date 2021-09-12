@@ -12,7 +12,7 @@
     -webkit-text-fill-color: transparent;
   }
 
-  &__wrapper-logo {
+  &__logo-wrapper {
     max-width: 260px;
 
     @media (max-width: $breakpoint-md) {
@@ -43,12 +43,12 @@
     }
   }
 
-  &__wrapper-copyright {
+  &__copyright-wrapper {
     margin-bottom: 21px;
     text-align: center;
   }
 
-  &__wrapper-list {
+  &__list-wrapper {
     display: flex;
     width: 560px;
     justify-content: space-between;
@@ -90,7 +90,7 @@
     }
   }
 
-  &__wrapper-subscribe {
+  &__subscribe-wrapper {
     width: 260px;
     margin-top: 4px;
 
@@ -113,7 +113,7 @@
     padding-top: 23px;
   }
 
-  &__wrapper-text {
+  &__text-wrapper {
     flex-flow: column;
   }
 

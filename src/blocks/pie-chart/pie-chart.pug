@@ -5,9 +5,9 @@ mixin pie-chart({ votesText, list })
     list.forEach((item) => fullVotes = item.votes + fullVotes); 
 
   .pie-chart.js-pie-chart
-    .pie-chart__wrapper-canvas
+    .pie-chart__canvas-wrapper
       canvas.pie-chart__canvas.js-pie-chart__canvas
-      .pie-chart__wrapper-text-diagram
+      .pie-chart__text-diagram-wrapper
         p.pie-chart__text-diagram.pie-chart__text-diagram_size_big= fullVotes
         p.pie-chart__text-diagram= votesText
 
