@@ -273,15 +273,14 @@
   "buttonList": [
     [
       { "text": "CLICK ME", "link": "/mock-address/change-me" },
-      { "text": "CLICK ME", "link": "/mock-address/change-me", "state": "active" }
+      { "text": "CLICK ME", "link": "/mock-address/change-me", "isActive": true }
     ],
     [
-      { "text": "CLICK ME", "link": "/mock-address/change-me", "theme": "border" },
+      { "text": "CLICK ME", "link": "/mock-address/change-me", "theme": "outlined" },
       {
         "text": "CLICK ME",
         "link": "/mock-address/change-me",
-        "theme": "border",
-        "state": "active-border"
+        "theme": "outlined"
       }
     ],
     [
@@ -290,7 +289,7 @@
         "text": "CLICK ME",
         "link": "/mock-address/change-me",
         "theme": "icon-link",
-        "state": "icon-link-active"
+        "isColorGray": true
       }
     ]
   ],

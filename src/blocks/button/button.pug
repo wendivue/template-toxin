@@ -1,14 +1,14 @@
-mixin button({ theme, size, state, themeHeader, hasIcon, link, text, isButton, type })
+mixin button({ theme, size, isActive, isColorGray, themeHeader, hasIcon, link, text, isButton, type })
   -
     let mainClasses = '';
     type = type ? type : '';
-    const themeSetting = ['border', 'active-border', 'icon-link'];
-    const sizeSetting = ['large', 'small', 'small-border'];
-    const stateSetting = ['active', 'active-border', 'icon-link-active'];
+    const themeSetting = ['outlined', 'icon-link'];
+    const sizeSetting = ['large', 'small', 'small-outlined'];
 
     if(themeSetting.includes(theme)) mainClasses += ' button_theme_' + theme;
     if(sizeSetting.includes(size)) mainClasses += ' button_size_' + size;
-    if(stateSetting.includes(state)) mainClasses += ' button_' + state;
+    if(isActive) mainClasses += ' button_active';
+    if(isColorGray) mainClasses += ' button_color_gray';
 
   if (isButton)
     button.button(class=mainClasses, href=link, type=type)= text

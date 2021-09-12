@@ -56,9 +56,11 @@
       border: 1px solid $dark-shade-50;
     }
 
-    &_icon {
-      padding-right: 40px;
-      cursor: pointer;
+    &_with {
+      &_icon {
+        padding-right: 40px;
+        cursor: pointer;
+      }
     }
   }
 

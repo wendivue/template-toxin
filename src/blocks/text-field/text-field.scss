@@ -53,9 +53,11 @@
       border-radius: 4px 4px 0 0;
     }
 
-    &_icon {
-      padding-right: 40px;
-      cursor: pointer;
+    &_with {
+      &_icon {
+        padding-right: 40px;
+        cursor: pointer;
+      }
     }
   }
 

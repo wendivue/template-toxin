@@ -88,7 +88,7 @@
       "type": "submit"
     },
     "textSignIn": "Уже есть аккаунт на Toxin",
-    "buttonSign": { "text": "войти", "link": "landing-sign-in.html", "theme": "border" }
+    "buttonSign": { "text": "войти", "link": "landing-sign-in.html", "theme": "outlined" }
   },
   "reservation": {
     "number": "888",
@@ -170,7 +170,7 @@
     "buttonRegistration": {
       "text": "создать",
       "link": "landing-registration.html",
-      "theme": "border"
+      "theme": "outlined"
     }
   },
   "datePicker": {

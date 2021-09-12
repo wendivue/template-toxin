@@ -21,17 +21,6 @@
     opacity: 0.5;
   }
 
-  &_icon-link-active {
-    opacity: 1;
-    color: $dark-shade-50;
-  }
-
-  &_active-border {
-    &:before {
-      opacity: 0.5;
-    }
-  }
-
   &__icon {
     @include material-icons;
 
@@ -42,7 +31,7 @@
   }
 
   &_theme {
-    &_border {
+    &_outlined {
       padding: 12.5px 17.5px;
       background: #fff;
       color: $color-primary;
@@ -62,8 +51,7 @@
         background: $gradient-primary;
       }
 
-      &:hover,
-      &_active {
+      &:hover {
         opacity: 1;
 
         &:before {
@@ -95,9 +83,15 @@
       padding: 9.5px 19.5px;
     }
 
-    &_small-border {
+    &_small-outlined {
       min-width: auto;
       padding: 7.5px 17.5px;
+    }
+  }
+
+  &_color {
+    &_gray {
+      color: $dark-shade-50;
     }
   }
 }

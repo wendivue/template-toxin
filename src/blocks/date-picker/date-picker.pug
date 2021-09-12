@@ -1,5 +1,3 @@
-include ../text-field/text-field.pug
-
 mixin date-picker({ isActive, isSmall, id, text, textState, type, name, isRange, placeholder, iconText, dateFormat, dateNavTitles = 'MM yyyy', isInline = false, selectedDate = [], buttons })
   -
     let datePickerClasses = '';
@@ -9,7 +7,7 @@ mixin date-picker({ isActive, isSmall, id, text, textState, type, name, isRange,
 
     if (isSmall) datePickerClasses +=' date-picker_size_small';
     if (isActive) inputClasses += ' date-picker__input_active';
-    if (iconText) inputClasses += ' date-picker__input_icon';
+    if (iconText) inputClasses += ' date-picker__input_with_icon';
     if(isRange) datePickerType = 'range';
     if(!isInline) calendarClasses += 'date-picker__calendar_hidden';
     if(isInline) calendarClasses += 'date-picker__calendar_inline';

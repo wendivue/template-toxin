@@ -45,6 +45,6 @@
       "type": "submit"
     },
     "textSignIn": "Уже есть аккаунт на Toxin",
-    "buttonSign": { "text": "войти", "link": "landing-sign-in.html", "theme": "border" }
+    "buttonSign": { "text": "войти", "link": "landing-sign-in.html", "theme": "outlined" }
   }
 }

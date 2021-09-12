@@ -27,8 +27,8 @@
     "loginButton": {
       "text": "войти",
       "link": "landing-sign-in.html",
-      "theme": "border",
-      "size": "small-border"
+      "theme": "outlined",
+      "size": "small-outlined"
     },
     "registerButton": {
       "text": "зарегистрироваться",
