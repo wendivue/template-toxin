@@ -2,7 +2,7 @@ include ../button/button.pug
 include ../page/page.pug
 include ../center-block/center-block.pug
 
-mixin header({ list, size, textLogin, loginButton, loginLink, registerButton })
+mixin header({ list, isSmall, textLogin, loginButton, loginLink, registerButton })
   header.header.js-header
     +page({ isSmall: true })
       +center-block({})
@@ -15,18 +15,16 @@ mixin header({ list, size, textLogin, loginButton, loginLink, registerButton })
             ul.header__list
               each item in list
                 -
-                  let { state, link, text, hasIcon, subList } = item;
+                  let { isActive, link, text, hasIcon, subList } = item;
                   let itemClasses = '';
                   let linkClasses = '';
                   let iconClasses = '';
                   let ButtonWrapperClasses = '';
-                  const sizeSetting = ['small'];
-                  const stateSetting = ['active'];
 
-                  if(sizeSetting.includes(size)) itemClasses += ' header__item_size_' + size;
-                  if(sizeSetting.includes(size)) iconClasses += ' header__icon_size_' + size;
-                  if(sizeSetting.includes(size)) ButtonWrapperClasses += ' header__button-wrapper_size_' + size;
-                  if(stateSetting.includes(state)) linkClasses += ' header__link_' + state;
+                  if(isSmall) itemClasses += ' header__item_size_small';
+                  if(isSmall) iconClasses += ' header__icon_size_small';
+                  if(isSmall) ButtonWrapperClasses += ' header__button-wrapper_size_small';
+                  if(isActive) linkClasses += ' header__link_active';
 
 
                 li.header__item(class=itemClasses)

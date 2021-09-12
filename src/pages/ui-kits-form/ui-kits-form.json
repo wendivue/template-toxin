@@ -1,7 +1,7 @@
 {
   "textFieldDefault": {
     "text": "Text Field",
-    "value": "Email",
+    "placeholder": "Email",
     "type": "text",
     "name": "text-1",
     "id": "text-1",
@@ -9,7 +9,7 @@
   },
   "textFieldHover": {
     "text": "Text Field",
-    "placeholder": "This is pretty awesome",
+    "value": "This is pretty awesome",
     "name": "text-2",
     "id": "text-2",
     "isActive": true,
