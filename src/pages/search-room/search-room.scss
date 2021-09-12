@@ -15,21 +15,58 @@
     border-bottom: 1px solid $dark-shade-25;
   }
 
+  &__sidebar {
+    @media (max-width: $breakpoint-lg) {
+      max-width: 1130px;
+      margin: 15px 0;
+      display: flex;
+      flex-flow: wrap;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    @media (max-width: $breakpoint-md) {
+      max-width: 580px;
+      justify-content: start;
+    }
+
+    @media (max-width: $breakpoint-sm) {
+      max-width: 320px;
+      justify-content: center;
+    }
+  }
+
   &__date-picker {
     margin-top: 10px;
+
+    @media (max-width: $breakpoint-lg) {
+      margin: 0;
+    }
   }
 
   &__dropdown {
     margin-top: 15px;
+
+    @media (max-width: $breakpoint-lg) {
+      margin: 0;
+    }
   }
 
   &__range-slider {
     margin-top: 30px;
+
+    @media (max-width: $breakpoint-lg) {
+      margin: 0;
+    }
   }
 
   &__checkbox-buttons {
     max-width: 240px;
     margin-top: 25px;
+
+    @media (max-width: $breakpoint-lg) {
+      margin: 0;
+    }
   }
 
   &__text-range-slider {
@@ -37,25 +74,45 @@
 
     margin-top: 9px;
     font-size: 12px;
+
+    @media (max-width: $breakpoint-lg) {
+      margin: 0;
+    }
   }
 
   &__rich {
     max-width: 260px;
     margin-top: 30px;
+
+    @media (max-width: $breakpoint-lg) {
+      margin: 0;
+    }
   }
 
   &__dropdown-room {
     margin-top: 26px;
+
+    @media (max-width: $breakpoint-lg) {
+      margin: 0;
+    }
   }
 
   &__checkbox-list {
     margin-top: 25px;
+
+    @media (max-width: $breakpoint-lg) {
+      margin: 0;
+    }
   }
 
   &__content {
     width: 100%;
     max-width: 834px;
     margin-top: 15px;
+
+    @media (max-width: $breakpoint-lg) {
+      margin: 0;
+    }
   }
 
   &__title {
