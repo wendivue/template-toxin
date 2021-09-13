@@ -31,8 +31,7 @@
     }
 
     @media (max-width: $breakpoint-sm) {
-      max-width: 320px;
-      justify-content: center;
+      flex-flow: column;
     }
   }
 
