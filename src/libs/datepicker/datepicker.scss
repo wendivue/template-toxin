@@ -132,3 +132,9 @@
     rgba(255, 255, 255, 1) 100%
   );
 }
+
+.-in-range-.datepicker--cell-day.-other-month-,
+.-in-range-.datepicker--cell-year.-other-decade- {
+  background: rgba($color-primary, 0.25);
+  color: $dark-shade-75;
+}

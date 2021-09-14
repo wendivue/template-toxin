@@ -6,7 +6,7 @@
   &__content {
     width: 100%;
     height: 830px;
-    background: url(img/landing-image.png) 100% 100% no-repeat;
+    background: url(img/landing-image.png) center no-repeat;
     background-size: cover;
 
     @media (max-width: $breakpoint-md) {
