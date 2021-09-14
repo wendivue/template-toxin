@@ -1,11 +1,11 @@
 mixin rate-button({ rating, maxRating = 5 })
-  - const iconBorder = maxRating - rating;
+  - const iconOutlined = maxRating - rating;
 
   ul.rate-button
     - for (let x = 0; x < rating; x++)
       li.rate-button__item
         i.rate-button__icon star
 
-    - for (let x = 0; x < iconBorder; x++)
+    - for (let x = 0; x < iconOutlined; x++)
       li.rate-button__item
         i.rate-button__icon star_border
