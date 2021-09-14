@@ -132,7 +132,12 @@
           "size": "large",
           "hasIcon": true
         },
-        { "description": "Сбор за доп. услуги", "size": "large", "price": "300", "hasIcon": true }
+        {
+          "description": "Сбор за дополнительные услуги",
+          "size": "large",
+          "price": "300",
+          "hasIcon": true
+        }
       ],
       "description": "Итого",
       "price": "38 081"

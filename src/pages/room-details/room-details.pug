@@ -46,4 +46,5 @@ block content
               h2.room-details__title-cancel= data.titleCancel
               p.room-details__text-cancel.room-details__text-cancel_small= data.textCancel
         .room-details__reservation
-          +reservation(data.reservation)
+          .room-details__card
+            +reservation(data.reservation)

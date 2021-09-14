@@ -8,7 +8,7 @@
     position: absolute;
     width: 298px;
     display: none;
-    padding: 4px 6px 12px 14px;
+    padding: 4px 6px 4px 14px;
     background-color: #fff;
     border-left: 1px solid $dark-shade-25;
     border-right: 1px solid $dark-shade-25;
@@ -17,7 +17,7 @@
     border-radius: 0 0 4px 4px;
     z-index: 10;
 
-    @media (max-width: $breakpoint-xxs) {
+    @media (max-width: $breakpoint-xs) {
       max-width: 268px;
     }
 
@@ -28,7 +28,7 @@
     &_size {
       &_small {
         width: 244px;
-        padding: 3px 7px 4px 13px;
+        padding: 3px 7px 5px 13px;
       }
     }
   }
@@ -82,6 +82,7 @@
     display: flex;
     justify-content: space-between;
     margin-top: 15px;
+    margin-bottom: 7px;
   }
 
   &__button-menu {

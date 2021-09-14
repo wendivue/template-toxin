@@ -1,6 +1,9 @@
 @import '~Typography';
 
 .icon-text-list {
+  max-width: 280px;
+  width: 100%;
+
   &__item {
     display: flex;
     align-items: center;
