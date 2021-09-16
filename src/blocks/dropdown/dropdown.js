@@ -8,13 +8,13 @@ class Dropdown {
   }
 
   init() {
-    this.getElement();
-    this.getAttribute();
+    this.defineElements();
+    this.defineAttributes();
     this.getValue();
-    this.bindEvents();
+    this.addEventHandlers();
   }
 
-  getElement() {
+  defineElements() {
     this.input = this.anchor.querySelectorAll('.js-dropdown__input');
     this.dropdownInput = this.anchor.querySelectorAll('.js-text-field__input');
     this.items = this.anchor.querySelectorAll('.js-dropdown__item');
@@ -25,7 +25,7 @@ class Dropdown {
     this.buttonCleans = this.anchor.querySelectorAll('.js-dropdown__button-menu_cleans');
   }
 
-  getAttribute() {
+  defineAttributes() {
     this.defaultValue = this.anchor.getAttribute('data-default-value');
     this.commonWord = JSON.parse(this.anchor.getAttribute('data-common-word'));
 
@@ -38,14 +38,17 @@ class Dropdown {
     });
   }
 
-  bindEvents() {
-    this.bindEventDocumentClick();
-    this.bindEventClick(this.buttonIncrease, this.buttonDecrease);
-    this.bindEventToggle(this.dropdownInput, this.buttonComplete);
-    this.bindEventClear(this.buttonCleans);
+  addEventHandlers() {
+    this.addEventHandlersDocument();
+    this.addEventHandlersButton();
+    this.addEventHandlersToggle();
+    this.addEventHandlersClear();
   }
 
-  bindEventClick(elementIncrease, elementDecrease) {
+  addEventHandlersButton() {
+    const elementIncrease = this.buttonIncrease;
+    const elementDecrease = this.buttonDecrease;
+
     elementIncrease.forEach((element, index) => {
       element.addEventListener('click', this.changeValueIncrease.bind(this, index));
     });
@@ -55,7 +58,10 @@ class Dropdown {
     });
   }
 
-  bindEventToggle(elements, buttons) {
+  addEventHandlersToggle() {
+    const elements = this.dropdownInput;
+    const buttons = this.buttonComplete;
+
     elements.forEach((element) => {
       element.addEventListener('click', this.toggle.bind(this));
     });
@@ -65,13 +71,15 @@ class Dropdown {
     });
   }
 
-  bindEventClear(elements) {
+  addEventHandlersClear() {
+    const elements = this.buttonCleans;
+
     elements.forEach((element) => {
       element.addEventListener('click', this.clear.bind(this));
     });
   }
 
-  bindEventDocumentClick() {
+  addEventHandlersDocument() {
     document.addEventListener('click', this.handleDocumentClick);
   }
 

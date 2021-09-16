@@ -8,17 +8,17 @@ class PieChart {
   }
 
   init() {
-    this.getElement();
-    this.getAttribute();
+    this.defineElements();
+    this.defineAttributes();
     this.createChart();
   }
 
-  getElement() {
+  defineElements() {
     this.canvas = this.anchor.querySelector('.js-pie-chart__canvas').getContext('2d');
     this.items = this.anchor.querySelectorAll('.js-pie-chart__item');
   }
 
-  getAttribute() {
+  defineAttributes() {
     this.votes = [];
     this.colors = [];
 

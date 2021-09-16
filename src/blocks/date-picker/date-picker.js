@@ -8,13 +8,13 @@ class DatePicker {
   }
 
   init() {
-    this.getElement();
-    this.getAttribute();
+    this.defineElements();
+    this.defineAttributes();
     this.createDatePicker();
-    this.bindEvents();
+    this.addEventHandlers();
   }
 
-  getElement() {
+  defineElements() {
     this.$input = this.$anchor.find('.js-date-picker__input');
     this.$calendar = this.$anchor.find('.js-date-picker__calendar');
     this.$start = this.$anchor.find('.js-date-picker__input-start');
@@ -23,7 +23,7 @@ class DatePicker {
     this.$button = this.$anchor.find('.js-date-picker__button');
   }
 
-  getAttribute() {
+  defineAttributes() {
     this.dateRangeType = this.$anchor.attr('data-type');
     this.dateFormat = this.$anchor.attr('data-date-format');
     this.dateNavTitles = this.$anchor.attr('data-date-nav-titles');
@@ -75,26 +75,32 @@ class DatePicker {
     return onSelect;
   }
 
-  bindEvents() {
-    this.bindEventDocumentClick();
-    this.bindEventInputClick([this.$start, this.$end, this.$single]);
-    this.bindEventButtonClick(this.$button.last());
-    this.bindEventButtonClearClick(this.$button.first());
+  addEventHandlers() {
+    this.addEventHandlersDocument();
+    this.addEventHandlersInput();
+    this.addEventHandlersButton();
+    this.addEventHandlersButtonClear();
   }
 
-  bindEventDocumentClick() {
+  addEventHandlersDocument() {
     document.addEventListener('click', this.handleDocumentClick.bind(this));
   }
 
-  bindEventInputClick(elements) {
+  addEventHandlersInput() {
+    const elements = [this.$start, this.$end, this.$single];
+
     elements.forEach((element) => element.on('click', this.show.bind(this)));
   }
 
-  bindEventButtonClick(element) {
+  addEventHandlersButton() {
+    const element = this.$button.last();
+
     element.on('click', this.hide.bind(this));
   }
 
-  bindEventButtonClearClick(element) {
+  addEventHandlersButtonClear() {
+    const element = this.$button.first();
+
     element.on('click', this.clear.bind(this));
   }
 

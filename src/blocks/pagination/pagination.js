@@ -8,11 +8,11 @@ class Pagination {
   }
 
   init() {
-    this.getAttribute();
+    this.defineAttributes();
     this.addPagination();
   }
 
-  getAttribute() {
+  defineAttributes() {
     this.itemsOnPage = this.anchor.getAttribute('data-items-on-page');
     this.items = this.anchor.getAttribute('data-items');
     this.currentPage = this.anchor.getAttribute('data-current-page');

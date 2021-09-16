@@ -6,18 +6,18 @@ class Checkbox {
   }
 
   init() {
-    this.getElement();
-    this.bindEventClick(this.header);
+    this.defineElements();
+    this.addEventHandlers();
   }
 
-  getElement() {
+  defineElements() {
     this.header = this.anchor.querySelector('.js-checkbox-list__header-wrapper');
     this.icon = this.header.querySelector('.js-checkbox-list__icon');
     this.menu = this.anchor.querySelector('.js-checkbox-list__items');
   }
 
-  bindEventClick(element) {
-    element.addEventListener('click', this.toggle.bind(this));
+  addEventHandlers() {
+    this.header.addEventListener('click', this.toggle.bind(this));
   }
 
   toggle() {

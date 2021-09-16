@@ -6,22 +6,24 @@ class Header {
   }
 
   init() {
-    this.getElement();
-    this.bindEventDocumentClick();
-    this.bindEventClickBurger(this.burger);
+    this.defineElements();
+    this.addEventHandlersDocument();
+    this.addEventHandlersBurger();
   }
 
-  getElement() {
+  defineElements() {
     this.burger = this.anchor.querySelectorAll('.js-header__burger');
   }
 
-  bindEventClickBurger(elements) {
+  addEventHandlersBurger() {
+    const elements = this.burger;
+
     elements.forEach((element) => {
       element.addEventListener('click', this.toggleBurger.bind(this));
     });
   }
 
-  bindEventDocumentClick() {
+  addEventHandlersDocument() {
     document.addEventListener('click', this.handleDocumentClick);
   }
 

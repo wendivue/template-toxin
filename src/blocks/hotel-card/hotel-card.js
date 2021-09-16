@@ -8,11 +8,11 @@ class HotelCard {
   }
 
   init() {
-    this.getAttribute();
+    this.defineAttributes();
     this.createSlider();
   }
 
-  getAttribute() {
+  defineAttributes() {
     this.dataNav = JSON.parse(this.$anchor.attr('data-nav'));
     this.dataItems = this.$anchor.attr('data-items');
     this.dataDots = JSON.parse(this.$anchor.attr('data-dots'));

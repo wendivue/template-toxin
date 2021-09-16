@@ -5,18 +5,18 @@ class LikeButton {
   }
 
   init() {
-    this.getElement();
-    this.bindEventClick(this.checkbox);
+    this.defineElements();
+    this.addEventHandlers();
   }
 
-  getElement() {
+  defineElements() {
     this.checkbox = this.anchor.querySelector('.js-like-button__checkbox');
     this.text = this.anchor.querySelector('.js-like-button__number');
     this.label = this.anchor.querySelector('.js-like-button__label');
   }
 
-  bindEventClick(element) {
-    element.addEventListener('click', this.increase.bind(this));
+  addEventHandlers() {
+    this.checkbox.addEventListener('click', this.increase.bind(this));
   }
 
   increase() {

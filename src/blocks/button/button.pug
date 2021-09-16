@@ -11,7 +11,7 @@ mixin button({ theme, size, isActive, isColorGray, themeHeader, hasIcon, link, t
     if(isColorGray) mainClasses += ' button_color_gray';
 
   if (isButton)
-    button.button(class=mainClasses, href=link, type=type)= text
+    button.button(class=mainClasses, type=type)= text
       if (hasIcon)
         i.button__icon arrow_forward
   else

@@ -8,11 +8,11 @@ class TextField {
   }
 
   init() {
-    this.getElement();
+    this.defineElements();
     this.addMask();
   }
 
-  getElement() {
+  defineElements() {
     this.input = this.anchor.querySelector('.js-text-field__input');
   }
 
