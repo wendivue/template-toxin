@@ -4,7 +4,7 @@
 .checkbox-buttons {
   &__header-wrapper {
     display: flex;
-    margin-bottom: 13px;
+    margin-bottom: 16px;
     align-items: center;
     color: $dark-shade-50;
   }
@@ -14,7 +14,7 @@
   }
 
   &__item {
-    margin-bottom: 5px;
+    margin-bottom: 11px;
 
     &_rich {
       margin-bottom: 9px;
