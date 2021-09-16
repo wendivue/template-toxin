@@ -120,7 +120,7 @@ class DatePicker {
   }
 
   show() {
-    this.$calendar.removeClass('date-picker__calendar_hidden');
+    this.$calendar.toggleClass('date-picker__calendar_hidden');
   }
 
   clear() {

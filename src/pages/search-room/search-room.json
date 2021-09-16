@@ -2,7 +2,7 @@
   "centerBlockProps": { "isScreenLarge": "large" },
   "datePicker": {
     "text": "даты пребывания в отеле",
-    "placeholder": "ДД.ММ.ГГГГ",
+    "placeholder": "ДД М - ДД М",
     "selectedDate": [
       [2022, 7, 19],
       [2022, 7, 23]
