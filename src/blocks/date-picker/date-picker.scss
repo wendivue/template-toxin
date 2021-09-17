@@ -1,7 +1,7 @@
 @import '~air-datepicker/dist/css/datepicker';
 @import '~Libs/datepicker/datepicker.scss';
 @import '~Typography';
-@import '~Blocks/text-field/text-field';
+@import '~Blocks/button/button';
 
 .date-picker {
   position: relative;
@@ -120,7 +120,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 0 17px;
+    padding: 0 21px;
     padding-bottom: 18px;
     background-color: #fff;
   }

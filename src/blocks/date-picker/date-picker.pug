@@ -1,3 +1,5 @@
+include ../button/button.pug
+
 mixin date-picker({ isActive, isSmall, id, text, textState, type, name, isRange, placeholder, iconText, dateFormat, dateNavTitles = 'MM yyyy', isInline = false, selectedDate = [], buttons })
   -
     let datePickerClasses = '';
@@ -78,5 +80,6 @@ mixin date-picker({ isActive, isSmall, id, text, textState, type, name, isRange,
 
     .date-picker__calendar.js-date-picker__calendar(class=calendarClasses)
       .date-picker__buttons-wrapper
-        button.date-picker__button.js-date-picker__button(type='button')= buttons[0]
-        button.date-picker__button.js-date-picker__button(type='button')= buttons[1]
+        each item in buttons
+          - const { isButton, text, theme } = item;
+          +button({isButton, text, theme})

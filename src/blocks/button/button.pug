@@ -1,7 +1,6 @@
-mixin button({ theme, size, isActive, isColorGray, themeHeader, hasIcon, link, text, isButton, type })
+mixin button({ theme, size, isActive, isColorGray, themeHeader, hasIcon, link, text, isButton, type = 'button' })
   -
     let mainClasses = '';
-    type = type ? type : '';
     const themeSetting = ['outlined', 'icon-link'];
     const sizeSetting = ['large', 'small', 'small-outlined'];
 
@@ -11,7 +10,7 @@ mixin button({ theme, size, isActive, isColorGray, themeHeader, hasIcon, link, t
     if(isColorGray) mainClasses += ' button_color_gray';
 
   if (isButton)
-    button.button(class=mainClasses, type=type)= text
+    button.button.js-button(class=mainClasses, type=type)= text
       if (hasIcon)
         i.button__icon arrow_forward
   else

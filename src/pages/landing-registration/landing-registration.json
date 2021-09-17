@@ -17,7 +17,10 @@
         [2022, 7, 19],
         [2022, 7, 23]
       ],
-      "buttons": ["Очистить", "Применить"],
+      "buttons": [
+        { "isButton": true, "text": "Очистить", "theme": "icon-link" },
+        { "isButton": true, "text": "Применить", "theme": "icon-link" }
+      ],
       "id": "date",
       "type": "text",
       "name": "date",

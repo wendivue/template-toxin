@@ -1,5 +1,6 @@
 @import '~Typography';
 @import '~Blocks/text-field/text-field';
+@import '~Blocks/button/button';
 
 .dropdown {
   position: relative;
@@ -86,18 +87,6 @@
   }
 
   &__button-menu {
-    @include typo-h3;
-
-    padding: 0;
-    color: $color-primary;
-    border: none;
-    background: #fff;
-    cursor: pointer;
-
-    &:hover {
-      color: $dark-shade-50;
-    }
-
     &_hide {
       opacity: 0;
     }

@@ -20,7 +20,7 @@ class DatePicker {
     this.$start = this.$anchor.find('.js-date-picker__input-start');
     this.$end = this.$anchor.find('.js-date-picker__input-end');
     this.$single = this.$anchor.find('.js-date-picker__input-single');
-    this.$button = this.$anchor.find('.js-date-picker__button');
+    this.$button = this.$anchor.find('.js-button');
   }
 
   defineAttributes() {

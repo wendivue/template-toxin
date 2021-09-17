@@ -9,7 +9,10 @@
         [2022, 7, 19],
         [2022, 7, 23]
       ],
-      "buttons": ["Очистить", "Применить"],
+      "buttons": [
+        { "isButton": true, "text": "Очистить", "theme": "icon-link" },
+        { "isButton": true, "text": "Применить", "theme": "icon-link" }
+      ],
       "type": "text",
       "name": ["arrival", "departure"],
       "id": ["start", "end"],
@@ -24,6 +27,10 @@
       "iconText": "expand_more",
       "isItemsPeople": true,
       "hasButtons": true,
+      "buttons": [
+        { "isButton": true, "text": "Очистить", "theme": "icon-link" },
+        { "isButton": true, "text": "Применить", "theme": "icon-link" }
+      ],
       "hasDropdown": true,
       "hasHideButtonCleans": true,
       "list": [
@@ -103,7 +110,10 @@
         [2022, 7, 19],
         [2022, 7, 23]
       ],
-      "buttons": ["Очистить", "Применить"],
+      "buttons": [
+        { "isButton": true, "text": "Очистить", "theme": "icon-link" },
+        { "isButton": true, "text": "Применить", "theme": "icon-link" }
+      ],
       "name": ["arrival", "departure"],
       "type": "text",
       "id": ["start2", "end2"],
@@ -118,6 +128,10 @@
       "iconText": "expand_more",
       "isItemsPeople": true,
       "hasButtons": true,
+      "buttons": [
+        { "isButton": true, "text": "Очистить", "theme": "icon-link" },
+        { "isButton": true, "text": "Применить", "theme": "icon-link" }
+      ],
       "hasDropdown": true,
       "list": [
         { "text": "взрослые", "value": "2", "name": "adults" },
@@ -180,7 +194,10 @@
   },
   "datePicker": {
     "isInline": true,
-    "buttons": ["Очистить", "Применить"]
+    "buttons": [
+      { "isButton": true, "text": "Очистить", "theme": "icon-link" },
+      { "isButton": true, "text": "Применить", "theme": "icon-link" }
+    ]
   },
   "hotelList": [
     {

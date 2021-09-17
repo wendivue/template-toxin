@@ -23,6 +23,10 @@
     "id": "dropdown-1",
     "textState": "Default",
     "hasButtons": true,
+    "buttons": [
+      { "isButton": true, "text": "Очистить", "theme": "icon-link" },
+      { "isButton": true, "text": "Применить", "theme": "icon-link" }
+    ],
     "hasDropdown": true,
     "hasHideButtonCleans": true,
     "list": [
@@ -54,7 +58,10 @@
       [2022, 7, 19],
       [2022, 7, 23]
     ],
-    "buttons": ["Очистить", "Применить"],
+    "buttons": [
+      { "isButton": true, "text": "Очистить", "theme": "icon-link" },
+      { "isButton": true, "text": "Применить", "theme": "icon-link" }
+    ],
     "type": "text",
     "name": ["arrival", "departure"],
     "id": ["start", "end"],
@@ -68,7 +75,10 @@
       [2022, 7, 19],
       [2022, 7, 23]
     ],
-    "buttons": ["Очистить", "Применить"],
+    "buttons": [
+      { "isButton": true, "text": "Очистить", "theme": "icon-link" },
+      { "isButton": true, "text": "Применить", "theme": "icon-link" }
+    ],
     "type": "text",
     "id": "date-2",
     "name": "filterDate",
@@ -222,6 +232,10 @@
     "textState": "Default",
     "isOpen": true,
     "hasButtons": true,
+    "buttons": [
+      { "isButton": true, "text": "Очистить", "theme": "icon-link" },
+      { "isButton": true, "text": "Применить", "theme": "icon-link" }
+    ],
     "hasDropdown": true,
     "hasHideButtonCleans": true,
     "list": [
@@ -308,6 +322,10 @@
     "id": "dropdown-5",
     "iconText": "expand_more",
     "hasButtons": true,
+    "buttons": [
+      { "isButton": true, "text": "Очистить", "theme": "icon-link" },
+      { "isButton": true, "text": "Применить", "theme": "icon-link" }
+    ],
     "hasDropdown": true,
     "isOpen": true,
     "list": [

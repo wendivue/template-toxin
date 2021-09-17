@@ -19,10 +19,10 @@ class Dropdown {
     this.dropdownInput = this.anchor.querySelectorAll('.js-text-field__input');
     this.items = this.anchor.querySelectorAll('.js-dropdown__item');
     this.button = this.anchor.querySelectorAll('.js-dropdown__button');
+    this.buttonWrapper = this.anchor.querySelectorAll('.js-dropdown__button-menu');
     this.buttonIncrease = this.anchor.querySelectorAll('.js-dropdown__button_increase');
     this.buttonDecrease = this.anchor.querySelectorAll('.js-dropdown__button_decrease');
-    this.buttonComplete = this.anchor.querySelectorAll('.js-dropdown__button-menu_complete');
-    this.buttonCleans = this.anchor.querySelectorAll('.js-dropdown__button-menu_cleans');
+    [this.buttonCleans, this.buttonComplete] = this.anchor.querySelectorAll('.js-button');
   }
 
   defineAttributes() {
@@ -60,23 +60,20 @@ class Dropdown {
 
   addEventHandlersToggle() {
     const elements = this.dropdownInput;
-    const buttons = this.buttonComplete;
 
     elements.forEach((element) => {
       element.addEventListener('click', this.toggle.bind(this));
     });
 
-    buttons.forEach((button) => {
-      button.addEventListener('click', this.toggle.bind(this));
-    });
+    if (this.buttonComplete) {
+      this.buttonComplete.addEventListener('click', this.toggle.bind(this));
+    }
   }
 
   addEventHandlersClear() {
-    const elements = this.buttonCleans;
-
-    elements.forEach((element) => {
-      element.addEventListener('click', this.clear.bind(this));
-    });
+    if (this.buttonCleans) {
+      this.buttonCleans.addEventListener('click', this.clear.bind(this));
+    }
   }
 
   addEventHandlersDocument() {
@@ -102,7 +99,7 @@ class Dropdown {
   }
 
   update(value, index) {
-    if (this.buttonCleans[0]) this.buttonCleans[0].classList.remove('dropdown__button-menu_hide');
+    if (this.buttonCleans) this.buttonWrapper[0].classList.remove('dropdown__button-menu_hide');
 
     if (value === 0) this.addDecrease(this.buttonDecrease, index);
     this.setValue(index, value);
@@ -187,7 +184,7 @@ class Dropdown {
   }
 
   clear() {
-    this.buttonCleans[0].classList.add('dropdown__button-menu_hide');
+    this.buttonWrapper[0].classList.add('dropdown__button-menu_hide');
     this.dropdownInput[0].value = this.defaultValue;
 
     this.input.forEach((element) => {
@@ -250,8 +247,8 @@ class Dropdown {
     let curValue = value;
     if (value === '') {
       curValue = string;
-      if (this.buttonCleans[0]) {
-        this.buttonCleans[0].classList.add('dropdown__button-menu_hide');
+      if (this.buttonCleans) {
+        this.buttonWrapper[0].classList.add('dropdown__button-menu_hide');
       }
     }
 
