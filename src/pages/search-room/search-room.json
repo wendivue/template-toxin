@@ -1,8 +1,16 @@
 {
   "centerBlockProps": { "isScreenLarge": "large" },
   "datePicker": {
-    "text": "даты пребывания в отеле",
-    "placeholder": "ДД М - ДД М",
+    "dates": [
+      {
+        "text": "даты пребывания в отеле",
+        "placeholder": "ДД М - ДД М",
+        "type": "text",
+        "name": "date",
+        "id": "date",
+        "iconText": "expand_more"
+      }
+    ],
     "selectedDate": [
       [2022, 7, 19],
       [2022, 7, 23]
@@ -11,11 +19,7 @@
       { "isButton": true, "text": "Очистить", "theme": "icon-link" },
       { "isButton": true, "text": "Применить", "theme": "icon-link" }
     ],
-    "type": "text",
-    "name": "date",
-    "id": "date",
     "isSmall": true,
-    "iconText": "expand_more",
     "dateFormat": "d M"
   },
   "dropdownPeople": {

@@ -87,9 +87,25 @@
     "link": "/mock-address/change-me",
     "text": { "typeText": "люкс", "period": "в сутки", "reviewText": "Отзывов" },
     "carousel": { "dataNav": true, "dataItems": 1, "dataDots": true },
-    "datePicker": {
-      "text": ["прибытие", "выезд"],
-      "placeholder": ["ДД.ММ.ГГГГ", "ДД.ММ.ГГГГ"],
+    "datePickers": {
+      "dates": [
+        {
+          "text": "прибытие",
+          "placeholder": "ДД.ММ.ГГГГ",
+          "type": "text",
+          "name": "arrival",
+          "id": "start2",
+          "iconText": "expand_more"
+        },
+        {
+          "text": "выезд",
+          "placeholder": "ДД.ММ.ГГГГ",
+          "type": "text",
+          "name": "departure",
+          "id": "end2",
+          "iconText": "expand_more"
+        }
+      ],
       "selectedDate": [
         [2022, 7, 19],
         [2022, 7, 23]
@@ -98,10 +114,6 @@
         { "isButton": true, "text": "Очистить", "theme": "icon-link" },
         { "isButton": true, "text": "Применить", "theme": "icon-link" }
       ],
-      "name": ["arrival", "departure"],
-      "type": "text",
-      "id": ["start2", "end2"],
-      "iconText": "expand_more",
       "isRange": true
     },
     "dropdown": {

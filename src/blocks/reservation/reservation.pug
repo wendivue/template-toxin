@@ -3,7 +3,7 @@ include ../date-picker/date-picker.pug
 include ../dropdown/dropdown.pug
 include ../button/button.pug
 
-mixin reservation({ number, price, link, text, datePicker, dropdown, priceList, buttonSubmit })
+mixin reservation({ number, price, link, text, datePickers, dropdown, priceList, buttonSubmit })
   - const { typeText, period } = text;
 
   form.reservation(action=link)
@@ -16,7 +16,7 @@ mixin reservation({ number, price, link, text, datePicker, dropdown, priceList, 
         span.reservation__price= price
         p.reservation__days= period
     .reservation__date-picker
-      +date-picker(datePicker)
+      +date-picker(datePickers)
     .reservation__dropdown
       +dropdown(dropdown)
     .reservation__price-list

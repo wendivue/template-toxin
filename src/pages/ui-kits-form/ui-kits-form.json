@@ -51,26 +51,46 @@
     "textState": "Default",
     "mask": "'alias': 'datetime', 'inputFormat': 'dd/mm/yyyy', 'placeholder': 'ДД.ММ.ГГГГ'"
   },
-  "datePickerRange": {
-    "text": ["date Dropdown", "date Dropdown"],
-    "placeholder": ["ДД.ММ.ГГГГ", "ДД.ММ.ГГГГ"],
-    "selectedDate": [
-      [2022, 7, 19],
-      [2022, 7, 23]
+  "datePickersRange": {
+    "dates": [
+      {
+        "text": "date Dropdown",
+        "placeholder": "ДД.ММ.ГГГГ",
+        "type": "text",
+        "name": "arrival",
+        "id": "start",
+        "iconText": "expand_more"
+      },
+      {
+        "text": "date Dropdown",
+        "placeholder": "ДД.ММ.ГГГГ",
+        "type": "text",
+        "name": "departure",
+        "id": "end",
+        "iconText": "expand_more"
+      }
     ],
+    "isRange": true,
     "buttons": [
       { "isButton": true, "text": "Очистить", "theme": "icon-link" },
       { "isButton": true, "text": "Применить", "theme": "icon-link" }
     ],
-    "type": "text",
-    "name": ["arrival", "departure"],
-    "id": ["start", "end"],
-    "iconText": "expand_more",
-    "isRange": true
+    "selectedDate": [
+      [2022, 7, 19],
+      [2022, 7, 23]
+    ]
   },
   "datePickerFilter": {
-    "text": "filter date dropdown",
-    "placeholder": "ДД М - ДД М",
+    "dates": [
+      {
+        "text": "filter date dropdown",
+        "placeholder": "ДД М - ДД М",
+        "type": "text",
+        "name": "filterDate",
+        "id": "date-2",
+        "iconText": "expand_more"
+      }
+    ],
     "selectedDate": [
       [2022, 7, 19],
       [2022, 7, 23]
@@ -79,11 +99,7 @@
       { "isButton": true, "text": "Очистить", "theme": "icon-link" },
       { "isButton": true, "text": "Применить", "theme": "icon-link" }
     ],
-    "type": "text",
-    "id": "date-2",
-    "name": "filterDate",
     "isSmall": true,
-    "iconText": "expand_more",
     "dateFormat": "d M"
   },
   "textFieldSubscription": {

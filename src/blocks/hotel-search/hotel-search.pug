@@ -2,12 +2,12 @@ include ../date-picker/date-picker.pug
 include ../dropdown/dropdown.pug
 include ../button/button.pug
 
-mixin hotel-search({ title, link, datePicker, dropdown, button})
+mixin hotel-search({ title, link, datePickers, dropdown, button})
   form.hotel-search(action=link)
     h1.hotel-search__title= title
 
     .hotel-search__date-picker
-      +date-picker(datePicker)
+      +date-picker(datePickers)
 
     .hotel-search__dropdown
       +dropdown(dropdown)
