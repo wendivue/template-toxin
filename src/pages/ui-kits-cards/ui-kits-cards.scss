@@ -1,6 +1,5 @@
 @import '~Vars';
 @import '~Layout/main-layout';
-@import '~Blocks/column-4/column-4';
 @import '~Blocks/hotel-search/hotel-search';
 @import '~Blocks/registration/registration';
 @import '~Blocks/reservation/reservation';
@@ -9,6 +8,12 @@
 
 .ui-kits-cards {
   margin-top: 57px;
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+  }
 
   &__img {
     display: block;
@@ -34,7 +39,7 @@
     margin-top: 40px;
   }
 
-  &__col-wrapper {
+  &__column-wrapper {
     margin-left: -2px;
   }
 

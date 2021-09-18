@@ -1,7 +1,6 @@
 extends ~Layout/main-layout.pug
 
 block variables
-  include ~Blocks/column-4/column-4.pug
   include ~Blocks/hotel-search/hotel-search.pug
   include ~Blocks/registration/registration.pug
   include ~Blocks/reservation/reservation.pug
@@ -20,18 +19,18 @@ block variables
   - footerProps = false;
 
 block content
-  +column-4
+  .ui-kits-cards__column
     .ui-kits-cards__hotel-search
       +hotel-search(data.hotelSearch)
     .ui-kits-cards__registration
       +registration(data.registration)
-  +column-4
+  .ui-kits-cards__column
     .ui-kits-cards__reservation
       +reservation(data.reservation)
     .ui-kits-cards__sign-in
       +sign-in(data.signIn)
-  +column-4
-    .ui-kits-cards__col-wrapper
+  .ui-kits-cards__column
+    .ui-kits-cards__column-wrapper
       .ui-kits-cards__date-picker
         +date-picker(data.datePicker)
     each item in data.hotelList

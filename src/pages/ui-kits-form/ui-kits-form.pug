@@ -1,7 +1,6 @@
 extends ~Layout/main-layout.pug
 
 block variables
-  include ~Blocks/column-4/column-4.pug
   include ~Blocks/text-field/text-field.pug
   include ~Blocks/dropdown/dropdown.pug
   include ~Blocks/date-picker/date-picker.pug
@@ -30,7 +29,7 @@ block variables
 block content
   +page({})
     +center-block({})
-      +column-4
+      .ui-kits-form__column
         .ui-kits-form__text-field
           +text-field(data.textFieldDefault)
         .ui-kits-form__text-field-hover
@@ -53,7 +52,7 @@ block content
           +checkbox-list(data.checkboxList)
         .ui-kits-form__checkbox-list-open
           +checkbox-list(data.checkboxListOpen)
-      .ui-kits-form__col-4
+      .ui-kits-form__column
         +checkbox-buttons(data.checkboxButtonsDefault)
         .ui-kits-form__radio-buttons
           h3.ui-kits-form__title.ui-kits-form__title_radio-button= data.titleRadioButton
@@ -79,7 +78,7 @@ block content
           +dropdown(data.dropdownDefaultPeopleOpen)
         .ui-kits-form__rich-checkbox-buttons
           +checkbox-buttons(data.checkboxButtonsRich)
-      +column-4
+      .ui-kits-form__column
         +range-slider(data.rangeSlider)
         .ui-kits-form__buttons
           h3.ui-kits-form__title= data.titleButtons
@@ -99,7 +98,7 @@ block content
           +bullet-list(data.bulletList)
   +page({})
     +center-block({})
-      .ui-kits-form__col-8
+      .ui-kits-form__other
         +icon-text-list(data.iconTextList)
         .ui-kits-form__review
           +review(data.review)

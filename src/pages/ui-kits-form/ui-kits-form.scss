@@ -1,6 +1,5 @@
 @import '~Typography';
 @import '~Layout/main-layout';
-@import '~Blocks/column-4/column-4';
 @import '~Blocks/text-field/text-field';
 @import '~Blocks/dropdown/dropdown';
 @import '~Blocks/date-picker/date-picker';
@@ -21,14 +20,17 @@
   list-style-type: none;
   margin-top: 50px;
 
-  &__col-4 {
+  &__column {
     display: flex;
     flex-direction: column;
     width: 320px;
-    margin-left: 50px;
 
-    @media (max-width: $breakpoint-md) {
-      margin-left: 0;
+    &:nth-child(2) {
+      margin-left: 50px;
+
+      @media (max-width: $breakpoint-md) {
+        margin-left: 0;
+      }
     }
   }
 
@@ -195,7 +197,7 @@
     }
   }
 
-  &__col-8 {
+  &__other {
     position: relative;
     top: -17px;
     width: 100%;
