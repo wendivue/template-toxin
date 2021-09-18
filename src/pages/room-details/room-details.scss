@@ -7,6 +7,12 @@
 @import '~Blocks/pie-chart/pie-chart';
 
 .room-details {
+  @media (max-width: $breakpoint-md) {
+    .center-block {
+      flex-flow: column-reverse;
+    }
+  }
+
   &__img-wrapper {
     position: relative;
     display: flex;
@@ -201,11 +207,10 @@
   }
 
   &__reservation {
-    margin-top: -250px;
     margin-left: 20px;
 
     @media (max-width: $breakpoint-md) {
-      margin-top: 30px;
+      margin-bottom: 30px;
       margin-left: 0;
     }
   }
