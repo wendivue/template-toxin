@@ -1,24 +1,24 @@
-mixin pie-chart({ votesText, list })
+mixin pie-chart({ diagramText, list })
   -
-    let fullVotes = 0;
+    let fullNumber = 0;
 
-    list.forEach((item) => fullVotes = item.votes + fullVotes); 
+    list.forEach((item) => fullNumber = item.items + fullNumber); 
 
   .pie-chart.js-pie-chart
     .pie-chart__canvas-wrapper
       canvas.pie-chart__canvas.js-pie-chart__canvas
       .pie-chart__text-diagram-wrapper
-        p.pie-chart__text-diagram.pie-chart__text-diagram_size_big= fullVotes
-        p.pie-chart__text-diagram= votesText
+        p.pie-chart__text-diagram.pie-chart__text-diagram_size_big= fullNumber
+        p.pie-chart__text-diagram= diagramText
 
     ul.pie-chart__list
       each item in list
         -
-          let { text, colorFirst, colorSecond, votes } = item;
+          let { text, colorFirst, colorSecond, items } = item;
           const circleStyleBackground = `background: linear-gradient(180deg, ${colorFirst} 0%, ${colorSecond} 100%)`;
 
         li.pie-chart__item.js-pie-chart__item(
-          data-votes=votes,
+          data-items=items,
           data-color-first=colorFirst,
           data-color-second=colorSecond
         )

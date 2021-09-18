@@ -20,29 +20,29 @@
     ]
   },
   "pieChart": {
-    "votesText": "голосов",
+    "diagramText": "голосов",
     "list": [
       {
         "text": "Великолепно",
-        "votes": 65,
+        "items": 65,
         "colorFirst": "#BC9CFF",
         "colorSecond": "#8BA4F9"
       },
       {
         "text": "Хорошо",
-        "votes": 65,
+        "items": 65,
         "colorFirst": "#6FCF97",
         "colorSecond": "#66D2EA"
       },
       {
         "text": "Удовлетворительно",
-        "votes": 130,
+        "items": 130,
         "colorFirst": "#FFE39C",
         "colorSecond": "#FFE39C"
       },
       {
         "text": "Разочарован",
-        "votes": 0,
+        "items": 0,
         "colorFirst": "#919191",
         "colorSecond": "#3d4975"
       }

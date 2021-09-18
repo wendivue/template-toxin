@@ -19,13 +19,13 @@ class PieChart {
   }
 
   defineAttributes() {
-    this.votes = [];
+    this.dataItems = [];
     this.colors = [];
 
     this.items.forEach((item) => {
       const color = [];
 
-      this.votes.push(item.getAttribute('data-votes'));
+      this.dataItems.push(item.getAttribute('data-items'));
       color.push(item.getAttribute('data-color-first'));
       color.push(item.getAttribute('data-color-second'));
       this.colors = [...this.colors, color];
@@ -42,7 +42,7 @@ class PieChart {
     const data = {
       datasets: [
         {
-          data: this.votes,
+          data: this.dataItems,
           backgroundColor: gradientList,
           cutout: '90%',
         },
