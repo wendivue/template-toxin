@@ -27,7 +27,7 @@
       "text": "войти",
       "link": "landing-sign-in.html",
       "theme": "outlined",
-      "size": "small-outlined"
+      "size": "smallest"
     },
     "registerButton": {
       "text": "зарегистрироваться",

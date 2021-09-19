@@ -2,7 +2,7 @@ mixin button({ theme, size, isActive, isColorGray, themeHeader, hasIcon, link, t
   -
     let mainClasses = '';
     const themeSetting = ['outlined', 'icon-link'];
-    const sizeSetting = ['large', 'small', 'small-outlined'];
+    const sizeSetting = ['large', 'small', 'smallest'];
 
     if(themeSetting.includes(theme)) mainClasses += ' button_theme_' + theme;
     if(sizeSetting.includes(size)) mainClasses += ' button_size_' + size;
