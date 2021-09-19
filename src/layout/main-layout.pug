@@ -1,7 +1,7 @@
 include ~Blocks/page/page.pug
 include ~Blocks/center-block/center-block.pug
 include ~Blocks/header/header.pug
-include ~Blocks/footer-copyright/footer-copyright.pug
+include ~Blocks/footer/footer.pug
 
 - data = require("Layout/main-layout.json");
 
@@ -43,4 +43,4 @@ html(lang='ru')
           block content
 
     if (footerProps)
-      +footer-copyright(footerProps)
+      +footer(footerProps)

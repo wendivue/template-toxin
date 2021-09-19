@@ -8,10 +8,10 @@ mixin reservation({ number, price, link, text, datePickers, dropdown, priceList,
 
   form.reservation(action=link)
     .reservation__head-wrapper
-      .reservation__items-number
-        p.reservation__number.reservation__number_size_small №
-          span.reservation__number.reservation__number_size_big= number
-          span.reservation__number.reservation__number_theme_primary-color= typeText
+      .reservation__room-number-wrapper
+        p.reservation__room-number.reservation__room-number_size_small №
+          span.reservation__room-number.reservation__room-number_size_big= number
+          span.reservation__room-number.reservation__room-number_theme_primary-color= typeText
       .reservation__items-price
         span.reservation__price= price
         p.reservation__days= period

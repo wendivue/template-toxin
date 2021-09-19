@@ -21,11 +21,11 @@ mixin hotel-card({ number, list, price, isLux, link, reviews, rating, text, caro
 
     .hotel-card__description
       .hotel-card__head-wrapper
-        .hotel-card__items-number
-          p.hotel-card__number.hotel-card__number_size_small №
-            span.hotel-card__number.hotel-card__number_size_big= number
+        .hotel-card__room-number-wrapper
+          p.hotel-card__room-number.hotel-card__room-number_size_small №
+            span.hotel-card__room-number.hotel-card__room-number_size_big= number
             if (isLux)
-              span.hotel-card__number.hotel-card__number_theme_primary-color= typeText
+              span.hotel-card__room-number.hotel-card__room-number_theme_primary-color= typeText
         .hotel-card__items-price
           span.hotel-card__text.hotel-card__text_size_bold= price
           p.hotel-card__text= period

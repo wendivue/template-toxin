@@ -1,0 +1,54 @@
+include ../page/page.pug
+include ../center-block/center-block.pug
+include ../text-field/text-field.pug
+
+mixin footer({ linkLogo, textLogo, type='full', list1, list2, list3, titleSub, textSub, img, copyright, iconList, textField })
+  if (type === 'full')
+    footer.footer.footer_theme_full
+      +page({})
+        +center-block({})
+          .footer__logo-wrapper
+            a(href=linkLogo) 
+              img.footer__logo(src=img, alt='logo')
+            p.footer__text-logo= textLogo
+          ul.footer__list-wrapper
+            each list in [list1, list2, list3]
+              li.footer__lists
+                ul.footer__list
+                  each item in list
+                    - const { title, link, text } = item;
+
+                    li.footer__list-item
+                      if (title)
+                        h3.footer__title= title
+                      else
+                        a.footer__link(href=link)= text
+
+          .footer__subscribe-wrapper
+            .footer__text-wrapper
+              h3.footer__title-subscribe= titleSub
+              p.footer__text-subscribe= textSub
+            .footer__subscribe
+              +text-field(textField)
+      .footer__bottom-footer
+        +page({})
+          +center-block({})
+            p.footer__text= copyright
+            ul.footer__social
+              each icons in iconList
+                - const { link, icon } = icons;
+                li.footer__item
+                  a.footer__link-icon(href=link, target='_blank', rel='noopener noreferrer')
+                    i(class="fa " + icon)
+  else if (type === 'creative')
+    footer.footer.footer_theme_creative
+      a(href=linkLogo) 
+        img.footer__logo(src=img, alt='logo')
+      .footer__copyright-wrapper
+        p.footer__text= copyright
+      ul.footer__social.footer__social_creative
+        each item in iconList
+          - const { link, icon } = item;
+          li.footer__item
+            a.footer__link-icon(href=link, target='_blank', rel='noopener noreferrer')
+              i(class="fa " + icon)
