@@ -8,8 +8,8 @@ mixin text-field({ isActive, isSmall, isSubmit, id, isOpen, text, textState, typ
     if (isSmall) textFieldClasses +=' text-field_size_small';
     if (isActive) inputClasses += ' text-field__input_active';
     if (isSubmit) iconClasses += ' text-field__icon_submit';
-    if (iconText) inputClasses += ' text-field__input_with_icon';
-    if (isOpen) inputClasses += ' text-field__input_open';
+    if (iconText) inputClasses += ' text-field__input_has-icon';
+    if (isOpen) inputClasses += ' text-field__input_no-bottom-outlines';
 
   .text-field.js-text-field(class=textFieldClasses)
     if (text)

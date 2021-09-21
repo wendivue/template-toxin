@@ -9,7 +9,7 @@ mixin date-picker({ dates = [], isActive, isSmall, isRange, dateFormat, dateNavT
 
     if (isSmall) datePickerClasses +=' date-picker_size_small';
     if (isActive) inputClasses += ' date-picker__input_active';
-    if (iconText) inputClasses += ' date-picker__input_with_icon';
+    if (iconText) inputClasses += ' date-picker__input_has-icon';
     if(isRange) datePickerType = 'range';
     if(!isInline) calendarClasses += 'date-picker__calendar_hidden';
     if(isInline) calendarClasses += 'date-picker__calendar_inline';

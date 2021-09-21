@@ -168,7 +168,7 @@ class Dropdown {
     const target = event.target.closest('.dropdown');
     if (!target) {
       textFields.forEach((element) => {
-        element.classList.remove('text-field__input_open');
+        element.classList.remove('text-field__input_no-bottom-outlines');
       });
       dropdownMenu.forEach((element) => {
         element.classList.remove('dropdown__menu_active');
@@ -179,7 +179,7 @@ class Dropdown {
   toggle(event) {
     const element = event.target;
     const dropdownMenu = this.anchor.querySelector('.js-dropdown__menu');
-    element.classList.toggle('text-field__input_open');
+    element.classList.toggle('text-field__input_no-bottom-outlines');
     dropdownMenu.classList.toggle('dropdown__menu_active');
   }
 

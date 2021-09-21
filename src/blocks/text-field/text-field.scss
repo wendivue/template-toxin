@@ -49,15 +49,13 @@
       border: 1px solid $dark-shade-50;
     }
 
-    &_open {
+    &_no-bottom-outlines {
       border-radius: 4px 4px 0 0;
     }
 
-    &_with {
-      &_icon {
-        padding-right: 40px;
-        cursor: pointer;
-      }
+    &_has-icon {
+      padding-right: 40px;
+      cursor: pointer;
     }
   }
 
