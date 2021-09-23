@@ -2,7 +2,7 @@ include ../button/button.pug
 include ../page/page.pug
 include ../center-block/center-block.pug
 
-mixin header({ list, isSmall, textLogin, loginButton, loginLink, registerButton })
+mixin header({ list, isSmall = false, textLogin = '', loginButton, loginLink, registerButton })
   header.header.js-header
     +page({ isSmall: true })
       +center-block({})
@@ -15,7 +15,7 @@ mixin header({ list, isSmall, textLogin, loginButton, loginLink, registerButton 
             ul.header__list
               each item in list
                 -
-                  let { isActive, link, text, hasIcon, subList } = item;
+                  let { isActive = false, link, text, hasIcon = false, subList } = item;
                   let itemClasses = '';
                   let linkClasses = '';
                   let iconClasses = '';

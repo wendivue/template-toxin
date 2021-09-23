@@ -2,7 +2,7 @@ mixin icon-text-list({ list })
   ul.icon-text-list
     each item in list
       -
-        const { isOutlined, icon, title, text } = item;
+        const { isOutlined = false, icon, title, text } = item;
         let itemClasses = '';
 
         if(isOutlined) itemClasses += ' icon-text-list__item_outlined';

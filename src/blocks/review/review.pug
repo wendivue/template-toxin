@@ -1,6 +1,6 @@
 include ../like-button/like-button.pug
 
-mixin review({ img, username, date, text, id, number, name, isChecked })
+mixin review({ img, username, date, text, id, number, name, isChecked = false })
   .review
     .review__row
       img.review__img(src=img)

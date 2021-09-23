@@ -1,5 +1,5 @@
 mixin range-slider({ text, rangeConfig })
-  - const { dataMin, dataMax, dataFrom, dataTo, dataStep, dataType, dataPostfix, dataValuesSeparator } = rangeConfig;
+  - const { dataMin = 0, dataMax = 1000, dataFrom, dataTo, dataStep = 100, dataType, dataPostfix, dataValuesSeparator } = rangeConfig;
 
   .range-slider
     .range-slider__header

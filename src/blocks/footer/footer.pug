@@ -2,7 +2,23 @@ include ../page/page.pug
 include ../center-block/center-block.pug
 include ../text-field/text-field.pug
 
-mixin footer({ linkLogo, textLogo, type='full', list1, list2, list3, titleSub, textSub, img, copyright, iconList, textField })
+mixin footer(props)
+  -
+    const {
+      linkLogo,
+      textLogo,
+      type = 'full',
+      list1,
+      list2,
+      list3,
+      titleSub = '',
+      textSub = '',
+      img,
+      copyright,
+      iconList = [],
+      textField = '',
+    } = props;
+
   if (type === 'full')
     footer.footer.footer_theme_full
       +page({})

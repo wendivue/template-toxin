@@ -1,5 +1,22 @@
-mixin text-field({ isActive, isSmall, isSubmit, id, isOpen, text, textState, type = 'text', value, name, placeholder, iconText, readonly, mask })
+mixin text-field(props)
   -
+    let {
+      isActive = false,
+      isSmall = false,
+      isSubmit = false,
+      id = '',
+      isOpen = false,
+      text = '',
+      textState = '',
+      type = 'text',
+      value = '',
+      name,
+      placeholder = '',
+      iconText = '',
+      readonly = false,
+      mask = '',
+    } = props;
+
     let textFieldClasses = '';
     let inputClasses = '';
     let iconClasses = '';

@@ -1,6 +1,6 @@
 include ~Blocks/checkbox/checkbox.pug
 
-mixin checkbox-buttons({ caption, isRich, list })
+mixin checkbox-buttons({ caption, isRich = false, list })
   .checkbox-buttons
     .checkbox-buttons__header-wrapper
       h3.checkbox-buttons__title= caption

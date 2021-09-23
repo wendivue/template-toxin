@@ -1,6 +1,6 @@
 include ../rate-button/rate-button.pug
 
-mixin hotel-card({ number, list, price, isLux, link, reviews, rating, text, carousel })
+mixin hotel-card({ number, list, price, isLux = false, link, reviews, rating, text, carousel })
   -
     const altText = "hotel-" + number;
     const { typeText, period, reviewText } = text;

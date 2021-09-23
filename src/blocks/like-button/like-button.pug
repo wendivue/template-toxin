@@ -1,4 +1,4 @@
-mixin like-button({ id, number, name, isChecked })
+mixin like-button({ id, number = 0, name, isChecked = false })
   -
     let labelClasses = '';
     if(isChecked) labelClasses += ' like-button__label_active';

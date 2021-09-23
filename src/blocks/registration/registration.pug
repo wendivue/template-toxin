@@ -4,7 +4,24 @@ include ../radio-buttons/radio-buttons.pug
 include ../toggle/toggle.pug
 include ../button/button.pug
 
-mixin registration({ title, link, textFieldName, textFieldSurName, radioButtons, textFieldDate, textFieldEmail, textFieldPassword, toggle, buttonSubmit, textSignIn, buttonSign})
+mixin registration(props)
+  -
+    const {
+      title,
+      link,
+      textFieldName,
+      textFieldSurName,
+      radioButtons,
+      textFieldDate,
+      textFieldEmail,
+      textFieldPassword,
+      toggle,
+      buttonSubmit,
+      textSignIn,
+      buttonSign,
+    } = props;
+
+
   form.registration(action=link)
     h1.registration__title= title
 

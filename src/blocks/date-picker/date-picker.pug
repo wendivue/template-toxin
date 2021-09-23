@@ -1,7 +1,19 @@
 include ../button/button.pug
 
-mixin date-picker({ dates = [], isActive, isSmall, isRange, dateFormat, dateNavTitles = 'MM yyyy', isInline = false, selectedDate = [], buttons })
+mixin date-picker(props)
   -
+    const {
+      dates = [],
+      isActive = false,
+      isSmall = false,
+      isRange = false,
+      dateFormat,
+      dateNavTitles = 'MM yyyy',
+      isInline = false,
+      selectedDate = [],
+      buttons = [],
+    } = props;
+
     let datePickerClasses = '';
     let inputClasses = '';
     let calendarClasses = '';
@@ -26,7 +38,7 @@ mixin date-picker({ dates = [], isActive, isSmall, isRange, dateFormat, dateNavT
       .date-picker__range-wrapper
         each item, index in dates
           -
-            let { id, text, type, name, placeholder, iconText, textState } = item;
+            let { id, text, type = "text", name, placeholder = '', iconText, textState = '' } = item;
             let jsClassesInput = ''
             if (index === 0) {
               inputJsClasses += ' js-date-picker__input-start';
@@ -52,7 +64,7 @@ mixin date-picker({ dates = [], isActive, isSmall, isRange, dateFormat, dateNavT
               if (iconText)
                 button.date-picker__icon= iconText
     else if (!isInline)
-      - let { id, text, type, name, placeholder, iconText, textState } = dates[0];
+      - let { id, text, type = "text", name, placeholder = "", iconText, textState } = dates[0];
       label.date-picker__label
         if (text)
           .date-picker__text-wrapper

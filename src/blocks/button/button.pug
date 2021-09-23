@@ -1,5 +1,17 @@
-mixin button({ theme, size, isActive, isColorGray, themeHeader, hasIcon, link, text, isButton, type = 'button' })
+mixin button(props)
   -
+    const {
+      theme = '',
+      size = '',
+      isActive = false,
+      isColorGray = false,
+      hasIcon = false,
+      link = '',
+      text,
+      isButton = false,
+      type = 'button',
+    } = props;
+
     let mainClasses = '';
     const themeSetting = ['outlined', 'icon-link'];
     const sizeSetting = ['large', 'small', 'smallest'];

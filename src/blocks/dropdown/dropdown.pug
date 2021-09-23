@@ -1,8 +1,29 @@
 include ../text-field/text-field.pug
 include ../button/button.pug
 
-mixin dropdown({ isOpen, isSmall, hasButtons, value, text, state, id, type, name, iconText, themeIcon, textState, hasDropdown, list, hasHideButtonCleans, readonly = true, defaultValue, commonWord, buttons })
+mixin dropdown(props)
   -
+    const {
+      isOpen = false,
+      isSmall = false,
+      hasButtons = false,
+      value = '',
+      text= '',
+      id= '',
+      type = 'text',
+      name,
+      iconText= '',
+      themeIcon = '',
+      textState = '',
+      hasDropdown = false,
+      list,
+      hasHideButtonCleans = false,
+      readonly = true,
+      defaultValue = '',
+      commonWord,
+      buttons = [],
+    } = props;
+
     let dropdownClasses = '';
     let menuClasses = '';
     let buttonMenuClasses = '';
@@ -23,7 +44,7 @@ mixin dropdown({ isOpen, isSmall, hasButtons, value, text, state, id, type, name
       ul.dropdown__list
         each item in list
           -
-            let { value, text, name, declension } = item;
+            let { value = '0', text, name, declension } = item;
             let buttonDecreaseClasses = '';
             if(value === "0") buttonDecreaseClasses += " dropdown__button_no-active"
 
