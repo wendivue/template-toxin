@@ -49,6 +49,10 @@
       border: 1px solid $dark-shade-50;
     }
 
+    &::placeholder {
+      color: $dark-shade-25;
+    }
+
     &_no-bottom-outlines {
       border-radius: 4px 4px 0 0;
     }

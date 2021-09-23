@@ -9,6 +9,7 @@ class TextField {
 
   init() {
     this.defineElements();
+    this.defineAttributes();
     this.addMask();
   }
 
@@ -16,8 +17,12 @@ class TextField {
     this.input = this.anchor.querySelector('.js-text-field__input');
   }
 
+  defineAttributes() {
+    this.dataInputMask = this.input.getAttribute('data-inputmask');
+  }
+
   addMask() {
-    Inputmask().mask(this.input);
+    if (this.dataInputMask) Inputmask().mask(this.input);
   }
 }
 

@@ -23,6 +23,7 @@ mixin text-field(props)
     id = id ? 'text-field-' + id : '';
 
     if (isSmall) textFieldClasses +=' text-field_size_small';
+    if (mask) textFieldClasses += ' js-text-field_masked';
     if (isActive) inputClasses += ' text-field__input_active';
     if (isSubmit) iconClasses += ' text-field__icon_submit';
     if (iconText) inputClasses += ' text-field__input_has-icon';

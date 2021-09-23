@@ -56,6 +56,10 @@
       border: 1px solid $dark-shade-50;
     }
 
+    &::placeholder {
+      color: $dark-shade-75;
+    }
+
     &_has-icon {
       padding-right: 40px;
       cursor: pointer;
