@@ -110,8 +110,8 @@ class Dropdown {
   }
 
   getValue() {
-    let val1 = parseFloat(this.input[1].value);
-    let val2 = parseFloat(this.input[0].value);
+    let val1 = parseFloat(this.input[0].value);
+    let val2 = parseFloat(this.input[1].value);
     let val3 = parseFloat(this.input[2].value);
 
     if (Number.isNaN(val1) || Number.isNaN(val2) || Number.isNaN(val3)) {
@@ -127,7 +127,7 @@ class Dropdown {
   }
 
   getString() {
-    const arrayValue = [this.val2, this.val1, this.val3];
+    const arrayValue = [this.val1, this.val2, this.val3];
     const stringList = [];
 
     if (this.declension.length < 2) {
@@ -221,15 +221,15 @@ class Dropdown {
   }
 
   setValue(index, value) {
-    if (index === 0) this.val2 = value;
-    if (index === 1) this.val1 = value;
+    if (index === 0) this.val1 = value;
+    if (index === 1) this.val2 = value;
     if (index === 2) this.val3 = value;
   }
 
   getMenuValue(index) {
     let value;
-    if (index === 0) value = this.val2;
-    if (index === 1) value = this.val1;
+    if (index === 0) value = this.val1;
+    if (index === 1) value = this.val2;
     if (index === 2) value = this.val3;
 
     return value;
