@@ -24,7 +24,7 @@
       "id": "date",
       "type": "text",
       "name": "date",
-      "mask": "'alias': 'datetime', 'inputFormat': 'dd/mm/yyyy', 'placeholder': 'ДД.ММ.ГГГГ'"
+      "mask": "'alias': 'datetime', 'inputFormat': 'dd.mm.yyyy', 'placeholder': 'ДД.ММ.ГГГГ'"
     },
     "textFieldEmail": {
       "text": "данные для входа в сервис",

@@ -49,7 +49,7 @@
     "name": "date",
     "id": "date-1",
     "textState": "Default",
-    "mask": "'alias': 'datetime', 'inputFormat': 'dd/mm/yyyy', 'placeholder': 'ДД.ММ.ГГГГ'"
+    "mask": "'alias': 'datetime', 'inputFormat': 'dd.mm.yyyy', 'placeholder': 'ДД.ММ.ГГГГ'"
   },
   "datePickersRange": {
     "dates": [
