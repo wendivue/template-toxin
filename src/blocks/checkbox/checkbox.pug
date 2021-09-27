@@ -1,10 +1,15 @@
 mixin checkbox({ text, id, title = '', name, isChecked = false, isRich = false })
-  .checkbox
+  -
+    let mainClasses = '';
+
+    if(isRich) mainClasses += ' checkbox_rich'
+
+  .checkbox(class=mainClasses)
     input.checkbox__input(id=id, name=name, type='checkbox', checked=isChecked)
 
     if (isRich)
       label.checkbox__text-wrapper(for=id)
         p.checkbox__text= title
-        p.checkbox__info.checkbox__info_size_small= text
+        p.checkbox__info= text
     else
       label.checkbox__info(for=id)= text

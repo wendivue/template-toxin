@@ -12,8 +12,6 @@ class Checkbox {
 
   defineElements() {
     this.header = this.anchor.querySelector('.js-checkbox-list__header-wrapper');
-    this.icon = this.header.querySelector('.js-checkbox-list__icon');
-    this.menu = this.anchor.querySelector('.js-checkbox-list__items');
   }
 
   addEventHandlers() {
@@ -21,8 +19,7 @@ class Checkbox {
   }
 
   toggle() {
-    this.icon.classList.toggle('checkbox-list__icon_open');
-    this.menu.classList.toggle('checkbox-list__items_open');
+    this.anchor.classList.toggle('checkbox-list_open');
   }
 }
 

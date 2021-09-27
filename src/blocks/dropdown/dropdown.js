@@ -162,7 +162,7 @@ class Dropdown {
   }
 
   handleDocumentClick(event) {
-    const dropdownMenu = document.querySelectorAll('.js-dropdown__menu');
+    const dropdowns = document.querySelectorAll('.js-dropdown');
     const textFields = document.querySelectorAll('.js-text-field__input');
 
     const target = event.target.closest('.dropdown');
@@ -170,17 +170,16 @@ class Dropdown {
       textFields.forEach((element) => {
         element.classList.remove('text-field__input_no-bottom-outlines');
       });
-      dropdownMenu.forEach((element) => {
-        element.classList.remove('dropdown__menu_active');
+      dropdowns.forEach((element) => {
+        element.classList.remove('dropdown_open');
       });
     }
   }
 
   toggle(event) {
     const element = event.target;
-    const dropdownMenu = this.anchor.querySelector('.js-dropdown__menu');
     element.classList.toggle('text-field__input_no-bottom-outlines');
-    dropdownMenu.classList.toggle('dropdown__menu_active');
+    this.anchor.classList.toggle('dropdown_open');
   }
 
   clear() {

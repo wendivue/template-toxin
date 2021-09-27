@@ -30,7 +30,7 @@ mixin dropdown(props)
 
     if(isSmall) dropdownClasses += ' dropdown_size_small';
     if(isSmall) menuClasses += ' dropdown__menu_size_small';
-    if(isOpen) menuClasses += ' dropdown__menu_active';
+    if(isOpen) dropdownClasses += ' dropdown_open';
     if(hasHideButtonCleans) buttonMenuClasses += ' dropdown__button-menu_hide';
 
   .dropdown.js-dropdown(

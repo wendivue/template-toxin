@@ -13,10 +13,6 @@
 
   &__items {
     display: none;
-
-    &_open {
-      display: block;
-    }
   }
 
   &__item {
@@ -34,9 +30,15 @@
 
     cursor: pointer;
     margin-right: 6px;
+  }
 
-    &_open {
+  &_open {
+    .checkbox-list__icon {
       transform: rotate(-180deg);
+    }
+
+    .checkbox-list__items {
+      display: block;
     }
   }
 }

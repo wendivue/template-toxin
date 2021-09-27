@@ -15,8 +15,10 @@
 
   &__item {
     margin-bottom: 11px;
+  }
 
-    &_rich {
+  &_rich {
+    .checkbox-buttons__item {
       margin-bottom: 9px;
     }
   }

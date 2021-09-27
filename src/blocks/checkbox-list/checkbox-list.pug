@@ -2,18 +2,16 @@ include ~Blocks/checkbox/checkbox.pug
 
 mixin checkbox-list({ isOpen = false, text, list })
   -
-    let iconClasses = '';
-    let itemsClasses = '';
+    let mainClasses = '';
 
-    if(isOpen) itemsClasses += ' checkbox-list__items_open';
-    if(isOpen) iconClasses += ' checkbox-list__icon_open';
+    if(isOpen) mainClasses += ' checkbox-list_open';
 
-  .checkbox-list.js-checkbox-list
+  .checkbox-list.js-checkbox-list(class=mainClasses)
     .checkbox-list__header-wrapper.js-checkbox-list__header-wrapper
       h3.checkbox-list__title= text
-      button.checkbox-list__icon.js-checkbox-list__icon(class=iconClasses)= "expand_more"
+      button.checkbox-list__icon.js-checkbox-list__icon= "expand_more"
 
-    ul.checkbox-list__items.js-checkbox-list__items(class=itemsClasses)
+    ul.checkbox-list__items.js-checkbox-list__items
       each item in list
         - let { id, text, name, isChecked = false, isRich = false } = item;
           li.checkbox-list__item

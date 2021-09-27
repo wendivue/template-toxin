@@ -1,16 +1,19 @@
 include ~Blocks/checkbox/checkbox.pug
 
 mixin checkbox-buttons({ caption, isRich = false, list })
-  .checkbox-buttons
+  -
+    let mainClasses = "";
+
+    if (isRich) mainClasses += "checkbox-buttons_rich";
+
+  .checkbox-buttons(class=mainClasses)
     .checkbox-buttons__header-wrapper
       h3.checkbox-buttons__title= caption
 
     ul.checkbox-buttons__items
       each item in list
-        - let itemClasses = "";
         - let { text, id, title, name, isChecked = false } = item;
         - id = id ? "checkbox-buttons-" + id : "";
-        - if (isRich) itemClasses += "checkbox-buttons__item_rich";
 
-        li.checkbox-buttons__item(class=itemClasses)
+        li.checkbox-buttons__item
           +checkbox({text, id, title, name, isChecked, isRich})
