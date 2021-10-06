@@ -1,9 +1,9 @@
 mixin pagination({ itemsOnPage = 12, items, currentPage = 1, text })
   -
-    const firstRange = itemsOnPage * (currentPage - 1) + 1;
-    const lastRange = currentPage * itemsOnPage;
+    const startOfRange = itemsOnPage * (currentPage - 1) + 1;
+    const endOfRange = currentPage * itemsOnPage;
     const numberOfItems = items < 100 ? items : '100+';
-    const fullText = `${firstRange} – ${lastRange} ${text[0]} ${numberOfItems} ${text[1]}`
+    const fullText = `${startOfRange} – ${endOfRange} ${text[0]} ${numberOfItems} ${text[1]}`
 
   .pagination.js-pagination(
     data-items-on-page=itemsOnPage,
