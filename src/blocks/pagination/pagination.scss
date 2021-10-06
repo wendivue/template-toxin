@@ -9,6 +9,10 @@
     color: #fff;
     border-radius: 22px;
     text-decoration: none;
+
+    @media (max-width: $breakpoint-xs) {
+      padding: 4px;
+    }
   }
 
   &__text {
@@ -22,6 +26,10 @@
   .simple-pagination {
     display: flex;
     align-items: center;
+
+    @media (max-width: $breakpoint-xs) {
+      justify-content: center;
+    }
 
     li {
       > * {
@@ -37,10 +45,24 @@
       }
     }
 
+    .page-link, .ellipse {
+      @media (max-width: $breakpoint-xs) {
+        width: 32px;
+        height: 32px;
+        line-height: 32px;
+      }
+    }
+
     .current {
       background: $gradient-primary;
       color: #fff;
       border-radius: 22px;
+
+      @media (max-width: $breakpoint-xs) {
+        width: 32px;
+        height: 32px;
+        line-height: 32px;
+      }
     }
 
     .disabled {

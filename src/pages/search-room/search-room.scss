@@ -139,5 +139,10 @@
     align-items: center;
     margin-top: 42px;
     margin-right: 14.6px;
+
+
+    @media (max-width: $breakpoint-md) {
+      margin-right: 0;
+    }
   }
 }
